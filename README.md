@@ -4,6 +4,12 @@ You can use the [editor on GitHub](https://github.com/seamusdemora/seamus.github
 
     Q: Can you also use the GitHubDesktop app?
 
+Column 1 | Column 2 | Column 3
+-------- | -------- | --------
+Ifs | Ands | Buts
+Are allowed and recommended | Are allowed and recommended | Are not allowed
+
+
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
