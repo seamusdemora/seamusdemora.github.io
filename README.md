@@ -1,4 +1,4 @@
-## Welcome to Seamus' GitHub ~~Pages~~Page
+## Welcome to Seamus' GitHub Page~~s~~
 
 You can use the [editor on GitHub](https://github.com/seamusdemora/seamus.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
