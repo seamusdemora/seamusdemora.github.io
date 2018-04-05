@@ -9,6 +9,10 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 
 ## Contents
 
+Repository | Description
+---------- | -----------
+PiPyMailer | Python program that notofoes me when it reboots
+
 ***
 
 You can use the [editor on GitHub](https://github.com/seamusdemora/seamus.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
