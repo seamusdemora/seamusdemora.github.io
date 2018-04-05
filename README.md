@@ -1,8 +1,20 @@
-## Welcome to Seamus' GitHub Page~~s~~
+# Do Something... Even if It's Wrong! 
+
+`“By seeking and blundering we learn.” 
+― Johann Wolfgang von Goethe`
+
+## What _IS_ This Anyway? 
+
+This is my collection - my eclectic collection - of code, how-to's, reminders, hints, memory aids, technical crutches, etc, etc, etc. It's nothing more than that, and may never be useful, helpful or interesting to anyone. I have no grand projects planned, and at present, my only motivation for doing this is as a learning project. That said, any comments or suggestions will be appreciated. And thanks for stopping in :) 
+
+***
 
 You can use the [editor on GitHub](https://github.com/seamusdemora/seamus.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
     Q: Can you also use the GitHubDesktop app?
+
+
+Let's try a table:
 
 Column 1 | Column 2 | Column 3
 -------- | -------- | --------
