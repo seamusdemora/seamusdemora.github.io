@@ -7,6 +7,8 @@
 
 This is my collection - my eclectic collection - of code, how-to's, reminders, hints, memory aids, technical crutches, etc, etc, etc. It's nothing more than that, and may never be useful, helpful or interesting to anyone. I have no grand projects planned, and at present, my only motivation for doing this is as a learning project. That said, any comments or suggestions will be appreciated. And thanks for stopping in :) 
 
+## Contents
+
 ***
 
 You can use the [editor on GitHub](https://github.com/seamusdemora/seamus.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
