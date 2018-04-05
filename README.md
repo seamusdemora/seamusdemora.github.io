@@ -11,7 +11,7 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 
 Repository | Description
 ---------- | -----------
-PiPyMailer | Python program that notofoes me when it reboots
+[PiPyMailer](https://github.com/seamusdemora/PiPyMailer) | Python program that notifies me when my Raspberry Pi reboots
 
 ***
 
