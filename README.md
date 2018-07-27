@@ -13,7 +13,7 @@ Repository | Description
 ---------- | -----------
 [PiPyMailer](https://github.com/seamusdemora/PiPyMailer) | Python program that notifies me when my Raspberry Pi reboots
 [Raspberry Pi Formulae](https://github.com/seamusdemora/PiFormulae) | A collection of "How-To" guides for Raspberry Pi
-
+[Mac Stuff](https://github.com/seamusdemora/) | Miscellaneous Administrative Tweaks for Mac OS
 ***
 
 You can use the [editor on GitHub](https://github.com/seamusdemora/seamus.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
