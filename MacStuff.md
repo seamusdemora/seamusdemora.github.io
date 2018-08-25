@@ -26,7 +26,7 @@ Caffeine may do the trick; specifically `caffeinate` may be exactly what you nee
 or perhaps more effectively as follows: 
 ```
     $ caffeinate -s &
-    [1] 1558         (AND IF YOU WISK TO RESTORE THE SLEEP PATTERN AFTER SOME TIME, simply kill it )
+    [1] 1558         (IF YOU WISH TO RESTORE THE SLEEP PATTERN AFTER SOME TIME, simply kill it )
     $ kill 1558
 ```
 Used in this way, `caffeinate` is a ***blunt instrument***. This command simply creates and holds an assertion that will prevent the Mac from sleeping as long as it remains on battery power. Run in the background, you can continue the terminal session for as long as needed, and then simply kill `caffeinate`'s PID to release the assertion and restore sleep patterns. 
@@ -34,6 +34,6 @@ Used in this way, `caffeinate` is a ***blunt instrument***. This command simply 
 ```
     ~ caffeinate -w PID
 ```
-When used with the `w` argument, sleep will be inhibited as long as the process ID `PID` is active. Once the the process exits, the assertion is released, and the configured sleep behavior will resume when appropriate. 
+When used with the `-w` argument, sleep will be inhibited as long as the process ID `PID` is active. Once the the process exits, the assertion is released, and the configured sleep behavior will resume when appropriate. 
 
-Process ID's are available from `Activity Monitor`, or can be listed in the terminal by entering `ps -Al`
+Note also that Process ID's are available from `Activity Monitor`, or can be listed in the terminal by entering `ps -Al`
