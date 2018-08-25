@@ -16,8 +16,10 @@ Repository | Description
 [Mac Stuff](https://github.com/seamusdemora/seamus.github.io/blob/master/MacStuff.md) | Miscellaneous Administrative Tweaks for Mac OS
 ***
 
-<p hidden>This paragraph should be hidden.</p>  
-<!--This is a comment. Comments are not displayed in the browser-->  
+
+<!--   From this line forward are comments. Comments are not displayed in the browser.  
+
+NOTE: The "hidden" tag does not work at GitHub...  <p hidden>This paragraph should be hidden.</p>  
 
 You can use the [editor on GitHub](https://github.com/seamusdemora/seamus.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
@@ -65,3 +67,5 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+--> 
