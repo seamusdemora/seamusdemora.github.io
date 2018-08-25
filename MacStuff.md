@@ -37,3 +37,21 @@ Used in this way, `caffeinate` is a ***blunt instrument***. This command simply 
 When used with the `-w` argument, sleep will be inhibited as long as the process ID `PID` is active. Once the the process exits, the assertion is released, and the configured sleep behavior will resume when appropriate. 
 
 Note also that Process ID's are available from `Activity Monitor`, or can be listed in the terminal by entering `ps -Al`
+
+## 3. How Do I Start an App From The Mac's Command Line?  
+
+There may be occasions when you want to start an application from the command line. Or more likely, from a script, or a `crontab` event, or perhaps on an interrupt-driven basis triggered by an event. For example, you want to check your Gmail account each day at 12:00. How would you do this? Here's one way: 
+
+a. get the location of the app
+
+```
+$ ps -A | grep TextEdit 
+ 1864 ??         0:00.85 /Applications/TextEdit.app/Contents/MacOS/TextEdit
+ 1873 ttys002    0:00.00 grep TextEdit
+```  
+b. start the app 
+
+```
+$ open -a /Applications/TextEdit.app/Contents/MacOS/TextEdit
+```
+
