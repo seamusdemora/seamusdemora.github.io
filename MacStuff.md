@@ -16,7 +16,7 @@ This will cause all screenshots to be saved in a folder called `screenshots` on 
 
 * Note that you must create this folder if it doesn't already exist! 
 
-## 1. How Do I Prevent My Mac From Sleeping? : 
+## 2. How Do I Prevent My Mac From Sleeping? : 
 
 Caffeine may do the trick; specifically `caffeinate` may be exactly what you need for your Mac. Know first that `man caffeinate` is your friend; enter it at the command line, and you'll find all the documentation for using this utility. `caffeinate` creates assertions to alter system sleep behavior. Following are a couple of general use cases: 
 
