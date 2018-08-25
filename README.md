@@ -16,7 +16,8 @@ Repository | Description
 [Mac Stuff](https://github.com/seamusdemora/seamus.github.io/blob/master/MacStuff.md) | Miscellaneous Administrative Tweaks for Mac OS
 ***
 
-<p hidden>This paragraph should be hidden.</p>
+<p hidden>This paragraph should be hidden.</p>  
+<!--This is a comment. Comments are not displayed in the browser-->  
 
 You can use the [editor on GitHub](https://github.com/seamusdemora/seamus.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
