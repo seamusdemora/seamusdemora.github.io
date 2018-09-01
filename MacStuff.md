@@ -45,6 +45,25 @@ There may be occasions when you want to start an application from the command li
 a. get the location of the app
 
 ```
+$ ls /Applications | grep Chrome  
+Google Chrome.app  
+``` 
+
+b. get the URL for your Gmail inbox:  
+```
+https://mail.google.com/mail/u/0/#inbox  
+```  
+
+c. "open" Chrome to view GMail: 
+```
+$ open -a "/Applications/Google Chrome.app" https://mail.google.com/mail/u/0/#inbox
+```  
+
+d. make the appropriate entry in your `crontab` [enter `crontab -e` at the command prompt `$`, then add the following line]:
+```
+
+```
+
 $ ps -A | grep TextEdit 
  1864 ??         0:00.85 /Applications/TextEdit.app/Contents/MacOS/TextEdit
  1873 ttys002    0:00.00 grep TextEdit
@@ -55,3 +74,6 @@ b. start the app
 $ open -a /Applications/TextEdit.app/Contents/MacOS/TextEdit
 ```
 
+```
+   
+``` 
