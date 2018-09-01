@@ -29,10 +29,10 @@ or perhaps more effectively as follows:
     [1] 1558         (IF YOU WISH TO RESTORE THE SLEEP PATTERN AFTER SOME TIME, simply kill it )
     $ kill 1558
 ```
-Used in this way, `caffeinate` is a ***blunt instrument***. This command simply creates and holds an assertion that will prevent the Mac from sleeping as long as it remains on battery power. Run in the background, you can continue the terminal session for as long as needed, and then simply kill `caffeinate`'s PID to release the assertion and restore sleep patterns. 
+Used in this way, `caffeinate` is a ***blunt instrument***. This command simply creates and holds an assertion that will prevent the Mac from sleeping as long as it remains on ac/mains power. Run in the background, you can continue the terminal session for as long as needed, and then simply kill `caffeinate`'s PID to release the assertion and restore sleep patterns. 
 
 ```
-    ~ caffeinate -w PID
+    $ caffeinate -w PID
 ```
 When used with the `-w` argument, sleep will be inhibited as long as the process ID `PID` is active. Once the the process exits, the assertion is released, and the configured sleep behavior will resume when appropriate. 
 
@@ -40,7 +40,7 @@ Note also that Process ID's are available from `Activity Monitor`, or can be lis
 
 ## 3. How Do I Start an App From The Mac's Command Line?  
 
-There may be occasions when you want to start an application from the command line. Or more likely, from a script, or a `crontab` event, or perhaps on an interrupt-driven basis triggered by an event. For example, you want to check your Gmail account each day at 12:00. How would you do this? Here's one way: 
+There may be occasions when you want to start an application from the command line. Or perhaps from a script, or a `crontab` event, or on an interrupt-driven basis triggered by an event. For example, you want to check your Gmail account each day at 12:00. How would you do this? Here's one way: 
 
 a. get the location of the app
 
