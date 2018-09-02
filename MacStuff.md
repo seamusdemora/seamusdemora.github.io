@@ -40,7 +40,7 @@ Note also that Process ID's are available from `Activity Monitor`, or can be lis
 
 ## 3. How Do I Start an App From The Mac's Command Line?  
 
-There may be occasions when you want to start an application from the command line. Or perhaps from a script, or a `crontab` event, or on an interrupt-driven basis triggered by an event. For example, you want to check your Gmail account each day at 12:00. How would you do this? Here's one way: 
+There may be occasions when you want or need to start an application from the command line. Or perhaps start an app from a script, or even to start the app at a specified time (more on scheduling in the sequel), or on an interrupt-driven basis triggered by an event. For example, you want to check your Gmail account each day at 12:00. How would you do this? Here's one way: 
 
 a. get the location of the app
 
@@ -54,12 +54,19 @@ b. get the URL for your Gmail inbox:
 https://mail.google.com/mail/u/0/#inbox  
 ```  
 
-c. "open" Chrome to view GMail to verify the command works as it should: 
+c. use `open` to start Chrome and load GMail: 
 ```
 $ open -a "/Applications/Google Chrome.app" https://mail.google.com/mail/u/0/#inbox
 ```  
+*Note that the file specification must be inside quotes to "protect" the space in the app name.* 
 
-d. make the appropriate entry in your `crontab` [enter `crontab -e` at the command prompt `$`, then add the following line]:
+## 3. How Do I Schedule an App to Run At a Specified Time?
+
+In general, there are (at least) two distinct approaches to scheduling in current versions of mac os:   
+a. `cron` is the standard (as in long-standing) method for scheduling. It's been around since the early days of Unix, and as a derivative of the BSD flavor of Unix, upon which mac os is built! That `cron` remains as a viable, well-maintained app today is a testament to its utility.  
+b. `launchd` is a much more complicated creature than `cron`, but it's got an Apple pedigree. It was developed by Dave Zarzycki, an Apple employee who started with them in 1996 as a 17 year-old, self-taught programmer. To use `launchd` effectively, you'll need to spend time preparing yourself. Consequently, we'll start here with `cron`, and pick up `launchd` in a future installment. 
+
+d. a `crontab` event, make the appropriate entry in your `crontab` [enter `crontab -e` at the command prompt `$`, then add the following line]:
 ```
 
 ```
