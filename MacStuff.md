@@ -54,7 +54,7 @@ b. get the URL for your Gmail inbox:
 https://mail.google.com/mail/u/0/#inbox  
 ```  
 
-c. "open" Chrome to view GMail: 
+c. "open" Chrome to view GMail to verify the command works as it should: 
 ```
 $ open -a "/Applications/Google Chrome.app" https://mail.google.com/mail/u/0/#inbox
 ```  
