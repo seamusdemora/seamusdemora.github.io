@@ -1,3 +1,5 @@
+<---
+
 # Miscellaneous Tips & Tricks for Mac OS
 
 ## 1. How Do I Change Where My Screenshots Are Saved? : 
@@ -84,3 +86,4 @@ $ open -a /Applications/TextEdit.app/Contents/MacOS/TextEdit
 ```
    
 ``` 
+--->
