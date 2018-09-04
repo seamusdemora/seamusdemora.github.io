@@ -93,7 +93,7 @@ a. `cron` events are declared and scheduled in the `crontab`. They follow a spec
 crontab -e
 ```
 
-But wait!! Before starting you should know that the default editor for Mac OS is `vim`. If you're comfortable using `vim`, go ahead. If you're not, I suggest you use `pico` instead: 
+But wait!! Before starting you should know that the default `crontab` editor for Mac OS is `vim`. If you're comfortable using `vim`, go ahead. If you're not, I suggest you use `pico` instead: 
 
 ```
 EDITOR=nano crontab -e
@@ -118,6 +118,8 @@ You'll recognize the `open` command and the parameters that follow it from the e
 ```
 
 This is simply the schedule information. It tells `cron` **when** to execute the command that follows. If you want to re-schedule for a time other that 12:00 noon, all you need change is the time. `man crontab` will guide you in the options for specifying the time and date. Until you become familiar with the syntax, you should use the [crontab guru](https://crontab.guru/#00_12_*_*_*) to check your schedule. You'll learn that  [`cron`'s simple syntax is quite flexible](https://crontab.guru/#5_4-7_1-28/2_1-9/3_*).  
+
+
 
 
 
