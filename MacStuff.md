@@ -121,7 +121,7 @@ This is simply the schedule information. It tells `cron` **when** to execute the
 
 
 
-<---
+<!––
 
 # Miscellaneous Tips & Tricks for Mac OS
 
