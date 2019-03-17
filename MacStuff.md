@@ -120,8 +120,18 @@ You'll recognize the `open` command and the parameters that follow it from the e
 This is simply the schedule information. It tells `cron` **when** to execute the command that follows. If you want to re-schedule for a time other that 12:00 noon, all you need change is the time. `man crontab` will guide you in the options for specifying the time and date. Until you become familiar with the syntax, you should use the [crontab guru](https://crontab.guru/#00_12_*_*_*) to check your schedule. You'll learn that  [`cron`'s simple syntax is quite flexible](https://crontab.guru/#5_4-7_1-28/2_1-9/3_*).  
 
 
+### 5. How Do I Check the Size of a Directory? 
 
+You can of course do this from the Finder menu: `File, Get Info`, but it may be quicker from the command line.
 
+For a directory on your Mac's HDD: 
+```
+$ du -sh /path/to/directory
+``` 
+For a network drive that's mounted: 
+```
+# du -sh /Volumes/sharename/path/to/directory  
+```
 
 <!--- 
 
