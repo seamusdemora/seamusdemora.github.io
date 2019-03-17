@@ -130,7 +130,7 @@ $ du -sh /path/to/directory
 ``` 
 For a network drive that's mounted: 
 ```
-# du -sh /Volumes/sharename/path/to/directory  
+$ du -sh /Volumes/sharename/path/to/directory  
 ```
 
 <!--- 
