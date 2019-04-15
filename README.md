@@ -11,11 +11,12 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 
 |         Repo Files          | Description |
 | :-------------------------- | :-------- |
+|[PiPyMailer](https://github.com/seamusdemora/PiPyMailer) | Python program that notifies me when my Raspberry Pi reboots|
+|[Raspberry Pi Formulae](https://github.com/seamusdemora/PiFormulae) | A collection of "How-To" guides for Raspberry Pi|
+|[Mac Stuff](https://github.com/seamusdemora/seamus.github.io/blob/master/MacStuff.md) | Miscellaneous Recipes for Tweaks to Mac OS|
+|[Serial Comms for Mac OS](https://github.com/seamusdemora/seamus.github.io/blob/master/SerialCommsFromMacOS.md)  |  How To Set Up Serial Communications in Mac OS|
 
-[PiPyMailer](https://github.com/seamusdemora/PiPyMailer) | Python program that notifies me when my Raspberry Pi reboots
-[Raspberry Pi Formulae](https://github.com/seamusdemora/PiFormulae) | A collection of "How-To" guides for Raspberry Pi
-[Mac Stuff](https://github.com/seamusdemora/seamus.github.io/blob/master/MacStuff.md) | Miscellaneous Recipes for Tweaks to Mac OS
-[Serial Comms for Mac OS](https://github.com/seamusdemora/seamus.github.io/blob/master/SerialCommsFromMacOS.md)  |  How To Set Up Serial Communications in Mac OS 
+
 ***
 
 
