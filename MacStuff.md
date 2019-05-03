@@ -119,19 +119,30 @@ You'll recognize the `open` command and the parameters that follow it from the e
 
 This is simply the schedule information. It tells `cron` **when** to execute the command that follows. If you want to re-schedule for a time other that 12:00 noon, all you need change is the time. `man crontab` will guide you in the options for specifying the time and date. Until you become familiar with the syntax, you should use the [crontab guru](https://crontab.guru/#00_12_*_*_*) to check your schedule. You'll learn that  [`cron`'s simple syntax is quite flexible](https://crontab.guru/#5_4-7_1-28/2_1-9/3_*).  
 
-
-### 5. How Do I Check the Size of a Directory? 
+### 5. How Do I Check the Size of a Directory?
 
 You can of course do this from the Finder menu: `File, Get Info`, but it may be quicker from the command line.
 
 For a directory on your Mac's HDD: 
 ```
 $ du -sh /path/to/directory
-``` 
+```
 For a network drive that's mounted: 
 ```
 $ du -sh /Volumes/sharename/path/to/directory  
 ```
+
+### 6. Can I Check Battery Status from the Command Line?
+
+Yes - and a lot more! The `pmset` utility provides a host of information, and allows manipulation of ***power management settings*** from the command line. For example, to get battery status: 
+
+```bash
+$ pmset -g batt                        # and for example, my Mac now reports" 
+Now drawing from 'AC Power'
+ -InternalBattery-0 (id=1234567)	100%; charged; 0:00 remaining present: true
+```
+
+The `-g`  (get) option provides data on current settings and logfiles. It can be run with normal user privileges. `pmset`can also change settings (e.g. standby, sleep, spin-down of disks, display, etc.), but those require `root`/`su` privileges. Documentation is available from `man pmset`. 
 
 <!--- 
 
@@ -143,12 +154,12 @@ Two lines of input are needed at the command line; regular user privileges are s
 ```
      $ defaults write com.apple.screencapture location ~/Desktop/screenshots
      $ killall SystemUIServer
-``` 
+```
 Alternatively, you may specify the full path: 
 ```
      $ defaults write com.apple.screencapture location Home/yourusername/Desktop/screenshots
      $ killall SystemUIServer
-``` 
+```
 This will cause all screenshots to be saved in a folder called `screenshots` on your Desktop. You may, of course, store them anywhere you wish*. 
 
 * Note that you must create this folder if it doesn't already exist! 
@@ -159,7 +170,7 @@ Caffeine may do the trick; specifically `caffeinate` may be exactly what you nee
 
 ```
     $ caffeinate -s  
-```   
+```
 or perhaps more effectively as follows: 
 ```
     $ caffeinate -s &
@@ -184,17 +195,17 @@ a. get the location of the app
 ```
 $ ls /Applications | grep Chrome  
 Google Chrome.app  
-``` 
+```
 
 b. get the URL for your Gmail inbox:  
 ```
 https://mail.google.com/mail/u/0/#inbox  
-```  
+```
 
 c. use `open` to start Chrome and load GMail: 
 ```
 $ open -a "/Applications/Google Chrome.app" https://mail.google.com/mail/u/0/#inbox
-```  
+```
 *Note that the file specification must be inside quotes to "protect" the space in the app name.* 
 
 ## 3. How Do I Schedule an App to Run At a Specified Time?
@@ -219,6 +230,8 @@ $ open -a /Applications/TextEdit.app/Contents/MacOS/TextEdit
 ```
 
 ```
-   
+
 ``` 
 --->
+
+```
