@@ -134,7 +134,7 @@ $ du -sh /Volumes/sharename/path/to/directory
 
 ### 6. Can I Check Battery Status from the Command Line?
 
-Yes - and a lot more! The `pmset` utility provides a host of information, and allows manipulation of ***power management settings*** from the command line. For example, to get battery status: 
+Yes - and a lot more! The `pmset` utility provides a host of information, and allows manipulation of ***power management settings*** from the command line. For example, to get battery status: 
 
 ```bash
 $ pmset -g batt                        # and for example, my Mac now reports" 
@@ -142,7 +142,32 @@ Now drawing from 'AC Power'
  -InternalBattery-0 (id=1234567)	100%; charged; 0:00 remaining present: true
 ```
 
-The `-g`  (get) option provides data on current settings and logfiles. It can be run with normal user privileges. `pmset`can also change settings (e.g. standby, sleep, spin-down of disks, display, etc.), but those require `root`/`su` privileges. Documentation is available from `man pmset`. 
+The `-g`  (get) option provides data on current settings and logfiles. It can be run with normal user privileges. `pmset`can also change settings (e.g. standby, sleep, spin-down of disks, display, etc.), but those require `root`/`su` privileges. Documentation is available from `man pmset`.  
+
+### 7. How Do I Find the Hardware Architecture for My Mac?
+
+Because `macos` has its roots in BSD Unix rather than Linux, the `machine` command will work: 
+
+```bash
+$ machine
+x86_64h                         # on a new-ish machine
+```
+
+However, the following *Linux-style* command also works: 
+
+```bash
+$ uname -m
+x86_64
+```
+
+And finally, suggest that you *do not* use this: 
+
+```bash
+$ arch
+i386
+```
+
+This is of course an **incorrect answer** for 64-bit processors, but one that you will get as of today (Mojave 10.14.4)**!** [Some have suggested](https://unix.stackexchange.com/a/518320/286615) that the `i386` output simply means that it's *capable* of running 32-bit programs. However, `man arch` makes no such statement. Consequently, it's my opinion that Apple has simply dropped the ball! In any case, the information is virtually useless. 
 
 <!--- 
 
