@@ -144,14 +144,16 @@ Now drawing from 'AC Power'
 
 The `-g`  (get) option provides data on current settings and logfiles. It can be run with normal user privileges. `pmset`can also change settings (e.g. standby, sleep, spin-down of disks, display, etc.), but those require `root`/`su` privileges. Documentation is available from `man pmset`.  
 
-### 7. How Do I Find the Hardware Architecture for My Mac?
+### 7. How Do I Find the Hardware Architecture and OS Version for My Mac?
 
-Because `macos` has its roots in BSD Unix rather than Linux, the `machine` command will work: 
+Because `macos` has (some of) its roots in BSD Unix rather than Linux, the `machine` command will reveal hardware: 
 
 ```bash
 $ machine
 x86_64h                         # on a new-ish machine
 ```
+
+And if you want to see perhaps the *shortest man page in the entire world*, check out `man machine`.  :) 
 
 However, the following *Linux-style* command also works: 
 
@@ -160,6 +162,8 @@ $ uname -m
 x86_64
 ```
 
+`uname` has several other options, all described in `man uname`. 
+
 And finally, suggest that you *do not* use this: 
 
 ```bash
@@ -167,7 +171,39 @@ $ arch
 i386
 ```
 
-This is of course an **incorrect answer** for 64-bit processors, but one that you will get as of today (Mojave 10.14.4)**!** [Some have suggested](https://unix.stackexchange.com/a/518320/286615) that the `i386` output simply means that it's *capable* of running 32-bit programs. However, `man arch` makes no such statement. Consequently, it's my opinion that Apple has simply dropped the ball! In any case, the information is virtually useless. 
+This is of course an **incorrect answer** for 64-bit processors, but one that you will get as of today (Mojave 10.14.4)**!** [Some have suggested](https://unix.stackexchange.com/a/518320/286615) that the `i386` output simply means that it's *capable* of running 32-bit programs. However, `man arch` makes no such statement. Consequently, it's my opinion that Apple has simply dropped the ball! In any case, the information is virtually useless. 
+
+To get the version of the OS: 
+
+```bash
+$ sw_vers
+ProductName:	Mac OS X
+ProductVersion:	10.14.4
+BuildVersion:	18E226
+```
+
+Note however, there is more confusion/inconsistency between the `sw_vers` command, and `uname -r[sv]`: both commands claim to display the `OS version`, but `uname -r[sv]` actually gives the version of its kernel (currently named [`Darwin`](https://en.wikipedia.org/wiki/Darwin_%28operating_system%29)): 
+```bash
+$ uname -v
+Darwin Kernel Version 18.5.0: Mon Mar 11 20:40:32 PDT 2019; root:xnu-4903.251.3~3/RELEASE_X86_64
+```
+
+This information is also available from Apple's *unique-to-the-Mac* command line utility `system_profiler SPSoftwareDataType`. Its output shows `System Version`, which corresponds to `OS version` given by `sw_vers`, and `Kernel Version` which corresponds to `OS version` given by `uname -r[sv]`. And yes, you're correct… this ***is*** a bit of a mess!  
+
+```
+$ system_profiler SPSoftwareDataType
+Software:
+
+    System Software Overview:
+
+      System Version: macOS 10.14.4 (18E226)
+      Kernel Version: Darwin 18.5.0
+      Boot Volume: Macintosh HD
+      Boot Mode: Normal
+```
+
+
+
 
 <!--- 
 
