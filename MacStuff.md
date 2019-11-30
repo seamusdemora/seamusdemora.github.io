@@ -82,8 +82,9 @@ Which can be quite useful for perusing the system documentation offline (in this
 ### 4. How Do I Schedule an App to Run At a Specified Time?
 
 In current versions of mac os, there are (at least) two distinct approaches to scheduling:   
-i. `cron` is the standard (as in long-standing) method for scheduling. It's been around since the early days of Unix. That `cron` remains as a viable, well-maintained app today is a testament to its utility. And as a derivative of the BSD flavor of Unix, it is fitting that it remains a component of mac os.   
-ii. `launchd` is a much more complicated creature than `cron`, but it's got an Apple pedigree. It was developed by Dave Zarzycki, an Apple employee who started with them in 1996 as a 17 year-old, self-taught programmer. To use `launchd` effectively, you'll need to spend time preparing yourself. Consequently, we'll start here with `cron`, and pick up `launchd` in a future installment. 
+
+1. `cron` is the standard (as in long-standing) method for scheduling. It's been around since the early days of Unix. That `cron` remains as a viable, well-maintained app today is a testament to its utility. And as a derivative of the BSD flavor of Unix, it is fitting that it remains a component of mac os. However, we must note that Apple has not maintained the `cron` software they distribute with mac os; `man cron`  reveals that the current version os `cron` in mac os ver 10.14.6 (Mojave) is vintage **June 17, 2007**.
+2. `launchd` is a much more complicated creature than `cron`, but it's got an Apple pedigree. It was developed by Dave Zarzycki, an Apple employee who started with them in 1996 as a 17 year-old, self-taught programmer.  `launchd` can do more than `cron`, but it's much more difficult (even arcane) in use. Consequently, we'll cover `cron` here, and pick up `launchd` in [this installment](UsingLaunchdForSchedulingTasks.md). 
 
 To continue one of the examples from above, let's assume, you want to check your Gmail account each day at 12:00. How would you do this? Here's one way to do this using `open` and `cron` : 
 
@@ -93,7 +94,7 @@ a. `cron` events are declared and scheduled in the `crontab`. They follow a spec
 crontab -e
 ```
 
-But wait!! Before starting you should know that the default `crontab` editor for Mac OS is `vim`. If you're comfortable using `vim`, go ahead. If you're not, I suggest you use `pico` instead: 
+But wait!! Before starting you should know that the default `crontab` editor for Mac OS is `vim`. If you're comfortable using `vim`, go ahead. If you're not, I suggest you use `pico` or `nano` instead: 
 
 ```
 EDITOR=nano crontab -e
@@ -188,7 +189,7 @@ $ uname -v
 Darwin Kernel Version 18.5.0: Mon Mar 11 20:40:32 PDT 2019; root:xnu-4903.251.3~3/RELEASE_X86_64
 ```
 
-This information is also available from Apple's *unique-to-the-Mac* command line utility `system_profiler SPSoftwareDataType`. Its output shows `System Version`, which corresponds to `OS version` given by `sw_vers`, and `Kernel Version` which corresponds to `OS version` given by `uname -r[sv]`. And yes, you're correct… this ***is*** a bit of a mess!  
+This information is also available from Apple's *unique-to-the-Mac* command line utility `system_profiler SPSoftwareDataType`. Its output shows `System Version`, which corresponds to `OS version` given by `sw_vers`, and `Kernel Version` which corresponds to `OS version` given by `uname -r[sv]`. And yes, you're correct… this ***is*** a bit of a mess!  
 
 ```
 $ system_profiler SPSoftwareDataType
@@ -276,23 +277,30 @@ a. `cron` is the standard (as in long-standing) method for scheduling. It's been
 b. `launchd` is a much more complicated creature than `cron`, but it's got an Apple pedigree. It was developed by Dave Zarzycki, an Apple employee who started with them in 1996 as a 17 year-old, self-taught programmer. To use `launchd` effectively, you'll need to spend time preparing yourself. Consequently, we'll start here with `cron`, and pick up `launchd` in a future installment. 
 
 d. a `crontab` event, make the appropriate entry in your `crontab` [enter `crontab -e` at the command prompt `$`, then add the following line]:
-```
-
-```
-
+```bash
 $ ps -A | grep TextEdit 
  1864 ??         0:00.85 /Applications/TextEdit.app/Contents/MacOS/TextEdit
  1873 ttys002    0:00.00 grep TextEdit
-```  
+```
+
+
+
 b. start the app 
 
 ```
 $ open -a /Applications/TextEdit.app/Contents/MacOS/TextEdit
 ```
 
+REFERENCES:
+1. [Q&A: Using the `at` command in macos:](https://unix.stackexchange.com/questions/478823/making-at-work-on-macos)  
+
+
+--->
+
 ```
 
-``` 
---->
+```
+
+```
 
 ```
