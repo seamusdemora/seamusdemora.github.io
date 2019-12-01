@@ -23,7 +23,9 @@ If we spend a few minutes perusing our system manuals (`man launchd.plist` in th
 
 ## Example
 
-For this example, we need to run our script 5 times at one-minute intervals beginning at 01:25 on November 29 each year. Here's an example of how to use `launchd` to accomplish that: 
+Here's an example of how to use `launchd`to create a `User Agent`. The scope of a `User Agent` is that it only runs for one user. *Note that it is also possible to create `Global Agent`, or a `Global Daemon` that runs for multiple/all users, but we'll leave that for another day.*
+
+For this example, we will run a `bash` script at odd times just after midnight on each weekday, Monday through Friday. Here's how to use `launchd` to accomplish that: 
 
 #### STEP 1. Create the script to be run by launchd:
 
@@ -43,64 +45,74 @@ We will name this file: `sdm.simple.exampleofPLIST.plist`
 > NOTE! DO NOT USE `~/` as shortcut for user's home directory in the `.plist`! You must use a full path specification, or it won't work.  
 
   ```
-  <?xml version="1.0" encoding="UTF-8"?>
-  <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-  <plist version="1.0">
-  <dict>
-	  <key>Label</key>
-	  <string>seamus.simple.example</string>
-	  <key>ProgramArguments</key>
-	  <array>
-		  <string>/Users/seamus/echodatetime.sh</string>
-	  </array>
-	  <key>StandardErrorPath</key>
-	  <string>/Users/seamus/echodatetime.error.txt</string>
-	  <key>StandardOutPath</key>
-	  <string>/Users/seamus/echodatetime.log.txt</string>
-	  <key>StartCalendarInterval</key>
-	  <array>
-		  <dict>
-			  <key>Minute</key>
-			  <integer>25</integer>
-		  </dict>
-		  <dict>
-			  <key>Minute</key>
-			  <integer>26</integer>
-		  </dict>
-		  <dict>
-			  <key>Minute</key>
-			  <integer>27</integer>
-		  </dict>
-		  <dict>
-			  <key>Minute</key>
-			  <integer>28</integer>
-		  </dict>
-		  <dict>
-			  <key>Minute</key>
-			  <integer>29</integer>
-		  </dict>
-		  <dict>
-			  <key>Hour</key>
-			  <integer>1</integer>
-			  <key>Day</key>
-			  <integer>29</integer>
-			  <key>Month</key>
-			  <integer>11</integer>
-		  </dict>
-	  </array>
-  </dict>
-  </plist>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Disabled</key>
+	<false/>
+	<key>Label</key>
+	<string>seamus.simple.example</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/jmoore/scripts/echodatetime.sh</string>
+	</array>
+	<key>StandardErrorPath</key>
+	<string>/Users/jmoore/scripts/echodatetime.error.txt</string>
+	<key>StandardOutPath</key>
+	<string>/Users/jmoore/scripts/echodatetime.log.txt</string>
+	<key>StartCalendarInterval</key>
+	<array>
+		<dict>
+			<key>Hour</key>
+			<integer>0</integer>
+			<key>Minute</key>
+			<integer>28</integer>
+			<key>Weekday</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>Hour</key>
+			<integer>0</integer>
+			<key>Minute</key>
+			<integer>30</integer>
+			<key>Weekday</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>Hour</key>
+			<integer>0</integer>
+			<key>Minute</key>
+			<integer>32</integer>
+			<key>Weekday</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>Minute</key>
+			<integer>34</integer>
+			<key>Weekday</key>
+			<integer>4</integer>
+		</dict>
+		<dict>
+			<key>Minute</key>
+			<integer>36</integer>
+			<key>Weekday</key>
+			<integer>5</integer>
+		</dict>
+	</array>
+</dict>
+</plist>
   ```
   This `.plist` will cause `~/echodatetime.sh` to be executed at the following times:  
-  Nov 29, 01:25  
-  Nov 29, 01:26  
-  Nov 29, 01:27  
-  Nov 29, 01:28  
-  Nov 29, 01:29   
+  Each Monday at 00:28  
+  Each Tuesday at 00:30  
+  Each Wednesday at 00:32  
+  Each Thursday at 00:34  
+  Each Friday at 00:36   
 
 > You may of course change this timing to suit you by simply changing the `integer` values in the appropriate `key`s.
 
-This example was chosen to show the somewhat odd syntax required for such a schedule, and specifically to highlight the fact that while Apple claims in `man launchd.plist` that the *semantics* for `launchd` are "similar" to those for `crontab`, the *syntax* is ***entirely different***. This strikes me as an entirely *misleading* statement, but then Apple is not known for having good manuals! 
+This example was chosen to show the somewhat odd syntax required for such a schedule, and specifically to highlight the fact that while Apple claims in `man launchd.plist` that the *semantics* for `launchd` are "similar" to those for `crontab`, the *syntax* is ***entirely different***. This strikes me as an entirely *misleading* statement, but then Apple is not known for having good manuals! 
 
 Having made that point convincingly (I hope), scheduling a single event may be accomplished by substituting the simpler `StartCalendarInterval` key shown below into the `.plist` shown above: 
 
@@ -108,31 +120,26 @@ Having made that point convincingly (I hope), scheduling a single event may be a
 	<key>StartCalendarInterval</key>
 	<array>
 		<dict>
-			<key>Minute</key>
-			<integer>30</integer>
 			<key>Hour</key>
-			<integer>19</integer>
-			<key>Day</key>
-			<integer>29</integer>
-			<key>Month</key>
-			<integer>11</integer>
+			<integer>12</integer>
+			<key>Minute</key>
+			<integer>0</integer>
 		</dict>
 	</array>
-
 ```
 
 Before proceeding, note two points re. our `.plist` 
 
 - Note the `Label` key, and that it is ***different*** from the file name.
-- Note the keys `StandardErrorPath` and `StandardErrorPath` effectively define `stderr` and `stdout` for our script.
+- Note the keys `StandardErrorPath` and `StandardOutPath` effectively define `stderr` and `stdout` for our script.
 
-#### STEP 3. `load` and `start` your job:
+#### STEP 3. `load` your job:
 
-  ```
+  ```bash
   $ launchctl load ~/Library/LaunchAgents/sdm.simple.exampleofPLIST.plist  
-  $ launchctl start seamus.simple.example
+  $ 
   ```
-***NOTE:*** `launchctl load` is done on the `.plist` ***file name***, whereas `launchctl start` is done on the `.plist` ***Label string***. 
+***NOTE:*** `launchctl load` is done on the `.plist` ***file name***, whereas `launchctl start` is done on the `.plist` ***Label string***. Once the job is `load`*ed*, `launchd` will see that it is executed. There is no need to execute a `launchctl start ...`, unless you want the job started and run immediately. 
 
 #### STEP 4. Monitor the output file:
 
@@ -140,22 +147,28 @@ Before proceeding, note two points re. our `.plist`
   $ tail -f ~/echodatetime.log.txt  
   ```
 
-You will probably see a datetime output when you start the job, and then (if you ran the initial `.plist` five (5) more reports at one minute intervals beginning at 01:25 and ending at 01:29 (using my timing) on Nov 29 every year :) 
+You will see a datetime output in your terminal screen based on the timing you've used in your `StartCalendarInterval` key. 
 
 #### STEP 5. Optional: `stop` and `unload` your job
 
-If you decide to *retire* your `launchd` job, that is done in the reverse order from starting it: 
+If you decide to *retire* your `launchd` job, and don't wish it to run any longer, you still have a little work to do! You have to proactively `retire` your `launchd` job, or it will continue to run iaw your .plist file *forever*. This can be done in one of two ways: 
+
+1. `unload` then `remove` the job using `launchctl`, and then delete or move the .plist file to location outside of `~/Library/UserAgents` :
 
 ```
-$ launchctl stop seamus.simple.example
 $ launchctl unload ~/Library/LaunchAgents/sdm.simple.exampleofPLIST.plist  
+$ launchctl remove seamus.simple.example  
+$ mv ~/LaunchAgents/sdm.simple.exampleofPLIST.plist ~/archive
 ```
+2. Leave the file where it is, but change the value of the `Disabled` key in the .plist to `true/` 
+
 You can check the status of your `launchd` job as follows:
+
 ```
 launchctl list | grep seamus
 ```
 
-# Miscellany 
+# Miscellany
 
 - The `.plist` files above have been tested, and operated successfully on my macbook pro running Mojave (ver 10.14.6). Also verified the behavior of `launchd` when an event schedule occurs during `sleep`: The task ran immediately after the mac "woke up", and logged the time it awakened (i.e. not the scheduled time).
 
@@ -163,7 +176,10 @@ launchctl list | grep seamus
 
 - A potentially useful hint: You can check the syntax of your .plist file like so: 
 
-```
+```bash
 $ plutil -lint /Users/seamus/Library/LaunchAgents/sdm.simple.exampleofPLIST.plist  
+/Users/seamus/Library/LaunchAgents/sdm.simple.exampleofPLIST.plist: OK  
+$
 ```
-> /Users/seamus/Library/LaunchAgents/sdm.simple.exampleofPLIST.plist: OK
+
+
