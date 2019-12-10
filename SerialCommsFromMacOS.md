@@ -2,13 +2,31 @@
 
 Mac OS has the tools needed to communicate with all or most serial devices, but IMHO, they're not documented as well as they should be. I found it to be a bit of a trial-and-error process, but having been through that I find it works quite well now. Here's my system setup: 
 
-### The hardware:
+### The Hardware:
 
-If you've got a recently-manufactured MacBook you'll have only USB-C ports (yeah, no DB9 connectors since the '60s :)   This means you'll need an **adapter cable** - a cable with a **USB-C** connector on one end, and a **DB9** connector on the other. This is not a DIY cable as there are USB-to-UART interface electronics packaged in the DB9 connector housing. My adapter cable is made by Tripp-Lite; it's called a [USB-C to DB9 Serial Adapter Cable](https://www.tripplite.com/usb-c-to-db9-serial-adapter-cable-male-male-5-ft~U209005C). I've found the cable itself works well, but it's ***NOT*** configured as a null modem cable. This means you'll need another piece of hardware: either a **null modem cable**, or a **null modem adapter**. An 8' to 12' cable will be a good choice because the Tripp-Lite adapter cable isn't very long, and that short length will be inconvenient at times.  
+If you've got a recently-manufactured MacBook you'll have only USB-C ports (yeah, no DB9 connectors since the '60s :)   This means you'll need an **adapter cable** - a cable with a **USB-C** connector on one end, and a **DB9** connector on the other. This is not a DIY cable as there are USB-to-UART interface electronics packaged in the DB9 connector housing. My adapter cable is made by Tripp-Lite; it's called a [USB-C to DB9 Serial Adapter Cable](https://www.tripplite.com/usb-c-to-db9-serial-adapter-cable-male-male-5-ft~U209005C). I've found the cable itself works well, but it's ***NOT*** configured as a null modem cable. This means you'll need another piece of hardware: either a **null modem cable**, or a **null modem adapter**. A **null modem cable** approximately 3 meters in length may be a good choice because the Tripp-Lite adapter cable isn't very long, and its short length will be inconvenient at times. 
 
-### The driver: 
+Of course if your serial device is in the next room, you may need a longer cable. However, know that beyond a certain cable length, the RS-232 signal will begin to degrade, and eventually cease to function. The length limit is a function of *baud rate* and the *capacitance* of the cable used. The old RS-232 specification called out 50 feet (16 m) as a length limit, but this was based on a total cable capacitance of 2,500 pf (pico farads). By using "modern" cable ([reference](https://www.quabbin.com/tech-briefs/why-cable-capacitance-important-electronic-applications)) it's possible to extend the length of the cable and/or the baud rate - but again, there are limits. 
 
-I tried using the driver included (inconveniently on a mini-CD) with the Tripp-Lite cable. This was an exercise in frustration, and it really pissed me off because Tripp-Lite couldn't be bothered to do this correctly. Apple's native drivers just didn't cooperate for reasons I still don't understand. After wasting too much time, I found an ***excellent*** driver from [Jeroen Arnoldus](https://www.mac-usb-serial.com/). 
+### A Diversion to [Blether](https://www.thefreedictionary.com/blether) About Maximum Cable Length for RS-232:
+
+If you need to push the limit on cable length, here's the general approach: 
+
+- Know your operating frequency & [why it's important](https://www.eetimes.com/getting-the-most-out-of-your-twisted-pair-cable/#). For <u>example</u>, at 115,200 baud, the cable should have an operating frequency of around 1.5 MHz, roughly (very) estimated as follows: 
+
+   - **transition rate = 115,200 * 1.25 = 144 kHZ**; to account for the start/stop & parity bits 
+
+   - I'll do a bit of "fudging" here in the interest of brevity: **a)** We know that [square waves are rich in harmonics (overtones)](http://www.informit.com/articles/article.aspx?p=1374896&seqNum=7). **b)** Nyquist informed us that we must sample at a rate of at least twice the fundamental frequency to recover that signal. If we assume we need the 3rd and 5th harmonics to guarantee "good" signal fidelity at the end of the cable, then Nyquist would say we need: 
+
+      **Nyquist Freq = 2 * 5 * 144 kHz = 1.44 MHz**  
+
+- Find the manufacturer's published specifications for *capacitance per unit length* (at or above the operating frequency). As an example, let's choose [this cable](https://www.quabbin.com/products/general-purpose-wire-cable/multipair/rs-232/8508) that has 13 pf/foot (43 pf/m). 
+
+- Do the math: **L<sub>max</sub> = 2,500 / 43 = 58 meters**  
+
+### The Driver:
+
+I tried using the driver included (inconveniently on a mini-CD) with the Tripp-Lite cable. This was an exercise in frustration, and it really pissed me off! **Why?** ***Because Tripp-Lite couldn't be bothered to do this correctly***. Apple's native drivers just didn't cooperate for reasons I still don't understand. After wasting too much time, I found an ***excellent*** driver from [Jeroen Arnoldus](https://www.mac-usb-serial.com/). Owners of new Macs will be glad to know this driver is compatible with [Mac OS *Catalina*](https://en.wikipedia.org/wiki/MacOS_Catalina). 
 
 ### Using `screen`:
 
