@@ -16,7 +16,7 @@ If you need to push the limit on cable length, here's the general approach:
 
    - **transition rate = 115,200 * 1.25 = 144 kHZ**; to account for the start/stop & parity bits 
 
-   - I'll do a bit of "fudging" here in the interest of brevity: **a)** We know that [square waves are rich in harmonics (overtones)](http://www.informit.com/articles/article.aspx?p=1374896&seqNum=7). **b)** Nyquist informed us that we must sample at a rate of at least twice the fundamental frequency to recover that signal. If we assume we need the 3rd and 5th harmonics to guarantee "good" signal fidelity at the end of the cable, then Nyquist would say we need: 
+   - I'll do a bit of "fudging" here in the interest of brevity: **a)** We know that [square waves are rich in harmonics (overtones)](http://www.informit.com/articles/article.aspx?p=1374896&seqNum=7). **b)** [Nyquist informed us](http://microscopy.berkeley.edu/courses/dib/sections/02Images/sampling.html) that we must sample at a rate of at least twice the fundamental frequency to recover that signal. If we assume we need the 3rd and 5th harmonics to guarantee "good" signal fidelity at the end of the cable, then Nyquist would say we need: 
 
       **Nyquist Freq = 2 * 5 * 144 kHz = 1.44 MHz**  
 
