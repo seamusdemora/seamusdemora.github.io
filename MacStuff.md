@@ -215,7 +215,9 @@ Software:
       Boot Mode: Normal
 ```
 
+### OTHER SOURCES: 
 
+- [OSXDaily offers a list](http://osxdaily.com/category/command-line/) of "command line tips" 
 
 
 <!--- 
