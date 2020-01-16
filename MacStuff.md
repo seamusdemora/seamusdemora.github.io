@@ -215,7 +215,11 @@ Software:
       Boot Mode: Normal
 ```
 
-### OTHER SOURCES: 
+### 9. How Do I Combine/Concatenate Multiple PDFs?
+
+[Apple has this one covered](https://support.apple.com/guide/mac-help/combine-files-into-a-pdf-mchl21ac2368/mac), and it's easy if you know ***the trick***. You should also know that the `Quick Actions > Create PDF` option in `Finder` may not show up! When you move the pointer over `Quick Actions` in `Finder` you may see only the option `Customize...`. If that's the case, click `Customize...`, then tick the box next to `Create PDF`. This will add `Create PDF` as an option for `Quick Actions`. 
+
+### OTHER SOURCES:
 
 - [OSXDaily offers a list](http://osxdaily.com/category/command-line/) of "command line tips" 
 
