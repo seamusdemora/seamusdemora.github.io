@@ -16,6 +16,7 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 |[Mac Stuff](https://github.com/seamusdemora/seamus.github.io/blob/master/MacStuff.md) | Miscellaneous Recipes for Tweaks to Mac OS|
 |[Serial Comms for Mac OS](https://github.com/seamusdemora/seamus.github.io/blob/master/SerialCommsFromMacOS.md)  |  How To Set Up Serial Communications in Mac OS|
 |[Using `sudo` in Mac OS](https://github.com/seamusdemora/seamus.github.io/blob/master/UsingSudoInMacos.md)  |  Uses for `sudo` in Mac OS with Examples|
+|[How to Use the Usenet](https://github.com/seamusdemora/seamus.github.io/blob/master/HowToUseTheUsenet.md) |  A brief overview for using a huge resource |
 
 ***
 
