@@ -219,13 +219,59 @@ Software:
 
 [Apple has this one covered](https://support.apple.com/guide/mac-help/combine-files-into-a-pdf-mchl21ac2368/mac), and it's easy if you know ***the trick***. You should also know that the `Quick Actions > Create PDF` option in `Finder` may not show up! When you move the pointer over `Quick Actions` in `Finder` you may see only the option `Customize...`. If that's the case, click `Customize...`, then tick the box next to `Create PDF`. This will add `Create PDF` as an option for `Quick Actions`. 
 
-### 10. How Do I Search My Command History in `Terminal`? 
+### 10. How Do I Search My Command History in `Terminal`?
 
 Here are some useful techniques: 
 
 - Type `control-r` at the command prompt. This brings up a *search* prompt: `(reverse-i-search):`.  Type whatever you can recall of a previously used command (e.g. `etc` ). As you type each character, the search continues. You can iterate back through all of the search results with `control-r`. When you've found the command you were looking for, hit the `enter` key to run it again "as-is", or make edits to the command (*use either of the left-right arrow keys*) before you run it. If you want to stop searching without running a command, type `control-g`. 
 - You can use the `history` command! `history` outputs the entire history to `stdout`. As such, you can *filter* the history by piping it to (e.g.) `grep`: `history | grep etc`, or redirect it to a file (e.g.`history > mycmdhistory.txt`), or any other command (e.g. `history | tail -5`).
-- Of course, you can still use the *up-and-down arrow keys* to step forward (or backward) through the command history, but if your command history is extensive, this will take time.  
+- Of course, you can still use the *up-and-down arrow keys* to step forward (or backward) through the command history, but if your command history is extensive, this will take time.  
+
+### 11. How to Disable Auto-Booting When Opening the Macbook Lid?
+
+This useful bit of wisdom was found in [this article in OSXDaily](http://osxdaily.com/2017/01/19/disable-boot-on-open-lid-macbook-pro/). You can manipulate the MacOS frimware from the command line:
+
+```bash
+sudo nvram AutoBoot=%00
+```
+
+Note that you must execute a clean shutdown to save this value. To restore the AutoBoot feature:
+
+```bash
+sudo nvram AutoBoot=%03
+```
+
+--OR--
+
+[Restore **ALL** NVRAM settings](http://osxdaily.com/2010/11/15/reset-pram-mac/) by rebooting the MacBook while holding down the `Command+Option+P+R` keys (yes, this is a two-handed operation :) 
+
+What other NVRAM settings are available for changing? 
+
+```bash
+nvram -p
+```
+
+will list available options... but it's very messy! 
+
+### 12. Can I Copy `command line` Output to Pasteboard/Clipboard?
+
+Yep! You can **copy** from `stdout` and **paste** to `stdin` using one of the several clipboards available.
+
+```Bash
+$ ls -la | pbcopy
+```
+
+You can then paste this output into a document using the `command-v` keyboard shortcut. 
+
+Similarly, using `pbpaste` you can paste text you've copied to a file; e.g.
+
+```bash
+$ pbpaste > newfile.txt
+```
+
+See `man pbcopy` for further details.
+
+
 
 ### OTHER SOURCES:
 
