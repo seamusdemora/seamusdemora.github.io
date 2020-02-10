@@ -36,7 +36,7 @@ or perhaps more effectively as follows:
     $ kill 1558
 ```
 
-Used in this way, `caffeinate` is a ***blunt instrument***. This command simply creates and holds an assertion that will prevent the Mac from sleeping<sup id="a1">[fn1](#f1)</sup> as long as it remains on ac/mains power<sup>[fn1](#fn1)</sup>. Run in the background, you can continue the terminal session for as long as needed, and then simply kill `caffeinate`'s PID to release the assertion and restore sleep patterns. 
+Used in this way, `caffeinate` is a ***blunt instrument***. This command simply creates and holds an assertion that will prevent the Mac from sleeping<sup id="a1">[fn1](#f1)</sup> as long as it remains on ac/mains power. Run in the background, you can continue the terminal session for as long as needed, and then simply kill `caffeinate`'s PID to release the assertion and restore sleep patterns. 
 
 ```
     $ caffeinate -w PID
@@ -45,8 +45,6 @@ Used in this way, `caffeinate` is a ***blunt instrument***. This command simply 
 When used with the `-w` argument, sleep will be inhibited as long as the process ID `PID` is active. Once the the process exits, the assertion is released, and the configured sleep behavior will resume when appropriate. 
 
 Note also that Process ID's are available from `Activity Monitor`, or can be listed in the terminal by entering `ps -Al` 
-
-​     <a name="fn1">fn1</a>: **Know that `caffeinate` will not prevent, a scheduled automatic logout.** 
 
 ​    <b id="f1">fn1:</b> *Know that `caffeinate` will not prevent, a scheduled automatic logout.*. [↩](#a1) 
 
