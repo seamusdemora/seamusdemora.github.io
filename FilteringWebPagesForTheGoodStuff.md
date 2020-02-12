@@ -12,7 +12,7 @@ I copied the URL of one of these blocked stories, and fed it into the [**`curl`*
 curl -o ~/CurldWebPage.html http://www.someplace.com/SomeContent.html
 ```
 
-The `-o` option specifies the output file that `curl` will use to save the content it downloads at the specified URL. 
+The `-o` option specifies the output file that `curl` will use to save the content it downloads at the specified URL. 
 
 To lose all the ads and useless junk in the page I thought thatI could [`pipe`](https://en.wikipedia.org/wiki/Pipeline_(Unix)) the `curl` output through an HTML filter (perhaps [`Beautiful Soup`](https://www.crummy.com/software/BeautifulSoup/)) to get the content I wanted without all the annoying, revenue-generating<sup id="a1">[Note1](#f1)</sup> shit the publishers load into their pages. 
 
@@ -20,10 +20,9 @@ To lose all the ads and useless junk in the page I thought thatI could [`pipe`](
 
 And finally, to the point of this recipe: I learned it's not necessary to create a DIY project for this because there are some excellent, free and open-sourced tools that are already doing this. I use Firefox as my primary browser (because it seems to have a higher level of *default* privacy protection). I discovered an *Add-on Extension* for Firefox called [Tranquility Reader](https://tranquility.ushnisha.com/) that does a wonderful job at *shit-filtering*. For Chrome, there is a similar free and open-sourced *Extension* called [Just Read](https://github.com/ZachSaucier/Just-Read) that also does a very good job. 
 
-And so, if you're like me, weary of the constant stream of crap the media outlets would hose you with, you should know that considerable relief is available with almost no effort on your part. 
+And so, if you're like me, weary of the constant stream of crap the media outlets would hose you with, you should know that considerable relief is available with almost no effort on your part. [Tranquility Reader](https://tranquility.ushnisha.com/) for Firefox, and  [Just Read](https://github.com/ZachSaucier/Just-Read) for Chrome. 
 
 <hr>
-
 <b id="f1">Note1:</b> Contrary to the impression one might get from reading this, I have nothing at all against businesses who seek to generate revenue. It is after all, the sole motivation of most for-profit business formation, and the backbone of a healthy free-market economy. But note that ***we have not contracted with these swine to hoover up our personal data, deposit 'tracking cookies' on the computers we own and sell the data they collect on us to any third party who will pay the price.*** Consequently I have no compunction about avoiding their *shitty tricks* with some of my own! [↩](#a1) 
 
 <hr>
