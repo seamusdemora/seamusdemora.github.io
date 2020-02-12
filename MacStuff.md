@@ -233,7 +233,7 @@ Here are some useful techniques:
 
 ### 11. How to Disable Auto-Booting When Opening the Macbook Lid?
 
-This useful bit of wisdom was found in [this article in OSXDaily](http://osxdaily.com/2017/01/19/disable-boot-on-open-lid-macbook-pro/). You can manipulate the MacOS frimware from the command line:
+This useful bit of wisdom was found in [this article in OSXDaily](http://osxdaily.com/2017/01/19/disable-boot-on-open-lid-macbook-pro/). You can manipulate the MacOS firmware from the command line:
 
 ```bash
 sudo nvram AutoBoot=%00
