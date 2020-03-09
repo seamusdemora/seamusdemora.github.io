@@ -1,6 +1,38 @@
-# Eclectic Tips & Tricks for Mac OS
+# Eclectic Tips & Tricks for Mac OS 
 
-### 1. How Do I Change Where My Screenshots Are Saved? :
+#### Table of contents
+
+[1. How to Change Where My Screenshots Are Saved? ](#1-how-to-change-where-my-screenshots-are-saved-)
+
+[2. How to Prevent My Mac From Sleeping? ](#2-how-to-prevent-my-mac-from-sleeping-)
+
+[3. How to Start (`open`) an App From the Mac OS Command Line?](#3-how-to-start-open-an-app-from-the-mac-os-command-line)
+
+[4. How to Schedule an App to Run At a Specified Time?](#4-how-to-schedule-an-app-to-run-at-a-specified-time)
+
+[5. How to Check the Size of a Directory?](#5-how-to-check-the-size-of-a-directory)
+
+[6. How to Check Battery Status from the Command Line?](#6-how-to-check-battery-status-from-the-command-line)
+
+[7. How to Send Files to the Trash from the macos Command Line?](#7-how-to-send-files-to-the-trash-from-the-macos-command-line)
+
+[8. How to Find the Hardware Architecture and OS Version for My Mac?](#8-how-to-find-the-hardware-architecture-and-os-version-for-my-mac)
+
+[9. How to Combine/Concatenate Multiple PDFs?](#9-how-to-combineconcatenate-multiple-pdfs)
+
+[10. How to Search My Command History in `Terminal`?](#10-how-to-search-my-command-history-in-terminal)
+
+[11. How to Disable Auto-Booting When Opening the Macbook Lid?](#11-how-to-disable-auto-booting-when-opening-the-macbook-lid)
+
+[12. How to Copy `command line` Output to Pasteboard/Clipboard?](#12-how-to-copy-command-line-output-to-pasteboardclipboard)
+
+[14. How to Show Hidden Files in Finder?](#14-how-to-show-hidden-files-in-finder)
+
+[15. How to Recover a Bodged `git` Repository?](#15-how-to-recover-a-bodged-git-repository)
+
+[OTHER SOURCES:](#other-sources) 
+
+### 1. How to Change Where My Screenshots Are Saved?
 
 Two lines of input are needed at the command line; regular user privileges are sufficient. The first changes the default location, the second restarts the __SystemUIServer__ 
 
@@ -20,7 +52,7 @@ This will cause all screenshots to be saved in a folder called `screenshots` on 
 
 - Note that you must create this folder if it doesn't already exist! 
 
-### 2. How Do I Prevent My Mac From Sleeping? :
+### 2. How to Prevent My Mac From Sleeping? 
 
 Caffeine may do the trick; specifically `caffeinate` may be exactly what you need for your Mac. Know first that `man caffeinate` is your friend; enter it at the command line, and you'll find all the documentation for using this utility. `caffeinate` creates assertions to alter system sleep behavior. Following are a couple of general use cases: 
 
@@ -50,7 +82,7 @@ Note also that Process ID's are available from `Activity Monitor`, or can be lis
 
 
 
-### 3. How Do I Start (`open`) an App From the Mac OS Command Line?
+### 3. How to Start (`open`) an App From the Mac OS Command Line?
 
 There may be occasions when you want or need to start an application from the command line. Or perhaps start an app from a script, or even to start the app at a specified time (more on scheduling in the sequel), or on an interrupt-driven basis triggered by an event. The `open` utility (ref. `man open`) is designed for this. For example, you want to start Chrome to check your Gmail account - how would you do this? Here's one way: 
 
@@ -83,7 +115,7 @@ $ man open | col -b | open -tf
 
 Which can be quite useful for perusing the system documentation offline (in this example, the `man` page for `open`), and/or making additions or changes to it either for your own use, or to share. 
 
-### 4. How Do I Schedule an App to Run At a Specified Time?
+### 4. How to Schedule an App to Run At a Specified Time?
 
 In current versions of mac os, there are (at least) two distinct approaches to scheduling:   
 
@@ -124,7 +156,7 @@ You'll recognize the `open` command and the parameters that follow it from the e
 
 This is simply the schedule information. It tells `cron` **when** to execute the command that follows. If you want to re-schedule for a time other that 12:00 noon, all you need change is the time. `man crontab` will guide you in the options for specifying the time and date. Until you become familiar with the syntax, you should use the [crontab guru](https://crontab.guru/#00_12_*_*_*) to check your schedule. You'll learn that  [`cron`'s simple syntax is quite flexible](https://crontab.guru/#5_4-7_1-28/2_1-9/3_*).  
 
-### 5. How Do I Check the Size of a Directory?
+### 5. How to Check the Size of a Directory?
 
 You can of course do this from the Finder menu: `File, Get Info`, but it may be quicker from the command line.
 
@@ -137,9 +169,9 @@ For a network drive that's mounted:
 $ du -sh /Volumes/sharename/path/to/directory  
 ```
 
-### 6. Can I Check Battery Status from the Command Line?
+### 6. How to Check Battery Status from the Command Line?
 
-Yes - and a lot more! The `pmset` utility provides a host of information, and allows manipulation of ***power management settings*** from the command line. For example, to get battery status: 
+The `pmset` utility provides a host of information, and allows manipulation of ***power management settings*** from the command line. For example, to get battery status: 
 
 ```bash
 $ pmset -g batt                        # and for example, my Mac now reports" 
@@ -149,9 +181,9 @@ Now drawing from 'AC Power'
 
 The `-g`  (get) option provides data on current settings and logfiles. It can be run with normal user privileges. `pmset`can also change settings (e.g. standby, sleep, spin-down of disks, display, etc.), but those require `root`/`su` privileges. Documentation is available from `man pmset`.  
 
-### 7. Can I Send Files to the Trash from the macos Command Line?
+### 7. How to Send Files to the Trash from the macos Command Line?
 
-Yes - thanks to the work of dabrahams. The latest version of the command line utility named `trash` is [available in this gist on GitHub](https://gist.github.com/dabrahams/14fedc316441c350b382528ea64bc09c). Its creation was spawned by a Q&A on Stack Exchange, and initially posted in [this answer](https://apple.stackexchange.com/a/162354). There is always `rm` of course, but it's a permanent and irrecoverable deletion. What makes `trash` special is that it ***moves*** files to the `Trash` folder, essentially replicating the system's `Move to Trash` feature available in `Finder`. And from `Trash` of course you have the option to recover the file, or delete it permanently. 
+This is easily and elegntly done thanks to the work of dabrahams. The latest version of the command line utility named `trash` is [available in this gist on GitHub](https://gist.github.com/dabrahams/14fedc316441c350b382528ea64bc09c). Its creation was spawned by a Q&A on Stack Exchange, and initially posted in [this answer](https://apple.stackexchange.com/a/162354). There is always `rm` of course, but it's a permanent and irrecoverable deletion. What makes `trash` special is that it ***moves*** files to the `Trash` folder, essentially replicating the system's `Move to Trash` feature available in `Finder`. And from `Trash` of course you have the option to recover the file, or delete it permanently. 
 
 It's written in Python, and *open source*. If you want to "integrate" `trash` into your system: 
 
@@ -161,7 +193,7 @@ It's written in Python, and *open source*. If you want to "integrate" `trash` in
   $ chmod a+rx /usr/local/bin/trash
   ```
 
-### 8. How Do I Find the Hardware Architecture and OS Version for My Mac?
+### 8. How to Find the Hardware Architecture and OS Version for My Mac?
 
 Because `macos` has (some of) its roots in BSD Unix rather than Linux, the `machine` command will reveal hardware: 
 
@@ -219,11 +251,11 @@ Software:
       Boot Mode: Normal
 ```
 
-### 9. How Do I Combine/Concatenate Multiple PDFs?
+### 9. How to Combine/Concatenate Multiple PDFs?
 
 [Apple has this one covered](https://support.apple.com/guide/mac-help/combine-files-into-a-pdf-mchl21ac2368/mac), and it's easy if you know ***the trick***. You should also know that the `Quick Actions > Create PDF` option in `Finder` may not show up! When you move the pointer over `Quick Actions` in `Finder` you may see only the option `Customize...`. If that's the case, click `Customize...`, then tick the box next to `Create PDF`. This will add `Create PDF` as an option for `Quick Actions`. 
 
-### 10. How Do I Search My Command History in `Terminal`?
+### 10. How to Search My Command History in `Terminal`?
 
 Here are some useful techniques: 
 
@@ -257,9 +289,9 @@ nvram -p
 
 will list available options... but it's very messy! 
 
-### 12. Can I Copy `command line` Output to Pasteboard/Clipboard?
+### 12. How to Copy `command line` Output to Pasteboard/Clipboard?
 
-Yep! You can **copy** from `stdout` and **paste** to `stdin` using one of the several clipboards available.
+You can **copy** from `stdout` and **paste** to `stdin` using one of the several clipboards available.
 
 ```Bash
 $ ls -la | pbcopy
@@ -275,102 +307,57 @@ $ pbpaste > newfile.txt
 
 See `man pbcopy` for further details.
 
+### 14. How to Show Hidden Files in Finder?
 
+There are many **hidden files and folders** in MacOS. We have to guess what Apple's motivations are for designating certain files and folders as hidden, but it seems likely this *default* configuration is to protect users from themselves. However, there are numerous situations where it's very useful to be able to see files in Finder that are hidden from our view bt default. Examples abound: 
+
+* all the files and folders associated with MacOS' Unix underpinnings; e.g. `/usr/local/bin`, `etc`, and many more.  
+* if you maintain a `git` repository on your Mac, there will be files that you will need to edit; e.g. `.gitignore`.
+* all `mount`*ed* drives and shares are listed under `/Volumes`, and it is occasionally useful to see inside this *hidden folder*. 
+
+ Fortunately, there's a simple way to turn visibility of hidden files and folders `ON` and `OFF`. If you're starting from the *default* condition in which hidden files and folders are NOT visible, use the **CLI** as follows to render them visible from within `Finder`: 
+
+```bash
+$ defaults write com.apple.finder AppleShowAllFiles TRUE 
+```
+
+If you have open Finder windows, you'll need to close them all with this command before you see the effects of this change; i.e. before Finder shows the hidden files in its listing:
+
+```bash
+$ killall Finder
+```
+
+Opening a new `Finder` window will reveal the hidden files and folders. To return to the default: 
+
+```bash
+$ defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder
+```
+
+### 15. How to Recover a Bodged `git` Repository?
+
+Recently, I inadvertently deleted all of my *local* GitHub repositories. In a comical sequence of poor decisions I made things worse by copying the entire repo from a backup, but it was not in sync with the repos on GitHub. Further attempts to resolve the issues only made things worse. Then it dawned on me that *this what `git` was made for!* A quick bit of research provided the answer - from the **CLI**:
+
+```bash
+$ git fetch origin 
+# some output ...
+$ git reset --hard origin/master
+```
+
+A few things to review beforehand! : 
+
+* execute these commands from the local directory where you want your repo to live, 
+* The `remote` repository is the origin you want (in my case, the remote repo at GitHub was my `origin`) 
+* The `branch` you want to restore is the `master` branch
 
 ### OTHER SOURCES:
 
 - [OSXDaily offers a list](http://osxdaily.com/category/command-line/) of "command line tips" 
 - [The Mac Observer](https://www.macobserver.com) has tips, tricks & news items.
-
+- [Q&A: Using the `at` command in macos](https://unix.stackexchange.com/questions/478823/making-at-work-on-macos) 
 
 <!--- 
 
-# Miscellaneous Tips & Tricks for Mac OS
-
-## 1. How Do I Change Where My Screenshots Are Saved? : 
-
-Two lines of input are needed at the command line; regular user privileges are sufficient. The first changes the default location, the second restarts the __SystemUIServer__ 
-```
-     $ defaults write com.apple.screencapture location ~/Desktop/screenshots
-     $ killall SystemUIServer
-```
-Alternatively, you may specify the full path: 
-```
-     $ defaults write com.apple.screencapture location Home/yourusername/Desktop/screenshots
-     $ killall SystemUIServer
-```
-This will cause all screenshots to be saved in a folder called `screenshots` on your Desktop. You may, of course, store them anywhere you wish*. 
-
-* Note that you must create this folder if it doesn't already exist! 
-
-## 2. How Do I Prevent My Mac From Sleeping? : 
-
-Caffeine may do the trick; specifically `caffeinate` may be exactly what you need for your Mac. Know first that `man caffeinate` is your friend; enter it at the command line, and you'll find all the documentation for using this utility. `caffeinate` creates assertions to alter system sleep behavior. Following are a couple of general use cases: 
-
-```
-    $ caffeinate -s  
-```
-or perhaps more effectively as follows: 
-```
-    $ caffeinate -s &
-    [1] 1558         (IF YOU WISH TO RESTORE THE SLEEP PATTERN AFTER SOME TIME, simply kill it )
-    $ kill 1558
-```
-Used in this way, `caffeinate` is a ***blunt instrument***. This command simply creates and holds an assertion that will prevent the Mac from sleeping as long as it remains on ac/mains power. Run in the background, you can continue the terminal session for as long as needed, and then simply kill `caffeinate`'s PID to release the assertion and restore sleep patterns. 
-
-```
-    $ caffeinate -w PID
-```
-When used with the `-w` argument, sleep will be inhibited as long as the process ID `PID` is active. Once the the process exits, the assertion is released, and the configured sleep behavior will resume when appropriate. 
-
-Note also that Process ID's are available from `Activity Monitor`, or can be listed in the terminal by entering `ps -Al`
-
-## 3. How Do I Start an App From The Mac's Command Line?  
-
-There may be occasions when you want or need to start an application from the command line. Or perhaps start an app from a script, or even to start the app at a specified time (more on scheduling in the sequel), or on an interrupt-driven basis triggered by an event. For example, you want to check your Gmail account each day at 12:00. How would you do this? Here's one way: 
-
-a. get the location of the app
-
-```
-$ ls /Applications | grep Chrome  
-Google Chrome.app  
-```
-
-b. get the URL for your Gmail inbox:  
-```
-https://mail.google.com/mail/u/0/#inbox  
-```
-
-c. use `open` to start Chrome and load GMail: 
-```
-$ open -a "/Applications/Google Chrome.app" https://mail.google.com/mail/u/0/#inbox
-```
-*Note that the file specification must be inside quotes to "protect" the space in the app name.* 
-
-## 3. How Do I Schedule an App to Run At a Specified Time?
-
-In general, there are (at least) two distinct approaches to scheduling in current versions of mac os:   
-a. `cron` is the standard (as in long-standing) method for scheduling. It's been around since the early days of Unix, and as a derivative of the BSD flavor of Unix, upon which mac os is built! That `cron` remains as a viable, well-maintained app today is a testament to its utility.  
-b. `launchd` is a much more complicated creature than `cron`, but it's got an Apple pedigree. It was developed by Dave Zarzycki, an Apple employee who started with them in 1996 as a 17 year-old, self-taught programmer. To use `launchd` effectively, you'll need to spend time preparing yourself. Consequently, we'll start here with `cron`, and pick up `launchd` in a future installment. 
-
-d. a `crontab` event, make the appropriate entry in your `crontab` [enter `crontab -e` at the command prompt `$`, then add the following line]:
-```bash
-$ ps -A | grep TextEdit 
- 1864 ??         0:00.85 /Applications/TextEdit.app/Contents/MacOS/TextEdit
- 1873 ttys002    0:00.00 grep TextEdit
-```
-
-
-
-b. start the app 
-
-```
-$ open -a /Applications/TextEdit.app/Contents/MacOS/TextEdit
-```
-
-REFERENCES:
-1. [Q&A: Using the `at` command in macos:](https://unix.stackexchange.com/questions/478823/making-at-work-on-macos)  
-
+You can hide shit in here  :)   LOL 
 
 --->
 
