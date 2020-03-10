@@ -28,9 +28,13 @@
 
 [14. How to Show Hidden Files in Finder?](#14-how-to-show-hidden-files-in-finder)
 
-[15. How to Recover a Bodged `git` Repository?](#15-how-to-recover-a-bodged-git-repository)
+[15. How to Recover a Bodged `git` Repository?](#15-how-to-recover-a-bodged-git-repository) 
+
+[16. How to Restore the "Lost Startup Chime"?](#16-how-to-restore-the-lost-startup-chime) 
 
 [OTHER SOURCES:](#other-sources) 
+
+
 
 ### 1. How to Change Where My Screenshots Are Saved?
 
@@ -78,7 +82,7 @@ When used with the `-w` argument, sleep will be inhibited as long as the process
 
 Note also that Process ID's are available from `Activity Monitor`, or can be listed in the terminal by entering `ps -Al` 
 
-​    <b id="f1">Note1:</b> *Know that `caffeinate` will not prevent a scheduled [automatic logout](http://osxdaily.com/2013/03/23/automatically-log-out-of-a-mac-after-a-period-of-inactivity/)*. [↩](#a1) 
+​    <b id="f1">Note1:</b> *Know that `caffeinate` will not prevent a scheduled [automatic logout](http://osxdaily.com/2013/03/23/automatically-log-out-of-a-mac-after-a-period-of-inactivity/)*. [↩](#a1) 
 
 
 
@@ -348,6 +352,24 @@ A few things to review beforehand! :
 * execute these commands from the local directory where you want your repo to live, 
 * The `remote` repository is the origin you want (in my case, the remote repo at GitHub was my `origin`) 
 * The `branch` you want to restore is the `master` branch
+
+### 16. How to Restore the "Lost Startup Chime"?
+
+The long lost startup chime has been found by [this fellow](). Here's how to get it back on your Mac: 
+
+```bash
+sudo nvram StartupMute=%00
+sudo reboot		# alternatively, `Restart...` fm the System menu
+# Hear the Lost Chime once again! 
+# When you get tired of it: 
+sudo nvram StartupMute=%01
+```
+
+[More details and *Chime Trivia* can be found here.](https://mrmacintosh.com/how-to-enable-the-mac-startup-chime-on-your-2016-macbook-pro/) 
+
+
+
+<hr>
 
 ### OTHER SOURCES:
 
