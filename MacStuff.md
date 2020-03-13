@@ -32,6 +32,8 @@
 
 [16. How to Restore the "Lost Startup Chime"?](#16-how-to-restore-the-lost-startup-chime) 
 
+[17. Weirdness With `zsh` ](#17-weirdness-with-zsh-)
+
 [OTHER SOURCES:](#other-sources) 
 
 
@@ -367,7 +369,41 @@ sudo nvram StartupMute=%01
 
 [More details and *Chime Trivia* can be found here.](https://mrmacintosh.com/how-to-enable-the-mac-startup-chime-on-your-2016-macbook-pro/) 
 
+### 17. Weirdness With `zsh` 
 
+As most of you will be aware, Apple has made the decision to change the default shell from `bash` to `zsh` in macOS Catalina. There's more to come here on `zsh`, but for now I'll include some *discoveries* I've made here. 
+
+* `zsh` 'over-globs'! 
+
+  This queerness took an hour from my life: 
+
+  ```zsh
+  % curl -o rpiforum.html -L https://www.raspberrypi.org/forums/viewtopic.php?p=1528736
+  zsh: no matches found: https://www.raspberrypi.org/forums/viewtopic.php?p=1528736 
+  
+  # wtf??
+  ```
+
+  A very old [problem according to this resource](https://github.com/ohmyzsh/ohmyzsh/issues/31). Two relatively simple solutions that might ***never*** occur to you are: 
+
+  ```zsh
+  % curl -o rpiforum.html -L "https://www.raspberrypi.org/forums/viewtopic.php?p=1528736"
+    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                   Dload  Upload   Total   Spent    Left  Speed
+  100  120k    0  120k    0     0   199k      0 --:--:-- --:--:-- --:--:--  199k
+  
+  # OR, A MORE PERMANENT PATCH: 
+  
+  % alias curl='noglob curl'
+  % curl -o rpiforum.html -L https://www.raspberrypi.org/forums/viewtopic.php?p=1528736
+    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                   Dload  Upload   Total   Spent    Left  Speed
+  100  120k    0  120k    0     0   204k      0 --:--:-- --:--:-- --:--:--  204k
+  ```
+
+  
+
+  
 
 <hr>
 
