@@ -1,4 +1,4 @@
-# Eclectic Tips & Tricks for Mac OS 
+# Eclectic Tips & Tricks for Mac OS
 
 #### Table of contents
 
@@ -412,6 +412,7 @@ As most of you will be aware, Apple has made the decision to change the default 
 - [OSXDaily offers a list](http://osxdaily.com/category/command-line/) of "command line tips" 
 - [The Mac Observer](https://www.macobserver.com) has tips, tricks & news items.
 - [Q&A: Using the `at` command in macos](https://unix.stackexchange.com/questions/478823/making-at-work-on-macos) 
+- [GadgetHacks has a list of *Essential* MacOS commands](https://mac-how-to.gadgethacks.com/how-to/13-terminal-commands-every-mac-user-should-know-0162453/); some are actually useful. 
 
 <!--- 
 
