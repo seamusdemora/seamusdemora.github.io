@@ -32,7 +32,9 @@
 
 [16. How to Restore the "Lost Startup Chime"?](#16-how-to-restore-the-lost-startup-chime) 
 
-[17. Weirdness With `zsh` ](#17-weirdness-with-zsh-)
+[17. Weirdness With `zsh` ](#17-weirdness-with-zsh-) 
+
+[18. How to Hide All Open Windows on a Desktop? ('Show Desktop')](#18-how-to-hide-all-open-windows-on-a-desktop-show-desktop) 
 
 [OTHER SOURCES:](#other-sources) 
 
@@ -369,7 +371,7 @@ sudo nvram StartupMute=%01
 
 [More details and *Chime Trivia* can be found here.](https://mrmacintosh.com/how-to-enable-the-mac-startup-chime-on-your-2016-macbook-pro/) 
 
-### 17. Weirdness With `zsh` 
+### 17. Weirdness With `zsh`
 
 As most of you will be aware, Apple has made the decision to change the default shell from `bash` to `zsh` in macOS Catalina. There's more to come here on `zsh`, but for now I'll include some *discoveries* I've made here. 
 
@@ -401,9 +403,15 @@ As most of you will be aware, Apple has made the decision to change the default 
   100  120k    0  120k    0     0   204k      0 --:--:-- --:--:-- --:--:--  204k
   ```
 
-  
 
-  
+### 18. How to Hide All Open Windows on a Desktop? ('Show Desktop')
+
+<kbd>fn</kbd><kbd>F11</kbd> - this will *toggle* Show & Hide all app windows on a desktop. 
+
+
+
+
+
 
 <hr>
 
