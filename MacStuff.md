@@ -421,6 +421,7 @@ As most of you will be aware, Apple has made the decision to change the default 
 - [The Mac Observer](https://www.macobserver.com) has tips, tricks & news items.
 - [Q&A: Using the `at` command in macos](https://unix.stackexchange.com/questions/478823/making-at-work-on-macos) 
 - [GadgetHacks has a list of *Essential* MacOS commands](https://mac-how-to.gadgethacks.com/how-to/13-terminal-commands-every-mac-user-should-know-0162453/); some are actually useful. 
+- [Terminal.app keyboard shortcuts for some recent versions of MacOS](https://support.apple.com/guide/terminal/keyboard-shortcuts-trmlshtcts/mac) 
 
 <!--- 
 
