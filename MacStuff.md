@@ -36,6 +36,14 @@
 
 [18. How to Hide All Open Windows on a Desktop? ('Show Desktop')](#18-how-to-hide-all-open-windows-on-a-desktop-show-desktop) 
 
+[19. How to Set Default Editor for CLI/Terminal App](#19-how-to-set-default-editor-for-cliterminal-app) 
+
+[20. How to Enable `cron` on Catalina](#20-how-to-enable-cron-on-catalina) 
+
+[21. Getting Up to Speed on `zsh`](#21-getting-up-to-speed-on-zsh) 
+
+[22. Upgrade Xcode on High Sierra... or Why Does Apple Crap On Us?](#22-upgrade-xcode-on-high-sierra-or-why-does-apple-crap-on-us) 
+
 [OTHER SOURCES:](#other-sources) 
 
 
@@ -371,6 +379,8 @@ sudo nvram StartupMute=%01
 
 [More details and *Chime Trivia* can be found here.](https://mrmacintosh.com/how-to-enable-the-mac-startup-chime-on-your-2016-macbook-pro/) 
 
+And if you're into [*mac nostalgia*](https://duckduckgo.com/?t=ffnt&q=mac+nostalgia&ia=web) you can [get all the default macOS wallpapers in 5K!](https://512pixels.net/projects/default-mac-wallpapers-in-5k/) 
+
 ### 17. Weirdness With `zsh`
 
 As most of you will be aware, Apple has made the decision to change the default shell from `bash` to `zsh` in macOS Catalina. There's more to come here on `zsh`, but for now I'll include some *discoveries* I've made here. 
@@ -403,17 +413,82 @@ As most of you will be aware, Apple has made the decision to change the default 
   100  120k    0  120k    0     0   204k      0 --:--:-- --:--:-- --:--:--  204k
   ```
 
-
 ### 18. How to Hide All Open Windows on a Desktop? ('Show Desktop')
 
 <kbd>fn</kbd><kbd>F11</kbd> - this will *toggle* Show & Hide all app windows on a desktop. 
 
 
 
+### 19. How to Set Default Editor for CLI/Terminal App
+
+If you run a command that invokes a text editor (e.g. `crontab -e`), you may find yourself in the `vi` editor. `vi`is fine once you're used to it, but proficiency in `vi`will require time and effort. If you'd prefer to avoid learning `vi`, you can easily set your default to a more user-friendly editor like `nano`: 
+
+```bash
+export EDITOR=nano
+```
+
+Enter this at the command line in `Terminal.app`. From this point forward, anytime you run `crontab -e`, your `crontab` will open in `nano`instead of `vi`. If you want to try `vi` later, simply `export EDITOR=vi`.
+
+
+
+### 20. How to Enable `cron` on Catalina
+
+In Catalina, Apple has *"enhanced security"* by disallowing operations that have long been allowed. `cron`is one of those. Restoring `cron`*'s* privileges requires it be granted **Full Disk Access** in **System Preferences**. Doing this using the GUI is a two-step process: 
+
+* Due to the way that apps are added to the Full Disk Access list, we must first find `cron` in Finder:
+  * Open Finder, enter Command+Shift+G
+  * Enter `usr/sbin` in the dialog box.
+  * Finder displays the contents of `usr/sbin`, scan the file listing, and find the on a named `cron`. 
+
+* Open System Preferences app & navigate to the Privacy tab in Security & Privacy
+  * Select the Full Disk Access item in the listing on the left side; this populates a list of apps on the right side
+  * From the Finder window above, drag and drop the `cron` app into the app list on the right. Make sure it is checked to enable access.
+
+*Opinion: I wonder if the primary effect of Apple's "enhanced security" changes in Catalina has been to put a much larger burden on some users by forcing them to activate these work-arounds to get their tasks completed?*
+
+
+
+### 21. Getting Up to Speed on `zsh`
+
+Apple has decided that the most-commonly-used shell (`bash`) should no longer be the default shell for macOS, so in Catalina they have made `zsh` the default. The motivation for this decision is, uh... interesting, I think - if this is true.  IMO, `zsh` is a hopped-up version of `bash` - a version that appeals mostly to the hyperactive, or maybe even amphetamine users. But that's just my opinion, man. I'll try anything once, and here's a shortlist to get up-to-speed on `zsh`: 
+
+* From How-To Geek: [What is ZSH, and Why Should You Use It Instead of Bash?](https://www.howtogeek.com/362409/what-is-zsh-and-why-should-you-use-it-instead-of-bash/) 
+* From Armin Briegel at [Scripting OS X](https://scriptingosx.com/), a series of articles: [Moving to zsh](https://scriptingosx.com/2019/06/moving-to-zsh/), also available as a [book](https://scriptingosx.com/2019/11/new-book-release-day-moving-to-zsh/). 
+* From [linux today](https://www.linuxtoday.com/), a blog post on [Writing scripts for `zsh`](https://www.linuxtoday.com/blog/writing-scripts-for-zsh.html).  
+* And if you want, here's how to restore `bash` as the default shell on Catalina - [an entire article on this](https://www.howtogeek.com/444596/how-to-change-the-default-shell-to-bash-in-macos-catalina/): 
+
+```zsh
+chsh -s /bin/bash
+```
+
+
+
+### 22. Upgrade Xcode on High Sierra... or Why Does Apple Crap On Us?
+
+Apple's abject failure to maintain many of their "Open Source" tools has led me to install [**MacPorts**](https://www.macports.org). My *ancient* MacBook Pro Late 2011 runs High Sierra, and I've been reasonably happy with it - it's a lesser hassle than my new 2019 MacBook Pro w/ Catalina. Also, since this vintage Mac has a removable SSD, I can easily back out of any failures. Anyway... as I learned, before installing MacPorts I had to upgrade XCode. XCode was installed from the AppStore, so I figured it would be an easy upgrade. But in yet another demonstration of how much Apple cares for their customers, this was far from *easy*. And no - I don't want to hear any lame explanations for this from Apple's supplicants - just STFU, please. 
+
+That said, I followed a recipe I found here [REF @cerniuk's post](https://forums.developer.apple.com/thread/110227) for uninstalling Xcode, and it seems to work. I'm sharing it here w/ one minor addition in hope that it'll help someone else: Here's what I did: 
+
+Remove the following: 
+
+1. /Applications/Xcode.app
+2. ~/Library/Caches/com.apple.dt.Xcode
+3. ~/Library/Developer
+4. ~/Library/MobileDevice
+5. ~/Library/Preferences/com.apple.dt.Xcode.plist 
+6. ~/Library/Preferences/com.apple.dt.xcodebuild.plist
+7. /Library/Preferences/com.apple.dt.Xcode.plist
+8. /System/Library/Receipts/com.apple.pkg.XcodeExtensionSupport.bom
+9. /System/Library/Receipts/com.apple.pkg.XcodeExtensionSupport.plist
+10. /System/Library/Receipts/com.apple.pkg.XcodeSystemResources.bom
+11. /System/Library/Receipts/com.apple.pkg.XcodeSystemResources.plist 
+
+Installing an older version of XCode is a bit different - you can't get it from the AppStore. Fortunately, [MacPorts keeps a list of downloads](https://www.macports.org/install.php), and a decent set of instructions. Once that task is accomplished, you have an *upgraded* XCode install that supports MacPorts (at least until Apple decides to break things again).
 
 
 
 <hr>
+
 
 ### OTHER SOURCES:
 
@@ -422,6 +497,9 @@ As most of you will be aware, Apple has made the decision to change the default 
 - [Q&A: Using the `at` command in macos](https://unix.stackexchange.com/questions/478823/making-at-work-on-macos) 
 - [GadgetHacks has a list of *Essential* MacOS commands](https://mac-how-to.gadgethacks.com/how-to/13-terminal-commands-every-mac-user-should-know-0162453/); some are actually useful. 
 - [Terminal.app keyboard shortcuts for some recent versions of MacOS](https://support.apple.com/guide/terminal/keyboard-shortcuts-trmlshtcts/mac) 
+- [Q&A: Null & empty string comparison in Bash](https://stackoverflow.com/questions/21407235/null-empty-string-comparison-in-bash): Know the difference between `null` & an empty string.
+- [Q&A: (How to put a) Command inside if statement of bash script](https://stackoverflow.com/questions/5276393/command-inside-if-statement-of-bash-script) 
+- [On Catalina, how can a cronjob get permission to touch files on a USB disk?](https://apple.stackexchange.com/questions/372768/on-catalina-how-can-a-cronjob-get-permission-to-touch-files-on-a-usb-disk) 
 
 <!--- 
 
