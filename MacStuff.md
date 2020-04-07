@@ -6,7 +6,7 @@
 
 [2. How to Prevent My Mac From Sleeping? ](#2-how-to-prevent-my-mac-from-sleeping)
 
-[3. How to Start (`open`) an App From the Mac OS Command Line?](#3-how-to-start-open-an-app-from-the-mac-os-command-line)
+[3. How to Start (`open`) an App From the macOS Command Line?](#3-how-to-start-open-an-app-from-the-macos-command-line)
 
 [4. How to Schedule an App to Run At a Specified Time?](#4-how-to-schedule-an-app-to-run-at-a-specified-time)
 
@@ -100,7 +100,7 @@ Note also that Process ID's are available from `Activity Monitor`, or can be lis
 
 
 
-### 3. How to Start (`open`) an App From the Mac OS Command Line?
+### 3. How to Start (`open`) an App From the macOS Command Line?
 
 There may be occasions when you want or need to start an application from the command line. Or perhaps start an app from a script, or even to start the app at a specified time (more on scheduling in the sequel), or on an interrupt-driven basis triggered by an event. The `open` utility (ref. `man open`) is designed for this. For example, you want to start Chrome to check your Gmail account - how would you do this? Here's one way: 
 
@@ -383,7 +383,7 @@ sudo nvram StartupMute=%01
 
 And if you're into [*mac nostalgia*](https://duckduckgo.com/?t=ffnt&q=mac+nostalgia&ia=web) you can [get all the default macOS wallpapers in 5K!](https://512pixels.net/projects/default-mac-wallpapers-in-5k/) 
 
-### 17. Weirdness With `zsh`
+### 17. Weirdness With zsh
 
 As most of you will be aware, Apple has made the decision to change the default shell from `bash` to `zsh` in macOS Catalina. There's more to come here on `zsh`, but for now I'll include some *discoveries* I've made here. 
 
