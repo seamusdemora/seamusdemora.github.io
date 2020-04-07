@@ -2,9 +2,9 @@
 
 #### Table of contents
 
-[1. How to Change Where My Screenshots Are Saved? ](#1-how-to-change-where-my-screenshots-are-saved-)
+[1. How to Change Where My Screenshots Are Saved?](#1-how-to-change-where-my-screenshots-are-saved)
 
-[2. How to Prevent My Mac From Sleeping? ](#2-how-to-prevent-my-mac-from-sleeping-)
+[2. How to Prevent My Mac From Sleeping? ](#2-how-to-prevent-my-mac-from-sleeping)
 
 [3. How to Start (`open`) an App From the Mac OS Command Line?](#3-how-to-start-open-an-app-from-the-mac-os-command-line)
 
@@ -32,7 +32,7 @@
 
 [16. How to Restore the "Lost Startup Chime"?](#16-how-to-restore-the-lost-startup-chime) 
 
-[17. Weirdness With `zsh` ](#17-weirdness-with-zsh-) 
+[17. Weirdness With `zsh` ](#17-weirdness-with-zsh) 
 
 [18. How to Hide All Open Windows on a Desktop? ('Show Desktop')](#18-how-to-hide-all-open-windows-on-a-desktop-show-desktop) 
 
@@ -70,7 +70,7 @@ This will cause all screenshots to be saved in a folder called `screenshots` on 
 
 - Note that you must create this folder if it doesn't already exist! 
 
-### 2. How to Prevent My Mac From Sleeping? 
+### 2. How to Prevent My Mac From Sleeping?
 
 Caffeine may do the trick; specifically `caffeinate` may be exactly what you need for your Mac. Know first that `man caffeinate` is your friend; enter it at the command line, and you'll find all the documentation for using this utility. `caffeinate` creates assertions to alter system sleep behavior. Following are a couple of general use cases: 
 
