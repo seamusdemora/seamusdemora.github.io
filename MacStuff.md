@@ -38,15 +38,17 @@
 
 [19. How to Set Default Editor for CLI/Terminal App](#19-how-to-set-default-editor-for-cliterminal-app) 
 
-[20. How to Enable `cron` on Catalina](#20-how-to-enable-cron-on-catalina) 
+[20. How to See Your Environment Variables](#20-how-to-see-your-environment-variables) 
 
-[21. Getting Up to Speed on `zsh`](#21-getting-up-to-speed-on-zsh) 
+[21. How to Enable `cron` on Catalina](#21-how-to-enable-cron-on-catalina)
 
-[22. Upgrade Xcode on High Sierra... or Why Does Apple Crap On Us?](#22-upgrade-xcode-on-high-sierra-or-why-does-apple-crap-on-us) 
+[22. Getting Up to Speed on `zsh`](#22-getting-up-to-speed-on-zsh)
+
+[23. Upgrade Xcode on High Sierra... or Why Does Apple Crap On Us?](#23-upgrade-xcode-on-high-sierra-or-why-does-apple-crap-on-us)  
 
 [OTHER SOURCES:](#other-sources) 
 
-
+<hr>
 
 ### 1. How to Change Where My Screenshots Are Saved?
 
@@ -431,7 +433,15 @@ Enter this at the command line in `Terminal.app`. From this point forward, anyti
 
 
 
-### 20. How to Enable `cron` on Catalina
+### 20. How to See Your Environment Variables
+
+```zsh
+printenv | less
+```
+
+
+
+### 21. How to Enable `cron` on Catalina
 
 In Catalina, Apple has *"enhanced security"* by disallowing operations that have long been allowed. `cron`is one of those. Restoring `cron`*'s* privileges requires it be granted **Full Disk Access** in **System Preferences**. Doing this using the GUI is a two-step process: 
 
@@ -448,7 +458,7 @@ In Catalina, Apple has *"enhanced security"* by disallowing operations that have
 
 
 
-### 21. Getting Up to Speed on `zsh`
+### 22. Getting Up to Speed on `zsh`
 
 Apple has decided that the most-commonly-used shell (`bash`) should no longer be the default shell for macOS, so in Catalina they have made `zsh` the default. The motivation for this decision is, uh... interesting, I think - if this is true.  IMO, `zsh` is a hopped-up version of `bash` - a version that appeals mostly to the hyperactive, or maybe even amphetamine users. But that's just my opinion, man. I'll try anything once, and here's a shortlist to get up-to-speed on `zsh`: 
 
@@ -463,7 +473,7 @@ chsh -s /bin/bash
 
 
 
-### 22. Upgrade Xcode on High Sierra... or Why Does Apple Crap On Us?
+### 23. Upgrade Xcode on High Sierra... or Why Does Apple Crap On Us?
 
 Apple's abject failure to maintain many of their "Open Source" tools has led me to install [**MacPorts**](https://www.macports.org). My *ancient* MacBook Pro Late 2011 runs High Sierra, and I've been reasonably happy with it - it's a lesser hassle than my new 2019 MacBook Pro w/ Catalina. Also, since this vintage Mac has a removable SSD, I can easily back out of any failures. Anyway... as I learned, before installing MacPorts I had to upgrade XCode. XCode was installed from the AppStore, so I figured it would be an easy upgrade. But in yet another demonstration of how much Apple cares for their customers, this was far from *easy*. And no - I don't want to hear any lame explanations for this from Apple's supplicants - just STFU, please. 
 
@@ -500,6 +510,7 @@ Installing an older version of XCode is a bit different - you can't get it from 
 - [Q&A: Null & empty string comparison in Bash](https://stackoverflow.com/questions/21407235/null-empty-string-comparison-in-bash): Know the difference between `null` & an empty string.
 - [Q&A: (How to put a) Command inside if statement of bash script](https://stackoverflow.com/questions/5276393/command-inside-if-statement-of-bash-script) 
 - [On Catalina, how can a cronjob get permission to touch files on a USB disk?](https://apple.stackexchange.com/questions/372768/on-catalina-how-can-a-cronjob-get-permission-to-touch-files-on-a-usb-disk) 
+- [List All Environment Variables](https://www.cyberciti.biz/faq/linux-list-all-environment-variables-env-command/) - a nixCraft article. 
 
 <!--- 
 
