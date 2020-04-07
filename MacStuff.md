@@ -49,6 +49,8 @@
 [OTHER SOURCES:](#other-sources) 
 
 <hr>
+
+
 ### 1. How to Change Where Screenshots Are Saved?
 
 Two lines of input are needed at the command line; regular user privileges are sufficient. The first changes the default location, the second restarts the __SystemUIServer__ 
