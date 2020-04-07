@@ -4,11 +4,11 @@ This began several months ago after realizing that the [one-time largest corpora
 
 In other words, I still count myself as a mac user at this point, but [I won't allow Apple to dictate my computing environment](https://duckduckgo.com/?q=fuck+you+Apple&t=ffnt&ia=web)! As I occasionally use my mac for more than perusing social media, it's important to me to have reasonably up-to-date tools, and the ability to add tools to suit my needs. As Apple has no package manager, one is required to find a third party. Fortunately there are (at least) two: [MacPorts](https://www.macports.org/), and [HomeBrew](https://brew.sh/). After [some research](https://duckduckgo.com/?q=Homebrew+vs+Macports&t=ffnt&ia=web), I decided that MacPorts was a better alternative.
 
-That said, the sequel below is simply my attempt to help others gain a bit of freedom-of-choice, and share what I learned during and after the MacPorts install. As of today, I've installed MacPorts on a new-ish (2019 Catalina - 10.15.4), and an old-ish (2011 High Sierra - 10.13.6) Macbook Pro. I'll add some notes for the 2011 High Sierra installation in the near future - this is 2019 Catalina material at present. I should also say that much of what follows is borrowed from [MacPorts Install page](https://www.macports.org/install.php). Much more [detailed guidance may be found on the MacPorts' website](https://guide.macports.org/). Finally, I am not affiliated with MacPorts in any way.
+That said, the sequel below is simply my attempt to help others gain a bit of freedom-of-choice, and share what I learned during and after the MacPorts install. As of today, I've installed MacPorts on a new-ish (2019 Catalina - 10.15.4), and an old-ish (2011 High Sierra - 10.13.6) Macbook Pro. Most of this post is based on the 2019 Catalina installation, but I've added a [section at the end noting the difference between the Catalina and High Sierra installations](#notes-on-the-high-sierra-Installation-of-macports). I should also say that much of what follows is borrowed from [MacPorts Install page](https://www.macports.org/install.php). Much more [detailed guidance may be found on the MacPorts' website](https://guide.macports.org/). Finally, I am not affiliated with MacPorts in any way.
 
 ### Post Installation:
 
-MacPorts "pkg" installer worked well for me, and there's nothing I can add. (Perhaps one exception is this *pre-MacPorts-installation* recipe for removing an old version of XCode on the *High Sierra* install). The MacPorts installer updates the $PATH env variable for you, but you will need to *source it* before it takes effect:
+MacPorts "pkg" installer worked well for me, and there's nothing I can add. The MacPorts installer updates the $PATH env variable for you, but you will need to *source it* before it takes effect:
 
 ```zsh
 $ . ~/.profile						# use for bash; aka `source ~/.profile` 
@@ -64,6 +64,10 @@ One other item may be useful ***if you run your mac as an unprivileged user*** -
 Help on a wide variety of topics is also available in the project [Guide](https://guide.macports.org/) and through the [Trac portal](https://trac.macports.org/) should you run into any problems installing and/or using MacPorts. Of particular relevance are the [installation](https://guide.macports.org/#installing) & [usage](https://guide.macports.org/#using) sections of the former and the [FAQ](https://trac.macports.org/wiki/FAQ) section of the [Wiki](https://trac.macports.org/wiki), where MacPorts keeps track of questions frequently fielded on their [mailing lists](contact.php#Lists).
 
 If any of these resources do not answer your questions or if you need any kind of extended support, [reach out and make contact](https://www.macports.org/contact.php)! 
+
+### Notes on the High Sierra Installation of MacPorts
+
+There are different installers for each version of macOS; they are [listed on the MacPorts install page](https://www.macports.org/install.php). In general, the installation experience on *High Sierra* was the same as for *Catalina*. The difficulty came about in having to upgrade an older version of *Xcode* on my High Sierra system. Since Apple does not provide an in-app upgrade mechanism for Xcode, I felt the safe approach was to un-install the old *Xcode*. If you know what to do, un-installing Xcode is only tedious; if you don't know what to do, it could lead to disaster. I didn't (and still don't) know how to un-install Xcode because Apple doesn't provide that information. I didn't let ignorance stop me however; [I un-installed by this procedure](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacStuff.md#23-upgrade-xcode-on-high-sierra-or-why-does-apple-crap-on-us). All I can say at this point is: "*so far, so good*".
 
 
 
