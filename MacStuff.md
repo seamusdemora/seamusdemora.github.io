@@ -4,7 +4,7 @@
 
 [1. How to Change Where My Screenshots Are Saved?](#1-how-to-change-where-my-screenshots-are-saved)
 
-[2. How to Prevent My Mac From Sleeping? ](#2-how-to-prevent-my-mac-from-sleeping-)
+[2. How to Prevent My Mac From Sleeping? ](#2-how-to-prevent-my-mac-from-sleeping)
 
 [3. How to Start (`open`) an App From the macOS Command Line?](#3-how-to-start-open-an-app-from-the-macos-command-line)
 
