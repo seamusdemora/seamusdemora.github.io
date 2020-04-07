@@ -44,7 +44,9 @@
 
 [22. Getting Up to Speed on `zsh`](#22-getting-up-to-speed-on-zsh)
 
-[23. Upgrade Xcode on High Sierra... or Why Does Apple Crap On Us?](#23-upgrade-xcode-on-high-sierra-or-why-does-apple-crap-on-us)  
+[23. Upgrade Xcode on High Sierra... or Why Does Apple Crap On Us?](#23-upgrade-xcode-on-high-sierra-or-why-does-apple-crap-on-us)
+
+[24. Cleaning and Restoration of iTerm2](#24-cleaning-and-restoration-of-iterm2)  
 
 [OTHER SOURCES:](#other-sources) 
 
@@ -496,6 +498,16 @@ Remove the following:
 
 Installing an older version of XCode is a bit different - you can't get it from the AppStore. Fortunately, [MacPorts keeps a list of downloads](https://www.macports.org/install.php), and a decent set of instructions. Once that task is accomplished, you have an *upgraded* XCode install that supports MacPorts (at least until Apple decides to break things again).
 
+### 24. Cleaning and Restoration of iTerm2
+
+[iTerm2](https://iterm2.com/index.html) is a popular terminal emulator for macOS. Some prefer it to Apple's native `Terminal.app`. I use it for some things, but find its many features can be distracting at times. I realized recently that I had wandered off [in the weeds](https://idioms.thefreedictionary.com/In+the+weeds) wrt my `Preferences...Profiles` settings, and that `Default` settings were long gone & far away from the original settings (which weren't that bad). For all the [knob dickers](https://www.urbandictionary.com/define.php?term=knob%20dicker), here's the cure from the [iTerm FAQ](https://iterm2.com/faq.html): 
+
+```zsh
+% defaults delete com.googlecode.iterm2
+```
+
+**Know this:** This clears ***ALL*** settings in iTerm2. If you want to create a *restore point* for your iTerm2 settings, you may find some help in [this Q&A on Stack Overflow](https://stackoverflow.com/a/23356086) - be sure to read all the comments! 
+
 
 
 <hr>
@@ -512,6 +524,8 @@ Installing an older version of XCode is a bit different - you can't get it from 
 - [Q&A: (How to put a) Command inside if statement of bash script](https://stackoverflow.com/questions/5276393/command-inside-if-statement-of-bash-script) 
 - [On Catalina, how can a cronjob get permission to touch files on a USB disk?](https://apple.stackexchange.com/questions/372768/on-catalina-how-can-a-cronjob-get-permission-to-touch-files-on-a-usb-disk) 
 - [List All Environment Variables](https://www.cyberciti.biz/faq/linux-list-all-environment-variables-env-command/) - a nixCraft article. 
+- [Q&A: Restoring iTerm2 to default values](https://apple.stackexchange.com/questions/164821/restoring-iterm2-to-default-values) 
+- [Q&A: How to export iTerm2 Profiles](https://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles) - the antidote?
 
 <!--- 
 
