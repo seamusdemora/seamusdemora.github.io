@@ -508,6 +508,8 @@ Installing an older version of XCode is a bit different - you can't get it from 
 
 **Know this:** This clears ***ALL*** settings in iTerm2. If you want to create a *restore point* for your iTerm2 settings, you may find some help in [this Q&A on Stack Overflow](https://stackoverflow.com/a/23356086) - be sure to read all the comments! 
 
+Related to this is iTerm2's [Dynamic Profiles](https://iterm2.com/documentation-dynamic-profiles.html) which are saved in one or more plist files formatted as JSON or XML (or in binary). Profile changes are made immediately (thus, *dynamic*).
+
 
 
 <hr>
