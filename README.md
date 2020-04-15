@@ -19,6 +19,7 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 |[How to Use the Usenet](https://github.com/seamusdemora/seamus.github.io/blob/master/HowToUseTheUsenet.md) |  A brief overview for using a huge resource |
 |[Shit Filtering](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/FilteringWebPagesForTheGoodStuff.md) |  How to clean up content from sketchy publishers  |
 |[Adding MacPorts](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md) | A few tips for adding MacPorts |
+|[Curing Dropped Network Connections](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MaintainLongRunningNetworkConnections.md) | Tired of dropped SSH connections?  |
 
 ***
 
