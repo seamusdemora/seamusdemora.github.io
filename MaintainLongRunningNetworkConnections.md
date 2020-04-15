@@ -46,7 +46,7 @@ It may work on other models also; I'd like some feedback if you try it. Of cours
 
 Of course the Power Management (aka *Energy Saver*) GUI in *System Preferences* should not be neglected. Here's a screen shot showing how you may wish to set yours. I haven't tried all the possibilities in the GUI, so perhaps don't stray too far until after you've experimented a bit.
 
-<img src="/Users/jmoore/Documents/GitHub/seamus.github.io/pix/EnergySaverSettings.png" alt="EnergySaverSettings" style="zoom:50%;" />
+<img src="/pix/EnergySaverSettings.png" alt="EnergySaverSettings" style="zoom:50%;" />
 
  Once you've initiated your SSH connection with `caffeinate -i`, you can verify its status using the *Activity Monitor*. You should see something like the following: 
 
