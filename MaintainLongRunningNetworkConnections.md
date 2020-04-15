@@ -52,7 +52,7 @@ Of course the Power Management (aka *Energy Saver*) GUI in *System Preferences* 
 
 
 
-<img src="/Users/jmoore/Documents/GitHub/seamus.github.io/pix/ActivityMonitorOnCaffeinate.png" alt="ActivityMonitorOnCaffeinate" style="zoom:50%;" />
+<img src="/pix/ActivityMonitorOnCaffeinate.png" alt="ActivityMonitorOnCaffeinate" style="zoom:50%;" />
 
 Two items to note: *Activity Monitor* is showing a filtered search on **caffeinate**, and the `caffeinate` process shown in the list is reported to be **Preventing Sleep** - exactly what we want! You can look under the other tabs to see more information about the selected process (e.g. the *Network* tab). Note also that this display has *optional columns* displayed: *Ports*, and *Preventing Sleep*. You can add these simply by 'right-clicking' in the label bar, and checking the labels you want to add or remove.
 
