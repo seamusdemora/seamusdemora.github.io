@@ -549,7 +549,8 @@ This should maintain an SSH connection for as long as you need it - hours, days,
 - [Six (6) commands for Checking SSH Connections](https://www.golinuxcloud.com/list-check-active-ssh-connections-linux/) 
 - [A script can be run by sshd when a specified user logs in](https://askubuntu.com/a/397696/831935); or this [simpler approach](https://askubuntu.com/questions/975327/how-to-connect-ssh-and-run-shell-script).
 - [Set macOS `Standby` parameters](https://www.howtogeek.com/260478/how-to-choose-when-your-mac-hibernates-or-enters-standby/). Standby mode's role in dropping SSH connections?
-- [Using `pmset` for Power Management in macOS](https://eclecticlight.co/2017/01/20/power-management-in-detail-using-pmset/) 
+- [How to Keep Your MacBook Awake While Closed](https://www.howtogeek.com/278943/how-to-keep-your-macbook-awake-while-closed/); The HTG author missed the boat on this one.
+- [Using `pmset` for Power Mgmt in macOS](https://eclecticlight.co/2017/01/20/power-management-in-detail-using-pmset/): Some advice from the Eclectic Light Company blog. 
 
 <!--- 
 
