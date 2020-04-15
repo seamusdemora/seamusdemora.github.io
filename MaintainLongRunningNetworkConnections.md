@@ -22,7 +22,7 @@ Let's break this down:
 
 * `caffeinate -i` tells macOS that it should **not sleep** while the process which follows (an `ssh` connection in this case) is running. Sleep mode stops most network activity.
 
-* the `ssh` options `ServerAliveInterval` & `ServerAliveCountMax` instruct your `ssh` client to send *"keep-alive"* messages to the server at 60 second intervals, and not to *"give up"* until 10 messages go un-answered. 
+* the `ssh` options `ServerAliveInterval` & `ServerAliveCountMax` instruct your `ssh` client to send *"keep-alive"* messages to the server at 60 second intervals, and not to *"give up"* until 10 messages go un-answered. These values (60, 10) are not hard-and-fast settings, but merely guides - so feel free to  change them if you're motivated. 
 
 * Both are needed to ensure the SSH connection remains alive: `caffeinate` prevents macOS from squashing he connection when it goes to sleep, and the *"keep-alives"* maintain the SSH client-to-server connection when there is little or no activity. 
 
