@@ -48,6 +48,8 @@
 
 [24. Cleaning and Restoration of iTerm2](#24-cleaning-and-restoration-of-iterm2)  
 
+[25. "client_loop: send disconnect: Broken pipe"](#25-client_loop-send-disconnect-broken-pipe) 
+
 [OTHER SOURCES:](#other-sources) 
 
 <hr>
@@ -512,6 +514,18 @@ Related to this is iTerm2's [Dynamic Profiles](https://iterm2.com/documentation-
 
 
 
+### 25. "client_loop: send disconnect: Broken pipe"
+
+Irritating, no? If your SSH connections are [*dropping like flies*](https://idioms.thefreedictionary.com/drop+like+flies), you can stop that by running your SSH connections under the native `caffeinate` command: 
+
+```zsh
+% caffeinate -i ssh user@host
+```
+
+This should maintain an SSH connection for as long as you need it - hours, days, weeks, etc. It requires *no additional software*, and will maintain other network connections and long-running processes even when the lid is closed on a MacBook. [You can read more details on this neighboring page.](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MaintainLongRunningNetworkConnections.md) 
+
+
+
 <hr>
 
 
@@ -527,7 +541,15 @@ Related to this is iTerm2's [Dynamic Profiles](https://iterm2.com/documentation-
 - [On Catalina, how can a cronjob get permission to touch files on a USB disk?](https://apple.stackexchange.com/questions/372768/on-catalina-how-can-a-cronjob-get-permission-to-touch-files-on-a-usb-disk) 
 - [List All Environment Variables](https://www.cyberciti.biz/faq/linux-list-all-environment-variables-env-command/) - a nixCraft article. 
 - [Q&A: Restoring iTerm2 to default values](https://apple.stackexchange.com/questions/164821/restoring-iterm2-to-default-values) 
-- [Q&A: How to export iTerm2 Profiles](https://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles) - the antidote?
+- [Q&A: How to export iTerm2 Profiles](https://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles) - the antidote? 
+- [Keeping SSH Sessions Alive After Disconnect](https://www.tecmint.com/keep-remote-ssh-sessions-running-after-disconnection/): ideas to help w/ SSH disconnects; incl `screen` & `tmux`.
+- [Using the Debug Mode in SSH to ID Connection Issues](https://www.tecmint.com/enable-debugging-mode-in-ssh/); done from client side.
+- [Buttloads of SSH How-To From TecMint](https://www.tecmint.com/category/ssh/); all sorts of uses for SSH! 
+- [Q&A: How to create a bash script to check the SSH connection?](https://stackoverflow.com/questions/1405324/how-to-create-a-bash-script-to-check-the-ssh-connection) 
+- [Six (6) commands for Checking SSH Connections](https://www.golinuxcloud.com/list-check-active-ssh-connections-linux/) 
+- [A script can be run by sshd when a specified user logs in](https://askubuntu.com/a/397696/831935); or this [simpler approach](https://askubuntu.com/questions/975327/how-to-connect-ssh-and-run-shell-script).
+- [Set macOS `Standby` parameters](https://www.howtogeek.com/260478/how-to-choose-when-your-mac-hibernates-or-enters-standby/). Standby mode's role in dropping SSH connections?
+- [Using `pmset` for Power Management in macOS](https://eclecticlight.co/2017/01/20/power-management-in-detail-using-pmset/) 
 
 <!--- 
 
