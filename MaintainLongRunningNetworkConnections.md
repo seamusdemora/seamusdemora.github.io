@@ -13,7 +13,7 @@ Here's what you **should** do to keep your SSH network connections viable:
 % 
 % caffeinate -i ssh -o ServerAliveInterval=60 -o ServerAliveCountMax=10 userid@host
 % 
-% # Alternatively, edit your ~/ssh/config file to add these options (-o), and then:
+% # Alternatively, edit your ~/.ssh/config file to add these options (-o), and then:
 % 
 % caffeinate -i ssh userid@host 
 ```
