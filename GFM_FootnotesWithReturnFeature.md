@@ -1,6 +1,6 @@
 ## Adding Footnotes to GFM With a *Return<sup id="a1">[1](#f1)</sup>* Feature
 
-[Footnotes](https://en.wikipedia.org/wiki/Note_(typography)) are a long-lived and useful device in writing - especially so for technical writing. They provide a convenient means for communicating useful information to the reader without interrupting the flow of the main narrative. For example to cite a source for quote or a fact, or to expand an item to provide additional information. 
+[Footnotes](https://en.wikipedia.org/wiki/Note_(typography)) are a long-lived and useful device in writing - especially so for technical writing. They provide a convenient means for communicating useful information to the reader without interrupting the flow of the main narrative. For example to cite a source for a direct quote, or a fact or to expand an item to provide additional information. 
 
 However, there is this **one thing** that has always bothered me about footnotes: ***It's sometimes difficult or awkward to get back to the main narrative where the footnote appeared.*** This is particularly true in documents that are rendered online - or in some *electronic* format such as [*hypertext*](https://en.wikipedia.org/wiki/Hypertext). In a book, my fingers can act as an anchor to avoid losing my place in the main narrative (e.g. with *endnotes*, or in a *bibliography*). However, in an [electronic document](https://en.wikipedia.org/wiki/Electronic_document), the closest thing to *fingers* is the [back-button](https://www.techopedia.com/definition/27450/back-button) in my browser.  
 
