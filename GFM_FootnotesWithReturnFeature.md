@@ -33,3 +33,10 @@ This is useful - for me at least. But I don't think it's *permanent*; it could d
 ---
 
 <b id="f1">1</b> ... check out the *return-from-a-footnote feature* by clicking the following icon ... [↩](#a1) 
+
+#### Addendum:
+
+Here's a ***faux<a title="faux = false"><sup>note</sup></a> tooltip*** created using a bit of embedded HTML:
+
+​    `<a title="faux = false"><sup>note</sup></a>` 
+
