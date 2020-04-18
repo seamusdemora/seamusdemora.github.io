@@ -22,7 +22,7 @@ And finally, to the point of this recipe: I learned it's not necessary to create
 
 And so, if you're like me, weary of the constant stream of crap the media outlets would hose you with, you should know that considerable relief is available with almost no effort on your part. [Tranquility Reader](https://tranquility.ushnisha.com/) for Firefox, and  [Just Read](https://github.com/ZachSaucier/Just-Read) for Chrome. 
 
------
+---
 
 <b id="f1">Note1:</b> Contrary to the impression one might get from reading this, I have nothing at all against businesses who seek to generate revenue. It is after all, the sole motivation of most for-profit business formation, and the backbone of a healthy free-market economy. But note that ***we have not contracted with these swine to hoover up our personal data, deposit 'tracking cookies' on the computers we own and sell the data they collect on us to any third party who will pay the price.*** Consequently I have no compunction about avoiding their *shitty tricks* with some of my own! [↩](#a1)   
 
