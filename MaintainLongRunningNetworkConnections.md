@@ -1,4 +1,4 @@
-## "client_loop: send disconnect: Broken pipe" 
+## "client_loop: send disconnect: Broken pipe"
 
 ### Stop MacOS From Dropping SSH (Network) Connections
 
@@ -59,6 +59,7 @@ Two items to note: *Activity Monitor* is showing a filtered search on **caffeina
 * This is a work-in-process. The process here is the best one I've found so far, but not without its *quirks*. There are many things going on in macOS that can affect the reliability of an SSH connection (or any network connection), and in the absence of good documentation from Apple these must be learned through trial-and-error. Using `caffeinate` as described below has definitely made a significant improvement - in my usage at least, but used alone, it may not completely solve *"the problem"*. 
 * Re. third-party solutions: No third-party solutions will be considered here. I've got nothing against them, but after paying Apple's price for a Macbook Pro, resorting to a third-party solution for this seems a bit like having to buy seats for a new Rolls Royce in the aftermarket. 
 * Suggestion: Don't bother with the myriad suggestions posted on the Internet that counsel making changes to your Mac's Power Management settings with the `pmset` command-line utility. Let me explain: `pmset` has some useful features, but Apple has provided only [*sparse*](https://idioms.thefreedictionary.com/piss-poor) documentation on it (`man pmset`). And even that is sadly out-of-date: as of 1Q 2020 `man pmset` shows it was last updated in *2012* !  And after repeated failed attempts to find any Apple-sourced documentation for `pmset` on Apple's websites, I've been forced to conclude Apple has simply chosen not to disclose how `pmset` works. Consequently - I feel that using `pmset` is unreliable at best, risky at worst. But get over it - it's just another way in which Apple [*respects*](https://idioms.thefreedictionary.com/screw+over) their customers. 
+* The clown show with Apple's power management software continues unabated: [ref 1](https://mrmacintosh.com/10-15-4-update-wake-from-sleep-kernel-panic-in-16-mbpro-2019/), [ref 2](https://sixcolors.com/post/2020/04/apple-battery-health-management/). [ref 3](https://mrmacintosh.com/10-15-4-supplemental-update-bricking-small-number-of-t2-macs/). It's really no wonder we have this dysfunction; what's amazing is that networking works at all in macOS!
 * [↩ return to footnote link](#a1)  
 
 
