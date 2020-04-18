@@ -20,6 +20,7 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 |[Shit Filtering](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/FilteringWebPagesForTheGoodStuff.md) |  How to clean up content from sketchy publishers  |
 |[Adding MacPorts](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md) | A few tips for adding MacPorts |
 |[Curing Dropped Network Connections](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MaintainLongRunningNetworkConnections.md) | Tired of dropped SSH connections?  |
+| [Fun With Footnotes in GFM](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/GFM_FootnotesWithReturnFeature.md) | How to create footnotes with a *return* feature |
 
 ***
 
@@ -27,10 +28,6 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 <!--   From this line forward are comments. Comments are not displayed in the browser.  
 
 NOTE: The "hidden" tag does not work at GitHub...  <p hidden>This paragraph should be hidden.</p>  
-
-You can use the [editor on GitHub](https://github.com/seamusdemora/seamus.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-    Q: Can you also use the GitHubDesktop app?
 
 
 Let's try a table:
