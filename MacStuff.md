@@ -48,7 +48,11 @@
 
 [24. Cleaning and Restoration of iTerm2](#24-cleaning-and-restoration-of-iterm2)  
 
-[25. "client_loop: send disconnect: Broken pipe"](#25-client_loop-send-disconnect-broken-pipe) 
+[25. "client_loop: send disconnect: Broken pipe"](#25-client_loop-send-disconnect-broken-pipe)
+
+[26. Re-Installing macOS](#26-potentially-useful-info-for-re-Installing-macos)
+
+[27. Tools for Isolating Hardware Faults in Macs](#27-tools-for-isolating-hardware-faults-in-macs)
 
 [OTHER SOURCES:](#other-sources) 
 
@@ -498,7 +502,9 @@ Remove the following:
 10. /System/Library/Receipts/com.apple.pkg.XcodeSystemResources.bom
 11. /System/Library/Receipts/com.apple.pkg.XcodeSystemResources.plist 
 
-Installing an older version of XCode is a bit different - you can't get it from the AppStore. Fortunately, [MacPorts keeps a list of downloads](https://www.macports.org/install.php), and a decent set of instructions. Once that task is accomplished, you have an *upgraded* XCode install that supports MacPorts (at least until Apple decides to break things again).
+Installing an older version of XCode is a bit different - you can't get it from the AppStore. Fortunately, [MacPorts keeps a list of downloads](https://www.macports.org/install.php), and a decent set of instructions. Once that task is accomplished, you have an *upgraded* XCode install that supports MacPorts (at least until Apple decides to break things again). 
+
+Oh, one other thing... checking your version of XCode Tools is reasonably straightforward, but try to find the version of XCode Command Line Tools. Yeah... frustrating, isn't it? 
 
 ### 24. Cleaning and Restoration of iTerm2
 
@@ -526,7 +532,22 @@ This should maintain an SSH connection for as long as you need it - hours, days,
 
 
 
-<hr>
+### 26. Potentially Useful Info for Re-Installing macOS
+
+Lest I be accused of ignoring the occasional and potentially useful item that Apple publishes, here's one that might come in handy in a disaster recovery context: [Creating a Bootable Installer for macOS](https://support.apple.com/en-us/HT201372). 
+
+
+
+### 27. Tools for Isolating Hardware Faults in Macs
+
+For hardware built prior to June, 2013, use the [Apple Hardware Test](https://support.apple.com/en-us/HT201257) 
+
+For hardware built after June, 2013, use [Apple Diagnostics](https://support.apple.com/en-us/HT202731). 
+
+
+
+---
+
 
 
 ### OTHER SOURCES:
