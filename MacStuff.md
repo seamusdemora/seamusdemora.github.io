@@ -140,7 +140,7 @@ d. `open` also has some options specific to text editing; for example to open a 
 $ man open | col -b | open -tf  
 ```
 
-Which can be quite useful for perusing the system documentation offline (in this example, the `man` page for `open`), and/or making additions or changes to it either for your own use, or to share. 
+Which can be quite useful for perusing the system documentation offline (in this example, the `man` page for `open`), and/or making additions or changes to it either for your own use, or to share.   [↩](#table-of-contents)
 
 ### 4. How to Schedule an App to Run At a Specified Time?
 
@@ -181,7 +181,7 @@ You'll recognize the `open` command and the parameters that follow it from the e
 00 12 * * *
 ```
 
-This is simply the schedule information. It tells `cron` **when** to execute the command that follows. If you want to re-schedule for a time other that 12:00 noon, all you need change is the time. `man crontab` will guide you in the options for specifying the time and date. Until you become familiar with the syntax, you should use the [crontab guru](https://crontab.guru/#00_12_*_*_*) to check your schedule. You'll learn that  [`cron`'s simple syntax is quite flexible](https://crontab.guru/#5_4-7_1-28/2_1-9/3_*).  
+This is simply the schedule information. It tells `cron` **when** to execute the command that follows. If you want to re-schedule for a time other that 12:00 noon, all you need change is the time. `man crontab` will guide you in the options for specifying the time and date. Until you become familiar with the syntax, you should use the [crontab guru](https://crontab.guru/#00_12_*_*_*) to check your schedule. You'll learn that  [`cron`'s simple syntax is quite flexible](https://crontab.guru/#5_4-7_1-28/2_1-9/3_*).    [↩](#table-of-contents)
 
 ### 5. How to Check the Size of a Directory?
 
@@ -196,6 +196,8 @@ For a network drive that's mounted:
 $ du -sh /Volumes/sharename/path/to/directory  
 ```
 
+[↩](#table-of-contents)
+
 ### 6. How to Check Battery Status from the Command Line?
 
 The `pmset` utility provides a host of information, and allows manipulation of ***power management settings*** from the command line. For example, to get battery status: 
@@ -206,7 +208,7 @@ Now drawing from 'AC Power'
  -InternalBattery-0 (id=1234567)	100%; charged; 0:00 remaining present: true
 ```
 
-The `-g`  (get) option provides data on current settings and logfiles. It can be run with normal user privileges. `pmset`can also change settings (e.g. standby, sleep, spin-down of disks, display, etc.), but those require `root`/`su` privileges. Documentation is available from `man pmset`.  
+The `-g`  (get) option provides data on current settings and logfiles. It can be run with normal user privileges. `pmset`can also change settings (e.g. standby, sleep, spin-down of disks, display, etc.), but those require `root`/`su` privileges. Documentation is available from `man pmset`.    [↩](#table-of-contents)
 
 ### 7. How to Send Files to the Trash from the macos Command Line?
 
@@ -219,6 +221,8 @@ It's written in Python, and *open source*. If you want to "integrate" `trash` in
 - ```
   $ chmod a+rx /usr/local/bin/trash
   ```
+
+[↩](#table-of-contents)
 
 ### 8. How to Find the Hardware Architecture and OS Version for My Mac?
 
@@ -278,9 +282,11 @@ Software:
       Boot Mode: Normal
 ```
 
+[↩](#table-of-contents)
+
 ### 9. How to Combine/Concatenate Multiple PDFs?
 
-[Apple has this one covered](https://support.apple.com/guide/mac-help/combine-files-into-a-pdf-mchl21ac2368/mac), and it's easy if you know ***the trick***. You should also know that the `Quick Actions > Create PDF` option in `Finder` may not show up! When you move the pointer over `Quick Actions` in `Finder` you may see only the option `Customize...`. If that's the case, click `Customize...`, then tick the box next to `Create PDF`. This will add `Create PDF` as an option for `Quick Actions`. 
+[Apple has this one covered](https://support.apple.com/guide/mac-help/combine-files-into-a-pdf-mchl21ac2368/mac), and it's easy if you know ***the trick***. You should also know that the `Quick Actions > Create PDF` option in `Finder` may not show up! When you move the pointer over `Quick Actions` in `Finder` you may see only the option `Customize...`. If that's the case, click `Customize...`, then tick the box next to `Create PDF`. This will add `Create PDF` as an option for `Quick Actions`.   [↩](#table-of-contents)
 
 ### 10. How to Search My Command History in `Terminal`?
 
@@ -288,7 +294,7 @@ Here are some useful techniques:
 
 - Type `control-r` at the command prompt. This brings up a *search* prompt: `(reverse-i-search):`.  Type whatever you can recall of a previously used command (e.g. `etc` ). As you type each character, the search continues. You can iterate back through all of the search results with `control-r`. When you've found the command you were looking for, hit the `enter` key to run it again "as-is", or make edits to the command (*use either of the left-right arrow keys*) before you run it. If you want to stop searching without running a command, type `control-g`. 
 - You can use the `history` command! `history` outputs the entire history to `stdout`. As such, you can *filter* the history by piping it to (e.g.) `grep`: `history | grep etc`, or redirect it to a file (e.g.`history > mycmdhistory.txt`), or any other command (e.g. `history | tail -5`).
-- Of course, you can still use the *up-and-down arrow keys* to step forward (or backward) through the command history, but if your command history is extensive, this will take time.  
+- Of course, you can still use the *up-and-down arrow keys* to step forward (or backward) through the command history, but if your command history is extensive, this will take time.    [↩](#table-of-contents)
 
 ### 11. How to Disable Auto-Booting When Opening the Macbook Lid?
 
@@ -314,7 +320,7 @@ What other NVRAM settings are available for changing?
 nvram -p
 ```
 
-will list available options... but it's very messy! 
+will list available options... but it's very messy!   [↩](#table-of-contents)
 
 ### 12. How to Copy `command line` Output to Pasteboard/Clipboard?
 
@@ -332,7 +338,7 @@ Similarly, using `pbpaste` you can paste text you've copied to a file; e.g.
 $ pbpaste > newfile.txt
 ```
 
-See `man pbcopy` for further details.
+See `man pbcopy` for further details.   [↩](#table-of-contents)
 
 ### 14. How to Show Hidden Files in Finder?
 
@@ -360,6 +366,8 @@ Opening a new `Finder` window will reveal the hidden files and folders. To retur
 $ defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder
 ```
 
+[↩](#table-of-contents)
+
 ### 15. How to Recover a Bodged `git` Repository?
 
 Recently, I inadvertently deleted all of my *local* GitHub repositories. In a comical sequence of poor decisions I made things worse by copying the entire repo from a backup, but it was not in sync with the repos on GitHub. Further attempts to resolve the issues only made things worse. Then it dawned on me that *this what `git` was made for!* A quick bit of research provided the answer - from the **CLI**:
@@ -374,7 +382,7 @@ A few things to review beforehand! :
 
 * execute these commands from the local directory where you want your repo to live, 
 * The `remote` repository is the origin you want (in my case, the remote repo at GitHub was my `origin`) 
-* The `branch` you want to restore is the `master` branch
+* The `branch` you want to restore is the `master` branch    [↩](#table-of-contents)
 
 ### 16. How to Restore the "Lost Startup Chime"?
 
@@ -390,7 +398,7 @@ sudo nvram StartupMute=%01
 
 [More details and *Chime Trivia* can be found here.](https://mrmacintosh.com/how-to-enable-the-mac-startup-chime-on-your-2016-macbook-pro/) 
 
-And if you're into [*mac nostalgia*](https://duckduckgo.com/?t=ffnt&q=mac+nostalgia&ia=web) you can [get all the default macOS wallpapers in 5K!](https://512pixels.net/projects/default-mac-wallpapers-in-5k/) 
+And if you're into [*mac nostalgia*](https://duckduckgo.com/?t=ffnt&q=mac+nostalgia&ia=web) you can [get all the default macOS wallpapers in 5K!](https://512pixels.net/projects/default-mac-wallpapers-in-5k/)   [↩](#table-of-contents)
 
 ### 17. Weird Behavior With zsh
 
@@ -424,9 +432,11 @@ As most of you will be aware, Apple has made the decision to change the default 
   100  120k    0  120k    0     0   204k      0 --:--:-- --:--:-- --:--:--  204k
   ```
 
+[↩](#table-of-contents)
+
 ### 18. How to Hide All Open Windows on a Desktop? ('Show Desktop')
 
-<kbd>fn</kbd><kbd>F11</kbd> - this will *toggle* Show & Hide all app windows on a desktop. 
+<kbd>fn</kbd><kbd>F11</kbd> - this will *toggle* Show & Hide all app windows on a desktop.   [↩](#table-of-contents)
 
 ### 19. How to Set Default Editor for CLI/Terminal App
 
@@ -436,13 +446,15 @@ If you run a command that invokes a text editor (e.g. `crontab -e`), you may fin
 export EDITOR=nano
 ```
 
-Enter this at the command line in `Terminal.app`. From this point forward, anytime you run `crontab -e`, your `crontab` will open in `nano`instead of `vi`. If you want to try `vi` later, simply `export EDITOR=vi`.
+Enter this at the command line in `Terminal.app`. From this point forward, anytime you run `crontab -e`, your `crontab` will open in `nano`instead of `vi`. If you want to try `vi` later, simply `export EDITOR=vi`.   [↩](#table-of-contents)
 
 ### 20. How to See Your Environment Variables
 
 ```zsh
 printenv | less
 ```
+
+[↩](#table-of-contents)
 
 ### 21. How to Enable `cron` on Catalina
 
@@ -457,7 +469,7 @@ In Catalina, Apple has *"enhanced security"* by disallowing operations that have
   * Select the Full Disk Access item in the listing on the left side; this populates a list of apps on the right side
   * From the Finder window above, drag and drop the `cron` app into the app list on the right. Make sure it is checked to enable access.
 
-*Opinion: I wonder if the primary effect of Apple's "enhanced security" changes in Catalina has been to put a much larger burden on some users by forcing them to activate these work-arounds to get their tasks completed?*
+*Opinion: I wonder if the primary effect of Apple's "enhanced security" changes in Catalina has been to put a much larger burden on some users by forcing them to activate these work-arounds to get their tasks completed?*    [↩](#table-of-contents)
 
 ### 22. Getting Up to Speed on `zsh`
 
@@ -471,6 +483,8 @@ Apple has decided that the most-commonly-used shell (`bash`) should no longer be
 ```zsh
 chsh -s /bin/bash
 ```
+
+[↩](#table-of-contents)
 
 ### 23. Upgrade Xcode on High Sierra... or Why Does Apple Crap On Us?
 
@@ -494,7 +508,7 @@ Remove the following:
 
 Installing an older version of XCode is a bit different - you can't get it from the AppStore. Fortunately, [MacPorts keeps a list of downloads](https://www.macports.org/install.php), and a decent set of instructions. Once that task is accomplished, you have an *upgraded* XCode install that supports MacPorts (at least until Apple decides to break things again). 
 
-Oh, one other thing... checking your version of XCode Tools is reasonably straightforward, but try to find the version of XCode Command Line Tools. Yeah... frustrating, isn't it? 
+Oh, one other thing... checking your version of XCode Tools is reasonably straightforward, but try to find the version of XCode Command Line Tools. Yeah... frustrating, isn't it?   [↩](#table-of-contents)
 
 ### 24. Cleaning and Restoration of iTerm2
 
@@ -506,7 +520,7 @@ Oh, one other thing... checking your version of XCode Tools is reasonably straig
 
 **Know this:** This clears ***ALL*** settings in iTerm2. If you want to create a *restore point* for your iTerm2 settings, you may find some help in [this Q&A on Stack Overflow](https://stackoverflow.com/a/23356086) - be sure to read all the comments! 
 
-Related to this is iTerm2's [Dynamic Profiles](https://iterm2.com/documentation-dynamic-profiles.html) which are saved in one or more plist files formatted as JSON or XML (or in binary). Profile changes are made immediately (thus, *dynamic*).
+Related to this is iTerm2's [Dynamic Profiles](https://iterm2.com/documentation-dynamic-profiles.html) which are saved in one or more plist files formatted as JSON or XML (or in binary). Profile changes are made immediately (thus, *dynamic*).   [↩](#table-of-contents)
 
 ### 25. "client_loop: send disconnect: Broken pipe"
 
@@ -516,17 +530,17 @@ Irritating, no? If your SSH connections are [*dropping like flies*](https://idio
 % caffeinate -i ssh user@host
 ```
 
-This should maintain an SSH connection for as long as you need it - hours, days, weeks, etc. It requires *no additional software*, and will maintain other network connections and long-running processes even when the lid is closed on a MacBook. [You can read more details on this neighboring page.](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MaintainLongRunningNetworkConnections.md) 
+This should maintain an SSH connection for as long as you need it - hours, days, weeks, etc. It requires *no additional software*, and will maintain other network connections and long-running processes even when the lid is closed on a MacBook. [You can read more details on this neighboring page.](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MaintainLongRunningNetworkConnections.md)  [↩](#table-of-contents)
 
 ### 26. Potentially Useful Info for Re-Installing macOS
 
-Lest I be accused of ignoring the occasional and potentially useful item that Apple publishes, here's one that might come in handy in a disaster recovery context: [Creating a Bootable Installer for macOS](https://support.apple.com/en-us/HT201372). 
+Lest I be accused of ignoring the occasional and potentially useful item that Apple publishes, here's one that might come in handy in a disaster recovery context: [Creating a Bootable Installer for macOS](https://support.apple.com/en-us/HT201372). [↩](#table-of-contents)
 
 ### 27. Tools for Isolating Hardware Faults in Macs
 
 For hardware built prior to June, 2013, use the [Apple Hardware Test](https://support.apple.com/en-us/HT201257) 
 
-For hardware built after June, 2013, use [Apple Diagnostics](https://support.apple.com/en-us/HT202731). 
+For hardware built after June, 2013, use [Apple Diagnostics](https://support.apple.com/en-us/HT202731). [↩](#table-of-contents)
 
 ### 28. The Strange Case of `airport`
 
