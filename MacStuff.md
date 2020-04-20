@@ -54,6 +54,8 @@
 
 [27. Tools for Isolating Hardware Faults in Macs](#27-tools-for-isolating-hardware-faults-in-macs)
 
+[28. The Strange Case of `airport`](#28-the-strange-case-of-airport)
+
 [OTHER SOURCES:](#other-sources) 
 
 <hr>
@@ -106,8 +108,6 @@ When used with the `-w` argument, sleep will be inhibited as long as the process
 Note also that Process ID's are available from `Activity Monitor`, or can be listed in the terminal by entering `ps -Al` 
 
 ​    <b id="f1">Note1:</b> *Know that `caffeinate` will not prevent a scheduled [automatic logout](http://osxdaily.com/2013/03/23/automatically-log-out-of-a-mac-after-a-period-of-inactivity/)*. [↩](#a1) 
-
-
 
 ### 3. How to Start (`open`) an App From the macOS Command Line?
 
@@ -428,8 +428,6 @@ As most of you will be aware, Apple has made the decision to change the default 
 
 <kbd>fn</kbd><kbd>F11</kbd> - this will *toggle* Show & Hide all app windows on a desktop. 
 
-
-
 ### 19. How to Set Default Editor for CLI/Terminal App
 
 If you run a command that invokes a text editor (e.g. `crontab -e`), you may find yourself in the `vi` editor. `vi`is fine once you're used to it, but proficiency in `vi`will require time and effort. If you'd prefer to avoid learning `vi`, you can easily set your default to a more user-friendly editor like `nano`: 
@@ -440,15 +438,11 @@ export EDITOR=nano
 
 Enter this at the command line in `Terminal.app`. From this point forward, anytime you run `crontab -e`, your `crontab` will open in `nano`instead of `vi`. If you want to try `vi` later, simply `export EDITOR=vi`.
 
-
-
 ### 20. How to See Your Environment Variables
 
 ```zsh
 printenv | less
 ```
-
-
 
 ### 21. How to Enable `cron` on Catalina
 
@@ -465,8 +459,6 @@ In Catalina, Apple has *"enhanced security"* by disallowing operations that have
 
 *Opinion: I wonder if the primary effect of Apple's "enhanced security" changes in Catalina has been to put a much larger burden on some users by forcing them to activate these work-arounds to get their tasks completed?*
 
-
-
 ### 22. Getting Up to Speed on `zsh`
 
 Apple has decided that the most-commonly-used shell (`bash`) should no longer be the default shell for macOS, so in Catalina they have made `zsh` the default. The motivation for this decision is, uh... interesting, I think - if this is true.  IMO, `zsh` is a hopped-up version of `bash` - a version that appeals mostly to the hyperactive, or maybe even amphetamine users. But that's just my opinion, man. I'll try anything once, and here's a shortlist to get up-to-speed on `zsh`: 
@@ -479,8 +471,6 @@ Apple has decided that the most-commonly-used shell (`bash`) should no longer be
 ```zsh
 chsh -s /bin/bash
 ```
-
-
 
 ### 23. Upgrade Xcode on High Sierra... or Why Does Apple Crap On Us?
 
@@ -518,8 +508,6 @@ Oh, one other thing... checking your version of XCode Tools is reasonably straig
 
 Related to this is iTerm2's [Dynamic Profiles](https://iterm2.com/documentation-dynamic-profiles.html) which are saved in one or more plist files formatted as JSON or XML (or in binary). Profile changes are made immediately (thus, *dynamic*).
 
-
-
 ### 25. "client_loop: send disconnect: Broken pipe"
 
 Irritating, no? If your SSH connections are [*dropping like flies*](https://idioms.thefreedictionary.com/drop+like+flies), you can stop that by running your SSH connections under the native `caffeinate` command: 
@@ -530,19 +518,27 @@ Irritating, no? If your SSH connections are [*dropping like flies*](https://idio
 
 This should maintain an SSH connection for as long as you need it - hours, days, weeks, etc. It requires *no additional software*, and will maintain other network connections and long-running processes even when the lid is closed on a MacBook. [You can read more details on this neighboring page.](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MaintainLongRunningNetworkConnections.md) 
 
-
-
 ### 26. Potentially Useful Info for Re-Installing macOS
 
 Lest I be accused of ignoring the occasional and potentially useful item that Apple publishes, here's one that might come in handy in a disaster recovery context: [Creating a Bootable Installer for macOS](https://support.apple.com/en-us/HT201372). 
-
-
 
 ### 27. Tools for Isolating Hardware Faults in Macs
 
 For hardware built prior to June, 2013, use the [Apple Hardware Test](https://support.apple.com/en-us/HT201257) 
 
 For hardware built after June, 2013, use [Apple Diagnostics](https://support.apple.com/en-us/HT202731). 
+
+### 28. The Strange Case of `airport`
+
+I've seen references to **"Airport"** in various articles for years without knowing what they were on about. Yeah - there's the odd app called [`AirPort Utility`](https://support.apple.com/guide/aputility/welcome/mac) in the folder labeled `Other` in `Launchpad`- the folder where they put a few other seldom-used apps. But as far as I knew, this  `AirPort Utility` was used *only* for light administrative duty on my *old-and-now-no-longer-manufactured* [Time Capsule](https://en.wikipedia.org/wiki/AirPort_Time_Capsule). I was amazed to see that it was still included in Catalina - Apple being so fond of casting out legacy items.
+
+But as it turns out, there's a *command-line utility* named `airport` that's been around for quite some time - maybe since Apple first embraced wifi? It may be useful for exercising a bit of **administrative control** over wifi, but I'll postpone that discussion. This note is simply an introduction.
+
+The **strange** things about `airport` are its location in the filesystem, and the stupefying lack of documentation. Even by Apple's low standards for documentation, `man airport` is laughable! If you never use `airport`, you should at least enter `man airport` from the command line - what ***were*** these wankers thinking?! Equally laughable is the output of `airport -h` - the so-called "help menu"! 
+
+As for its location: `/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport` 
+
+Yes - seriously - that's where it is - at least for Catalina & Mojave. Older versions of macOS have it in a different, but equally odd location. If you want to try `airport` you could start by reading [this post on OSX Daily](https://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/).  I **hope** to find a use for `airport` in conjunction with `networksetup` to overcome the *promising-but-utterly-useless* `Network` configuration tool in the `System Preferences` app - but that's for another day.  
 
 
 
@@ -572,6 +568,10 @@ For hardware built after June, 2013, use [Apple Diagnostics](https://support.app
 - [Set macOS `Standby` parameters](https://www.howtogeek.com/260478/how-to-choose-when-your-mac-hibernates-or-enters-standby/). Standby mode's role in dropping SSH connections?
 - [How to Keep Your MacBook Awake While Closed](https://www.howtogeek.com/278943/how-to-keep-your-macbook-awake-while-closed/); The HTG author missed the boat on this one.
 - [Using `pmset` for Power Mgmt in macOS](https://eclecticlight.co/2017/01/20/power-management-in-detail-using-pmset/): Some advice from the Eclectic Light Company blog. 
+- [airport – the Little Known Command Line Wireless Utility for Mac](https://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/) - from OSX Daily.
+- [A series of articles re the `networksetup` command](https://osxdaily.com/tag/networksetup/) - from OSX Daily.
+- [`networksetup` - YALKCLWUM ](https://yourmacguy.wordpress.com/2008/08/07/networksetup-command/) 
+- [Wilson Mar's list of macOS command-line utilities](https://wilsonmar.github.io/mac-utilities/) - Extensive! 
 
 <!--- 
 
