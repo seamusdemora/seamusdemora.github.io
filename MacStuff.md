@@ -546,7 +546,7 @@ For hardware built after June, 2013, use [Apple Diagnostics](https://support.app
 
 ### 28. Insert Symbols in macOS
 
-macOS has a large set of symbols (⌘, ⌃, ␠, ↑ + hundreds more) that can be inserted into most documents you create (or edit). Use your keyboard <kbd>command</kbd><kbd>control</kbd><kbd>space</kbd> (or, ⌘, ⌃, ␠) to see the entire pallet of symbols. Click on the one you wish to use, *et c'est voila*.   [↑](#table-of-contents) 
+macOS has a large set of symbols (⌘, ⌃, ␠, ↑ + hundreds more) that can be inserted into most documents you create (or edit). Use your keyboard <kbd>command</kbd><kbd>control</kbd><kbd>space</kbd> (or, ⌘, ⌃, ␠) to see the entire pallet of symbols. Click on the one you wish to use, *et c'est voilà*.   [↑](#table-of-contents) 
 
 ### 29. The Strange Case of `airport`
 
