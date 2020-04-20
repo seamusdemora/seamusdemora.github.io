@@ -64,3 +64,10 @@ Two items to note: *Activity Monitor* is showing a filtered search on **caffeina
 
 
 
+---
+
+### REFERENCES:
+
+* [airport – the Little Known Command Line Wireless Utility for Mac](https://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/) - from OSX Daily.
+* [macOS Networking Articles](https://osxdaily.com/tag/networking/) - from OSX Daily.
+* [macOS WiFi Articles](https://osxdaily.com/tag/wi-fi/) - from OSX Daily. 
