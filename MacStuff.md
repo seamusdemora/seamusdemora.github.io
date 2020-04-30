@@ -56,7 +56,9 @@
 
 [28. Insert Symbols in macOS](#28-insert-symbols-in-macos)
 
-[29. The Strange Case of `airport`](#29-the-strange-case-of-airport)
+[29. The Elusive Symbol for Degree°](#29-the-elusive-symbol-for-degree)
+
+[30. The Strange Case of `airport`](#30-the-strange-case-of-airport)
 
 [OTHER SOURCES:](#other-sources) 
 
@@ -544,11 +546,25 @@ For hardware built prior to June, 2013, use the [Apple Hardware Test](https://su
 
 For hardware built after June, 2013, use [Apple Diagnostics](https://support.apple.com/en-us/HT202731). [↑](#table-of-contents)
 
+
+
 ### 28. Insert Symbols in macOS
 
 macOS has a large set of symbols (⌘, ⌃, ␠, ↑ + hundreds more) that can be inserted into most documents you create (or edit). Use your keyboard <kbd>command</kbd><kbd>control</kbd><kbd>space</kbd> (or, ⌘, ⌃, ␠) to see the entire pallet of symbols. Click on the one you wish to use, *et c'est voilà*.   [↑](#table-of-contents) 
 
-### 29. The Strange Case of `airport`
+
+
+### 29. The Elusive Symbol for *Degree*
+
+Several ways to do this: 
+
+* For the GUI people: <kbd>control</kbd><kbd>command</kbd><kbd>space</kbd> (as above!)
+* Keyboard version (tiny): <kbd>option</kbd><kbd>k</kbd> (note: actually the *diacritical* mark) 
+* **Keyboard version (normal):**  <kbd>shift</kbd><kbd>option</kbd><kbd>8</kbd> 
+
+
+
+### 30. The Strange Case of `airport`
 
 I've seen references to **"Airport"** in various articles for years without knowing what they were on about. Yeah - there's the odd app called [`AirPort Utility`](https://support.apple.com/guide/aputility/welcome/mac) in the folder labeled `Other` in `Launchpad`- the folder where they put a few other seldom-used apps. But as far as I knew, this  `AirPort Utility` was used *only* for light administrative duty on my *old-and-now-no-longer-manufactured* [Time Capsule](https://en.wikipedia.org/wiki/AirPort_Time_Capsule). I was amazed to see that it was still included in Catalina - Apple being so fond of casting out legacy items.
 
