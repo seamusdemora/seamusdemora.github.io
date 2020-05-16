@@ -58,7 +58,9 @@
 
 [29. The Elusive Symbol for Degree°](#29-the-elusive-symbol-for-degree)
 
-[30. The Strange Case of `airport`](#30-the-strange-case-of-airport)
+[30. The Strange Case of `airport`](#30-the-strange-case-of-airport) 
+
+[31. Do You Want to Move That File, or Copy It?](#31-do-you-want-to-move-that-file-or-copy-it) 
 
 [OTHER SOURCES:](#other-sources) 
 
@@ -577,6 +579,22 @@ As for its location: `/System/Library/PrivateFrameworks/Apple80211.framework/Ver
 Yes - seriously - that's where it is - at least for Catalina & Mojave. Older versions of macOS have it in a different, but equally odd location. If you want to try `airport` you could start by reading [this post on OSX Daily](https://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/).  I **hope** to find a use for `airport` in conjunction with `networksetup` to overcome the *promising-but-utterly-useless* `Network` configuration tool in the `System Preferences` app - but that's for another day.  [↑](#table-of-contents) 
 
 
+
+### 31. Would You Like to Move That File, or Copy It?
+
+If you ever use `Finder`, this is for you. As you have likely noticed, there is an *unspoken rule* behind `Finder`*'s* behavior during ***drag-and-drop*** operations on files: 
+
+> On the same volume: **move is default**. On a different volume, **copy is default.**
+
+But these default behaviors are **not** what we want in some situations. Here's how to modify that: 
+
+>***Command*** key while dragging changes **copy *to* move**.
+>
+>***Option*** key while dragging changes **move *to* copy**. 
+
+ If you find it tedious to remember this, one option is to use `mv` or `cp` from the CLI.  [↑](#table-of-contents) 
+
+ 
 
 ---
 
