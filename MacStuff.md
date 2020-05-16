@@ -60,7 +60,7 @@
 
 [30. The Strange Case of `airport`](#30-the-strange-case-of-airport) 
 
-[31. Do You Want to Move That File, or Copy It?](#31-do-you-want-to-move-that-file-or-copy-it) 
+[31. Do You Want to Move That File, or Copy It?](#31-would-you-like-to-move-that-file-or-copy-it) 
 
 [OTHER SOURCES:](#other-sources) 
 
