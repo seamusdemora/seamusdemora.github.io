@@ -58,7 +58,7 @@ After connecting power to the APU.2C2, we can follow the boot process on our `sc
 
 
 
-```
+```bash
 login: root
 Password:
 Last login: Mon Jun  5 14:58:05 on ttyu0
@@ -84,11 +84,26 @@ Enter an option: 8
 
 root@OPNsense:~ # ls /dev/led
 igb0    igb1    igb2
-root@OPNsense:~ # echo f3 > /dev/led/igb0
+root@OPNsense:~ # echo f3 > /dev/led/igb0   # turn the LEDs ON & OFF
 root@OPNsense:~ # echo f2 > /dev/led/igb0
 root@OPNsense:~ # echo f1 > /dev/led/igb0
 root@OPNsense:~ # echo f0 > /dev/led/igb0
 root@OPNsense:~ # echo 0 > /dev/led/igb0
 root@OPNsense:~ # 
+```
+
+
+
+### Terminating `screen`: 
+
+When you're finished, you may wonder how to quit `screen`! As with all things, it's only difficult when you don't know how - here's how: 
+
+```bash
+$ screen -ls        # retrieves list of all screen sessions; for example:
+There is a screen on:
+	1172.ttys001.MyMacbookPro	(Attached)
+1 Socket in /var/folders/9t/_1d0fdt969x5s97bnfz40jdw0000gp/T/.screen.
+$ screen -XS 1172.ttys001.MyMacbookPro quit
+# c'est finis
 ```
 
