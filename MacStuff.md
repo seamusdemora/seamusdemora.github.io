@@ -626,6 +626,7 @@ But these default behaviors are **not** what we want in some situations. Here's 
 - [A series of articles re the `networksetup` command](https://osxdaily.com/tag/networksetup/) - from OSX Daily.
 - [`networksetup` - YALKCLWUM ](https://yourmacguy.wordpress.com/2008/08/07/networksetup-command/) 
 - [Wilson Mar's list of macOS command-line utilities](https://wilsonmar.github.io/mac-utilities/) - Extensive! 
+- [Obscure Terminal Features](https://scriptingosx.com/obscure/) from the Scripting OS X blog. Obscure - but also useful!
 
 <!--- 
 
