@@ -99,7 +99,7 @@ Secondly, `sudo` should NOT be considered as a tool to harden the system against
 As this was intended only as an introduction, this seems like a good point to stop. If you decide to try `sudo`, and you encounter difficulty, there are at least two StackExchange Q&A sites that may prove helpful: [SuperUser SE](https://superuser.com/) and [Unix&Linux SE](https://unix.stackexchange.com/) are two examples. In fact, this post was originally an Answer to a Question on the [Ask Different SE](https://apple.stackexchange.com/) site. Some of the comments to [that answer](https://apple.stackexchange.com/a/360272/149366) are interesting... if you get the idea from reading some of these comments that some Mac users are... uh, well, let's just say *different*, I'd be inclined to agree with you :)
 
 ---------------------
-Other potentially useful resources related to `sudo`: 
+### Other References for `sudo`: 
 
 1. [AppleGazette on editing the `sudoers` file](https://www.applegazette.com/mac/pro-terminal-commands-how-and-why-to-edit-sudoers-on-macos/)   
 2. [AP Lawrence on *Using `sudo`*](https://aplawrence.com/Basics/sudo.html)  
@@ -109,4 +109,5 @@ Other potentially useful resources related to `sudo`:
 6. [Good general (not Mac-specific) help from from Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-edit-the-sudoers-file-on-ubuntu-and-centos)  
 7. [The `sudo` command, Part 2 of a 4-part series on "*Demystifying root*"](https://scriptingosx.com/2018/04/demystifying-root-on-macos-part-2-the-sudo-command/) 
 8. [FYI, Feb 4, 2020: `sudo` security flaw patched - make sure your system is updated](https://arstechnica.com/information-technology/2020/02/serious-flaw-that-lurked-in-sudo-for-9-years-finally-gets-a-patch/) 
+9. [Q&A: How to set visudo to use a different editor than the default on Fedora?](https://unix.stackexchange.com/questions/4408/how-to-set-visudo-to-use-a-different-editor-than-the-default-on-fedora) 
 
