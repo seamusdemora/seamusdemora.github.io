@@ -164,7 +164,7 @@ If any of these resources do not answer your questions or if you need any kind o
 
 There are different installers for each version of macOS; they are [listed on the MacPorts install page](https://www.macports.org/install.php). In general, the installation experience on *High Sierra* was the same as for *Catalina*. The difficulty came about in having to upgrade an older version of *Xcode* on my High Sierra system. Since Apple does not provide an in-app upgrade mechanism for Xcode, I felt the safe approach was to un-install the old *Xcode*. If you know what to do, un-installing Xcode is only tedious; if you don't know what to do, it could lead to disaster. I didn't (and still don't) know how to un-install Xcode because Apple doesn't provide that information. I didn't let ignorance stop me however; [I un-installed by this procedure](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacStuff.md#23-upgrade-xcode-on-high-sierra-or-why-does-apple-crap-on-us). All I can say at this point is: "*so far, so good*".
 
-
+---
 
 ### REFERENCES:
 
