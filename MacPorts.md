@@ -153,8 +153,8 @@ If any of these resources do not answer your questions or if you need any kind o
 2. After installing a macOS update (10.15.5 to be specific), an attempt to install a port generated the following **Warning** from MacPorts:
 
 ```zsh
-    Warning: cltversion: The Command Line Tools are installed, but MacPorts cannot determine the version.
-    Warning: cltversion: For a possible fix, please see: https://trac.macports.org/wiki/ProblemHotlist#reinstall-clt
+  Warning: cltversion: The Command Line Tools are installed, but MacPorts cannot determine the version.
+  Warning: cltversion: For a possible fix, please see: https://trac.macports.org/wiki/ProblemHotlist#reinstall-clt
 ```
   - The cause of this consternation is a flaw in Apple's software: updating `Xcode` (or in this case, a general update) removes the CLT receipt! This makes it impossible for MacPorts to determine the version of CLT; thus the Warning.
 
