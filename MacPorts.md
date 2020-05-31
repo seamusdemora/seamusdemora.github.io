@@ -156,9 +156,9 @@ If any of these resources do not answer your questions or if you need any kind o
     Warning: cltversion: The Command Line Tools are installed, but MacPorts cannot determine the version.
     Warning: cltversion: For a possible fix, please see: https://trac.macports.org/wiki/ProblemHotlist#reinstall-clt
 ```
-​    - The cause of this consternation is a flaw in Apple's software: updating `Xcode` (or in this case, a general update) removes the CLT receipt! This makes it impossible for MacPorts to determine the version of CLT; thus the Warning.
+  - The cause of this consternation is a flaw in Apple's software: updating `Xcode` (or in this case, a general update) removes the CLT receipt! This makes it impossible for MacPorts to determine the version of CLT; thus the Warning.
 
-​    - It turns out that Apple has now displaced `root` as the super-user on macOS in favor of themselves! Consequently, `Software Update` cannot be used (which would be more efficient) because the file used to flag the update is in `/tmp`, and therefore inaccessible as long a `csrutil` is active. And so - **the [only fix](https://trac.macports.org/wiki/ProblemHotlist#reinstall-clt) that will work is to download and re-install the CLT**.
+  - It turns out that Apple has now displaced `root` as the super-user on macOS in favor of themselves! Consequently, `Software Update` cannot be used (which would be more efficient) because the file used to flag the update is in `/tmp`, and therefore inaccessible as long a `csrutil` is active. And so - **the [only fix](https://trac.macports.org/wiki/ProblemHotlist#reinstall-clt) that will work is to download and re-install the CLT**.
 
 ### Notes on the High Sierra Installation of MacPorts
 
