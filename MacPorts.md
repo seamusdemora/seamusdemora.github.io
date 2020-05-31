@@ -55,37 +55,72 @@ This will launch the editor specified in your environment. Enter the following l
 
 This will run `port selfupdate` command **and** `port upgrade outdated` every other day at 2 AM. It will also create an entry in a logfile that captures `stdout` and `stderr` outputs. You may refer to the [crontab guru](https://crontab.guru/) if you need help changing the schedule for this cron job.
 
-#### Clean up after yourself:
+#### What ports are installed?:
 
-Another maintenance item is cleaning up inactive or deprecated ports to reclaim disk space:
+This is a *two-part* question. Some ports are installed because we **requested** they be installed; other ports are installed because they are needed by ports we requested.
 
 ```zsh
-% sudo port reclaim
+% port installed requested    # su privileges are not needed
 # ...
-%
+% port installed              # includes dependencies for requested ports
+# ...
 ```
 
 #### Finding and installing ports:
 
-Afterwards, you may search for ports to install:
+You may search for ports to install:
 
 	port search <portname>
 
-where <portname> is the name of the port you are searching for, or a partial name. To install a port you've chosen, you need to run the port install command as the Unix superuser:
+where `<portname>` is the name of the port you are searching for, or a partial name. To install a port you've chosen, you need to run the port install command as the Unix superuser:
 
 	sudo port install <portname> 
 
 where now `<portname>` maps to an exact port name in the ports tree, such as those returned by the port search command. Please consult the port(1) man page for complete documentation for this command and the software installation process. 
 
-#### What ports are installed?: 
+#### Check for 'Variants': 
 
-This is a *two-part* question. Some ports are installed because we **requested** they be installed; other ports are installed because they are needed by ports we requested.
+You may discover - in reading the notes *after* installing a port - that there are **variants** for that port. For example, after a recent installation of `ffmpeg`, the notes revealed this: 
+
+```zsh
+To include all nonfree, GPLed and LGPL code use variant +nonfree.
+```
+
+Here's how to accommodate that:
 
 ```
-% port installed requested    # su privileges are not needed
+% sudo port install ffmpeg +nonfree
+```
+
+In general `+<variant>` adds non-default variants, and `-<variant>` removes default variants. [MacPorts documentation on the 'Variant' feature](https://guide.macports.org/#using.variants) covers all the options in detail.
+
+The *right* way to handle variants is to scope them out **before** installing: 
+
+```zsh
+% port variants ffmpeg
+```
+
+However, if you fail to do that, it's easy enough to recover. Simply re-install the port using the desired variant handling, and subsequently **remove** the (**inactive**) variant you don't want: 
+
+```zsh
+% sudo port install ffmpeg +nonfree
+...
+% port installed requested
+The following ports are currently installed:
+  ffmpeg @4.2.2_0+gpl2
+  ffmpeg @4.2.2_0+gpl2+nonfree (active)
+```
+
+Note that checking requested ports tells us that the `+nonfree` variant has been made the **active port**, and the originally installed variant is rendered as **inactive** - which is exactly what was wanted (in this case). As an **inactive** port, you will be prompted to uninstall it when you run `sudo port reclaim`. 
+
+#### Clean up after yourself:
+
+Another maintenance item is cleaning up **inactive** or deprecated ports to reclaim disk space:
+
+```zsh
+% sudo port reclaim
 # ...
-% port installed              # includes dependencies for requested ports
-# ...
+%
 ```
 
 #### Uninstall an installed port:
@@ -108,9 +143,22 @@ One other item may be useful ***if you run your mac as an unprivileged user*** -
 
 ### Documentation & Support:
 
-Help on a wide variety of topics is also available in the project [Guide](https://guide.macports.org/) and through the [Trac portal](https://trac.macports.org/) should you run into any problems installing and/or using MacPorts. Of particular relevance are the [installation](https://guide.macports.org/#installing) & [usage](https://guide.macports.org/#using) sections of the former and the [FAQ](https://trac.macports.org/wiki/FAQ) section of the [Wiki](https://trac.macports.org/wiki), where MacPorts keeps track of questions frequently fielded on their [mailing lists](contact.php#Lists).
+Help on a wide variety of topics is also available in the project [Guide](https://guide.macports.org/) and through the [Trac portal](https://trac.macports.org/) should you run into any problems installing and/or using MacPorts. Of particular relevance are the [installation](https://guide.macports.org/#installing) & [usage](https://guide.macports.org/#using) sections of the former and the [FAQ](https://trac.macports.org/wiki/FAQ) section of the [Wiki](https://trac.macports.org/wiki), where MacPorts keeps track of questions frequently fielded on their [mailing lists](contact.php#Lists). The [MacPorts Wiki](https://trac.macports.org/wiki) is highly recommended.
 
-If any of these resources do not answer your questions or if you need any kind of extended support, [reach out and make contact](https://www.macports.org/contact.php)! 
+If any of these resources do not answer your questions or if you need any kind of extended support, [reach out and make contact](https://www.macports.org/contact.php)! [Rocket Chat](https://trac.macports.org/wiki/Chat) is one way to get help on IRC - it has worked extremely well for me.
+
+### Miscellaneous Issues and Discoveries:
+
+1. Apple's Command Line Tools (CLT) are now included with Xcode (I'm probably the last to know :). This seems to obviate the need to install CLT separately. ***However...*** 
+2. After installing a macOS update (10.15.5 to be specific), an attempt to install a port generated the following **Warning** from MacPorts:
+
+```zsh
+    Warning: cltversion: The Command Line Tools are installed, but MacPorts cannot determine the version.
+    Warning: cltversion: For a possible fix, please see: https://trac.macports.org/wiki/ProblemHotlist#reinstall-clt
+```
+​    - The cause of this consternation is a flaw in Apple's software: updating `Xcode` (or in this case, a general update) removes the CLT receipt! This makes it impossible for MacPorts to determine the version of CLT; thus the Warning.
+
+​    - It turns out that Apple has now displaced `root` as the super-user on macOS in favor of themselves! Consequently, `Software Update` cannot be used (which would be more efficient) because the file used to flag the update is in `/tmp`, and therefore inaccessible as long a `csrutil` is active. And so - **the [only fix](https://trac.macports.org/wiki/ProblemHotlist#reinstall-clt) that will work is to download and re-install the CLT**.
 
 ### Notes on the High Sierra Installation of MacPorts
 
