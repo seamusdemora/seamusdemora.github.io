@@ -21,7 +21,7 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 |[Adding MacPorts](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md) | A few tips for adding MacPorts |
 |[Curing Dropped Network Connections](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MaintainLongRunningNetworkConnections.md) | Tired of dropped SSH connections?  |
 | [Fun With Footnotes in GFM](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/GFM_FootnotesWithReturnFeature.md) | How to create footnotes with a *return* feature |
-|  [Dual-booting Linux & macOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/LinuxOnLate2011.md)  |  A step-by-step of installation of Linux on a late-2011 Macbook Pro - dual boot High Sierra & Ubuntu 20.04 |
+|  [Dual-booting Linux & macOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/LinuxOnLate2011.md)  |  Step-by-step install: Linux on 2011 Macbook Pro - dual boot High Sierra & Ubuntu 20.04 |
 
 ***
 
