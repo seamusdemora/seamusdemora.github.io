@@ -26,7 +26,7 @@ At any rate, an alternative OS has now become a necessity. I made the decision t
 
 1. A local copy of the script: `create_macos_vm_install_dmg.sh`, available [from the author's GitHub repo](https://github.com/rtrouton/create_macos_vm_install_dmg) 
 
-2. A copy of Apple's current High Sierra installer `Install macOS High Sierra.app` - which **may** be available on [Apple's website here.](https://support.apple.com/en-us/HT201372) 
+2. A copy of Apple's current High Sierra installer `Install macOS High Sierra.app` - which **may be available**<sup id="a1">[Note 1](#f1)</sup> on [Apple's website.](https://support.apple.com/en-us/HT201372) 
 
 #### Create the VM:
 
@@ -105,6 +105,11 @@ And that's it - for those who prefer a visual reference, I've attached some scre
 ##### 8. Successful High Sierra Installation - Installation Complete
 
 [![enter image description here][9]][9]
+
+
+
+<b id="f1">Note 1 : </b> Apparently Apple creates **barriers** for download of their *Install* application files. I have no inside knowledge of how this works - all I can do here is share some observations. One barrier is that you  must use the `Safari` web browser when you [load this page](https://support.apple.com/en-us/HT201372) and click the link to download the *Installer* you need. The other barrier is that the macOS version you're using will determine whether or not you're allowed to actually download the file. For example, you **won't** be allowed to download the High Sierra Installer app from a macOS Catalina system!  [↩](#a1)
+
 
 
 
