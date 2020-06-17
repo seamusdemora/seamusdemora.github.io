@@ -16,7 +16,7 @@ One can spend much time trying to wangle buggy software. With a lot of help, I'v
 
 ### Why create a macOS VM?
 
-I needed a VM of macOS High Sierra as a test bed of sorts - to evaluate some options for installing Linux and other *alternative* operating systems on a [*late 2011 Macbook Pro - 17" display*](https://support.apple.com/kb/SP646?locale=en_US). This was my first Mac, and I guess I'm attached to it, but the alternative OS idea has become compelling since [Apple has announced termination of support for High Sierra](https://en.wikipedia.org/wiki/MacOS#Release_history) later this year! Of course hardware support for this Mac expired some time ago, but High Sierra being removed from support at three years old? 
+I need a VM of macOS High Sierra as a test bed of sorts - to evaluate some options for installing Linux and other *alternative* operating systems on a [*late 2011 Macbook Pro - 17" display*](https://support.apple.com/kb/SP646?locale=en_US). This was my first Mac, and I guess I'm attached to it, but the alternative OS idea has become compelling since [Apple has announced termination of support for High Sierra](https://en.wikipedia.org/wiki/MacOS#Release_history) later this year! Of course hardware support for this Mac expired some time ago, but High Sierra being removed from support at three years old? 
 
 At any rate, an alternative OS has now become a necessity. I made the decision to convert my 2011 Macbook to dual-boot. For now, macOS High Sierra will remain, and the other OS is TBD. Thus the need for a VM. Also, looking further ahead, a High Sierra VM might be quite useful.
 
