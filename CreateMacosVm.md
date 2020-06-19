@@ -123,3 +123,29 @@ And that's it - for those who prefer a visual reference, I've attached some scre
 [7]: https://i.stack.imgur.com/F9hCW.jpg
 [8]: https://i.stack.imgur.com/xv6R1.jpg
 [9]: https://i.stack.imgur.com/KiEav.jpg
+
+
+
+
+
+<!---
+
+Hidden material pending further research: 
+
+Run these commands one at a time to make a bootable macOS High Sierra Installation media.
+
+    hdiutil create -o /tmp/macOSHighSierra.cdr -size 5200m -layout SPUD -fs HFS+J
+    hdiutil attach /tmp/macOSHighSierra.cdr.dmg -noverify -mountpoint /Volumes/install_build
+    sudo Downloads/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia –volume /Volumes/install_build
+    mv /tmp/macOSHighSierra.cdr.dmg ~/Desktop/InstallSystem.dmg
+    hdiutil detach /Volumes/Install\ macOS\ High\ Sierra
+    hdiutil convert ~/Desktop/InstallSystem.dmg -format UDTO -o ~/Desktop/macOSHighSierra.iso
+
+
+ALTERNATIVE: 
+
+https://osxdaily.com/2017/09/27/download-complete-macos-high-sierra-installer/
+
+https://mycyberuniverse.com/macos/how-download-complete-macos-high-sierra-installer-app.html
+
+--->
