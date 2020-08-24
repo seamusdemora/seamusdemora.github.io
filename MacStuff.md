@@ -596,6 +596,20 @@ But these default behaviors are **not** what we want in some situations. Here's 
 
  
 
+### 32. Should You Put Siri on an "iLeash", or Put Her Down?
+
+With the ["Siri Privacy Scandal"](https://duckduckgo.com/?t=ffnt&q=Siri+Privacy+Scandal&ia=web) out in the open now, you may have wondered what, if anything you should do about it - I know I have. After understanding what happened, it *feels like* Apple simply cannot be trusted. For me - the fact that they didn't completely **take ownership of the issue** was the biggest disappointment - a punk-ass move IMHO. I should just accept the fact that giant corporations are inherently untrustworthy, and run by people who might throw their Mother overboard to improve their odds... I should *grow up*, and accept this. Anyway - now the time has come to decide what to do about it. Here are some of the options I've considered:
+
+  1. Leave it disabled - as it has always been on my new Macbook 
+  2. [Remove Siri from the TouchBar](https://apple.stackexchange.com/questions/373361/how-do-i-remove-siri-from-the-collapsed-control-strip) - definitely!
+  3. Rip it out - remove the executable/app file(s)
+
+On Catalina and Mojave, there's a control panel for Siri in `System Preferences`. The `Enable Siri` option can be checked - or un-checked. It ought to be that simple - but it's not. Since Catalina 10.15.1, Apple added "new features" to the Siri control panel - giving you "more control" over your personal data. Hmm - Apple's post-Siri-Scandal pledges and promises are already being watered down? In all honesty, I don't know. But given that Apple's software is closed-source, and their record is not great I wouldn't take any wagers. Note to Apple: Lost trust is hard to recover. 
+
+Removing Siri from the "Touch Bar" (Mojave-speak), or the "Control Strip" (Catalina-speak) likewise has been made harder than it should be. The link in option 2. above is a SE Q&A that illustrates this point. If that doesn't work for you, my best suggestion is to [search for your particular OS](https://duckduckgo.com/?t=ffnt&q=remove+siri+from+macOS+touchbar&ia=web).
+
+Option 3 seems the ultimate solution to me. But there's a question of ***how*** to do this. Search as much as you wish, but you won't find a how-to guide for removing Siri published by Apple. Maybe there's a reason for that - maybe some Siri software components are needed in critical system functions. I don't like the fact that Apple says nothing at all about this, 'cause I know the question has been asked. The only guidance I found for removing Siri was in [this article](https://www.geek-kb.com/remove-siri-macbook/). But the the author's solution comes down to `sudo rm -rf` on the system library folder where Siri lives. Except for a restore from backup, this approach is 100% commitment!   
+
 ---
 
 
@@ -628,6 +642,11 @@ But these default behaviors are **not** what we want in some situations. Here's 
 - [Wilson Mar's list of macOS command-line utilities](https://wilsonmar.github.io/mac-utilities/) - Extensive! 
 - [Obscure Terminal Features](https://scriptingosx.com/obscure/) from the Scripting OS X blog. Obscure - but also useful! 
 - [L’entrée à AppleScript Language Guide](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html) 
+- [Confirmed: Apple Caught In **Siri** Privacy **Scandal**](https://www.forbes.com/sites/jeanbaptiste/2019/07/30/confirmed-apple-caught-in-siri-privacy-scandal-let-contractors-listen-to-private-voice-recordings) - Yes, it's true - a corporation lied :/
+- [Q&A: To what degree is Siri listening?](https://apple.stackexchange.com/questions/391900/to-what-degree-is-siri-listening) 
+- [Q&A: How to delete system apps in macOS Catalina?](https://superuser.com/questions/1490326/how-to-delete-system-apps-in-macos-catalina) 
+- [Part 11 of arsTECHNICA's excellent review of Catalina explains Apple's changes to the filesystem that have made simple things difficult](https://arstechnica.com/gadgets/2019/10/macos-10-15-catalina-the-ars-technica-review/11/) 
+- [How to remove Siri from my MacBook](https://www.geek-kb.com/remove-siri-macbook/) 
 
 <!--- 
 
