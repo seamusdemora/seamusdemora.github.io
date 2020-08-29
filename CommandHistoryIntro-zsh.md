@@ -24,9 +24,9 @@ As it turns out, the [`history`](https://opensource.com/article/18/6/history-com
 
 Simpler still is using the *up* (<kbd>⬆︎</kbd>) and *down* (<kbd>⬇︎</kbd>) arrows on the keyboard to scroll up and down in the ***command history***. This is easily demonstrated in any active terminal window - each press of an up or down arrow button will advance or return one command further into the ***command history*** stack. Like the `history` command, this is useful, but not particularly efficient for older commands (further up in the stack) - or for those using the CLI frequently.
 
-Let's now turn our attention to how the shell maintains the ***command history***, and by what means the user exercises control and inputs his preferences. 
+Before discussing other methods for accessing the ***command history***, let's briefly focus on how the shell maintains the ***command history***, and by what means the user may exercise control and express his preferences. 
 
-As mentioned above, the ***command history*** is a function of the shell, and for purposes of this recipe the shell of interest is `zsh` - currently the default shell in macOS. The file `/etc/zshrc` contains your machine’s default settings, including a few relevant to the ***command history***. Following are those defaults as of this writing:
+As mentioned above, the ***command history*** is a function of the shell, and for purposes of this recipe the shell of interest is `zsh` - currently the default shell in macOS. The file `/etc/zshrc` contains your machine’s default settings, including a few relevant to the ***command history***. Following are the defaults as of this writing:
 
    ```zsh
    % less /etc/zshrc   # peruse the default settings for zsh
@@ -44,7 +44,7 @@ Let's briefly review these variables:
 * `SAVEHIST` defines the size of the **history file**  
 * `HISTFILE` simply declares the name of the user's history file, and where it's stored. 
 
-Note that the ***command history*** is made up of two separate entities: the **session history** and the **history file**. They are "linked" in the following fashion: 
+Note that the ***command history*** is made up of two separate entities: the **session history** and the **history file**. They are "linked" and inter-operate in the following fashion: 
 
 * when a `zsh` session is closed, the **session history** is *concatenated* to the **history file** 
 * when the **session history** reaches its limit, the *overflow* is *concatenated* to the **history file** 
