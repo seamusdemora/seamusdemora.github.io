@@ -52,6 +52,12 @@ Note that the ***command history*** is made up of two separate entities: the **s
 * the ***command history*** of a new session, before any commands are issued, is entirely from the **history file** 
 * commands in the  **session history** are unique to that session; the **history file** contains command history from (potentially) all sessions, past and present.
 
+The following graphic attempts to illustrate some of the relationships between the **session histories** (one per session), and the **history file**: 
+
+![commandhistory2](pix/commandhistory2.png)
+
+
+
 If you've been using `zsh` for a while, you can open your command history file at `~/.zsh_history` and see what it contains. Likewise, with this file open and in view, the operation and interaction of the **session history** and the  **history file** may be directly observed. (*You may want to temporarily reduce `HISTSIZE` and `SAVEHIST` to save time before doing so. Backing up your .zsh_history` may also be warranted.*)
 
 Given the above, it is left as an exercise for the reader to determine the logic behind Apple's default settings for `HISTSIZE` and `SAVEHIST`. That is to say, the deep thinking that went into setting `SAVEHIST` to one-half the size of `HISTSIZE`. Extra points to the reader who shares this revelation. 
