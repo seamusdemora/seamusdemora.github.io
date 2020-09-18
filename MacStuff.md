@@ -62,6 +62,11 @@
 
 [31. Do You Want to Move That File, or Copy It?](#31-would-you-like-to-move-that-file-or-copy-it) 
 
+[32. Should You Put Siri on an "iLeash", or Put Her Down?](#32-should-you-put-siri-on-an-ileash-or-put-her-down) 
+
+
+
+
 [OTHER SOURCES:](#other-sources) 
 
 <hr>
