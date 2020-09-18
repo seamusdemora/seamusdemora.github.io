@@ -18,14 +18,15 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 |[Using `sudo` in Mac OS](https://github.com/seamusdemora/seamus.github.io/blob/master/UsingSudoInMacos.md)  |  Uses for `sudo` in Mac OS with Examples|
 |[How to Use the Usenet](https://github.com/seamusdemora/seamus.github.io/blob/master/HowToUseTheUsenet.md) |  A brief overview for using a huge resource |
 |[Shit Filtering](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/FilteringWebPagesForTheGoodStuff.md) |  How to clean up content from sketchy publishers  |
-|[Adding MacPorts](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md) | A few tips for adding MacPorts |
+|[MacPorts: The package manager for macOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md) | A few tips for installing & using MacPorts |
 |[Curing Dropped Network Connections](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MaintainLongRunningNetworkConnections.md) | Tired of dropped SSH connections?  |
 | [Fun With Footnotes in GFM](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/GFM_FootnotesWithReturnFeature.md) | How to create footnotes with a *return* feature |
 | [Create a VM for macOS High Sierra](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/CreateMacosVm.md)  |  Verified step-by-step recipe for creating a macOS High Sierra VM  |
 |  [Dual-booting Linux & macOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/LinuxOnLate2011.md)  | Step-by-step install: Dual boot High Sierra & Ubuntu 20.04 on 2011 Macbook |
+| [Using `launchd` in MacOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/UsingLaunchdForSchedulingTasks.md) | Schedule jobs with `launchctl` or `LaunchControl` |
+| [Using command history in `zsh`](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/CommandHistoryIntro-zsh.md)  |  Get acquainted with your CLI command history & be more efficient |
 
 ***
-
 
 <!--   From this line forward are comments. Comments are not displayed in the browser.  
 
