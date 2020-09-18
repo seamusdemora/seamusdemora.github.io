@@ -652,6 +652,7 @@ Option 3 seems the ultimate solution to me. But there's a question of ***how*** 
 - [Q&A: How to delete system apps in macOS Catalina?](https://superuser.com/questions/1490326/how-to-delete-system-apps-in-macos-catalina) 
 - [Part 11 of arsTECHNICA's excellent review of Catalina explains Apple's changes to the filesystem that have made simple things difficult](https://arstechnica.com/gadgets/2019/10/macos-10-15-catalina-the-ars-technica-review/11/) 
 - [How to remove Siri from my MacBook](https://www.geek-kb.com/remove-siri-macbook/) 
+- [Disable bunch of #$!@ in Catalina](https://gist.github.com/pwnsdx/1217727ca57de2dd2a372afdd7a0fc21) - Sadly, this fine effort now neutered for Big Sur by Apple's Autocracy
 
 <!--- 
 
