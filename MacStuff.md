@@ -649,12 +649,14 @@ Option 3 seems the ultimate solution to me. But there's a question of ***how*** 
 - [L’entrée à AppleScript Language Guide](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html) 
 - [Confirmed: Apple Caught In **Siri** Privacy **Scandal**](https://www.forbes.com/sites/jeanbaptiste/2019/07/30/confirmed-apple-caught-in-siri-privacy-scandal-let-contractors-listen-to-private-voice-recordings) - Yes, it's true - a corporation lied :/
 - [Q&A: To what degree is Siri listening?](https://apple.stackexchange.com/questions/391900/to-what-degree-is-siri-listening) 
+- [How to Delete Siri and Dictation History in macOS Catalina](https://beebom.com/how-delete-siri-dictation-history-macos-catalina/) No, sadly, this **is not a Siri deletion how-to**
 - [Q&A: How to delete system apps in macOS Catalina?](https://superuser.com/questions/1490326/how-to-delete-system-apps-in-macos-catalina) 
 - [Part 11 of arsTECHNICA's excellent review of Catalina explains Apple's changes to the filesystem that have made simple things difficult](https://arstechnica.com/gadgets/2019/10/macos-10-15-catalina-the-ars-technica-review/11/) 
 - [How to remove Siri from my MacBook](https://www.geek-kb.com/remove-siri-macbook/) 
 - [Disable bunch of #$!@ in Catalina](https://gist.github.com/pwnsdx/1217727ca57de2dd2a372afdd7a0fc21) - Sadly, this fine effort now neutered for Big Sur by Apple's Autocracy 
 - [Siri Stores Encrypted E-mails in Plain Text](https://mjtsai.com/blog/2019/11/06/siri-stores-encrypted-e-mails-in-plain-text/) - Disturbing...
-- [Challenge: does your ten-year-old code still run?](https://www.nature.com/articles/d41586-020-02462-7) I think about this in terms of the Apple Autocracy
+- [Challenge: does your ten-year-old code still run?](https://www.nature.com/articles/d41586-020-02462-7) I think about this in terms of the Apple Autocracy 
+- [Ten Years Reproducibility Challenge](https://github.com/ReScience/ten-years) - I have code written for Mojave that won't run on Catalina - you? 
 
 <!--- 
 
