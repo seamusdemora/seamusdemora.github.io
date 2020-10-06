@@ -71,3 +71,5 @@ Two items to note: *Activity Monitor* is showing a filtered search on **caffeina
 * [airport – the Little Known Command Line Wireless Utility for Mac](https://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/) - from OSX Daily.
 * [macOS Networking Articles](https://osxdaily.com/tag/networking/) - from OSX Daily.
 * [macOS WiFi Articles](https://osxdaily.com/tag/wi-fi/) - from OSX Daily. 
+* [Q&A: What is the default idle timeout for OpenSSH?](https://unix.stackexchange.com/questions/150402/what-is-the-default-idle-timeout-for-openssh) - Useful!!
+* [Q&A: How does an SSH connection become inactive?](https://unix.stackexchange.com/questions/263302/how-does-an-ssh-connection-become-inactive) - less useful...
