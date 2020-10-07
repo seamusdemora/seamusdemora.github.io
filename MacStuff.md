@@ -179,7 +179,7 @@ In current versions of mac os, there are (at least) three distinct approaches to
    
       ​            Yes, it created the requested output... it's in an email message! You can verify this by checking your email with the `mail` command.
 
-**`cron` Example:**
+   **`cron` Example:**
 
 Let's assume, you want to check your Gmail account each day at 12:00. How would you do this? Here's one way to do this using `open` and `cron` : 
 
