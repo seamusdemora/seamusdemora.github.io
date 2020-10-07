@@ -158,9 +158,13 @@ Which can be quite useful for perusing the system documentation offline (in this
 In current versions of mac os, there are (at least) three distinct approaches to scheduling:   
 
 1. `cron` is the standard (as in long-standing) method for scheduling. It's been around since the early days of Unix. That `cron` remains as a viable, well-maintained app today is a testament to its utility. And as a derivative of the BSD flavor of Unix, it is fitting that it remains a component of mac os. However, we must note that Apple has not maintained the `cron` software they distribute with mac os; `man cron`  reveals that the current version os `cron` in mac os ver 10.14.6 (Mojave) is vintage **June 17, 2007**.
+
 2. `launchd` is a much more complicated creature than `cron`, but it's got an Apple pedigree. It was developed by Dave Zarzycki, an Apple employee who started with them in 1996 as a 17 year-old, self-taught programmer.  `launchd` can do more than `cron`, but it's much more difficult (even arcane) in use. Consequently, we'll cover `cron` here, and pick up `launchd` in [this installment](UsingLaunchdForSchedulingTasks.md). 
+
 3. `at` is a bit of an outlier in the sense it's less frequently used. As of macOS Catalina, `at` is still included, and supported (in the fashion that Apple supports such things). If you're interested, read two things: `man at` and this Q&A on Stack Exchange: [Making “at” work on macOS](https://unix.stackexchange.com/questions/478823/making-at-work-on-macos) that explains how to work around the debris known as Apple's "open source" environment. N.B. that Apple's version of `at` isn't as up-to-date as the one in your favorite Linux distro, but it does work: 
 
+   **`at` Example:**
+   
    ```zsh
    % at now + 1 minute
    <enter this sh command:> echo "Hello World from at"
@@ -168,46 +172,40 @@ In current versions of mac os, there are (at least) three distinct approaches to
    job 9 at Wed Oct  7 03:17:00 2020 
    % at -l
    9	Wed Oct  6 13:17:00 2020
-   %
+%
    ```
 
       ​            So... now what? Where's the output? Does this `at` thing work at all? 
-
+   
       ​            Yes, it created the requested output... it's in an email message! You can verify this by checking your email with the `mail` command.
 
-To continue one of the examples from above, let's assume, you want to check your Gmail account each day at 12:00. How would you do this? Here's one way to do this using `open` and `cron` : 
+      ​**`cron` Example"**
 
-a. `cron` events are declared and scheduled in the `crontab`. They follow a specific syntax, although there are variations across the different versions of `cron`. We're working of course with Mac OS, and that means the Vixie (named after Paul VIxie) version of `cron`.  Creating an entry in your `crontab` file is done with a simple command: 
+      ​Let's assume, you want to check your Gmail account each day at 12:00. How would you do this? Here's one way to do this using `open` and `cron` : 
+
+      ​`cron` events are declared and scheduled in the `crontab`. They follow a specific syntax, although there are variations across the different versions of `cron`. We're working of course with Mac OS, and that means the Vixie (named after Paul VIxie) version of `cron`.  Creating an entry in your `crontab` file is done with a simple command: 
 
 ```bash
 crontab -e
 ```
 
-But wait!! Before starting you should know that the default `crontab` editor for Mac OS is `vim`. If you're comfortable using `vim`, go ahead. If you're not, I suggest you use `pico` or `nano` instead: 
-
-```
-EDITOR=nano crontab -e
-```
-
-If this is the first time you've edited your `crontab`, you'll probably find the editor opens a completely blank file. Many Linux systems will have a default `crontab` that has comments and helpful hints, but Mac OS does not. 
-
-Let's schedule our event now. Enter the following line in the `pico` editor you've just opened: 
+      ​If this is the first time you've edited your `crontab`, you'll probably find the editor opens a completely blank file. Many Linux systems will have a default `crontab` that has comments and helpful hints, but Mac OS does not. 
+    
+      ​Let's schedule our event now. Enter the following line in the `nano` editor you've just opened: 
 
 ```
 00 12 * * * open -a "/Applications/Google Chrome.app" https://mail.google.com/mail/u/0/#inbox
 ```
 
-Next, tell `pico` to write your new `crontab` by entering `ctrl-o`, `enter` to accept the filename, and `ctrl-x` to exit the `pico editor. And that's it. You've just scheduled Chrome to start and fetch your Gmail inbox every day at 12:00 noon.  
-
-Let's review what we've just done: 
-
-You'll recognize the `open` command and the parameters that follow it from the earlier example. What we've added to that is a strange-looking sequence: 
+      ​Next, tell `nano` to write your new `crontab` by entering `ctrl-o`, `enter` to accept the filename, and `ctrl-x` to exit `nano`. And that's it. You've just scheduled Chrome to start and fetch your Gmail inbox every day at 12:00 noon.  
+    
+      ​You'll recognize the `open` command and the parameters that follow it in the `crontab` entry. We've prepended a strange-looking sequence to that: 
 
 ```
 00 12 * * *
 ```
 
-This is simply the schedule information. It tells `cron` **when** to execute the command that follows. If you want to re-schedule for a time other that 12:00 noon, all you need change is the time. `man crontab` will guide you in the options for specifying the time and date. Until you become familiar with the syntax, you should use the [crontab guru](https://crontab.guru/#00_12_*_*_*) to check your schedule. You'll learn that  [`cron`'s simple syntax is quite flexible](https://crontab.guru/#5_4-7_1-28/2_1-9/3_*).    [↑](#table-of-contents)
+      ​This is simply the schedule information. It tells `cron` **when** to execute the command that follows. If you want to re-schedule for a time other that 12:00 noon, all you need change is the time. `man crontab` will guide you in the options for specifying the time and date. Until you become familiar with the syntax, you should use the [crontab guru](https://crontab.guru/#00_12_*_*_*) to check your schedule. You'll learn that  [`cron`'s simple syntax is quite flexible](https://crontab.guru/#5_4-7_1-28/2_1-9/3_*).    [↑](#table-of-contents)
 
 ### 5. How to Check the Size of a Directory?
 
