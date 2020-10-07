@@ -171,9 +171,9 @@ In current versions of mac os, there are (at least) three distinct approaches to
    %
    ```
 
-​            So... now what? Where's the output? Does this `at` thing work at all? 
+      ​            So... now what? Where's the output? Does this `at` thing work at all? 
 
-​            Yes, it created the requested output... it's in an email message! You can verify this by checking your email with the `mail` command.
+      ​            Yes, it created the requested output... it's in an email message! You can verify this by checking your email with the `mail` command.
 
 To continue one of the examples from above, let's assume, you want to check your Gmail account each day at 12:00. How would you do this? Here's one way to do this using `open` and `cron` : 
 
