@@ -155,10 +155,25 @@ Which can be quite useful for perusing the system documentation offline (in this
 
 ### 4. How to Schedule an App to Run At a Specified Time?
 
-In current versions of mac os, there are (at least) two distinct approaches to scheduling:   
+In current versions of mac os, there are (at least) three distinct approaches to scheduling:   
 
 1. `cron` is the standard (as in long-standing) method for scheduling. It's been around since the early days of Unix. That `cron` remains as a viable, well-maintained app today is a testament to its utility. And as a derivative of the BSD flavor of Unix, it is fitting that it remains a component of mac os. However, we must note that Apple has not maintained the `cron` software they distribute with mac os; `man cron`  reveals that the current version os `cron` in mac os ver 10.14.6 (Mojave) is vintage **June 17, 2007**.
 2. `launchd` is a much more complicated creature than `cron`, but it's got an Apple pedigree. It was developed by Dave Zarzycki, an Apple employee who started with them in 1996 as a 17 year-old, self-taught programmer.  `launchd` can do more than `cron`, but it's much more difficult (even arcane) in use. Consequently, we'll cover `cron` here, and pick up `launchd` in [this installment](UsingLaunchdForSchedulingTasks.md). 
+3. `at` is a bit of an outlier in the sense it's less frequently used. As of macOS Catalina, `at` is still included, and supported (in the fashion that Apple supports such things). If you're interested, read two things: `man at` and this Q&A on Stack Exchange: [Making “at” work on macOS](https://unix.stackexchange.com/questions/478823/making-at-work-on-macos) that explains how to work around the debris known as Apple's "open source" environment. N.B. that Apple's version of `at` isn't as up-to-date as the one in your favorite Linux distro, but it does work: 
+
+   ```zsh
+   % at now + 1 minute
+   <enter this sh command:> echo "Hello World from at"
+   <enter ^D>
+   job 9 at Wed Oct  7 03:17:00 2020 
+   % at -l
+   9	Wed Oct  6 13:17:00 2020
+   %
+   ```
+
+​      So... now what? Where's the output? Does this `at` thing work at all? 
+
+​      Yes, it created the requested output... it's in an email message! You can verify this by checking your email with the `mail` command.
 
 To continue one of the examples from above, let's assume, you want to check your Gmail account each day at 12:00. How would you do this? Here's one way to do this using `open` and `cron` : 
 
