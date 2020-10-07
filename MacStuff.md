@@ -190,7 +190,7 @@ In current versions of mac os, there are (at least) three distinct approaches to
    ```
 
    If this is the first time you've edited your `crontab`, you'll probably find the editor opens a completely blank file. Many Linux systems will have a default `crontab` that has comments and helpful hints, but Mac OS does not. 
-    
+   
    Let's schedule our event now. Enter the following line in the `nano` editor you've just opened: 
 
    ```
@@ -198,7 +198,7 @@ In current versions of mac os, there are (at least) three distinct approaches to
    ```
 
    Next, tell `nano` to write your new `crontab` by entering `ctrl-o`, `enter` to accept the filename, and `ctrl-x` to exit `nano`. And that's it. You've just scheduled Chrome to start and fetch your Gmail inbox every day at 12:00 noon.  
-    
+   
    You'll recognize the `open` command and the parameters that follow it in the `crontab` entry. We've prepended a strange-looking sequence to that: 
 
    ```
@@ -636,7 +636,11 @@ Option 3 seems the ultimate solution to me. But there's a question of ***how*** 
 
 - [OSXDaily offers a list](http://osxdaily.com/category/command-line/) of "command line tips" 
 - [The Mac Observer](https://www.macobserver.com) has tips, tricks & news items.
-- [Q&A: Using the `at` command in macos](https://unix.stackexchange.com/questions/478823/making-at-work-on-macos) 
+- [Q&A: Using the **`at`** command in macos](https://unix.stackexchange.com/questions/478823/making-at-work-on-macos) 
+- [Linux **at**, batch, atq, and atrm commands](https://www.computerhope.com/unix/uat.htm) 
+- [One Time Task Scheduling using **at** Command in Linux](https://tecadmin.net/one-time-task-scheduling-using-at-commad-in-linux/) 
+- [How to Use **at** and batch on Linux to Schedule Commands](https://www.howtogeek.com/451386/how-to-use-at-and-batch-on-linux-to-launch-processes/) 
+- [**at**(1) - Linux man page](https://linux.die.net/man/1/at) 
 - [GadgetHacks has a list of *Essential* MacOS commands](https://mac-how-to.gadgethacks.com/how-to/13-terminal-commands-every-mac-user-should-know-0162453/); some are actually useful. 
 - [Terminal.app keyboard shortcuts for some recent versions of MacOS](https://support.apple.com/guide/terminal/keyboard-shortcuts-trmlshtcts/mac) 
 - [Q&A: Null & empty string comparison in Bash](https://stackoverflow.com/questions/21407235/null-empty-string-comparison-in-bash): Know the difference between `null` & an empty string.
