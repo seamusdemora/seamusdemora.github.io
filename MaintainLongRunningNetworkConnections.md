@@ -74,4 +74,5 @@ Two items to note: *Activity Monitor* is showing a filtered search on **caffeina
 * [Q&A: What causes Raspberry Pi to reliably drop SSH connections: `client_loop: send disconnect: Broken pipe`](https://raspberrypi.stackexchange.com/questions/111265/what-causes-raspberry-pi-to-reliably-drop-ssh-connections-client-loop-send-di) 
 * [Debian's `sshd_config` - OpenSSH SSH daemon configuration file](https://manpages.debian.org/buster/openssh-server/sshd_config.5.en.html) 
 * [Q&A: What is the default idle timeout for OpenSSH?](https://unix.stackexchange.com/questions/150402/what-is-the-default-idle-timeout-for-openssh) - Useful!!
-* [Q&A: How does an SSH connection become inactive?](https://unix.stackexchange.com/questions/263302/how-does-an-ssh-connection-become-inactive) - less useful...
+* [Q&A: How does an SSH connection become inactive?](https://unix.stackexchange.com/questions/263302/how-does-an-ssh-connection-become-inactive) - less useful... 
+* [Proper use of SSH client in Mac OS X](https://www.getpagespeed.com/work/proper-use-of-ssh-client-in-mac-os-x) 
