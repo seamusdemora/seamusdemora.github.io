@@ -25,6 +25,7 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 |  [Dual-booting Linux & macOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/LinuxOnLate2011.md)  | Step-by-step install: Dual boot High Sierra & Ubuntu 20.04 on 2011 Macbook |
 | [Using `launchd` in MacOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/UsingLaunchdForSchedulingTasks.md) | Schedule jobs with `launchctl` or `LaunchControl` |
 | [Using command history in `zsh`](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/CommandHistoryIntro-zsh.md)  |  Get acquainted with your CLI command history & be more efficient |
+|  [Hacking the iMessage database](https://github.com/seamusdemora/iMsgExtract)  |  Dig into the `chat.db` database where all messages are stored.  |
 
 ***
 
