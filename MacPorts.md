@@ -1,6 +1,6 @@
 ### Table of contents
 
-1. [MacPorts - My Experience](#macports---my_experience) 
+1. [MacPorts - My Experience](#macports---my-experience) 
     * [Installation:](#installation)
     * [Post Installation:](#post-installation)
 2. [Fundamental Usage of MacPorts:](#fundamental-usage-of-macports)
