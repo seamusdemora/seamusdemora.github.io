@@ -20,7 +20,7 @@
 
 ---
 
-## MacPorts: My Experience
+## MacPorts - My Experience
 
 This began several months ago after realizing that the [one-time largest corporation in the world](https://en.wikipedia.org/wiki/Apple_Inc.) was shipping [16-year-old open source software](https://opensource.apple.com/source/bash/bash-118.40.2/) with their *pricey* computers. For any [**Apple Apologists**](https://forums.macrumors.com/threads/apologists.2093606/) reading this, please just STFU, and move on. To say I'm disappointed with Apple would be an understatement. As I see things today, we must choose our technology products to balance our exposure to exploitative and extortionate corporate interests against the very personal concept of *value*.  
 
