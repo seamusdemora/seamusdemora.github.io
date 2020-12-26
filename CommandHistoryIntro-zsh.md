@@ -1,8 +1,10 @@
-## Using command history in `zsh`
+## Using command history in your shell - `zsh`
+
+This is written from the perspective of a *macOS* user; specifically, a *macOS Catalina* (or later) user. Under *macOS Catalina*, Apple changed the default shell from `bash` to `zsh`. However, most of the material here is completely relevant for `bash` users as well. Some of the **semantics** will change, but the **operation** of the shell history is the same for `bash` and `zsh`. 
 
 ### What is the command history?
 
-If you open a terminal - for example `Terminal.app` in macOS - and you enter a command at the prompt, that command is saved into the ***command history***. In fact, depending upon how command history is configured on your machine, every command you have ever issued could be saved into a command history. Control and maintenance of the command history is a function of the **shell** being used. Different **shells** manage the command history in different ways, though they also have much in common. If you switch between shells, your command history will be contained in different memory locations and different files.  
+If you open a terminal - for example `Terminal.app` in *macOS* - and you enter a command at the prompt, that command is saved into the ***command history***. In fact, depending upon how command history is configured on your machine, every command you have ever issued could be saved into a command history. Control and maintenance of the command history is a function of the **shell** being used. Different **shells** manage the command history in different ways, though they *also have much in common*. If you switch between shells, your command history will be contained in different memory locations and different files.  
 
 The ***command history*** is useful because we often use the same - or similar - commands repeatedly. These commands may contain long lists of *arguments* and *options* that are highly specific, and often arcane. Considerable time and effort may be invested in getting a particular command "tweaked" to perform a certain function in a very specific way. The utility of a command history will be obvious to anyone after using `rsync` or `ffmpeg` or `git` for a while. 
 
