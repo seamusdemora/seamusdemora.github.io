@@ -92,15 +92,15 @@ Note that the folder `tools` was part of the `rEFInd` installation, and therefor
 - A bootable USB stick prepared previously will be used. It was created from the Ubuntu desktop ISO downloaded from Ubuntu's website, and written to USB using `balenaEtcher`. The Macbook has successfully booted into the "Live" Ubuntu system, and it is therefore a "good" copy. 
 - A partition was also previously created, and should be sufficient. This partition is seen above under `diskutil list`, and is labeled: `Microsoft Basic Data OTHEROS`; i.e. a FAT partition of 1.2 TB in size. Checking the contents of this partition: 
 
-  ```bash
-$ ls -la /Volumes/OTHEROS
-total 256
-drwxrwxrwx@ 1 jmoore  staff  32768 Jun  6 19:24 .
-drwxr-xr-x@ 4 root    wheel    128 Jun  6 19:24 ..
-drwxrwxrwx  1 jmoore  staff  32768 Jun  6 19:24 .Spotlight-V100
-drwxrwxrwx  1 jmoore  staff  32768 Jun  6 19:24 .Trashes
-drwxrwxrwx  1 jmoore  staff  32768 Jun  6 19:24 .fseventsd
-  ```
+   ```bash
+   $ ls -la /Volumes/OTHEROS
+   total 256
+   drwxrwxrwx@ 1 jmoore  staff  32768 Jun  6 19:24 .
+   drwxr-xr-x@ 4 root    wheel    128 Jun  6 19:24 ..
+   drwxrwxrwx  1 jmoore  staff  32768 Jun  6 19:24 .Spotlight-V100
+   drwxrwxrwx  1 jmoore  staff  32768 Jun  6 19:24 .Trashes
+   drwxrwxrwx  1 jmoore  staff  32768 Jun  6 19:24 .fseventsd
+   ```
 
 - All hidden files created by macOS. Screenshots of `Disk Utility` and the `Info` tab are included below. Also note that during the re-formatting of `OTHEROS` partition, the scheme `GUID Partition Map` was not an available option. That option seems to be available only when the device is selected in `Disk Utility` - and as shown in the screenshot below, it is set raw the recipe.
 
