@@ -183,3 +183,18 @@ Reboot the computer.
 ### II. `rEFInd` Adjustments
 
 There are several adjustments that can be made to `rEFInd` to *personalize* it, and make it resistant to `boot coups`. These are mostly covered on the [`rEFInd` website](http://www.rodsbooks.com/refind/), and will be covered here once they've been tried.  
+
+
+
+## Ruminations and Rumors: 
+
+*Note: I'm adding this nonsensically-named section here because I can't think of anywhere else to put it now.* 
+
+I have a fairly extensive collection of Apple computers (MBP & iMac), and I would like to install Linux on all of them. However, it appears there are some major obstacles in the way - all in the form of Apple proprietary software. Two examples are Apple's SSD technology ([NVMe](https://en.wikipedia.org/wiki/NVM_Express)), and the "T2 chip". Specifically: 
+
+* There is no driver available for the proprietary SSD hardware used in most Macs since about 2015. 
+* The T2 chip was designed by Apple to take control of your computer away from you, and put that control in Apple's hands. Shocking? Well yes, of course it is. But true nevertheless: T2 will not allow you to install another OS on your Mac. 
+
+I [read here](https://www.phoronix.com/scan.php?page=news_item&px=MacBook-Finally-Linux-SSD-RW) recently of a [project to develop an open-source driver for Apple's proprietary SSD](https://github.com/Dunedan/mbp-2016-linux). This is all I have for now. I'm keeping my eye on this GitHub project, and hoping for great things from Dunedan. 
+
+And I should be honest... I'm *coming out* : I've concluded that Apple now sucks. 
