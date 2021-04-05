@@ -195,6 +195,6 @@ I have a fairly extensive collection of Apple computers (MBP & iMac), and I woul
 * There is no driver available for the proprietary SSD hardware used in most Macs since about 2015. 
 * The T2 chip was designed by Apple to take control of your computer away from you, and put that control in Apple's hands. Shocking? Well yes, of course it is. But true nevertheless: T2 will not allow you to install another OS on your Mac. 
 
-I [read here](https://www.phoronix.com/scan.php?page=news_item&px=MacBook-Finally-Linux-SSD-RW) recently of a [project to develop an open-source driver for Apple's proprietary SSD](https://github.com/Dunedan/mbp-2016-linux). This is all I have for now. I'm keeping my eye on this GitHub project, and hoping for great things from Dunedan. 
+I [read here](https://www.phoronix.com/scan.php?page=news_item&px=MacBook-Finally-Linux-SSD-RW) recently of a [project to develop an open-source driver for Apple's proprietary SSD](https://github.com/Dunedan/mbp-2016-linux). Turns out it's a bit more ambitious than that. I'm keeping my eye on this GitHub project, and hoping for great things from Dunedan. And if you're following Dunedan, you should also follow [roadrunner2's *gist*](https://gist.github.com/roadrunner2/1289542a748d9a104e7baec6a92f9cd7) *"Linux on MacBook Pro Late 2016 and Mid 2017 (with Touchbar)"*.  Lots of comments & both seem to be making good progress! 
 
-And I should be honest... I'm *coming out* : I've concluded that Apple now sucks. 
+And I should be honest... I'm *coming out of the closet now* : I've concluded that Apple now sucks. 
