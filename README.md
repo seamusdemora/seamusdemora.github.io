@@ -11,7 +11,7 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 
 |         Repo Files          | Description |
 | :-------------------------- | :-------- |
-|[PiPyMailer](https://github.com/seamusdemora/PiPyMailer) | Python program sends email when RPi reboots; uses Gmail as SMTP relay |
+|  [Dual-booting Linux & macOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/LinuxOnLate2011.md)  | A step-by-step installation guide for Dual booting High Sierra & Ubuntu 20.04 on 2011 Macbook. \n12 months on now, this is really **solid**. |
 |[Raspberry Pi Formulae](https://github.com/seamusdemora/PiFormulae) | A repo/collection of "How-To" guides for Raspberry Pi |
 |[Mac Stuff](https://github.com/seamusdemora/seamus.github.io/blob/master/MacStuff.md) | Miscellaneous Recipes for Tweaks to Mac OS|
 |[Serial Comms for Mac OS](https://github.com/seamusdemora/seamus.github.io/blob/master/SerialCommsFromMacOS.md)  |  How To Set Up Serial Communications in Mac OS|
@@ -22,7 +22,7 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 |[Curing Dropped Network Connections](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MaintainLongRunningNetworkConnections.md) | Tired of dropped SSH connections?  |
 | [Fun With Footnotes in GFM](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/GFM_FootnotesWithReturnFeature.md) | How to create footnotes with a *return* feature |
 | [Create a VM for macOS High Sierra](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/CreateMacosVm.md)  |  Verified step-by-step recipe for creating a macOS High Sierra VM  |
-|  [Dual-booting Linux & macOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/LinuxOnLate2011.md)  | Step-by-step install: Dual boot High Sierra & Ubuntu 20.04 on 2011 Macbook |
+|[PiPyMailer](https://github.com/seamusdemora/PiPyMailer) | Python program sends email when RPi reboots; uses Gmail as SMTP relay |
 | [Using `launchd` in MacOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/UsingLaunchdForSchedulingTasks.md) | Schedule jobs with `launchctl` or `LaunchControl` |
 | [Using command history in `zsh`](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/CommandHistoryIntro-zsh.md)  |  Get acquainted with your CLI command history & be more efficient |
 |  [Hacking the iMessage database](https://github.com/seamusdemora/iMsgExtract)  |  Dig into the `chat.db` database where all messages are stored.  |
