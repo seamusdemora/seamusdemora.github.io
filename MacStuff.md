@@ -2,7 +2,9 @@
 
 #### Table of contents
 
-[1. How to Change Where Screenshots Are Saved?](#1-how-to-change-where-screenshots-are-saved)
+[1. How to Change Where Screenshots Are Saved?](#1-how-to-change-where-screenshots-are-saved) 
+
+[1.5 A zsh Script to Re-Name Your Screenshots](#1-5-a-shell-script-to-rename-screenshot-files) 
 
 [2. How to Prevent macOS From Sleeping?](#2-how-to-prevent-macos-from-sleeping)
 
@@ -91,6 +93,52 @@ Alternatively, you may specify the full path:
 This will cause all screenshots to be saved in a folder called `screenshots` on your Desktop. You may, of course, store them anywhere you wish*. 
 
 \* Note that you must create this folder if it doesn't already exist!  [↑toc](#table-of-contents) 
+
+### 1.5 A Shell Script to Rename Screenshot Files
+
+Apple does several things I don't particularly like. One of them is the file-naming convention they dictate for screenshots. Somewhere in the abyss of configuration files, there is probably a prescription for that, but finding Apple's documentation is never easy - even if it exists. For example, there is a shell command named `screencapture` - it even has a system manual at `man screencapture`! If you read to the bottom, you'll find a couple of interesting items:  
+
+   1. > BUGS - Better documentation is needed for this utility. 
+
+   2. >June 16, 2004
+
+So - ***someone*** at Apple recognized their documentation sucks, yet the document was last updated in mid-2004! 
+
+But we're not here to belabor the poor state of Apple's documentation. Here's a script that will do a *bulk-rename* of all the files in your screenshots (or any other) folder: 
+
+```zsh
+#!/bin/zsh
+# shotfnmv.sh
+cd $HOME/TestShots
+for afile in *.png
+do
+   echo $afile
+   oldfile=$(basename "$afile")
+   echo $oldfile
+   if [[ $oldfile == *"Screen Shot"* ]]; then
+     echo "Found an Apple-formatted Screen Shot file."
+
+     oldtimestr=$(echo "$oldfile" | awk '{ printf "%s-%s_%s\n", $3, $5, substr($6,1,2) }')
+     echo $oldtimestr
+     newtimestr=$(date -j -f %Y-%m-%d-%I.%M.%S_%p "$oldtimestr" "+%Y-%m-%d-%T")
+     echo $newtimestr
+     newfile="screenshot-${newtimestr}.png"
+     echo $newfile
+#    mv "$oldfile" "$newfile"                   # overwrite fienames in place
+     cp -np "$oldfile" "$newfile"               # copy file to same dir, new name
+#    cp -np "$oldfile" ../TestShots2/"$newfile" # copy file to different dir, new name
+  fi
+done
+```
+
+The `shebang` calls for `zsh`, but I believe the script will run in `bash`, and perhaps other shells. The `date` and `awk` utilities are the "native Apple" versions in `/bin` & `/usr/bin`. I've tested the script on my MBP macOS 10.15.6, and it seems to work fine for me. Note there are two.`#/comments` near the end that give you the option to copy or overwrite the original files. Also, the script still contains `echo` commands inserted for debugging - which can of course be *commented out* to reduce the noise. While I have tested this, I urge caution because Apple is free to change their file-naming format without notice, and it's not been rigorously tested against a wide variety of filenames. The latest version of the script is available in the /src folder here. 
+
+Beyond that, a few other points worth mention: 
+
+* The string `Screen Shot` is used as a filter to select only Apple-named screenshots; this will exclude files with, for example,  `Screen Recording` in the filename - or any files you have saved in the folder with any name that doesn't begin with `Screen Shot`. 
+* `awk` is used to parse the filename into fields, and extract the original date-time string from the original file name. This original-format date-time string is saved in the shell variable `oldtimestr`
+* `date` is used to re-format `oldtimestr` into a cleaner (IMO) format in `newtimestr`; i.e. they are the *same date & time, but in a different format*.
+* After that it's only a matter of copying (`cp`) the new file to retain both `oldfile` & `newfile`, or overwriting (`mv`) the `oldfile` with `newfile`. 
 
 ### 2. How to Prevent macOS From Sleeping?
 
