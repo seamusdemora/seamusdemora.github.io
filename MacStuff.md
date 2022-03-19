@@ -4,7 +4,7 @@
 
 [1. How to Change Where Screenshots Are Saved?](#1-how-to-change-where-screenshots-are-saved) 
 
-[1.5 A zsh Script to Re-Name Your Screenshots](#1-5-a-shell-script-to-rename-screenshot-files) 
+[1.5 A zsh Script to Re-Name Your Screenshots](#15-a-shell-script-to-rename-screenshot-files)  
 
 [2. How to Prevent macOS From Sleeping?](#2-how-to-prevent-macos-from-sleeping)
 
