@@ -11,7 +11,7 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 
 |         Repo Files          | Description |
 | :-------------------------- | :-------- |
-|  [Dual-booting Linux & macOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/LinuxOnLate2011.md)  | A step-by-step installation guide for Dual booting High Sierra & Ubuntu 20.04 on 2011 Macbook. <br>**~** *12 months on now, this is really **solid**.*<br/> |
+|  [Dual-booting Linux & macOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/LinuxOnLate2011.md)  | A step-by-step installation guide for Dual booting High Sierra & Ubuntu 20.04 on 2011 Macbook. <br>**~** *12 months on now, this is really **solid installation**.*<br/> |
 |[Raspberry Pi Formulae](https://github.com/seamusdemora/PiFormulae) | A repo/collection of "How-To" guides for Raspberry Pi |
 |[Mac Stuff](https://github.com/seamusdemora/seamus.github.io/blob/master/MacStuff.md) | Miscellaneous Recipes for Tweaks to Mac OS|
 |[Serial Comms for Mac OS](https://github.com/seamusdemora/seamus.github.io/blob/master/SerialCommsFromMacOS.md)  |  How To Set Up Serial Communications in Mac OS|
