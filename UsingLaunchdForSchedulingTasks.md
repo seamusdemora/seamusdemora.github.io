@@ -1,3 +1,7 @@
+## LaunchControl is a Better Solution
+
+I completely stopped using Apple's `launchctl` (described below) several months after this recipe was originally published in Nov, 2019. I've never looked back. [`LaunchControl`](https://soma-zone.com/LaunchControl/) is easily one of the 2 or 3 most competent apps I've used on mac OS. In 2 + years of use, I've found it to be both well-designed and well-supported. This is so different from most software products you buy today - especially the native apps designed by Apple!  And so, while I will leave the original recipe here for those who want to try their hand at the tedious amnual creation of .plist files for` launchctl,` I no longer use it. `LaunchControl` saves time - lots of time.
+
 ## Using launchd for Scheduling Jobs in MacOS
 
 [`launchd`](https://www.launchd.info/) is Apple's initialization and service management software. IMHO, it's nothing to write home about, but as I use a Mac, it's a fact of life. My interest in it lies mainly in being able to schedule jobs to be run at a certain time (or perhaps when a certain condition is satisfied). In that context it serves the same purpose as `cron`. The downside is that it is a helluva' lot more difficult to prepare a `.plist` file than to enter a line in your `crontab`. However, Apple refuses to maintain its `cron` utility (`man cron` says it's vintage is June 17, 2007!), and perhaps the extra effort in learning `launchd` may pay dividends one day. 
@@ -181,5 +185,4 @@ $ plutil -lint /Users/seamus/Library/LaunchAgents/sdm.simple.exampleofPLIST.plis
 /Users/seamus/Library/LaunchAgents/sdm.simple.exampleofPLIST.plist: OK  
 $
 ```
-
 
