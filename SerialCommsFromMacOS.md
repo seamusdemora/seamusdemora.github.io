@@ -26,7 +26,7 @@ If you need to push the limit on cable length, here's the general approach:
 
 ### The Driver:
 
-I tried using the driver included (inconveniently on a mini-CD) with the Tripp-Lite cable. This was an exercise in frustration, and it really pissed me off! **Why?** ***Because Tripp-Lite couldn't be bothered to do this correctly***. Apple's native drivers just didn't cooperate for reasons I still don't understand. After wasting too much time, I found an ***excellent*** driver from [Jeroen Arnoldus](https://www.mac-usb-serial.com/). Owners of new Macs will be glad to know this driver is compatible with [Mac OS *Catalina*](https://en.wikipedia.org/wiki/MacOS_Catalina). 
+***N.B. This may be the most critical component for getting good results.*** I tried using the driver included (inconveniently on a mini-CD) with the Tripp-Lite cable. *It sucked*: This was an exercise in frustration, and it really pissed me off! **Why?** ***Because Tripp-Lite couldn't be bothered to do this correctly***. Apple's native drivers *also sucked* -they just didn't cooperate for reasons I still don't understand. After wasting too much time, I found an ***excellent*** driver at [**mac-usb-serial.com**](https://www.mac-usb-serial.com/) developed by Jeroen Arnoldus. Owners of the newest Macs will have to wait a while however, because as of *March 19, 2022* the currently-available driver compatibility ends with [Mac OS *Catalina*](https://en.wikipedia.org/wiki/MacOS_Catalina). 
 
 ### Using `screen`:
 
