@@ -131,7 +131,7 @@ do
 done
 ```
 
-The `shebang` calls for `zsh`, but I believe the script will run in `bash`, and perhaps other shells. The `date` and `awk` utilities are the "native Apple" versions in `/bin` & `/usr/bin`. I've tested the script on my MBP macOS 10.15.6, and it seems to work fine for me. Note there are two.`#/comments` near the end that give you the option to copy or overwrite the original files. Also, the script still contains `echo` commands inserted for debugging - which can of course be *commented out* to reduce the noise. While I have tested this, I urge caution because Apple is free to change their file-naming format without notice, and it's not been rigorously tested against a wide variety of filenames. The latest version of the script is available in the /src folder here. 
+The `shebang` calls for `zsh`, but I believe the script will run in `bash`, and perhaps other shells. The `date` and `awk` utilities are the "native Apple" versions in `/bin` & `/usr/bin`. I've tested the script on my MBP macOS 10.15.6, and it seems to work fine for me. Note there are two.`#/comments` near the end that give you the option to copy or overwrite the original files. Also, the script still contains `echo` commands inserted for debugging - which can of course be *commented out* to reduce the noise. While I have tested this, I urge caution because Apple is free to change their file-naming format without notice, and it's not been rigorously tested against a wide variety of filenames. The latest version of the script is available in the [./src folder here](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/src/shotfnmv.sh). 
 
 Beyond that, a few other points worth mention: 
 
