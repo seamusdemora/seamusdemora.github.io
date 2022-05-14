@@ -90,9 +90,10 @@ This is a *two-part* question. Some ports are installed because we **requested**
 
 ### Finding and installing ports:
 
-You may search for ports to install:
+You may search for ports to install, and get additional information on those ports:
 
 	port search <portname>
+	port info <portname>
 
 where `<portname>` is the name of the port you are searching for, or a partial name. To install a port you've chosen, you need to run the port install command as the Unix superuser:
 
