@@ -66,6 +66,8 @@
 
 [32. Should You Put Siri on an "iLeash", or Put Her Down?](#32-should-you-put-siri-on-an-ileash-or-put-her-down) 
 
+[33. Burning ISO files to DVD Using `hdiutil`](#33-burning-iso-files-to-dvd) 
+
 
 
 
@@ -675,6 +677,41 @@ On Catalina and Mojave, there's a control panel for Siri in `System Preferences`
 Removing Siri from the "Touch Bar" (Mojave-speak), or the "Control Strip" (Catalina-speak) likewise has been made harder than it should be. The link in option 2. above is a SE Q&A that illustrates this point. If that doesn't work for you, my best suggestion is to [search for your particular OS](https://duckduckgo.com/?t=ffnt&q=remove+siri+from+macOS+touchbar&ia=web).
 
 Option 3 seems the ultimate solution to me. But there's a question of ***how*** to do this. Search as much as you wish, but you won't find a how-to guide for removing Siri published by Apple. Maybe there's a reason for that - maybe some Siri software components are needed in critical system functions. I don't like the fact that Apple says nothing at all about this, 'cause I know the question has been asked. The only guidance I found for removing Siri was in [this article](https://www.geek-kb.com/remove-siri-macbook/). But the the author's solution comes down to `sudo rm -rf` on the system library folder where Siri lives. Except for a restore from backup, this approach is 100% commitment!   
+
+
+
+### 33. Burning ISO files to DVD
+
+Rather *old-school*, but DVDs still come in handy on occasion. For example, if you've been called upon to repair a relative's Linux PC, and don't have a USB drive to spare. Fortunately, you do have one of Apple's *"Super Drives"* from back in the day, and a big stack of DVDs you got on sale 10 years ago :)  
+
+You might ***think*** you can use Balena Etcher for this (as you do with USB drives), but you will be disappointed to find that the bunch at Balena doesn't support that - despite the fact there was a lot of discussion on the subject some time ago! 
+
+Fortunately, in a rare case of *Apple's software does occasionally do something useful*, the *command-line utility* `hdiutil` rises to the challenge. A well-written CLI utility is a thing of beauty, and this is not only *beautiful*, but it far exceeded my expectations. I should mention that this was done on my Catalina system, so YMMV. But here's how it looked on my system:    
+
+```zsh
+seamus@Dung-Pro ~ % cd Downloads                                
+seamus@Dung-Pro Downloads % hdiutil burn ubuntu-22.04-desktop-amd64.iso
+Preparing data for burn
+Opening session
+Opening track
+Writing track
+.......................................................................................................................................
+Closing track
+.......................................................................................................................................
+Closing session
+.......................................................................................................................................
+Finishing burn
+Verifying burn…
+Verifying
+.......................................................................................................................................
+Burn completed successfully
+.......................................................................................................................................
+hdiutil: burn: completed
+```
+
+Awesome! The physical configuration ICYI: 
+
+![DVD-Burn](pix/DVD-Burn.jpeg)
 
 ---
 
