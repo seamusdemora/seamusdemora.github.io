@@ -68,6 +68,8 @@
 
 [33. Burning ISO files to DVD Using `hdiutil`](#33-burning-iso-files-to-dvd) 
 
+[34. Switch the Profile in your current Terminal window](#34-switch-the-profile-in-your-current-terminal-window)
+
 
 
 
@@ -713,6 +715,16 @@ Awesome! The physical configuration ICYI:
 
 ![DVD-Burn](pix/DVD-Burn.jpeg)
 
+
+### 34. Switch the Profile in your current Terminal window 
+
+Yes - you can do this, and it comes in really handy sometimes: 
+
+    1. Right-click an open space in the Terminal window, or <kbd>command</kbd><kbd>I</kbd> 
+    2. Choose `Show Inspector` from the menu
+    3. Click on the `Profile` tab in the `Inspector` window
+    4. Choose a new profile for the current window
+
 ---
 
 
@@ -759,6 +771,7 @@ Awesome! The physical configuration ICYI:
 - [Siri Stores Encrypted E-mails in Plain Text](https://mjtsai.com/blog/2019/11/06/siri-stores-encrypted-e-mails-in-plain-text/) - Disturbing...
 - [Challenge: does your ten-year-old code still run?](https://www.nature.com/articles/d41586-020-02462-7) I think about this in terms of the Apple Autocracy 
 - [Ten Years Reproducibility Challenge](https://github.com/ReScience/ten-years) - I have code written for Mojave that won't run on Catalina - you? 
+- [Switch the profile of your current terminal](https://apple.stackexchange.com/a/192973/149366)
 
 <!--- 
 
