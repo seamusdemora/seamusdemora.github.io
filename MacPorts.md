@@ -187,11 +187,19 @@ The **surgical removal**:
 
 You may now run `which file`, and you should see the executable in `/opt/local/bin`.  
 
+## If you use any of the GNU tools: 
+
+I'm using a few GNU tools that are available as MacPorts packages. Some of these tools are packaged as a "set" - for example GNU's [find-utils](https://www.gnu.org/software/findutils/), and [core-utils](https://www.maizure.org/projects/decoded-gnu-coreutils/) packages. The **issue** is this: to avoid **command name collisions**, MacPorts appends the single letter `g` to the command's name; e.g. `gfind`, `glocate`, etc. I find this *"taxing"*. I've discovered a solution that seems to work well so far. Rather than detail it here, please refer to the Q&A on Unix&Linux SE for the time being: [How to get 'man gfind' when I enter 'man find'?](https://unix.stackexchange.com/questions/705757/how-to-get-man-gfind-when-i-enter-man-find). 
+
+Please also note that this is unrelated to the function provided by `port select`; ref `man port-select`. 
+
+
+
 ## Documentation & Support:
 
 Help on a wide variety of topics is also available in the project [Guide](https://guide.macports.org/) and through the [Trac portal](https://trac.macports.org/) should you run into any problems installing and/or using MacPorts. Of particular relevance are the [installation](https://guide.macports.org/#installing) & [usage](https://guide.macports.org/#using) sections of the former and the [FAQ](https://trac.macports.org/wiki/FAQ) section of the [Wiki](https://trac.macports.org/wiki), where MacPorts keeps track of questions frequently fielded on their [mailing lists](contact.php#Lists). The [MacPorts Wiki](https://trac.macports.org/wiki) is highly recommended.
 
-If any of these resources do not answer your questions or if you need any kind of extended support, [reach out and make contact](https://www.macports.org/contact.php)! [Rocket Chat](https://trac.macports.org/wiki/Chat) is one way to get help on IRC - it has worked extremely well for me.
+If any of these resources do not answer your questions or if you need any kind of extended support, [reach out and make contact](https://www.macports.org/contact.php)! [Rocket Chat](https://trac.macports.org/wiki/Chat) is one way to get help on IRC - it has worked extremely well for me. IRC support continues to work well for me, but it's now available through [libera chat](https://web.libera.chat/#macports). 
 
 ## Miscellaneous Issues and Discoveries:
 
