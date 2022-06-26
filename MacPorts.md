@@ -222,5 +222,6 @@ There are different installers for each version of macOS; they are [listed on th
 
 ## REFERENCES:
 
-* [Installing MacPorts on MacOS 10.15 Catalina](https://www.ghostwheel.com/2019/09/05/installing-macports-on-macos-10-15-catalina-beta-7/) - Some notes from Chris Knight on his installation.
+* [Installing MacPorts on MacOS 10.15 Catalina](https://www.ghostwheel.com/2019/09/05/installing-macports-on-macos-10-15-catalina-beta-7/) - Some notes from Chris Knight on his installation. 
+* MacPorts package of GNU's `locate` (i.e. `glocate`) should be considered **broken** until [the issue with `glocatedb`](https://apple.stackexchange.com/a/397258/149366) is resolved.
 
