@@ -42,33 +42,35 @@
 
 [20. How to See Your Environment Variables](#20-how-to-see-your-environment-variables) 
 
-[21. How to Enable `cron` on Catalina](#21-how-to-enable-cron-on-catalina)
+[21. Where is the PATH Environment Variable Stored on MacOS?](#21-where-is-the-path-environment-variable-stored-on-macos) 
 
-[22. Getting Up to Speed on `zsh`](#22-getting-up-to-speed-on-zsh)
+[22. How to Enable `cron` on Catalina](#22-how-to-enable-cron-on-catalina)
 
-[23. Upgrade Xcode on High Sierra... or Why Does Apple Crap On Us?](#23-upgrade-xcode-on-high-sierra-or-why-does-apple-crap-on-us)
+[23. Getting Up to Speed on `zsh`](#23-getting-up-to-speed-on-zsh) 
 
-[24. Cleaning and Restoration of iTerm2](#24-cleaning-and-restoration-of-iterm2)  
+[24. Upgrade Xcode on High Sierra... or Why Does Apple Crap On Us?](#24-upgrade-xcode-on-high-sierra-or-why-does-apple-crap-on-us)
 
-[25. "client_loop: send disconnect: Broken pipe"](#25-client_loop-send-disconnect-broken-pipe)
+[25. Cleaning and Restoration of iTerm2](#25-cleaning-and-restoration-of-iterm2)  
 
-[26. Re-Installing macOS](#26-potentially-useful-info-for-re-Installing-macos)
+[26. "client_loop: send disconnect: Broken pipe"](#26-client_loop-send-disconnect-broken-pipe)
 
-[27. Tools for Isolating Hardware Faults in Macs](#27-tools-for-isolating-hardware-faults-in-macs)
+[27. Re-Installing macOS](#27-potentially-useful-info-for-re-Installing-macos)
 
-[28. Insert Symbols in macOS](#28-insert-symbols-in-macos)
+[28. Tools for Isolating Hardware Faults in Macs](#28-tools-for-isolating-hardware-faults-in-macs)
 
-[29. The Elusive Symbol for Degree°](#29-the-elusive-symbol-for-degree)
+[29. Insert Symbols in macOS](#29-insert-symbols-in-macos)
 
-[30. The Strange Case of `airport`](#30-the-strange-case-of-airport) 
+[30. The Elusive Symbol for Degree°](#30-the-elusive-symbol-for-degree)
 
-[31. Do You Want to Move That File, or Copy It?](#31-would-you-like-to-move-that-file-or-copy-it) 
+[31. The Strange Case of `airport`](#31-the-strange-case-of-airport) 
 
-[32. Should You Put Siri on an "iLeash", or Put Her Down?](#32-should-you-put-siri-on-an-ileash-or-put-her-down) 
+[32. Do You Want to Move That File, or Copy It?](#32-would-you-like-to-move-that-file-or-copy-it) 
 
-[33. Burning ISO files to DVD Using `hdiutil`](#33-burning-iso-files-to-dvd) 
+[33. Should You Put Siri on an "iLeash", or Put Her Down?](#33-should-you-put-siri-on-an-ileash-or-put-her-down) 
 
-[34. Switch the Profile in your current Terminal window](#34-switch-the-profile-in-your-current-terminal-window)
+[34. Burning ISO files to DVD Using `hdiutil`](#34-burning-iso-files-to-dvd) 
+
+[35. Switch the Profile in your current Terminal window](#35-switch-the-profile-in-your-current-terminal-window)
 
 
 
@@ -526,13 +528,27 @@ Enter this at the command line in `Terminal.app`. From this point forward, anyti
 
 ### 20. How to See Your Environment Variables
 
+From the command prompt:
+
 ```zsh
-printenv | less
+% printenv
+# or if you prefer not to clutter your terminal history:
+% printenv | less
 ```
 
-[↑](#table-of-contents)
+### 21. Where is the PATH Environment Variable Stored on MacOS?
 
-### 21. How to Enable `cron` on Catalina
+The files containing the system's default PATH environment are in two places: 
+
+* `/etc/paths` 
+* Other folders are added (typically by 3rd-party application installers) in on of the files under `/etc/paths.d` 
+* Typically, your PATH environment variable is further modified for your individual use in: 
+  * `~/.zprofile` - if you use `zsh`, or 
+  * `~/.bash_profile` for `bash` users
+
+
+
+### 22. How to Enable `cron` on Catalina
 
 In Catalina, Apple has *"enhanced security"* by disallowing operations that have long been allowed. `cron`is one of those. Restoring `cron`*'s* privileges requires it be granted **Full Disk Access** in **System Preferences**. Doing this using the GUI is a two-step process: 
 
@@ -547,7 +563,7 @@ In Catalina, Apple has *"enhanced security"* by disallowing operations that have
 
 *Opinion: I wonder if the primary effect of Apple's "enhanced security" changes in Catalina has been to put a much larger burden on some users by forcing them to activate these work-arounds to get their tasks completed?*    [↑](#table-of-contents)
 
-### 22. Getting Up to Speed on `zsh`
+### 23. Getting Up to Speed on `zsh`
 
 Apple has decided that the most-commonly-used shell (`bash`) should no longer be the default shell for macOS, so in Catalina they have made `zsh` the default. The motivation for this decision is, uh... interesting, I think - if this is true.  IMO, `zsh` is a hopped-up version of `bash` - a version that appeals mostly to the hyperactive, or maybe even amphetamine users. But that's just my opinion, man. I'll try anything once, and here's a shortlist to get up-to-speed on `zsh`: 
 
@@ -562,7 +578,7 @@ chsh -s /bin/bash
 
 [↑](#table-of-contents)
 
-### 23. Upgrade Xcode on High Sierra... or Why Does Apple Crap On Us?
+### 24. Upgrade Xcode on High Sierra... or Why Does Apple Crap On Us?
 
 Apple's abject failure to maintain many of their "Open Source" tools has led me to install [**MacPorts**](https://www.macports.org). My *ancient* MacBook Pro Late 2011 runs High Sierra, and I've been reasonably happy with it - it's a lesser hassle than my new 2019 MacBook Pro w/ Catalina. Also, since this vintage Mac has a removable SSD, I can easily back out of any failures. Anyway... as I learned, before installing MacPorts I had to upgrade XCode. XCode was installed from the AppStore, so I figured it would be an easy upgrade. But in yet another demonstration of how much Apple cares for their customers, this was far from *easy*. And no - I don't want to hear any lame explanations for this from Apple's supplicants - just STFU, please. 
 
@@ -586,7 +602,7 @@ Installing an older version of XCode is a bit different - you can't get it from 
 
 Oh, one other thing... checking your version of XCode Tools is reasonably straightforward, but try to find the version of XCode Command Line Tools. Yeah... frustrating, isn't it?   [↑](#table-of-contents)
 
-### 24. Cleaning and Restoration of iTerm2
+### 25. Cleaning and Restoration of iTerm2
 
 [iTerm2](https://iterm2.com/index.html) is a popular terminal emulator for macOS. Some prefer it to Apple's native `Terminal.app`. I use it for some things, but find its many features can be distracting at times. I realized recently that I had wandered off [in the weeds](https://idioms.thefreedictionary.com/In+the+weeds) wrt my `Preferences...Profiles` settings, and that `Default` settings were long gone & far away from the original settings (which weren't that bad). For all the [knob dickers](https://www.urbandictionary.com/define.php?term=knob%20dicker), here's the cure from the [iTerm FAQ](https://iterm2.com/faq.html): 
 
@@ -598,7 +614,7 @@ Oh, one other thing... checking your version of XCode Tools is reasonably straig
 
 Related to this is iTerm2's [Dynamic Profiles](https://iterm2.com/documentation-dynamic-profiles.html) which are saved in one or more plist files formatted as JSON or XML (or in binary). Profile changes are made immediately (thus, *dynamic*).   [↑](#table-of-contents)
 
-### 25. "client_loop: send disconnect: Broken pipe"
+### 26. "client_loop: send disconnect: Broken pipe"
 
 Irritating, no? If your SSH connections are [*dropping like flies*](https://idioms.thefreedictionary.com/drop+like+flies), you can stop that by running your SSH connections under the native `caffeinate` command: 
 
@@ -608,11 +624,11 @@ Irritating, no? If your SSH connections are [*dropping like flies*](https://idio
 
 This should maintain an SSH connection for as long as you need it - hours, days, weeks, etc. It requires *no additional software*, and will maintain other network connections and long-running processes even when the lid is closed on a MacBook. [You can read more details on this neighboring page.](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MaintainLongRunningNetworkConnections.md)  [↑](#table-of-contents)
 
-### 26. Potentially Useful Info for Re-Installing macOS
+### 27. Potentially Useful Info for Re-Installing macOS
 
 Lest I be accused of ignoring the occasional and potentially useful item that Apple publishes, here's one that might come in handy in a disaster recovery context: [Creating a Bootable Installer for macOS](https://support.apple.com/en-us/HT201372). [↑](#table-of-contents)
 
-### 27. Tools for Isolating Hardware Faults in Macs
+### 28. Tools for Isolating Hardware Faults in Macs
 
 For hardware built prior to June, 2013, use the [Apple Hardware Test](https://support.apple.com/en-us/HT201257) 
 
@@ -620,13 +636,13 @@ For hardware built after June, 2013, use [Apple Diagnostics](https://support.app
 
 
 
-### 28. Insert Symbols in macOS
+### 29. Insert Symbols in macOS
 
 macOS has a large set of symbols (⌘, ⌃, ␠, ↑ + hundreds more) that can be inserted into most documents you create (or edit). Use your keyboard <kbd>command</kbd><kbd>control</kbd><kbd>space</kbd> (or, ⌘, ⌃, ␠) to see the entire pallet of symbols. Click on the one you wish to use, *et c'est voilà*.   [↑](#table-of-contents) 
 
 
 
-### 29. The Elusive Symbol for *Degree*
+### 30. The Elusive Symbol for *Degree*
 
 Several ways to do this: 
 
@@ -636,7 +652,7 @@ Several ways to do this:
 
 
 
-### 30. The Strange Case of `airport`
+### 31. The Strange Case of `airport`
 
 I've seen references to **"Airport"** in various articles for years without knowing what they were on about. Yeah - there's the odd app called [`AirPort Utility`](https://support.apple.com/guide/aputility/welcome/mac) in the folder labeled `Other` in `Launchpad`- the folder where they put a few other seldom-used apps. But as far as I knew, this  `AirPort Utility` was used *only* for light administrative duty on my *old-and-now-no-longer-manufactured* [Time Capsule](https://en.wikipedia.org/wiki/AirPort_Time_Capsule). I was amazed to see that it was still included in Catalina - Apple being so fond of casting out legacy items.
 
@@ -650,7 +666,7 @@ Yes - seriously - that's where it is - at least for Catalina & Mojave. Older ver
 
 
 
-### 31. Would You Like to Move That File, or Copy It?
+### 32. Would You Like to Move That File, or Copy It?
 
 If you ever use `Finder`, this is for you. As you have likely noticed, there is an *unspoken rule* behind `Finder`*'s* behavior during ***drag-and-drop*** operations on files: 
 
@@ -666,7 +682,7 @@ But these default behaviors are **not** what we want in some situations. Here's 
 
  
 
-### 32. Should You Put Siri on an "iLeash", or Put Her Down?
+### 33. Should You Put Siri on an "iLeash", or Put Her Down?
 
 With the ["Siri Privacy Scandal"](https://duckduckgo.com/?t=ffnt&q=Siri+Privacy+Scandal&ia=web) out in the open now, you may have wondered what, if anything, you should do about it. I know I have. After understanding what happened, it *feels like* Apple simply cannot be trusted. For me - the fact that they **didn't take ownership of the issue** was the biggest disappointment - a punk-ass move IMHO. I should just accept the fact that giant corporations are inherently untrustworthy, and run by people who might throw their Mother overboard to improve their odds... I should *grow up*, and accept this. Anyway - now the time has come to decide what to do about it. Here are some of the options I've considered:
 
@@ -682,7 +698,7 @@ Option 3 seems the ultimate solution to me. But there's a question of ***how*** 
 
 
 
-### 33. Burning ISO files to DVD
+### 34. Burning ISO files to DVD
 
 Rather *old-school*, but DVDs still come in handy on occasion. For example, if you've been called upon to repair a relative's Linux PC, and don't have a USB drive to spare. Fortunately, you do have one of Apple's *"Super Drives"* from back in the day, and a big stack of DVDs you got on sale 10 years ago :)  
 
@@ -715,8 +731,7 @@ Awesome! The physical configuration ICYI:
 
 ![DVD-Burn](pix/DVD-Burn.jpeg)
 
-
-### 34. Switch the Profile in your current Terminal window 
+### 35. Switch the Profile in your current Terminal window
 
 Yes - you can do this, and it comes in really handy sometimes: 
 
