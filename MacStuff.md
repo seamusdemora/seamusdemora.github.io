@@ -800,7 +800,9 @@ Yes - you can do this, and it comes in really handy sometimes:
 - [Siri Stores Encrypted E-mails in Plain Text](https://mjtsai.com/blog/2019/11/06/siri-stores-encrypted-e-mails-in-plain-text/) - Disturbing...
 - [Challenge: does your ten-year-old code still run?](https://www.nature.com/articles/d41586-020-02462-7) I think about this in terms of the Apple Autocracy 
 - [Ten Years Reproducibility Challenge](https://github.com/ReScience/ten-years) - I have code written for Mojave that won't run on Catalina - you? 
-- [Switch the profile of your current terminal](https://apple.stackexchange.com/a/192973/149366)
+- [Switch the profile of your current terminal](https://apple.stackexchange.com/a/192973/149366) 
+- [Q&A: Why does rm -f ask me for confirmation on zsh?](https://stackoverflow.com/questions/27988160/why-does-rm-f-ask-me-for-confirmation-on-zsh) 
+- [Q&A: Double rm verification in zsh](https://unix.stackexchange.com/questions/135084/double-rm-verification-in-zsh)
 
 <!--- 
 
