@@ -34,7 +34,7 @@
 
 [16. How to Restore the "Lost Startup Chime"?](#16-how-to-restore-the-lost-startup-chime) 
 
-[17. Weird Behavior With zsh; `noglob` and `rm -rf`](#17-weird-behavior-with-zsh-noglob-and-rm-rf)
+[17. Weird Behavior With zsh; `noglob` and `rm -rf`](#17-weird-behavior-with-zsh-noglob-and-rm-reluctant) 
 
 [18. How to Hide All Open Windows on a Desktop? ('Show Desktop')](#18-how-to-hide-all-open-windows-on-a-desktop-show-desktop) 
 
@@ -478,7 +478,7 @@ sudo nvram StartupMute=%01
 
 And if you're into [*mac nostalgia*](https://duckduckgo.com/?t=ffnt&q=mac+nostalgia&ia=web) you can [get all the default macOS wallpapers in 5K!](https://512pixels.net/projects/default-mac-wallpapers-in-5k/)   [↑](#table-of-contents)
 
-### 17. Weird Behavior With zsh: `noglob` and `rm -rf`
+### 17. Weird Behavior With zsh: `noglob` and `rm reluctant`
 
 As most of you will be aware, Apple has made the decision to change the default shell from `bash` to `zsh` in macOS Catalina. There's more to come here on `zsh`, but for now I'll include some *discoveries* I've made here. 
 
