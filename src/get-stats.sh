@@ -1,11 +1,14 @@
 #!/bin/zsh
 
-# also works w/ bash: /opt/local/bin/bash if you're using GNU bash via MacPorts, or /ban/bash
+# also works w/ bash: /opt/local/bin/bash for GNU bash via MacPorts, or /bin/bash
 #
 # script name 'get-stats.sh`:
-# macOS - Compare stat's of source dir for rsync backup against rsync dest after restore:
-# used to evaluate rsync options for their ability to restore files & folders previously 
-# backed up on the SynologyNAS drive with the same ownership & permissions as original.
+# macOS - Compare stat's of two folders: SOURCE_ORIGINAL & DEST_RESTORE. Typical usage
+# is evaluating rsync options to determine any loss of meta-data between the source dir 
+# of an rsync backup against the corresponding rsync dest after restoration:
+#
+#                      rsync backup          rsync restore
+#     SOURCE_ORIGINAL  ----------->  BACKUP  ------------>   DEST_RESTORE
 #
 # Assumes ./xyz-original & ./xyz-restored are located in $HOME
 
@@ -25,4 +28,3 @@ cd $HOME
 diff -sy --suppress-common-lines $STATFILE_ORIGINAL $STATFILE_RESTORED > $STATFILE_DIFF
 
 cat $STATFILE_DIFF
-
