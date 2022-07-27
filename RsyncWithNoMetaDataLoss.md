@@ -138,15 +138,48 @@ This backup-restore cycle lost no metadata. A brief explanation of each of the `
 
 
 
-
-
-
-
-
-
 ---
 
-### REFERENCES: 
+### REFERENCES:
 
 1. [Rsync between Mac and Linux](https://odd.blog/2020/10/06/rsync-between-mac-and-linux/); a few words re `--iconv` - the `rsync` character set conversion option 
-2. [Why add a trailing slash after an rsync destination?](https://unix.stackexchange.com/questions/402555/why-add-a-trailing-slash-after-an-rsync-destination) ; a trailing `/` plays an important role for src & dest
+2. [Why add a trailing slash after an rsync destination?](https://unix.stackexchange.com/questions/402555/why-add-a-trailing-slash-after-an-rsync-destination) ; a trailing `/` plays an important role for src & dest 
+
+
+
+### DECODING THE ITEMIZED CHANGES (option `i`):
+
+```
+# decode --itemize output:
+#
+# YXcstpoguax  path/to/file
+# |||||||||||
+# `----------- the type of update being done::
+#  ||||||||||   < : file is being transferred to the remote host (sent).
+#  ||||||||||   > : file is being transferred to the local host (received).
+#  ||||||||||   c: local change/creation for the item, such as:
+#  ||||||||||      - the creation of a directory
+#  ||||||||||      - the changing of a symlink,
+#  ||||||||||      - etc.
+#  ||||||||||   h: the item is a hard link to another item (requires --hard-links).
+#  ||||||||||   .: the item is not being updated (though it might have attributes that are being modified).
+#  ||||||||||   *: means that the rest of the itemized-output area contains a message (e.g. "deleting").
+#  ||||||||||
+#  `---------- the file type:
+#   |||||||||   f for a file,
+#   |||||||||   d for a directory,
+#   |||||||||   L for a symlink,
+#   |||||||||   D for a device,
+#   |||||||||   S for a special file (e.g. named sockets and fifos).
+#   |||||||||
+#   `--------- c: different checksum (for regular files)
+#    ||||||||     changed value (for symlink, device, and special file)
+#    `-------- s: Size is different
+#     `------- t: Modification time is different; T: time set to transfer time
+#      `------ p: Permission are different
+#       `----- o: Owner is different
+#        `---- g: Group is different
+#         `--- x: The extended attribute information is being changed.
+#          `-- a: The ACL information changed
+```
+
