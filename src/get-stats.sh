@@ -20,9 +20,9 @@ STATFILE_RESTORED="xyz-restored-stat.txt"
 STATFILE_DIFF="stat_diffs.txt"
 
 cd $SOURCE_ORIGINAL
-find . -exec stat --format='%n %A %U %G' {} \; | sort > $HOME/$STATFILE_ORIGINAL 
+find . -exec stat --format='%n %A %U %G %Y' {} \; | sort > $HOME/$STATFILE_ORIGINAL 
 cd ../$DEST_RESTORE
-find . -exec stat --format='%n %A %U %G' {} \; | sort > $HOME/$STATFILE_RESTORED
+find . -exec stat --format='%n %A %U %G %Y' {} \; | sort > $HOME/$STATFILE_RESTORED
 cd $HOME
 # run `diff` on files containing `stat` results for comparison & output results:
 diff -sy --suppress-common-lines $STATFILE_ORIGINAL $STATFILE_RESTORED > $STATFILE_DIFF
