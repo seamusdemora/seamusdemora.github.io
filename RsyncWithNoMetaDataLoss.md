@@ -8,7 +8,7 @@ Without belaboring that further, I'll just explain the issue, and provide the so
 
 The issue is best illustrated in a brief example of the backup-restore process depicted below: 
 
-![rsync-process](/Users/jmoore/Documents/GitHub/seamus.github.io/pix/rsync-process.png)
+![rsync-process](pix/rsync-process.png)
 
 Consider a folder on your macOS local drive - `xyz-original` - for which you want to create a backup using `rsync`.  Before initiating the backup, let's do a recursive listing of the contents of `xyz-original` : 
 
