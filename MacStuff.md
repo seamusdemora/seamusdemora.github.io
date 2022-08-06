@@ -10,7 +10,7 @@
 
 [3. How to Start (`open`) an App From the macOS Command Line?](#3-how-to-start-open-an-app-from-the-macos-command-line) 
 
-[3.5 How to `open` a Network drive](#35-how-to-open-network-share) 
+[3.5 How to `open` a Network drive](#35-how-to-open-a-network-share) 
 
 [4. How to Schedule an App to Run At a Specified Time?](#4-how-to-schedule-an-app-to-run-at-a-specified-time)
 
