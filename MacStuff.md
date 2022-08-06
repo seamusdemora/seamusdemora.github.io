@@ -8,7 +8,9 @@
 
 [2. How to Prevent macOS From Sleeping?](#2-how-to-prevent-macos-from-sleeping)
 
-[3. How to Start (`open`) an App From the macOS Command Line?](#3-how-to-start-open-an-app-from-the-macos-command-line)
+[3. How to Start (`open`) an App From the macOS Command Line?](#3-how-to-start-open-an-app-from-the-macos-command-line) 
+
+[3.5 How to `open` a Network drive](#3.5-how-to-open-network-share) 
 
 [4. How to Schedule an App to Run At a Specified Time?](#4-how-to-schedule-an-app-to-run-at-a-specified-time)
 
@@ -205,7 +207,19 @@ d. `open` also has some options specific to text editing; for example to open a 
 $ man open | col -b | open -tf  
 ```
 
-Which can be quite useful for perusing the system documentation offline (in this example, the `man` page for `open`), and/or making additions or changes to it either for your own use, or to share.   [↑](#table-of-contents)
+Which can be quite useful for perusing the system documentation offline (in this example, the `man` page for `open`), and/or making additions or changes to it either for your own use, or to share.   [↑](#table-of-contents)  
+
+### 3.5 How to `open` a Network share
+
+`open` can also launch Finder, and open a network share: 
+
+a. Open `Finder`, click the `Go` item in the Menu, and then `Connect to server...` (or ,<kbd>⌘</kbd><kbd>K</kbd>)
+
+b. Enter `smb://server/share`, and click the `Connect` button, **OR** click `Browse` to select a server & share.
+
+c. A new `Finder` window/tab will open showing the contents of`smb://server/share`. That connection is now _registered_ in the `LaunchServices` database, and entering `open smb://server/share` in `Terminal.app`will open to that share in `Finder`. 
+
+Note: This will also work for any other supported network file system: `cifs`, `nfs`, etc.
 
 ### 4. How to Schedule an App to Run At a Specified Time?
 
