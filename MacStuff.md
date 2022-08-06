@@ -219,7 +219,7 @@ b. Enter `smb://server/share`, and click the `Connect` button, **OR** click `Bro
 
 c. A new `Finder` window/tab will open showing the contents of`smb://server/share`. That connection is now _registered_ in the `LaunchServices` database, and entering `open smb://server/share` in `Terminal.app`will open to that share in `Finder`. 
 
-Note: This will also work for any other supported network file system: `cifs`, `nfs`, etc.
+Note: This will also work for any other supported network file system: `cifs`, `nfs`, etc.  [↑toc](#table-of-contents) 
 
 ### 4. How to Schedule an App to Run At a Specified Time?
 
