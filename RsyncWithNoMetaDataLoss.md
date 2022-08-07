@@ -202,6 +202,7 @@ Finally, one may wonder, "If the filesystem is proprietary, how does `rsync` man
 2. [Why add a trailing slash after an rsync destination?](https://unix.stackexchange.com/questions/402555/why-add-a-trailing-slash-after-an-rsync-destination) ; a trailing `/` plays an important role for src & dest 
 3. [Q&A: Where is ACL data technically stored?](https://unix.stackexchange.com/questions/93508/where-is-acl-data-technically-stored); Access Control Lists are also metadata. 
 4. [Q&A: Where are extended attributes stored?](https://stackoverflow.com/questions/20618492/where-are-extended-attributes-stored) 
+5. [Q&A: Using rsync to backup](https://apple.stackexchange.com/a/444906/149366) 
 
 
 
