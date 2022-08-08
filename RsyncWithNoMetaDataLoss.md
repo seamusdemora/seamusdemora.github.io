@@ -2,7 +2,7 @@
 
 Backups are typically done using Network Attached Storage (NAS) devices. There are numerous file systems in use to support that, but if you're using one of the jumbo storage units, your choices may be limited. But even if the manufacturer offers a multitude of file system options, time and the learning curve may push you toward a familiar option - one you've already invested time and effort in learning. When bringing my new Synology NAS online recently, I learned - again - there are other ***vendor-specific*** factors that may limit your choices. For example, I learned Synology's documentation and technical support are *sorely lacking*; i.e. non-existent. 
 
-Without belaboring that further, I'll just explain the issue, and provide the solution I developed. 
+Without belaboring that further, I'll just explain the issue, and provide the approach I developed. 
 
 ### The issue is *meta-data* - how to avoid losing it:
 
