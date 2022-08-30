@@ -816,7 +816,8 @@ Yes - you can do this, and it comes in really handy sometimes:
 - [Ten Years Reproducibility Challenge](https://github.com/ReScience/ten-years) - I have code written for Mojave that won't run on Catalina - you? 
 - [Switch the profile of your current terminal](https://apple.stackexchange.com/a/192973/149366) 
 - [Q&A: Why does rm -f ask me for confirmation on zsh?](https://stackoverflow.com/questions/27988160/why-does-rm-f-ask-me-for-confirmation-on-zsh) 
-- [Q&A: Double rm verification in zsh](https://unix.stackexchange.com/questions/135084/double-rm-verification-in-zsh)
+- [Q&A: Double rm verification in zsh](https://unix.stackexchange.com/questions/135084/double-rm-verification-in-zsh) 
+- [Running a task at a specified time on a Mac](https://hawksites.newpaltz.edu/myerse/2018/08/16/running-a-task-at-a-specified-time-on-a-mac/)
 
 <!--- 
 
