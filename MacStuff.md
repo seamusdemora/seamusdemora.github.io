@@ -245,7 +245,7 @@ In current versions of mac os, there are (at least) three distinct approaches to
 
       ​            So... now what? Where's the output? Does this `at` thing work at all? 
    
-      ​            Yes, it created the requested output... it's in an email message! You can verify this by checking your email with the `mail` command.
+      ​            Yes, it created the requested output... it's in an email message! You can verify this by checking your email with the `mail` command. Alternatively, you may use a `redirect` to send the output to a file; e.g. `echo "Hello World from at" > ~/at_output.txt`
 
    **`cron` Example:**
 
