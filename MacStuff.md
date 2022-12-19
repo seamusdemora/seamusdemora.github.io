@@ -440,7 +440,14 @@ There are many **hidden files and folders** in MacOS. We have to guess what Appl
 * if you maintain a `git` repository on your Mac, there will be files that you will need to edit; e.g. `.gitignore`.
 * all `mount`*ed* drives and shares are listed under `/Volumes`, and it is occasionally useful to see inside this *hidden folder*. 
 
- Fortunately, there's a simple way to turn visibility of hidden files and folders `ON` and `OFF`. If you're starting from the *default* condition in which hidden files and folders are NOT visible, use the **CLI** as follows to render them visible from within `Finder`: 
+ Fortunately, there at least two simple ways to turn visibility of hidden files and folders `ON` and `OFF`. 
+ 
+ 
+ The quickest and simplest method is to use the keyboard shortcut when a Finder window is in focus: 
+ 
+ <kbd>⌘</kbd><kbd>shift</kbd><kbd>.</kbd>
+ 
+ You may also use the **CLI** as follows to render the hidden files as visible from within `Finder`: 
 
 ```bash
 $ defaults write com.apple.finder AppleShowAllFiles TRUE 
@@ -552,7 +559,35 @@ If you run a command that invokes a text editor (e.g. `crontab -e`), you may fin
 export EDITOR=nano
 ```
 
-Enter this at the command line in `Terminal.app`. From this point forward, anytime you run `crontab -e`, your `crontab` will open in `nano`instead of `vi`. If you want to try `vi` later, simply `export EDITOR=vi`.   [↑](#table-of-contents)
+Enter this at the command line in `Terminal.app`. From this point forward, anytime you run `crontab -e`, your `crontab` will open in `nano`instead of `vi`. If you want to try `vi` later, simply `export EDITOR=vi`.   
+
+Alternatively, you can modify your `zsh` or `bash` configuration file(s) from the CLI:  
+
+`zsh`:  
+```zsh
+echo 'export EDITOR=nano' >> ~/.zshrc
+echo 'export VISUAL="$EDITOR"' >> ~/.zshrc
+```
+`bash`:  
+```bash
+echo 'export EDITOR=nano' >> ~/.bash_profile
+echo 'export VISUAL="$EDITOR"' >> ~/.bash_profile
+``` 
+Afterwards, you can `source` the config file for it to take effect immediately in all open terminal windows:  
+
+`zsh`:  
+```zsh
+source ~/.zshrc
+# - or -
+. ~/.zshrc     # the POSIX-compliant option!
+```
+`bash`:  
+```bash
+source ~/.bash_profile
+# - or -
+. ~/.bash_profile     # the POSIX-compliant option!
+```
+[↑](#table-of-contents)
 
 ### 20. How to See Your Environment Variables
 
@@ -593,7 +628,7 @@ In Catalina, Apple has *"enhanced security"* by disallowing operations that have
 
 ### 23. Getting Up to Speed on `zsh`
 
-Apple has decided that the most-commonly-used shell (`bash`) should no longer be the default shell for macOS, so in Catalina they have made `zsh` the default. The motivation for this decision is, uh... interesting, I think - if this is true.  IMO, `zsh` is a hopped-up version of `bash` - a version that appeals mostly to the hyperactive, or maybe even amphetamine users. But that's just my opinion, man. I'll try anything once, and here's a shortlist to get up-to-speed on `zsh`: 
+Apple has decided that the most-commonly-used shell (`bash`) should no longer be the default shell for macOS, so in Catalina they have made `zsh` the default. The motivation for this decision is, uh... interesting, I think - if this is true. Personally, I find `bash` more comfortable, but that's just my opinion. You should make up your own mind, and here's a reading shortlist to help with `zsh`: 
 
 * From How-To Geek: [What is ZSH, and Why Should You Use It Instead of Bash?](https://www.howtogeek.com/362409/what-is-zsh-and-why-should-you-use-it-instead-of-bash/) 
 * From Armin Briegel at [Scripting OS X](https://scriptingosx.com/), a series of articles: [Moving to zsh](https://scriptingosx.com/2019/06/moving-to-zsh/), also available as a [book](https://scriptingosx.com/2019/11/new-book-release-day-moving-to-zsh/). 
@@ -603,6 +638,8 @@ Apple has decided that the most-commonly-used shell (`bash`) should no longer be
 ```zsh
 chsh -s /bin/bash
 ```
+
+Finally, know that if you prefer `bash`, you're not stuck with Apple's "antique" version of `bash`; you can get the latest release through [MacPorts](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md).
 
 [↑](#table-of-contents)
 
