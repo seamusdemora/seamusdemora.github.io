@@ -32,11 +32,12 @@ Let's break this down:
   # Note: There may be other items in ~/.ssh/config; they should probably remain
   ```
 
-Using this method, when your Mac is running from mains power (charger), your SSH connection will remain viable even after the lid is closed for hours, days, etc. No 3rd party software is required for this method, and it has been verified to work on the following MacBook Pros:
+Using this method, when your Mac is running from mains power (charger), your SSH connection will remain viable even after the lid is closed for hours, days, etc. No 3rd party software is required for this method, and it has been verified to work on the following MacBook Pros: 
 
-- 2019, 16-inch MacBook Pro, Catalina, 10.15.4
-- 2016, 15-inch MacBook Pro, Mojave, 10.14.6
-- Late 2011, 17-inch MacBook Pro, High Sierra, 10.13.6
+- 2023, 16-inch Macbook Pro, Ventura
+- 2019, 16-inch MacBook Pro, Catalina
+- 2016, 15-inch MacBook Pro, Mojave
+- Late 2011, 17-inch MacBook Pro, High Sierra
 
 It may work on other models also; please share feedback if you try it. Once again, you should have your MacBook connected to the charger for extended sessions. Running on battery power alone, at some point the system may override `caffeinate` and force it into sleep mode. It's impossible to say what will happen on the various makes and models as Apple may have Power Management features that will vary from one make and model to another.  
 
