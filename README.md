@@ -20,7 +20,7 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 |[How to Use the Usenet](https://github.com/seamusdemora/seamus.github.io/blob/master/HowToUseTheUsenet.md) |  A brief overview for using a huge resource |
 |[Shit Filtering](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/FilteringWebPagesForTheGoodStuff.md) |  How to clean up content from sketchy publishers  |
 |[MacPorts: The package manager for macOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md) | A few tips for installing & using MacPorts |
-|[Curing Dropped Network Connections](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MaintainLongRunningNetworkConnections.md) | Tired of dropped SSH connections?  |
+|[Improving SSH Connection Reliability](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/ImprovingSSH_Reliability.md) | Tired of dropped SSH connections?  |
 | [Fun With Footnotes in GFM](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/GFM_FootnotesWithReturnFeature.md) | How to create footnotes with a *return* feature |
 | [Create a VM for macOS High Sierra](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/CreateMacosVm.md)  |  Verified step-by-step recipe for creating a macOS High Sierra VM  |
 | [Using `launchd` in MacOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/UsingLaunchdForSchedulingTasks.md) | Schedule jobs with `launchctl` or `LaunchControl` |
