@@ -46,7 +46,7 @@
 
 [21. Where is the PATH Environment Variable Stored on MacOS?](#21-where-is-the-path-environment-variable-stored-on-macos) 
 
-[22. How to Enable `cron` on Catalina](#22-how-to-enable-cron-on-catalina)
+[22. How to Enable `cron` on Catalina](#22-how-to-enable-cron-on-current-versions-of-macos)
 
 [23. Getting Up to Speed on `zsh`](#23-getting-up-to-speed-on-zsh) 
 
@@ -637,7 +637,7 @@ The files containing the system's default PATH environment are in two places:
 
 [↑](#table-of-contents)
 
-### 22. How to Enable `cron` on post-Catalina versions of macOS
+### 22. How to Enable `cron` on current versions of macOS
 
 Beginning with Catalina, Apple has *"enhanced security"* by disallowing operations that have long been allowed. `cron`is one of those. Restoring `cron`*'s* privileges requires it be granted **Full Disk Access** in **System Preferences/Settings**. Doing this using the GUI is a brief process: 
 
