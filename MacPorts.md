@@ -60,7 +60,7 @@ The primary user interface to MacPorts is the ***`port`*** command, and the vari
 %
 ```
 
-### Use `cron` to automate updates and keep a log:
+### Automating MacPorts updates and keep a log:
 
 Running this `port selfupdate` command on a regular basis is [recommended](https://guide.macports.org/#using.port.selfupdate) -- it ensures your MacPorts installation is always up to date. One way to accomplish this is to set up a `cron` job as follows: 
 
@@ -75,7 +75,9 @@ This will launch the editor specified in your environment. Enter the following l
 15 2 */2 * * (sudo /opt/local/bin/port -q upgrade outdated && echo "----------\n") >> /Users/<username>/portupdatelog.txt 2>&1
 ```
 
-This will run `port selfupdate` command **and** `port upgrade outdated` every other day at 2 AM. It will also create an entry in a logfile that captures `stdout` and `stderr` outputs. You may refer to the [crontab guru](https://crontab.guru/) if you need help changing the schedule for this cron job.
+This will run `port selfupdate` command **and** `port upgrade outdated` every other day at 2 AM. It will also create an entry in a logfile that captures `stdout` and `stderr` outputs. You may refer to the [crontab guru](https://crontab.guru/) if you need help changing the schedule for this cron job. 
+
+You can read more about [setting up `cron` in this recipe](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacStuff.md#22-how-to-enable-cron-on-current-versions-of-macos), or you can use the native [`launchd`](https://www.launchd.info/) or the always-handy (3rd party) [`LaunchControl` app from soma-zone](https://www.soma-zone.com/LaunchControl/). Regardless of which one of these you use, there's a [very simple `bash` script here](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/src/updt_mp.sh) to help.  
 
 ### What ports are installed?:
 
