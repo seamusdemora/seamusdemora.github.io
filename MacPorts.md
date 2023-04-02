@@ -5,7 +5,7 @@
     * [Post Installation:](#post-installation)
 2. [Fundamental Usage of MacPorts:](#fundamental-usage-of-macports)
     * [Update your ports:](#update-your-ports)
-    * [Use `cron` to automate updates and keep a log:](#use-cron-to-automate-updates-and-keep-a-log)
+    * [Automate updates and keep a log:](#automating-macports-updates)
     * [What ports are installed?:](#what-ports-are-installed)
     * [Finding and installing ports:](#finding-and-installing-ports)
     * [Check for 'Variants':](#check-for-variants)
@@ -60,7 +60,7 @@ The primary user interface to MacPorts is the ***`port`*** command, and the vari
 %
 ```
 
-### Automating MacPorts updates and keep a log:
+### Automating MacPorts updates:
 
 Running this `port selfupdate` command on a regular basis is [recommended](https://guide.macports.org/#using.port.selfupdate) -- it ensures your MacPorts installation is always up to date. One way to accomplish this is to set up a `cron` job as follows: 
 
