@@ -46,7 +46,7 @@
 
 [21. Where is the PATH Environment Variable Stored on MacOS?](#21-where-is-the-path-environment-variable-stored-on-macos) 
 
-[22. How to Enable `cron` on Catalina](#22-how-to-enable-cron-on-current-versions-of-macos)
+[22. How to Enable `cron` in macOS](#22-how-to-enable-cron-on-current-versions-of-macos)
 
 [23. Getting Up to Speed on `zsh`](#23-getting-up-to-speed-on-zsh) 
 
