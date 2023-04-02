@@ -148,6 +148,8 @@ Beyond that, a few other points worth mention:
 * `date` is used to re-format `oldtimestr` into a cleaner (IMO) format in `newtimestr`; i.e. they are the *same date & time, but in a different format*.
 * After that it's only a matter of copying (`cp`) the new file to retain both `oldfile` & `newfile`, or overwriting (`mv`) the `oldfile` with `newfile`. 
 
+[↑](#table-of-contents)
+
 ### 2. How to Prevent macOS From Sleeping?
 
 Caffeine may do the trick; specifically `caffeinate` may be exactly what you need for your Mac. Know first that `man caffeinate` is your friend; enter it at the command line, and you'll find all the documentation for using this utility. `caffeinate` creates assertions to alter system sleep behavior. Following are a couple of general use cases: 
@@ -174,7 +176,9 @@ When used with the `-w` argument, sleep will be inhibited as long as the process
 
 Note also that Process ID's are available from `Activity Monitor`, or can be listed in the terminal by entering `ps -Al` 
 
-​    <b id="f1">Note1:</b> *Know that `caffeinate` will not prevent a scheduled [automatic logout](http://osxdaily.com/2013/03/23/automatically-log-out-of-a-mac-after-a-period-of-inactivity/)*. [↩](#a1)    [↑toc](#table-of-contents) 
+​    <b id="f1">Note1:</b> *Know that `caffeinate` will not prevent a scheduled [automatic logout](http://osxdaily.com/2013/03/23/automatically-log-out-of-a-mac-after-a-period-of-inactivity/)*. 
+
+[↑toc](#table-of-contents) 
 
 ### 3. How to Start (`open`) an App From the macOS Command Line?
 
@@ -207,7 +211,9 @@ d. `open` also has some options specific to text editing; for example to open a 
 $ man open | col -b | open -tf  
 ```
 
-Which can be quite useful for perusing the system documentation offline (in this example, the `man` page for `open`), and/or making additions or changes to it either for your own use, or to share.   [↑](#table-of-contents)  
+Which can be quite useful for perusing the system documentation offline (in this example, the `man` page for `open`), and/or making additions or changes to it either for your own use, or to share.   
+
+[↑](#table-of-contents)  
 
 ### 3.5 How to `open` a Network share
 
@@ -219,7 +225,9 @@ b. Enter `smb://server/share`, and click the `Connect` button, **OR** click `Bro
 
 c. A new `Finder` window/tab will open showing the contents of`smb://server/share`. That connection is now _registered_ in the `LaunchServices` database, and entering `open smb://server/share` in `Terminal.app`will open to that share in `Finder`. 
 
-Note: This will also work for any other supported network file system: `cifs`, `nfs`, etc.  [↑](#table-of-contents) 
+Note: This will also work for any other supported network file system: `cifs`, `nfs`, etc.  
+
+[↑](#table-of-contents) 
 
 ### 4. How to Schedule an App to Run At a Specified Time?
 
@@ -273,7 +281,9 @@ In current versions of mac os, there are (at least) three distinct approaches to
    00 12 * * *
    ```
 
-   This is simply the schedule information. It tells `cron` **when** to execute the command that follows. If you want to re-schedule for a time other that 12:00 noon, all you need change is the time. `man crontab` will guide you in the options for specifying the time and date. Until you become familiar with the syntax, you should use the [crontab guru](https://crontab.guru/#00_12_*_*_*) to check your schedule. You'll learn that  [`cron`'s simple syntax is quite flexible](https://crontab.guru/#5_4-7_1-28/2_1-9/3_*).    [↑](#table-of-contents)
+   This is simply the schedule information. It tells `cron` **when** to execute the command that follows. If you want to re-schedule for a time other that 12:00 noon, all you need change is the time. `man crontab` will guide you in the options for specifying the time and date. Until you become familiar with the syntax, you should use the [crontab guru](https://crontab.guru/#00_12_*_*_*) to check your schedule. You'll learn that  [`cron`'s simple syntax is quite flexible](https://crontab.guru/#5_4-7_1-28/2_1-9/3_*).    
+   
+   [↑](#table-of-contents)
 
 ### 5. How to Check the Size of a Directory?
 
@@ -300,11 +310,13 @@ Now drawing from 'AC Power'
  -InternalBattery-0 (id=1234567)	100%; charged; 0:00 remaining present: true
 ```
 
-The `-g`  (get) option provides data on current settings and logfiles. It can be run with normal user privileges. `pmset`can also change settings (e.g. standby, sleep, spin-down of disks, display, etc.), but those require `root`/`su` privileges. Documentation is available from `man pmset`.    [↑](#table-of-contents)
+The `-g`  (get) option provides data on current settings and logfiles. It can be run with normal user privileges. `pmset`can also change settings (e.g. standby, sleep, spin-down of disks, display, etc.), but those require `root`/`su` privileges. Documentation is available from `man pmset`.    
+
+[↑](#table-of-contents)
 
 ### 7. How to Send Files to the Trash from the macos Command Line?
 
-This is easily and elegntly done thanks to the work of dabrahams. The latest version of the command line utility named `trash` is [available in this gist on GitHub](https://gist.github.com/dabrahams/14fedc316441c350b382528ea64bc09c). Its creation was spawned by a Q&A on Stack Exchange, and initially posted in [this answer](https://apple.stackexchange.com/a/162354). There is always `rm` of course, but it's a permanent and irrecoverable deletion. What makes `trash` special is that it ***moves*** files to the `Trash` folder, essentially replicating the system's `Move to Trash` feature available in `Finder`. And from `Trash` of course you have the option to recover the file, or delete it permanently. 
+This is easily and elegntly done thanks to the work of dabrahams. The latest version of the command line utility named `trash` is [available in this gist on GitHub](https://gist.github.com/dabrahams/14fedc316441c350b382528ea64bc09c), and [now here in this repo](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/Trash.md). Its creation was spawned by a Q&A on Stack Exchange, and initially posted in [this answer](https://apple.stackexchange.com/a/162354). There is always `rm` of course, but it's a permanent and irrecoverable deletion. What makes `trash` special is that it ***moves*** files to the `Trash` folder, essentially replicating the system's `Move to Trash` feature available in `Finder`. And from `Trash` of course you have the option to recover the file, or delete it permanently. 
 
 It's written in Python, and *open source*. If you want to "integrate" `trash` into your system: 
 
@@ -378,15 +390,21 @@ Software:
 
 ### 9. How to Combine/Concatenate Multiple PDFs?
 
-[Apple has this one covered](https://support.apple.com/guide/mac-help/combine-files-into-a-pdf-mchl21ac2368/mac), and it's easy if you know ***the trick***. You should also know that the `Quick Actions > Create PDF` option in `Finder` may not show up! When you move the pointer over `Quick Actions` in `Finder` you may see only the option `Customize...`. If that's the case, click `Customize...`, then tick the box next to `Create PDF`. This will add `Create PDF` as an option for `Quick Actions`.   [↑](#table-of-contents)
+[Apple has this one covered](https://support.apple.com/guide/mac-help/combine-files-into-a-pdf-mchl21ac2368/mac), and it's easy if you know ***the trick***. You should also know that the `Quick Actions > Create PDF` option in `Finder` may not show up! When you move the pointer over `Quick Actions` in `Finder` you may see only the option `Customize...`. If that's the case, click `Customize...`, then tick the box next to `Create PDF`. This will add `Create PDF` as an option for `Quick Actions`.   
+
+[↑](#table-of-contents)
 
 ### 10. How to Search My Command History in `Terminal`?
 
 Here are some useful techniques: 
 
 - Type `control-r` at the command prompt. This brings up a *search* prompt: `(reverse-i-search):`.  Type whatever you can recall of a previously used command (e.g. `etc` ). As you type each character, the search continues. You can iterate back through all of the search results with `control-r`. When you've found the command you were looking for, hit the `enter` key to run it again "as-is", or make edits to the command (*use either of the left-right arrow keys*) before you run it. If you want to stop searching without running a command, type `control-g`. 
+
 - You can use the `history` command! `history` outputs the entire history to `stdout`. As such, you can *filter* the history by piping it to (e.g.) `grep`: `history | grep etc`, or redirect it to a file (e.g.`history > mycmdhistory.txt`), or any other command (e.g. `history | tail -5`).
-- Of course, you can still use the *up-and-down arrow keys* to step forward (or backward) through the command history, but if your command history is extensive, this will take time.    [↑](#table-of-contents)
+
+- Of course, you can still use the *up-and-down arrow keys* to step forward (or backward) through the command history, but if your command history is extensive, this will take time.    
+
+  [↑](#table-of-contents)
 
 ### 11. How to Disable Auto-Booting When Opening the Macbook Lid?
 
@@ -412,7 +430,9 @@ What other NVRAM settings are available for changing?
 nvram -p
 ```
 
-will list available options... but it's very messy!   [↑](#table-of-contents)
+will list available options... but it's very messy!   
+
+[↑](#table-of-contents)
 
 ### 12. How to Copy `command line` Output to Pasteboard/Clipboard?
 
@@ -430,7 +450,9 @@ Similarly, using `pbpaste` you can paste text you've copied to a file; e.g.
 $ pbpaste > newfile.txt
 ```
 
-See `man pbcopy` for further details.   [↑](#table-of-contents)
+See `man pbcopy` for further details.   
+
+[↑](#table-of-contents)
 
 ### 14. How to Show Hidden Files in Finder?
 
@@ -441,12 +463,12 @@ There are many **hidden files and folders** in MacOS. We have to guess what Appl
 * all `mount`*ed* drives and shares are listed under `/Volumes`, and it is occasionally useful to see inside this *hidden folder*. 
 
  Fortunately, there at least two simple ways to turn visibility of hidden files and folders `ON` and `OFF`. 
- 
- 
+
+
  The quickest and simplest method is to use the keyboard shortcut when a Finder window is in focus: 
- 
+
  <kbd>⌘</kbd><kbd>shift</kbd><kbd>.</kbd>
- 
+
  You may also use the **CLI** as follows to render the hidden files as visible from within `Finder`: 
 
 ```bash
@@ -481,7 +503,8 @@ A few things to review beforehand! :
 
 * execute these commands from the local directory where you want your repo to live, 
 * The `remote` repository is the origin you want (in my case, the remote repo at GitHub was my `origin`) 
-* The `branch` you want to restore is the `master` branch    [↑](#table-of-contents)
+* The `branch` you want to restore is the `master` branch    
+* [↑](#table-of-contents)
 
 ### 16. How to Restore the "Lost Startup Chime"?
 
@@ -497,7 +520,9 @@ sudo nvram StartupMute=%01
 
 [More details and *Chime Trivia* can be found here.](https://mrmacintosh.com/how-to-enable-the-mac-startup-chime-on-your-2016-macbook-pro/) 
 
-And if you're into [*mac nostalgia*](https://duckduckgo.com/?t=ffnt&q=mac+nostalgia&ia=web) you can [get all the default macOS wallpapers in 5K!](https://512pixels.net/projects/default-mac-wallpapers-in-5k/)   [↑](#table-of-contents)
+And if you're into [*mac nostalgia*](https://duckduckgo.com/?t=ffnt&q=mac+nostalgia&ia=web) you can [get all the default macOS wallpapers in 5K!](https://512pixels.net/projects/default-mac-wallpapers-in-5k/)   
+
+[↑](#table-of-contents)
 
 ### 17. Weird Behavior With zsh: `noglob` and `rm` is reluctant
 
@@ -541,25 +566,24 @@ As most of you will be aware, Apple has made the decision to change the default 
   setopt rmstarsilent
   ```
   
-  
-
-
 
 [↑](#table-of-contents)
 
 ### 18. How to Hide All Open Windows on a Desktop? ('Show Desktop')
 
-<kbd>fn</kbd><kbd>F11</kbd> - this will *toggle* Show & Hide all app windows on a desktop.   [↑](#table-of-contents)
+<kbd>fn</kbd><kbd>F11</kbd> - this will *toggle* Show & Hide all app windows on a desktop.   
+
+[↑](#table-of-contents)
 
 ### 19. How to Set Default Editor for CLI/Terminal App
 
-If you run a command that invokes a text editor (e.g. `crontab -e`), you may find yourself in the `vi` editor. `vi`is fine once you're used to it, but proficiency in `vi`will require time and effort. If you'd prefer to avoid learning `vi`, you can easily set your default to a more user-friendly editor like `nano`: 
+If you run a command that invokes a text editor (e.g. `crontab -e`), you may find yourself in the `vi` editor. `vi` is fine once you're used to it, but proficiency in `vi`will require time and effort. If you'd prefer to avoid learning `vi`, you can easily set your default to a more user-friendly editor like `nano`: 
 
 ```bash
 export EDITOR=nano
 ```
 
-Enter this at the command line in `Terminal.app`. From this point forward, anytime you run `crontab -e`, your `crontab` will open in `nano`instead of `vi`. If you want to try `vi` later, simply `export EDITOR=vi`.   
+Enter this at the command line in `Terminal.app`. From this point forward, anytime you run `crontab -e`, your `crontab` will open in `nano` instead of `vi`. If you want to try `vi` later, simply `export EDITOR=vi`.   
 
 Alternatively, you can modify your `zsh` or `bash` configuration file(s) from the CLI:  
 
@@ -572,7 +596,7 @@ echo 'export VISUAL="$EDITOR"' >> ~/.zshrc
 ```bash
 echo 'export EDITOR=nano' >> ~/.bash_profile
 echo 'export VISUAL="$EDITOR"' >> ~/.bash_profile
-``` 
+```
 Afterwards, you can `source` the config file for it to take effect immediately in all open terminal windows:  
 
 `zsh`:  
@@ -599,6 +623,8 @@ From the command prompt:
 % printenv | less
 ```
 
+ [↑](#table-of-contents)
+
 ### 21. Where is the PATH Environment Variable Stored on MacOS?
 
 The files containing the system's default PATH environment are in two places: 
@@ -609,22 +635,22 @@ The files containing the system's default PATH environment are in two places:
   * `~/.zprofile` - if you use `zsh`, or 
   * `~/.bash_profile` for `bash` users
 
+[↑](#table-of-contents)
 
+### 22. How to Enable `cron` on post-Catalina versions of macOS
 
-### 22. How to Enable `cron` on Catalina
+Beginning with Catalina, Apple has *"enhanced security"* by disallowing operations that have long been allowed. `cron`is one of those. Restoring `cron`*'s* privileges requires it be granted **Full Disk Access** in **System Preferences/Settings**. Doing this using the GUI is a brief process: 
 
-In Catalina, Apple has *"enhanced security"* by disallowing operations that have long been allowed. `cron`is one of those. Restoring `cron`*'s* privileges requires it be granted **Full Disk Access** in **System Preferences**. Doing this using the GUI is a two-step process: 
+Open System Preferences/Settings app & navigate to the Privacy tab in Security & Privacy (or to `Full Disk Access` under `Privacy & Security`)
 
-* Due to the way that apps are added to the Full Disk Access list, we must first find `cron` in Finder:
-  * Open Finder, enter Command+Shift+G
-  * Enter `usr/sbin` in the dialog box.
-  * Finder displays the contents of `usr/sbin`, scan the file listing, and find the on a named `cron`. 
+* Select the `Full Disk Access` item in the listing (or `Privacy` in the tab); this reveals a list of apps.
+* Click the `+` symbol at the bottom of the list; this will yield a `Finder` window. 
+* With the `Finder` window in focus, enter <kbd>command</kbd>+<kbd>shift</kbd>+<kbd>G</kbd>, and then enter `/usr/sbin` in the dialog box.  
+* From the `/usr/sbin` listing in `Finder`, select the `cron` app; it should now be added to the `Full Disk Access` list; ensure `cron` is checked/enabled.
 
-* Open System Preferences app & navigate to the Privacy tab in Security & Privacy
-  * Select the Full Disk Access item in the listing on the left side; this populates a list of apps on the right side
-  * From the Finder window above, drag and drop the `cron` app into the app list on the right. Make sure it is checked to enable access.
+You may now proceed to populate your `crontab` with jobs, although in the later versions of macOS (e.g. Ventura) you won't find a helpful *default* crontab to help you get started.
 
-*Opinion: I wonder if the primary effect of Apple's "enhanced security" changes in Catalina has been to put a much larger burden on some users by forcing them to activate these work-arounds to get their tasks completed?*    [↑](#table-of-contents)
+​    [↑](#table-of-contents)
 
 ### 23. Getting Up to Speed on `zsh`
 
@@ -665,7 +691,9 @@ Remove the following:
 
 Installing an older version of XCode is a bit different - you can't get it from the AppStore. Fortunately, [MacPorts keeps a list of downloads](https://www.macports.org/install.php), and a decent set of instructions. Once that task is accomplished, you have an *upgraded* XCode install that supports MacPorts (at least until Apple decides to break things again). 
 
-Oh, one other thing... checking your version of XCode Tools is reasonably straightforward, but try to find the version of XCode Command Line Tools. Yeah... frustrating, isn't it?   [↑](#table-of-contents)
+Oh, one other thing... checking your version of XCode Tools is reasonably straightforward, but try to find the version of XCode Command Line Tools. Yeah... frustrating, isn't it?   
+
+[↑](#table-of-contents)
 
 ### 25. Cleaning and Restoration of iTerm2
 
@@ -677,7 +705,9 @@ Oh, one other thing... checking your version of XCode Tools is reasonably straig
 
 **Know this:** This clears ***ALL*** settings in iTerm2. If you want to create a *restore point* for your iTerm2 settings, you may find some help in [this Q&A on Stack Overflow](https://stackoverflow.com/a/23356086) - be sure to read all the comments! 
 
-Related to this is iTerm2's [Dynamic Profiles](https://iterm2.com/documentation-dynamic-profiles.html) which are saved in one or more plist files formatted as JSON or XML (or in binary). Profile changes are made immediately (thus, *dynamic*).   [↑](#table-of-contents)
+Related to this is iTerm2's [Dynamic Profiles](https://iterm2.com/documentation-dynamic-profiles.html) which are saved in one or more plist files formatted as JSON or XML (or in binary). Profile changes are made immediately (thus, *dynamic*).   
+
+[↑](#table-of-contents)
 
 ### 26. "client_loop: send disconnect: Broken pipe"
 
@@ -687,25 +717,29 @@ Irritating, no? If your SSH connections are [*dropping like flies*](https://idio
 % caffeinate -i ssh user@host
 ```
 
-This should maintain an SSH connection for as long as you need it - hours, days, weeks, etc. It requires *no additional software*, and will maintain other network connections and long-running processes even when the lid is closed on a MacBook. [You can read more details on this neighboring page.](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MaintainLongRunningNetworkConnections.md)  [↑](#table-of-contents)
+This should maintain an SSH connection for as long as you need it - hours, days, weeks, etc. It requires *no additional software*, and will maintain other network connections and long-running processes even when the lid is closed on a MacBook. [You can read more details on this neighboring page.](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MaintainLongRunningNetworkConnections.md)  
+
+[↑](#table-of-contents)
 
 ### 27. Potentially Useful Info for Re-Installing macOS
 
-Lest I be accused of ignoring the occasional and potentially useful item that Apple publishes, here's one that might come in handy in a disaster recovery context: [Creating a Bootable Installer for macOS](https://support.apple.com/en-us/HT201372). [↑](#table-of-contents)
+Lest I be accused of ignoring the occasional and potentially useful item that Apple publishes, here's one that might come in handy in a disaster recovery context: [Creating a Bootable Installer for macOS](https://support.apple.com/en-us/HT201372). 
+
+[↑](#table-of-contents)
 
 ### 28. Tools for Isolating Hardware Faults in Macs
 
 For hardware built prior to June, 2013, use the [Apple Hardware Test](https://support.apple.com/en-us/HT201257) 
 
-For hardware built after June, 2013, use [Apple Diagnostics](https://support.apple.com/en-us/HT202731). [↑](#table-of-contents)
+For hardware built after June, 2013, use [Apple Diagnostics](https://support.apple.com/en-us/HT202731). 
 
-
+[↑](#table-of-contents)
 
 ### 29. Insert Symbols in macOS
 
-macOS has a large set of symbols (⌘, ⌃, ␠, ↑ + hundreds more) that can be inserted into most documents you create (or edit). Use your keyboard <kbd>command</kbd><kbd>control</kbd><kbd>space</kbd> (or, ⌘, ⌃, ␠) to see the entire pallet of symbols. Click on the one you wish to use, *et c'est voilà*.   [↑](#table-of-contents) 
+macOS has a large set of symbols (⌘, ⌃, ␠, ↑ *+ hundreds more*) that can be inserted into most documents you create (or edit). Use your keyboard <kbd>command</kbd><kbd>control</kbd><kbd>space</kbd> (or, ⌘, ⌃, ␠) to see the entire pallet of symbols. Click on the one you wish to use, *et c'est voilà*.   
 
-
+[↑](#table-of-contents) 
 
 ### 30. The Elusive Symbol for *Degree*
 
@@ -715,7 +749,7 @@ Several ways to do this:
 * Keyboard version (tiny): <kbd>option</kbd><kbd>k</kbd> (note: actually the *diacritical* mark) 
 * **Keyboard version (normal):**  <kbd>shift</kbd><kbd>option</kbd><kbd>8</kbd> 
 
-
+[↑](#table-of-contents) 
 
 ### 31. The Strange Case of `airport`
 
@@ -727,9 +761,9 @@ The **strange** things about `airport` are its location in the filesystem, and t
 
 As for its location: `/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport` 
 
-Yes - seriously - that's where it is - at least for Catalina & Mojave. Older versions of macOS have it in a different, but equally odd location. If you want to try `airport` you could start by reading [this post on OSX Daily](https://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/).  I **hope** to find a use for `airport` in conjunction with `networksetup` to overcome the *promising-but-utterly-useless* `Network` configuration tool in the `System Preferences` app - but that's for another day.  [↑](#table-of-contents) 
+Yes - seriously - that's where it is - at least for Catalina & Mojave. Older versions of macOS have it in a different, but equally odd location. If you want to try `airport` you could start by reading [this post on OSX Daily](https://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/).  I **hope** to find a use for `airport` in conjunction with `networksetup` to overcome the *promising-but-utterly-useless* `Network` configuration tool in the `System Preferences` app - but that's for another day.  
 
-
+[↑](#table-of-contents) 
 
 ### 32. Would You Like to Move That File, or Copy It?
 
@@ -743,9 +777,9 @@ But these default behaviors are **not** what we want in some situations. Here's 
 >
 >***Option*** key while dragging changes **move *to* copy**. 
 
- If you find it tedious to remember this, one option is to use `mv` or `cp` from the CLI.  [↑](#table-of-contents) 
+ If you find it tedious to remember this, one option is to use `mv` or `cp` from the CLI.  
 
- 
+[↑](#table-of-contents) 
 
 ### 33. Should You Put Siri on an "iLeash", or Put Her Down?
 
@@ -761,7 +795,7 @@ Removing Siri from the "Touch Bar" (Mojave-speak), or the "Control Strip" (Catal
 
 Option 3 seems the ultimate solution to me. But there's a question of ***how*** to do this. Search as much as you wish, but you won't find a how-to guide for removing Siri published by Apple. Maybe there's a reason for that - maybe some Siri software components are needed in critical system functions. I don't like the fact that Apple says nothing at all about this, 'cause I know the question has been asked. The only guidance I found for removing Siri was in [this article](https://www.geek-kb.com/remove-siri-macbook/). But the the author's solution comes down to `sudo rm -rf` on the system library folder where Siri lives. Except for a restore from backup, this approach is 100% commitment!   
 
-
+[↑](#table-of-contents) 
 
 ### 34. Burning ISO files to DVD
 
@@ -804,6 +838,8 @@ Yes - you can do this, and it comes in really handy sometimes:
     2. Choose `Show Inspector` from the menu
     3. Click on the `Profile` tab in the `Inspector` window
     4. Choose a new profile for the current window
+
+[↑](#table-of-contents) 
 
 ---
 
