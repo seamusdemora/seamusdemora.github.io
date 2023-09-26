@@ -76,7 +76,10 @@ Nothing exceptional here, I only wanted to make a point that creating *symbolic 
 
 1. I recently came across a very popular gist for [Automounting NFS shares in OS X](https://gist.github.com/L422Y/8697518) that may be useful for using AutoFS to automount NFS shares (my example is for SMB).
 
-2. I've noticed that each time my OS is updated (or upgraded), Apple's installation routines ***revert*** any changes I've made to my `/etc/auto_master` file. I still do not understand **why** Apple does this, but I have discovered a cure for it. The following command will **preserve** all of my changes to `/etc/auto_master`, allowing it to survive (at least) Apple's updates:
+2. Another approach to automounting NFS shares in macOS is provided in the blog post ["Persistent NFS mount points on macOS
+Using vifs and fstab to mount NFS shares"](https://tisgoud.nl/2020/10/persistent-nfs-mount-points-on-macos/).
+
+3. I've noticed that each time my OS is updated (or upgraded), Apple's installation routines ***revert*** any changes I've made to my `/etc/auto_master` file. I still do not understand **why** Apple does this, but I have discovered a cure for it. The following command will **preserve** all of my changes to `/etc/auto_master`, allowing it to survive (at least) Apple's updates:
 
    ```zsh
    sudo chflags simmutable /etc/auto_master
