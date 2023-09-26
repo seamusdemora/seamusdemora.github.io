@@ -844,7 +844,7 @@ Yes - you can do this, and it comes in really handy sometimes:
 
 ### 36. Stop Apple's Updates from trashing your customized `/etc` files
 
-It's quite irritating to have files in `/etc` that you have carefully tailored be reverted to their original contents by Apple's Updates. It's even more irritating that Apple does this without notification, explanation or documentation. You learn of it only after an Upgrade when all your shit breaks! Here's a solution that seems to work; it preserved my `/etc/auto_master` file during a recent Ventura Upgrade to 13.6. It should work for other files in `/etc` also - perhaps even in other locations:
+It's quite irritating to have files in `/etc` that you have carefully tailored be reverted to their original contents by Apple's Updates. It's even more irritating that Apple does this without notification, explanation or documentation. You learn of it only after an Update when all your shit breaks! Here's a solution that seems to work; it preserved my `/etc/auto_master` file during a recent Ventura Upgrade to 13.6. It should work for other files in `/etc` also - perhaps even in other locations:
 
    ```zsh
    sudo chflags simmutable /etc/auto_master
