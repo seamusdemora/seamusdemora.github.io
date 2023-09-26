@@ -74,6 +74,7 @@
 
 [35. Switch the Profile in your current Terminal window](#35-switch-the-profile-in-your-current-terminal-window) 
 
+[36. Stop Apple's Updates from trashing your customized `/etc` files](#36-stop-apples-updates-from-trashing-your-customized-etc-files)
 
 
 
@@ -840,6 +841,18 @@ Yes - you can do this, and it comes in really handy sometimes:
     4. Choose a new profile for the current window
 
 [↑](#table-of-contents) 
+
+### 36. Stop Apple's Updates from trashing your customized `/etc` files
+
+It's quite irritating to have files in `/etc` that you have carefully tailored be reverted to their original contents by Apple's Updates. It's even more irritating that Apple does this without notification, explanation or documentation. You learn of it only after an Upgrade when all your shit breaks! Here's a solution that seems to work; it preserved my `/etc/auto_master` file during a recent Ventura Upgrade to 13.6. It should work for other files in `/etc` also - perhaps even in other locations:
+
+   ```zsh
+   sudo chflags simmutable /etc/auto_master
+
+   # REF: 'man chflags'; use 'nosimmutable' to undo when edits are required
+   ```
+
+[↑](#table-of-contents)
 
 ---
 
