@@ -156,7 +156,8 @@ $ diskutil list
 
 ```
 
-
+## Epilogue:
+It's now 4Q 2023, over 2 years since I upgraded the macOS in my 12-year-old MacbookPro to Ubuntu Linux. It's still running great.
 
 ## Addendum:
 
