@@ -55,7 +55,7 @@ Let's start a couple of SSH connections, and look at the `Activity Monitor` app 
 
 We start `Activity Monitor` app, select the `Network` tab, add the `Preventing Sleep` column to the display, close the lid on the 2023 Macbook Pro (Ventura), and let it run for approximately 30 hours. Re-opening the lid, we are greeted with this in `Activity Monitor`: 
 
-![ScrnShtActMonNwkSshVentura](/Users/jmoore/Documents/GitHub/seamusdemora.github.io/pix/ScrnShtActMonNwkSshVentura.png)
+![ScrnShtActMonNwkSshVentura](pix/ScrnShtActMonNwkSshVentura.png)
 
 We see both `ssh` sessions, indicating they are both still "alive", and we note that one of them has considerably more Sent & Rcvd packets than the other. From this we deduce that the first one (PID 2942) is the connection to the **\*4b** host using the *keep-alives*. You may also not that neither of the SSH sessions are indicated to be `Preventing Sleep`; it is the `caffeinate` process that is preventing sleep. 
 
