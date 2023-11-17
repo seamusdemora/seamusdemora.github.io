@@ -1,6 +1,6 @@
 ## LaunchControl is a Better Solution
 
-I completely stopped using Apple's `launchctl` (described below) several months after this recipe was originally published in Nov, 2019. I've never looked back. [`**LaunchControl**`](https://soma-zone.com/LaunchControl/) is easily one of the 2 or 3 most competent apps I've used on mac OS. In 2 + years of use, I've found it to be both well-designed and well-supported. This is so different from most software products you buy today - especially the native apps designed by Apple!  And so, while I will leave the original recipe here for those who want to try their hand at the tedious manual creation of .plist files for` launchctl,` I no longer use it. `LaunchControl` saves time - lots of time.
+I completely stopped using Apple's `launchctl` (described below) several months after this recipe was originally published in Nov, 2019. I've never looked back. [`LaunchControl`](https://soma-zone.com/LaunchControl/) is easily one of the 2 or 3 most competent apps I've used on mac OS. In 2 + years of use, I've found it to be both well-designed and well-supported. This is so different from most software products you buy today - especially the native apps designed by Apple!  And so, while I will leave the original recipe here for those who want to try their hand at the tedious manual creation of .plist files for` launchctl,` I no longer use it. `LaunchControl` saves time - lots of time.
 
 ## Using launchd for Scheduling Jobs in MacOS
 
