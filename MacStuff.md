@@ -76,7 +76,7 @@
 
 [36. Stop Apple's Updates from trashing your customized `/etc` files](#36-stop-apples-updates-from-trashing-your-customized-etc-files) 
 
-[37. Don't fret over loss of `youtube-dl`](#37-dont-fret-over-loss-of-youtubedl) 
+[37. Don't fret over loss of `youtube-dl`](#37-dont-fret-over-loss-of-youtube-dl) 
 
 
 
@@ -860,6 +860,7 @@ It's quite irritating to have files in `/etc` that you have carefully tailored b
 
 If you're a user of `youtube-dl`, you may have seen [this announcement](https://youtube-dl.org/) announcing that Germany's court system has apparently *pulled the plug* on this popular app. But don't fret, the folks at MacPorts have brought you a replacement in the form of [`yt-dlp`](https://ports.macports.org/port/yt-dlp/). They also have [their own website/repo here on GitHub](https://github.com/yt-dlp/yt-dlp). The king is dead; long live the king. 
 
+[↑](#table-of-contents)
 ---
 
 
