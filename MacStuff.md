@@ -78,6 +78,8 @@
 
 [37. Don't fret over loss of `youtube-dl`](#37-dont-fret-over-loss-of-youtube-dl) 
 
+[38. Add "QuickLook" visibility for `.webp` images in older Macs](#38-add-webp-quicklook-older-macs) 
+
 
 
 [OTHER SOURCES:](#other-sources) 
@@ -860,7 +862,24 @@ It's quite irritating to have files in `/etc` that you have carefully tailored b
 
 If you're a user of `youtube-dl`, you may have seen [this announcement](https://youtube-dl.org/) announcing that Germany's court system has apparently *pulled the plug* on this popular app. But don't fret, the folks at MacPorts have brought you a replacement in the form of [`yt-dlp`](https://ports.macports.org/port/yt-dlp/). They also have [their own website/repo here on GitHub](https://github.com/yt-dlp/yt-dlp). The king is dead; long live the king. 
 
-[↑](#table-of-contents)
+[↑](#table-of-contents) 
+
+### 38. Add webp QuickLook for older macs 
+
+My macOS Mojave is still a good machine - I use it regularly. I've not upgraded it because I feel that Apple "fucks you over" on the upgrades - but that's only my registered opinion :) What's **not** opinion is that Apple **does not support** their older machines for more that a few years. 
+
+But I digress...  Using an older Mac, there are a few features that I miss. But I've found that `MacPorts` usually takes care of the *important stuff*. However, I couldn't find a solution for the "preview/QuickLook" functionality for the (now) ubiquitous `.webp` graphics. Searching online was revealing... why do [some assholes](https://www.laptopmag.com/how-to/preview-webp-files-on-macos-with-quick-look) try to take over other people's work? Yes - that's correct... the assholes at laptopmag.com tried to take credit for ['emin's open source project](https://github.com/emin/WebPQuickLook). 
+
+Anyway: The [solution is available from emin's GitHub site](https://github.com/emin/WebPQuickLook).  Just one small thing to keep in mind: Run the install script from Terminal in your Admin account (no `sudo` required):
+```
+curl -L https://raw.github.com/emin/WebPQuickLook/master/install-all.sh | sh
+```
+
+It's been working well for me!
+
+
+[↑](#table-of-contents) 
+
 ---
 
 
