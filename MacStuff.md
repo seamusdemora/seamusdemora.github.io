@@ -80,7 +80,7 @@
 
 [38. Add "QuickLook" visibility for `.webp` images in older Macs](#38-add-webp-quicklook-for-older-macs) 
 
-
+[39. Apple sucks again](#39-whereis-vs-which-and-why-Apple-sucks)
 
 [OTHER SOURCES:](#other-sources) 
 
@@ -877,8 +877,27 @@ curl -L https://raw.github.com/emin/WebPQuickLook/master/install-all.sh | sh
 
 It's been working well for me!
 
-
 [↑](#table-of-contents) 
+
+### 39. 'whereis' vs. 'which' and why Apple sucks
+
+So - I've got this *old-ish* Macbook - a 2016 model. In my fashion, it was bought new with Mojave installed, and it **still** has Mojave installed. Why don't I upgrade? Because I consider *once-per-year* OS upgrades a brainless scam, and back when I **did** upgrade it was always a recipe for pain and frustration. No upgrades for me;  I don't care how many of those little red dots the assholes at Apple put on my 'System Preferences' shortcut icon. And *yes* - I am convinced beyond doubt that Apple sucks, and that Tim Cook is the _chief suckster_ in the entire organization. I mean really - a friggin' ***bean-counter*** as the CEO of Apple? C'mon - you all  know I'm right whether you'll admit it or not. But I digress...
+
+Working with an older machine is actually a blessing. For one thing, you have it long enough to see some of the abject stupidity that's baked into the product. The supidity I'm picking on today is Apple's implementation of `whereis`. Unlike in Linux - where the [differences between `which` and `whereis`](https://www.makeuseof.com/which-vs-whereis-vs-whatis-in-linux/) are clear and mildly useful, Apple forgot the differences in their infelicitous quest for *"security"*. Here's what I find so incredibly stupid about Apple's `whereis` command: **`whereis` searches *only* the PATH defined in a string called `user.cs_path`**. It gets better: the `user.cs_path` string is apparently baked into Apple's firmware (somewhere it is un-reachable in  any case); far beyond the reach of the `sysctl` utility. What's that you say... *"What do you mean beyond the reach of `sysctl`?"* What I mean is that the `sysctl` utility provided by Apple has had the `-w` (`--write`) option *removed*; to quote Apple's `man sysctl`: 
+
+   >The −w option has been deprecated and is silently ignored.
+
+I *thought* this could be overcome somehow by disabling `SIP`, but I tried that without success. 
+
+You may wish to ponder this for just a moment: Apple has relegated `whereis` to searching **only** in this PATH: **`/usr/bin:/bin:/usr/sbin:/sbin`**. And unlike the Linux version of `whereis`, Apple's version is totally silent on the location of any documentation. AFAICT, Apple's `whereis` informs you **only** where Apple keeps their 20+ year-old tools! And this is why I've made the following change on my trusty **"Mojave"** system: 
+
+   ```bash
+   cd /usr/bin
+   sudo mv whereis whereis.sucks
+   sudo ln -s /usr/bin/which whereis
+   ```
+[↑](#table-of-contents) 
+
 
 ---
 
