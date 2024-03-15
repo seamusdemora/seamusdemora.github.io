@@ -13,6 +13,7 @@
     * [Uninstall an installed port:](#uninstall-an-installed-port)
     * [Using `sudo` as an un-privileged user:](#using-sudo-as-an-un-privileged-user)
     * [Don't forget to ***flush your cache!***](#dont-forget-to-flush-your-cache)
+    * [Sorting the **PATH** business](#set-your-path-environment-variable) 
 3. [Documentation & Support:](#documentation--support)
 4. [Miscellaneous Issues and Discoveries:](#miscellaneous-issues-and-discoveries)
 5. [Notes on the High Sierra Installation of MacPorts](#notes-on-the-high-sierra-installation-of-macports)
@@ -189,13 +190,37 @@ The **surgical removal**:
 
 You may now run `which file`, and you should see the executable in `/opt/local/bin`.  
 
+### Set your PATH environment variable:
+
+There's a NOTE appended to some of the ports (e.g. `grep` that is well worth repeating here: 
+
+> grep has the following notes:  
+>
+> This port previously installed itself without a g* prefix, thus overshadowing system binaries such as grep, fgrep, and egrep. The port is now changed so that it does install with a g* prefix, like other GNU ports. This means that you'll now find GNU grep at /opt/local/bin/ggrep. If you dislike typing ggrep, you can create a shell alias or you can **add /opt/local/libexec/gnubin to your PATH**, wherein non-g* prefixed symlinks are installed. **In other words, /opt/local/libexec/gnubin contains GNU binaries without any prefix to the file names, so you can type grep and get GNU grep just as before**.   
+
+And so it's up to you: Use the command **`ggrep`** to access the newer, up-to-date, MacPorts-provided version of `grep`, ***OR*** add `/opt/local/libexec/gnubin` to your PATH, and use the command **`grep`** : 
+
+```bash
+PATH=/opt/local/libexec/gnubin:$PATH
+```
+
+
+
 ## If you use any of the GNU tools: 
 
 I'm using a few GNU tools that are available as MacPorts packages. Some of these tools are packaged as a "set" - for example GNU's [find-utils](https://www.gnu.org/software/findutils/), and [core-utils](https://www.maizure.org/projects/decoded-gnu-coreutils/) packages. The **issue** is this: to avoid **command name collisions**, MacPorts appends the single letter `g` to the command's name; e.g. `gfind`, `glocate`, etc. I find this *"taxing"*. I've discovered a solution that seems to work well so far. Rather than detail it here, please refer to the Q&A on Unix&Linux SE for the time being: [How to get 'man gfind' when I enter 'man find'?](https://unix.stackexchange.com/questions/705757/how-to-get-man-gfind-when-i-enter-man-find). 
 
+The other issue with the `*-utils` packages is knowing exactly which ports are included in those packages. Here's a solution for that: 
+
+```bash
+port contents coreutils | less	# use the pager because this is quite a long list!
+port contents findutils
+port contents diffutils
+```
+
+
+
 Please also note that this is unrelated to the function provided by `port select`; ref `man port-select`. 
-
-
 
 ## Documentation & Support:
 
