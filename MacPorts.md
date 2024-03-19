@@ -208,7 +208,7 @@ PATH=/opt/local/libexec/gnubin:$PATH
 
 ## If you use any of the GNU tools: 
 
-I'm using a few GNU tools that are available as MacPorts packages. Some of these tools are packaged as a "set" - for example GNU's [find-utils](https://www.gnu.org/software/findutils/), and [core-utils](https://www.maizure.org/projects/decoded-gnu-coreutils/) packages. The **issue** is this: to avoid **command name collisions**, MacPorts appends the single letter `g` to the command's name; e.g. `gfind`, `glocate`, etc. I find this *"taxing"*. I've discovered a solution that seems to work well so far. Rather than detail it here, please refer to the Q&A on Unix&Linux SE for the time being: [How to get 'man gfind' when I enter 'man find'?](https://unix.stackexchange.com/questions/705757/how-to-get-man-gfind-when-i-enter-man-find). 
+I'm using a few GNU tools that are available as MacPorts packages. Some of these tools are packaged as a "set" - for example GNU's [find-utils](https://www.gnu.org/software/findutils/), and [core-utils](https://www.maizure.org/projects/decoded-gnu-coreutils/) packages. The **issue** is this: to avoid **command name collisions**, MacPorts appends the single letter `g` to the command's name; e.g. `gfind`, `glocate`, etc. I find this *"taxing"*. I've discovered a solution that seems to work well so far. Rather than detail it here, please refer to the Q&A on Unix&Linux SE for the time being: [How to get 'man gfind' when I enter 'man find'?](https://unix.stackexchange.com/questions/705757/how-to-get-man-gfind-when-i-enter-man-find). *
 
 The other issue with the `*-utils` packages is knowing exactly which ports are included in those packages. Here's a solution for that: 
 
@@ -218,9 +218,18 @@ port contents findutils
 port contents diffutils
 ```
 
+**Before leaving this topic, here's another trick that may help:**
 
+Suppose you find a tool, and you want to find out which package provided it:
 
-Please also note that this is unrelated to the function provided by `port select`; ref `man port-select`. 
+```bash
+$ port provides `which gunlink`
+/opt/local/bin/gunlink is provided by: coreutils
+$ port provides `which ggrep`
+/opt/local/bin/ggrep is provided by: grep
+```
+
+\* Please also note that this is unrelated to the function provided by `port select`; ref `man port-select`. 
 
 ## Documentation & Support:
 
