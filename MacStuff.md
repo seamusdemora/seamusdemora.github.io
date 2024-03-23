@@ -80,7 +80,9 @@
 
 [38. Add "QuickLook" visibility for `.webp` images in older Macs](#38-add-webp-quicklook-for-older-macs) 
 
-[39. Apple sucks again](#39-whereis-vs-which-and-why-Apple-sucks)
+[39. Apple sucks again](#39-whereis-vs-which-and-why-Apple-sucks) 
+
+[40. Turn off the .DS_Store nuisance](#40-turn-off-the nuisance)
 
 [OTHER SOURCES:](#other-sources) 
 
@@ -897,6 +899,25 @@ You may wish to ponder this for just a moment: Apple has relegated `whereis` to 
    sudo ln -s /usr/bin/which whereis
    ```
 [↑](#table-of-contents) 
+
+### 40. Turn off "the nuisance" 
+
+"The nuisance" is Apple's computers spewing endless streams of `DS_Store` files. I've been tempted to post this previously, but hesitated due to the *provenance* of the sources. After some research, I've found this recommendation on an ["official" Apple website](https://support.apple.com/en-gb/102064), so I'll publish it now. So here it is - there are two forms of the command: one for networked file systems, the other for USB-based file systems (devices?):
+
+* For networked (non-local) file systems, enter the following command in Terminal: 
+  ```zsh
+  defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+  # reverse / re-enable:
+  defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool FALSE
+  ``` 
+  Logout & login (or `killall Finder` from the cmd line) for effect. 
+
+* For USB drives
+  ```zsh
+  defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true 
+  # reverse / re-enable: 
+  defaults write com.apple.desktopservices DSDontWriteUSBStores -bool false
+  ``` 
 
 
 ---
