@@ -902,7 +902,7 @@ You may wish to ponder this for just a moment: Apple has relegated `whereis` to 
 
 ### 40. Turn off 'the nuisance' 
 
-'The nuisance' is Apple's computers spewing endless streams of `DS_Store` files to every other filesystem they come in contact with. I've been tempted to post this previously, but hesitated due to the *provenance* of the sources. After some research, I've found this recommendation on an ["official" Apple website](https://support.apple.com/en-gb/102064), so I'll publish it now. So here it is - there are two forms of the command: one for networked file systems, the other for USB-based file systems (devices?):
+'The nuisance' is Apple's computers spewing endless streams of `DS_Store` files to every other filesystem they come in contact with. I've been tempted to post this previously, but hesitated due to the *provenance* of the sources. After some research, I've found this recommendation on an ["official" Apple website](https://support.apple.com/en-gb/102064) - ([and in the US](https://support.apple.com/en-us/102064)), so I'll publish it now. So here it is - there are two forms of the command: one for networked file systems, the other for USB-based file systems (devices?):
 
 * For networked (non-local) file systems, enter the following command in Terminal: 
   ```zsh
@@ -917,7 +917,14 @@ You may wish to ponder this for just a moment: Apple has relegated `whereis` to 
   defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true 
   # reverse / re-enable: 
   defaults write com.apple.desktopservices DSDontWriteUSBStores -bool false
-  ``` 
+  ```
+To remove those that have already infested your network drives, try *something like* this: 
+   ```zsh
+   /Volumes/backups/fumier
+   find /Volumes/backups -name '.DS_Store' | xargs rm 
+   ```
+But be prepared for some [strange results](https://unix.stackexchange.com/q/772948/286615); perhaps if someone muffles the **asshole @muru** (*yet another nuisance*), an answer may emerge to explain this??? 
+  
 [↑](#table-of-contents) 
 
 
@@ -971,6 +978,8 @@ You may wish to ponder this for just a moment: Apple has relegated `whereis` to 
 - [Q&A: Why does rm -f ask me for confirmation on zsh?](https://stackoverflow.com/questions/27988160/why-does-rm-f-ask-me-for-confirmation-on-zsh) 
 - [Q&A: Double rm verification in zsh](https://unix.stackexchange.com/questions/135084/double-rm-verification-in-zsh) 
 - [Running a task at a specified time on a Mac](https://hawksites.newpaltz.edu/myerse/2018/08/16/running-a-task-at-a-specified-time-on-a-mac/)
+- [Blue Lotus Blog: Death to .DS_Store, Dec 24, 2011](https://www.aorensoftware.com/blog/2011/12/24/death-to-ds_store/)
+- [Q&A:Is there a way to prevent those pesky .DS_Store files from being ever created?](https://apple.stackexchange.com/a/296000/149366) 
 
 <!--- 
 
