@@ -900,9 +900,9 @@ You may wish to ponder this for just a moment: Apple has relegated `whereis` to 
    ```
 [↑](#table-of-contents) 
 
-### 40. Turn off "the nuisance" 
+### 40. Turn off 'the nuisance' 
 
-"The nuisance" is Apple's computers spewing endless streams of `DS_Store` files. I've been tempted to post this previously, but hesitated due to the *provenance* of the sources. After some research, I've found this recommendation on an ["official" Apple website](https://support.apple.com/en-gb/102064), so I'll publish it now. So here it is - there are two forms of the command: one for networked file systems, the other for USB-based file systems (devices?):
+'The nuisance' is Apple's computers spewing endless streams of `DS_Store` files to every other filesystem they come in contact with. I've been tempted to post this previously, but hesitated due to the *provenance* of the sources. After some research, I've found this recommendation on an ["official" Apple website](https://support.apple.com/en-gb/102064), so I'll publish it now. So here it is - there are two forms of the command: one for networked file systems, the other for USB-based file systems (devices?):
 
 * For networked (non-local) file systems, enter the following command in Terminal: 
   ```zsh
@@ -918,6 +918,7 @@ You may wish to ponder this for just a moment: Apple has relegated `whereis` to 
   # reverse / re-enable: 
   defaults write com.apple.desktopservices DSDontWriteUSBStores -bool false
   ``` 
+[↑](#table-of-contents) 
 
 
 ---
