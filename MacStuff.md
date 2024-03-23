@@ -82,7 +82,7 @@
 
 [39. Apple sucks again](#39-whereis-vs-which-and-why-Apple-sucks) 
 
-[40. Turn off the .DS_Store nuisance](#40-turn-off-the nuisance)
+[40. Turn off the '.DS_Store' nuisance](#40-turn-off-the-nuisance) 
 
 [OTHER SOURCES:](#other-sources) 
 
