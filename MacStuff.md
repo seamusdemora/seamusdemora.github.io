@@ -920,8 +920,7 @@ You may wish to ponder this for just a moment: Apple has relegated `whereis` to 
   ```
 To remove those that have already infested your network drives, try *something like* this: 
    ```zsh
-   /Volumes/backups/fumier
-   find /Volumes/backups -name '.DS_Store' | xargs rm 
+   find /Volumes/myNAS/backups -name '.DS_Store' | xargs rm 
    ```
 But be prepared for some [strange results](https://unix.stackexchange.com/q/772948/286615); perhaps if someone muffles the **asshole @muru** (*yet another nuisance*), an answer may emerge to explain this??? 
   
