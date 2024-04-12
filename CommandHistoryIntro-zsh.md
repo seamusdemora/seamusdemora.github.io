@@ -28,7 +28,7 @@ Simpler still is using the *up* (<kbd>⬆︎</kbd>) and *down* (<kbd>⬇︎</kbd
 
 Before discussing other methods for accessing the ***command history***, let's briefly focus on how the shell maintains the ***command history***, and by what means the user may exercise control and express his preferences. 
 
-As mentioned above, the ***command history*** is a function of the shell, and for purposes of this recipe the shell of interest is `zsh` - currently the default shell in macOS. The file `/etc/zshrc` contains your machine’s default settings, including a few relevant to the ***command history***. Following are the defaults as of this writing:
+As mentioned above, the ***command history*** is a function of the shell, and for purposes of this recipe the shell of interest is `zsh` - currently the default shell in macOS. The file **`/etc/zshrc`** contains your machine’s default settings, including a few relevant to the ***command history***. Following are the defaults as of this writing:
 
    ```zsh
    % less /etc/zshrc   # peruse the default settings for zsh
@@ -62,7 +62,7 @@ The following graphic attempts to illustrate some of the relationships between t
 
 If you've been using `zsh` for a while, you can open your command history file at `~/.zsh_history` and see what it contains. Likewise, with this file open and in view, the operation and interaction of the **session history** and the  **history file** may be directly observed. (*You may want to temporarily reduce `HISTSIZE` and `SAVEHIST` to save time before doing so. Backing up your .zsh_history` may also be warranted.*)
 
-Given the above, it is left as an exercise for the reader to determine the logic behind Apple's default settings for `HISTSIZE` and `SAVEHIST`. That is to say, the deep thinking that went into setting `SAVEHIST` to one-half the size of `HISTSIZE`. Extra points to the reader who shares this revelation. 
+Given the above, it is left as an exercise for the reader to determine the logic behind Apple's default settings for `HISTSIZE` and `SAVEHIST` in **`/etc/zshrc`**. That is to say, the deep thinking that went into setting `SAVEHIST` to one-half the size of `HISTSIZE`. Extra points to the reader who shares this revelation!  
 
 Some may be tempted to make changes to the default values of `SAVEHIST` and `HISTSIZE`. If you wish to make changes, please note:
 
@@ -70,7 +70,9 @@ Some may be tempted to make changes to the default values of `SAVEHIST` and `HIS
    >
    > **\# Setup user specific overrides for this in ~/.zshrc**
    >
-   > **Do not make changes in `/etc/zshrc`**
+   > At one time, Apple included this warning in `/etc/zshrc`: **Do not make changes in `/etc/zshrc`**
+
+I have yet to see (as of Ventura) Apple include any *practical* history settings in `~/.zshrc`; consequently, you must do this yourself. You should refer to `man zshoptions` (specifically the "History" section) when making these changes. Also note that in `man zshoptions`, it is not always crystal clear whether they are referring to *session history* - or the *history file*.  
 
 With relationships between the ***command history*** *components* made clear, let us explore some additional methods for accessing the ***command history***: 
 
@@ -79,7 +81,7 @@ With relationships between the ***command history*** *components* made clear, le
       3. <kbd>control</kbd><kbd>r</kbd> at the command prompt will search & match items in your ***command history***  
       4. `!!` runs the previous command; e.g. `sudo !!`  executes the previous command with `root` privileges
 
-These tools, coupled with an understanding of the command history components and how they interact is quite enough to begin using the ***command history*** productively. A few examples follow with a bit more detail.
+These tools, coupled with an understanding of the command history components and how they interact is enough to begin using the ***command history*** productively. A few examples follow with more details.
 
 ### Examples for accessing ***command history***
 
@@ -127,7 +129,8 @@ These are only two examples. The REFERENCES below may provide more advanced meth
 2. [A SO Q&A to get `history-search-forward` using `bind` in `~/.zshrc`](https://stackoverflow.com/a/51939529/5395338) 
 3. [Q&A: How can I search history with text already entered at the prompt in zsh?](https://unix.stackexchange.com/questions/97843/how-can-i-search-history-with-text-already-entered-at-the-prompt-in-zsh) 
 4. [Docs: zsh Line Editor's History Control](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#History-Control) ; see also [ZLE Builtins](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Zle-Builtins) 
-5. [Lorna Jane's blog on 'Navigating Bash History with Ctrl+R'](https://lornajane.net/posts/2011/navigating-bash-history-with-ctrlr) 
+5. [Lorna Jane's blog on 'Navigating Bash History with Ctrl+R'](https://lornajane.net/posts/2011/navigating-bash-history-with-ctrlr)
+6. [How To Set Up History-Based Autocompletion in Zsh](https://dev.to/rossijonas/how-to-set-up-history-based-autocompletion-in-zsh-k7o) 
 
 
 
