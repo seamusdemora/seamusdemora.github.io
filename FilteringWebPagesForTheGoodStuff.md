@@ -20,7 +20,7 @@ To lose all the ads and useless junk in the page I thought thatI could [`pipe`](
 
 And finally, to the point of this recipe: I learned it's not necessary to create a DIY project for this because there are some excellent, free and open-sourced tools that are already doing this. I use Firefox as my primary browser (because it seems to have a higher level of *default* privacy protection). I discovered an *Add-on Extension* for Firefox called [Tranquility Reader](https://tranquility.ushnisha.com/) that does a wonderful job at *shit-filtering*. For Chrome, there is a similar free and open-sourced *Extension* called [Just Read](https://github.com/ZachSaucier/Just-Read) that also does a very good job. 
 
-And so, if you're like me, weary of the constant stream of crap the media outlets would hose you with, you should know that considerable relief is available with almost no effort on your part. [Tranquility Reader](https://tranquility.ushnisha.com/) for Firefox, and  [Just Read](https://github.com/ZachSaucier/Just-Read) for Chrome. 
+And so, if you're like me, weary of the constant stream of crap the media outlets and website operators would hose you with, you should know that considerable relief is available with almost no effort on your part. [Tranquility Reader](https://tranquility.ushnisha.com/) for Firefox, and  [Just Read](https://github.com/ZachSaucier/Just-Read) for Chrome. 
 
 ---
 
@@ -30,15 +30,17 @@ And so, if you're like me, weary of the constant stream of crap the media outlet
 
 ### REFERENCES: 
 
-1. [A Q&A at ResearchGate on extracting useful content from websites](https://www.researchgate.net/post/How_do_I_extract_the_content_from_dynamic_web_pages) 
-2. [Some Firefox "add ons" for improving readability](https://addons.mozilla.org/en-US/firefox/search/?platform=mac&q=readability&sort=relevance&type=extension) 
-3. [I've just installed the "Tranquility" add on in Firefox, and it seems to work well](https://addons.mozilla.org/en-US/firefox/addon/tranquility-1/?src=search) 
-4. [A script or source code would support a customized solution (e.g. `curl someURL | readability-script`), and apparently source code may be extracted from add ons!)](https://www.instructables.com/id/Extract-Firefox-Addon-Source-Code/) 
-5. Other "filters" such as [`Readability`](https://www.ghacks.net/2010/03/09/readability-firefox-add-on/), and [Boilerpipe](https://github.com/kohlschutter/boilerpipe) may be deprecated?? 
-6. [Search for libraries or utilities for html scraping on linux](https://duckduckgo.com/?q=library+utility+html+scraoing+linux&t=ffnt&ia=web) 
-7. [Some webscraping tools...](https://linuxhint.com/top_20_webscraping_tools/) 
-8. [SE Q&A that is a "must-read" as the author of `boilerpipe` provides an answer on *What is readability?*](https://stackoverflow.com/questions/3652657/what-algorithm-does-readability-use-for-extracting-text-from-urls/4240037#4240037) Note: Recommend you read ***all*** of the answers. 
-9. [A brief overview of tools for extracting text from HTML pages](https://www.bigdatanews.datasciencecentral.com/profiles/blogs/how-to-extract-text-from-html-document-these-tools-we-can-use) 
-10. I'm now using the [`Tranquility Reader`](https://tranquility.ushnisha.com/) as an *extension* (or *add-on*) in Firefox. I like what it does on "dirty" web pages... mostly news & weather outlets! 
-11. I'm using the [`Just Read`](https://github.com/ZachSaucier/Just-Read) *extension* in Chrome. 
+1. [An overview of web page content extraction](https://joyboseroy.medium.com/an-overview-of-web-page-content-extraction-5e0e2c62855d)
+2. [A Q&A at ResearchGate on extracting useful content from websites](https://www.researchgate.net/post/How_do_I_extract_the_content_from_dynamic_web_pages)
+3. [Tools to extract data from website](https://www.softr.io/blog/tools-to-extract-data-from-website) 
+4. [Some Firefox "add ons" for improving readability](https://addons.mozilla.org/en-US/firefox/search/?platform=mac&q=readability&sort=relevance&type=extension) 
+5. [I've just installed the "Tranquility" add on in Firefox, and it seems to work well](https://addons.mozilla.org/en-US/firefox/addon/tranquility-1/?src=search) 
+6. [A script or source code would support a customized solution (e.g. `curl someURL | readability-script`), and apparently source code may be extracted from add ons!)](https://www.instructables.com/id/Extract-Firefox-Addon-Source-Code/) 
+7. Other "filters" such as [`Readability`](https://www.ghacks.net/2010/03/09/readability-firefox-add-on/), and [Boilerpipe](https://github.com/kohlschutter/boilerpipe) may be deprecated?? 
+8. [Search for libraries or utilities for html scraping on linux](https://duckduckgo.com/?q=library+utility+html+scraoing+linux&t=ffnt&ia=web) 
+9. [Some webscraping tools...](https://linuxhint.com/top_20_webscraping_tools/) 
+10. [SE Q&A that is a "must-read" as the author of `boilerpipe` provides an answer on *What is readability?*](https://stackoverflow.com/questions/3652657/what-algorithm-does-readability-use-for-extracting-text-from-urls/4240037#4240037) Note: Recommend you read ***all*** of the answers. 
+11. [A brief overview of tools for extracting text from HTML pages](https://www.bigdatanews.datasciencecentral.com/profiles/blogs/how-to-extract-text-from-html-document-these-tools-we-can-use) 
+12. I'm now using the [`Tranquility Reader`](https://tranquility.ushnisha.com/) as an *extension* (or *add-on*) in Firefox. I like what it does on "dirty" web pages... mostly news & weather outlets! 
+13. I'm using the [`Just Read`](https://github.com/ZachSaucier/Just-Read) *extension* in Chrome. 
 
