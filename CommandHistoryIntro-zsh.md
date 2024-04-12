@@ -125,12 +125,14 @@ These are only two examples. The REFERENCES below may provide more advanced meth
 
 ## REFERENCES:
 
-1. [Better command history browsing in Terminal](https://www.macworld.com/article/1146015/termhistory.html) - get `history-search-forward` setup using `~/.profile` 
-2. [A SO Q&A to get `history-search-forward` using `bind` in `~/.zshrc`](https://stackoverflow.com/a/51939529/5395338) 
-3. [Q&A: How can I search history with text already entered at the prompt in zsh?](https://unix.stackexchange.com/questions/97843/how-can-i-search-history-with-text-already-entered-at-the-prompt-in-zsh) 
-4. [Docs: zsh Line Editor's History Control](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#History-Control) ; see also [ZLE Builtins](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Zle-Builtins) 
-5. [Lorna Jane's blog on 'Navigating Bash History with Ctrl+R'](https://lornajane.net/posts/2011/navigating-bash-history-with-ctrlr)
-6. [How To Set Up History-Based Autocompletion in Zsh](https://dev.to/rossijonas/how-to-set-up-history-based-autocompletion-in-zsh-k7o) 
+1. [Better command history browsing in Terminal](https://www.macworld.com/article/1146015/termhistory.html) - get `history-search-forward` setup using `~/.profile`
+2. [Better zsh History](https://jdhao.github.io/2021/03/24/zsh_history_setup/) 
+3. [A Guide to ZSH History](https://techcolleague.com/zsh-history/) 
+4. [A SO Q&A to get `history-search-forward` using `bind` in `~/.zshrc`](https://stackoverflow.com/a/51939529/5395338) 
+5. [Q&A: How can I search history with text already entered at the prompt in zsh?](https://unix.stackexchange.com/questions/97843/how-can-i-search-history-with-text-already-entered-at-the-prompt-in-zsh) 
+6. [Docs: zsh Line Editor's History Control](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#History-Control) ; see also [ZLE Builtins](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Zle-Builtins) 
+7. [Lorna Jane's blog on 'Navigating Bash History with Ctrl+R'](https://lornajane.net/posts/2011/navigating-bash-history-with-ctrlr)
+8. [How To Set Up History-Based Autocompletion in Zsh](https://dev.to/rossijonas/how-to-set-up-history-based-autocompletion-in-zsh-k7o) 
 
 
 
