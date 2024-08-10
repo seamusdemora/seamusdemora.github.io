@@ -513,7 +513,7 @@ A few things to review beforehand! :
 
 ### 16. How to Restore the "Lost Startup Chime"?
 
-The long lost startup chime has been found by [this fellow](). Here's how to get it back on your Mac: 
+The long lost startup chime has been found by [this fellow](https://www.cultofmac.com/686749/how-to-resurrect-your-macs-startup-chime/). Here's how to get it back on your Mac: 
 
 ```bash
 sudo nvram StartupMute=%00
