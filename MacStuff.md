@@ -870,12 +870,15 @@ My macOS Mojave is still a good machine - I use it regularly. I've not upgraded 
 
 But I digress...  Using an older Mac, there are a few features that I miss. But I've found that [`MacPorts`](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md) usually takes care of the *important stuff*. However, I couldn't find a solution for the "preview/QuickLook" functionality for the (now) ubiquitous `.webp` graphics. Searching online was revealing... why do [some assholes](https://www.laptopmag.com/how-to/preview-webp-files-on-macos-with-quick-look) try to take over other people's work? Yes - that's correct... the assholes at laptopmag.com tried to take credit for ['emin's open source project](https://github.com/emin/WebPQuickLook). 
 
-Anyway: The [solution is available from emin's GitHub site](https://github.com/emin/WebPQuickLook).  Just one small thing to keep in mind: Run the install script from Terminal in your Admin account (no `sudo` required):
+Anyway: The [solution is available from emin's GitHub site](https://github.com/emin/WebPQuickLook), and it's still up as of this writing (10 Aug 2024).  Just one small thing to keep in mind: Run the install script from Terminal in your Admin account (no `sudo` required): 
+
 ```
-curl -L https://raw.github.com/emin/WebPQuickLook/master/install-all.sh | sh
+$ su <Admin user>  # become an Admin user - if you're not already one
+
+$ curl -L https://raw.github.com/emin/WebPQuickLook/master/install-all.sh | sh
 ```
 
-It's been working well for me!
+It's worked well for me, although it ***may need to be re-installed from time-to-time***!
 
 [↑](#table-of-contents) 
 
