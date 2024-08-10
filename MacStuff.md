@@ -716,13 +716,13 @@ Related to this is iTerm2's [Dynamic Profiles](https://iterm2.com/documentation-
 
 ### 26. "client_loop: send disconnect: Broken pipe"
 
-Irritating, no? If your SSH connections are [*dropping like flies*](https://idioms.thefreedictionary.com/drop+like+flies), you can stop that by running your SSH connections under the native `caffeinate` command: 
+Irritating, no? If your SSH connections are [*dropping like flies*](https://idioms.thefreedictionary.com/drop+like+flies), you can <s>stop</s> reduce that by running your SSH connections under the native `caffeinate` command: 
 
 ```zsh
 % caffeinate -i ssh user@host
 ```
 
-This should maintain an SSH connection for as long as you need it - hours, days, weeks, etc. It requires *no additional software*, and will maintain other network connections and long-running processes even when the lid is closed on a MacBook. [You can read more details on this neighboring page.](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MaintainLongRunningNetworkConnections.md)  
+This should maintain an SSH connection for as long as you need it **IF you are "plugged in" to the charger**. It requires *no additional software*, and will maintain other network connections and long-running processes even when the lid is closed on a MacBook. [You can read more details on this neighboring page.](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MaintainLongRunningNetworkConnections.md)  
 
 [↑](#table-of-contents)
 
