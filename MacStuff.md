@@ -78,7 +78,7 @@
 
 [37. Don't fret over loss of `youtube-dl`](#37-dont-fret-over-loss-of-youtube-dl) 
 
-[38. Add "QuickLook" visibility for `.webp` images in older Macs](#38-add-webp-quicklook-for-older-macs) 
+[38. Add "QuickLook" visibility for `.webp` images in older Macs](#38-add-webp-quicklook-for-older-macs) - **UPDATED** *20240821*
 
 [39. Apple sucks again](#39-whereis-vs-which-and-why-Apple-sucks) 
 
@@ -864,11 +864,11 @@ If you're a user of `youtube-dl`, you may have seen [this announcement](https://
 
 [↑](#table-of-contents) 
 
-### 38. Add webp QuickLook for older macs 
+### 38. Add webp QuickLook for older macs [UPDATED 20240821]
 
-My macOS Mojave is still a good machine - I use it regularly. I've not upgraded it because I feel that Apple "fucks you over" on the upgrades - but that's only my registered opinion :) What's **not** opinion is that Apple **does not support** their older machines for more that a few years. 
+My macOS Mojave is still a good machine - I use it regularly. I've not upgraded it because I feel that Apple "fucks you over" on the upgrades - but that's only my registered opinion :) What's **not** opinion is that Apple **does not support** their older machines for more that a few years. Using an older Mac, there are a few features that I miss. But I've found that [`MacPorts`](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md) usually takes care of the *important stuff*. 
 
-But I digress...  Using an older Mac, there are a few features that I miss. But I've found that [`MacPorts`](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md) usually takes care of the *important stuff*. However, I couldn't find a solution for the "preview/QuickLook" functionality for the (now) ubiquitous `.webp` graphics. Searching online was revealing... why do [some assholes](https://www.laptopmag.com/how-to/preview-webp-files-on-macos-with-quick-look) try to take over other people's work? Yes - that's correct... the assholes at laptopmag.com tried to take credit for ['emin's open source project](https://github.com/emin/WebPQuickLook). 
+However, I couldn't find a solution for the "preview/QuickLook" functionality for the (now) ubiquitous `.webp` graphics. Searching online was revealing... why do [some assholes](https://www.laptopmag.com/how-to/preview-webp-files-on-macos-with-quick-look) try to take over other people's work? Yes - that's correct... the assholes at laptopmag.com tried to take credit for ['emin's open source project'](https://github.com/emin/WebPQuickLook). They gave _emin_ (the original author of `WebpQuickLook`) no credit when I looked.
 
 Anyway: The [solution is available from emin's GitHub site](https://github.com/emin/WebPQuickLook), and it's still up as of this writing (10 Aug 2024).  Just one small thing to keep in mind: Run the install script from Terminal in your Admin account (no `sudo` required): 
 
@@ -878,7 +878,9 @@ $ su <Admin user>  # become an Admin user - if you're not already one
 $ curl -L https://raw.github.com/emin/WebPQuickLook/master/install-all.sh | sh
 ```
 
-It's worked well for me, although it ***may need to be re-installed from time-to-time***!
+##### UPDATE:
+If you're having problems with *emin's* `webpQuickLook`, that ***might*** be because it hasn't been updated in a while. There's a more *up-to-date* fork of `webpQuickLook` available from [*lincerely's* GitHub page](https://github.com/lincerely/WebPQuickLook). He's updated several things, including the **installation script**. 
+
 
 [↑](#table-of-contents) 
 
