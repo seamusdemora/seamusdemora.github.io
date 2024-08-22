@@ -864,7 +864,8 @@ If you're a user of `youtube-dl`, you may have seen [this announcement](https://
 
 [↑](#table-of-contents) 
 
-### 38. Add webp QuickLook for older macs [UPDATED 20240821]
+### 38. Add webp QuickLook for older macs
+**[UPDATED 20240821]**
 
 My macOS Mojave is still a good machine - I use it regularly. I've not upgraded it because I feel that Apple "fucks you over" on the upgrades - but that's only my registered opinion :) What's **not** opinion is that Apple **does not support** their older machines for more that a couple of years. Using an older Mac, there are a few upgrades that I might be missing out on. But I've found that [`MacPorts`](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md) usually takes care of the *important stuff*. 
 
@@ -879,7 +880,7 @@ $ curl -L https://raw.github.com/emin/WebPQuickLook/master/install-all.sh | sh
 ```
 
 ##### UPDATE:
-If you're having problems with *emin's* `webpQuickLook`, that ***might*** be because it hasn't been updated in a while. There's a more *up-to-date* fork of `webpQuickLook` available from [*lincerely's* GitHub page](https://github.com/lincerely/WebPQuickLook). He's updated several things, including the **installation script**. 
+If you're having problems with *emin's* `webpQuickLook`, that ***might*** be because it hasn't been updated in a while. There's a more *up-to-date* fork of `webpQuickLook` available from [*lincerely's* GitHub page](https://github.com/lincerely/WebPQuickLook). He's updated several things, including the **installation script**. I just installed IAW the instructions - it seems to work fine! 
 
 
 [↑](#table-of-contents) 
