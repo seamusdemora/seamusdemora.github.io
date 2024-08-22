@@ -866,7 +866,7 @@ If you're a user of `youtube-dl`, you may have seen [this announcement](https://
 
 ### 38. Add webp QuickLook for older macs [UPDATED 20240821]
 
-My macOS Mojave is still a good machine - I use it regularly. I've not upgraded it because I feel that Apple "fucks you over" on the upgrades - but that's only my registered opinion :) What's **not** opinion is that Apple **does not support** their older machines for more that a few years. Using an older Mac, there are a few features that I miss. But I've found that [`MacPorts`](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md) usually takes care of the *important stuff*. 
+My macOS Mojave is still a good machine - I use it regularly. I've not upgraded it because I feel that Apple "fucks you over" on the upgrades - but that's only my registered opinion :) What's **not** opinion is that Apple **does not support** their older machines for more that a couple of years. Using an older Mac, there are a few upgrades that I might be missing out on. But I've found that [`MacPorts`](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md) usually takes care of the *important stuff*. 
 
 However, I couldn't find a solution for the "preview/QuickLook" functionality for the (now) ubiquitous `.webp` graphics. Searching online was revealing... why do [some assholes](https://www.laptopmag.com/how-to/preview-webp-files-on-macos-with-quick-look) try to take over other people's work? Yes - that's correct... the assholes at laptopmag.com tried to take credit for ['emin's open source project'](https://github.com/emin/WebPQuickLook). They gave _emin_ (the original author of `WebpQuickLook`) no credit when I looked.
 
