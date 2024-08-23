@@ -865,7 +865,7 @@ If you're a user of `youtube-dl`, you may have seen [this announcement](https://
 [↑](#table-of-contents) 
 
 ### 38. Add webp QuickLook for older macs
-**[UPDATED 20240821]**
+**[UPDATED 20240823]**
 
 My macOS Mojave is still a good machine - I use it regularly. I've not upgraded it because I feel that Apple "fucks you over" on the upgrades - but that's only my registered opinion :) What's **not** opinion is that Apple **does not support** their older machines for more that a couple of years. Using an older Mac, there are a few upgrades that I might be missing out on. But I've found that [`MacPorts`](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md) usually takes care of the *important stuff*. 
 
