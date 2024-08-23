@@ -871,21 +871,14 @@ My macOS Mojave is still a good machine - I use it regularly. I've not upgraded 
 
 However, I couldn't find a solution for the "preview/QuickLook" functionality for the (now) ubiquitous `.webp` graphics. Searching online was revealing... why do [some assholes](https://www.laptopmag.com/how-to/preview-webp-files-on-macos-with-quick-look) try to take over other people's work? Yes - that's correct... the assholes at laptopmag.com tried to take credit for ['emin's open source project'](https://github.com/emin/WebPQuickLook). They gave _emin_ (the original author of `WebpQuickLook`) no credit when I looked.
 
-Anyway: The [solution is available from emin's GitHub site](https://github.com/emin/WebPQuickLook), and it's still up as of this writing (10 Aug 2024).  Just one small thing to keep in mind: Run the install script from Terminal in your Admin account (no `sudo` required): 
+<s>Anyway: The [solution is available from emin's GitHub site](https://github.com/emin/WebPQuickLook), and it's still up as of this writing (10 Aug 2024).</s>  
 
-```
-$ su <Admin user>  # become an Admin user - if you're not already one
-
-$ curl -L https://raw.github.com/emin/WebPQuickLook/master/install-all.sh | sh
-```
-
-##### UPDATE:
+#### UPDATE:
 If you're having problems with *emin's* `webpQuickLook`, that ***might*** be because it hasn't been updated in a while. There's a more *up-to-date* fork of `webpQuickLook` available from [*lincerely's* GitHub page](https://github.com/lincerely/WebPQuickLook). He's updated several things, including the **installation script**. I just installed IAW the instructions. It seems to be an ***improvement***, but it's not ***flawless!*** A few things I've noticed: 
 
    1. It fails on some `webp` images. These may be animations(?). In a few cases, I had to open the file in 'Chrome'  to see it.
-   2. It's not "Quick" in all cases;  in some cases I'd call it *"Semi-Quick"* :)
-   3. Sometimes, it doesn't seem to work at all! I've had some luck in restoring it by re-running `qlmanage -r` from the  Terminal.
-
+   2. It's not "Quick" in all cases; in some cases I'd call it *"Semi-Quick"* :)
+   3. Sometimes, it doesn't seem to work at all! I've had some luck in restoring it by re-running `qlmanage -r` from the  Terminal. 
 
 [↑](#table-of-contents) 
 
