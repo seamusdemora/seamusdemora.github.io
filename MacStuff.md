@@ -78,7 +78,7 @@
 
 [37. Don't fret over loss of `youtube-dl`](#37-dont-fret-over-loss-of-youtube-dl) 
 
-[38. Add "QuickLook" visibility for `.webp` images in older Macs](#38-add-webp-quicklook-for-older-macs) - **UPDATED** *20240821*
+[38. Add "QuickLook" visibility for `.webp` images in older Macs](#38-add-webp-quicklook-for-older-macs) - **UPDATED** *20240823*
 
 [39. Apple sucks again](#39-whereis-vs-which-and-why-Apple-sucks) 
 
