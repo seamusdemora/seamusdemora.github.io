@@ -82,6 +82,8 @@
 
 [39. Apple sucks again](#39-whereis-vs-which-and-why-Apple-sucks) 
 
+[40. Refresh shell configuration without restarting](#40-refresh-shell-configuration-without-restarting)
+
 [OTHER SOURCES:](#other-sources) 
 
 <hr>
@@ -900,6 +902,30 @@ You may wish to ponder this for just a moment: Apple has relegated `whereis` to 
    ```
 [↑](#table-of-contents) 
 
+### 40. Refresh shell configuration without restarting:
+
+There are two user-owned files that control many aspects of the shell's behavior - uh, *interactive shells, that is*: `~/.profile` & `~/.bashrc`. Likewise for `zsh`, the `~/.zprofile` & `~/.zshrc`. There will be occasions when changes to these files will need to be made in the current session - without exiting one shell session, and starting a new one. Examples of such changes are changes to the `PATH`, or addition of an `alias`. Here's how to refresh/reload your shell configuration:
+
+
+```zsh
+$ source ~/.profile       # use this for bash 
+$ source ~/.bashrc        #        "
+% source ~/.zprofile      # use this for zsh 
+% source ~/.zshrc         #        " 
+# OR ALTERNATIVELY: 
+$ . ~/.profile            # use for bash + see Notes below 
+$ . ~/.bashrc             #        "
+% . ~/.zprofile           # use for zsh + see Notes below 
+% . ~/.zshrc              #        "
+```
+
+>> **Note 1:** The [dot operator](https://ss64.com/bash/source.html); `.` is a synonym for `source`. Also, it's POSIX-compliant (`source` is not).
+
+>> **Note 2:** Additions and removals from `~/.bashrc` behave differently: If something is **removed** from `~/.bashrc`, this change will **not** take effect after *sourcing* `~/.bashrc` (i.e.  `. ~/.bashrc`).  
+>
+>> For example: Add a function to `~/.bashrc`: `function externalip () { curl http://ipecho.net/plain; echo; }`. Now *source* it with `. ~/.profile`. You should see that the function now works in this session. Now remove the function, and then *source* it again using `. ~/.profile`. The function is still available - only restarting (log out & in), or starting a new shell session will remove it. I *suspect* it works the same in `zsh`.
+
+[↑](#table-of-contents) 
 
 ---
 
