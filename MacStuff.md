@@ -876,9 +876,9 @@ However, I couldn't find a solution for the "preview/QuickLook" functionality fo
 #### UPDATE:
 If you're having problems with *emin's* `webpQuickLook`, that ***might*** be because it hasn't been updated in a while. There's a more *up-to-date* fork of `webpQuickLook` available from [*lincerely's* GitHub page](https://github.com/lincerely/WebPQuickLook). He's updated several things, including the **installation script**. I just installed IAW the instructions. It seems to be an ***improvement***, but it's not ***flawless!*** A few things I've noticed: 
 
-      1. It's not "Quick" in all cases; in some cases I'd call it *"Semi-Quick"* :)
-      2. Sometimes, it doesn't seem to work at all! I've had some luck in restoring it by re-running `qlmanage -r` from the  Terminal.
-      3. It completely fails on some `webp` images. In all cases that I've tested, the failing `webp` images turned out to be **animations** when I viewed them in 'Chrome'. 
+   1. It's not "Quick" in all cases; in some cases I'd call it *"Semi-Quick"* :)
+   2. Sometimes, it doesn't seem to work at all! I've had some luck in restoring it by re-running `qlmanage -r` from the  Terminal.
+   3. It completely fails on some `webp` images. In all cases that I've tested, the failing `webp` images turned out to be **animations** when I viewed them in 'Chrome'. 
 
 [↑](#table-of-contents) 
 
