@@ -153,7 +153,7 @@ Finally, one may wonder, "If the filesystem is proprietary, how does `rsync` man
 #  -D	          preserve devices and special files
 #  -v	          increased verbosity; may be repeated
 #  -i	          itemize changes
-#  --fake-super		store/recover privileged attrs using xattrs (for ACLs & XATTRs)
+#  --fake-super	store/recover privileged attrs using xattrs (for ACLs & XATTRs)
 ```
 
 #### Decoding the itemize output (option `i`):
