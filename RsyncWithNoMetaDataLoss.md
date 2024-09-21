@@ -108,7 +108,7 @@ Using the `rsync` options shown below eliminates the loss of meta-data - includi
 
 ### Verifying the results: 
 
-All well and good to claim success, but this recipe would be incomplete without some suggestions on how to verify these claims. To this end, the `src` folder in this repo contains two scripts created to verify the results - after all, I'm now depending upon the accuracy of this recipe for my own backups :) 
+All well and good to claim success, but this recipe would be incomplete without some suggestions on how to verify these claims. To this end, [the `src` folder](https://github.com/seamusdemora/seamusdemora.github.io/tree/master/src) folder in this repo contains two scripts that verify the results - after all, I'm now depending upon the accuracy of this recipe for my own backups :) 
 
 The scripts are named [`get-stats.sh`](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/src/get-stats.sh), and [`get-xattrs.sh`](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/src/get-xattrs.sh); they are simple and structurally identical. One uses the `stat` tool to read the *conventional* file stats/metadata; the other uses the macOS tool `xattr`. After logging the `stat` or `xattr` output, results are compared using `diff`. Please feel free to inspect, use or modify these scripts to suit your needs; any feedback via the [Issues page](https://github.com/seamusdemora/seamusdemora.github.io/issues), or suggested improvements via [pull request](https://github.com/seamusdemora/seamusdemora.github.io/pulls) are most welcome. 
 
