@@ -143,16 +143,16 @@ Finally, one may wonder, "If the filesystem is proprietary, how does `rsync` man
 #### A brief summary explanation of each of the `rsync` options used:
 
 ```
-#  -r					recursive; recurse into directories
-#  -l					copy symlinks as symlinks
+#  -r					    recursive; recurse into directories
+#  -l					    copy symlinks as symlinks
 #  --acls, -A           preserve ACLs (implies --perms, -p)
 #  --xattrs, -X         preserve extended attributes
-#  -t					preserve modification times
-#  -g					preserve group
-#  -o					preserve owner
-#  -D					preserve devices and special files
-#  -v					increased verbosity; may be repeated
-#  -i					itemize changes
+#  -t					    preserve modification times
+#  -g					    preserve group
+#  -o					    preserve owner
+#  -D					    preserve devices and special files
+#  -v					    increased verbosity; may be repeated
+#  -i					    itemize changes
 #  --fake-super			store/recover privileged attrs using xattrs (for ACLs & XATTRs)
 ```
 
