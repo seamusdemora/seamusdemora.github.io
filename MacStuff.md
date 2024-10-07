@@ -82,7 +82,9 @@
 
 [39. Apple sucks again](#39-whereis-vs-which-and-why-Apple-sucks) 
 
-[40. Refresh shell configuration without restarting](#40-refresh-shell-configuration-without-restarting)
+[40. Refresh shell configuration without restarting](#40-refresh-shell-configuration-without-restarting) 
+
+[41. Why not upgrade macOS?](#41-why-i-do-not-upgrade-macos)
 
 [OTHER SOURCES:](#other-sources) 
 
@@ -926,7 +928,22 @@ $ . ~/.bashrc             #        "
 >
 >> For example: Add a function to `~/.bashrc`: `function externalip () { curl http://ipecho.net/plain; echo; }`. Now *source* it with `. ~/.profile`. You should see that the function now works in this session. Now remove the function, and then *source* it again using `. ~/.profile`. The function is still available - only restarting (log out & in), or starting a new shell session will remove it. I *suspect* it works the same in `zsh`.
 
-[↑](#table-of-contents) 
+[↑](#table-of-contents)  
+
+### 41. Why I do not upgrade macOS
+
+A few people have asked me ***why*** I don't ever upgrade a Mac. It's a *fair question*, and deserves a *fair answer*. 
+
+My SOP is based on *personal experience* that began years ago, and continues today. I found that after upgrading, occasionally very weird things happened - things that on a couple of occasions turned into ***weird AND horrible*** experiences that trashed personal data, or made it impossible to do things I'd made a habit of doing.  I develop *methods* for doing things, and I cannot tolerate a third party that arbitrarily changes things in *"their OS"* - ***without notification or warning***.  First and foremost: **I do not trust Apple**. In fact, **I think they suck** - big time. This may have something to do with their enormous size... I don't really know or care. I hope that addresses the question. 
+
+If you disagree with my opinion, I think that's fine.  You may be the sort of person who prefers to weigh up the evidence, and make their own decisions. If that's the case, my hat is off to you.  I feel the world would be a better place if more people thought (and acted) ***independently***! And so without trying to influence anyone else's thinking or opinions, I will offer some anecdotal evidence that one might consider in forming his or her own opinion. 
+
+* [Unable to access External Drives and Disk Utility after updating to macOS Sonoma](https://discussions.apple.com/thread/255188289) 
+* more to follow...
+
+[↑](#table-of-contents)   
+
+
 
 ---
 
