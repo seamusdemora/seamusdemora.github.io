@@ -959,7 +959,12 @@ Here's a *recipe* I used to convert an `.mp4` to `.webp` (*credit to [Matt Josep
      -preset picture -an -vsync 0 JW-convertedmp4.webp 
 ```
 
-For the *skeptics* (like me), know that `.webp` may have certain security and performance issues - as discussed in the [*Wikipedia* article](https://en.wikipedia.org/wiki/WebP). 
+For the *skeptics* (like me), know that `.webp` may have certain security and performance issues - as discussed in the [*Wikipedia* article](https://en.wikipedia.org/wiki/WebP). There is some [`ffmpeg` documentation](https://ffmpeg.org//ffmpeg-all.html#libwebp) on options for the `libwebp` codec; other documentation can be found at: 
+
+- [a GitHub gist](https://gist.github.com/witmin/1edf926c2886d5c8d9b264d70baf7379), 
+- [opensource article on `ffmpeg`](https://opensource.com/article/17/6/ffmpeg-convert-media-file-formats), 
+- [`ffmpeg` bug tracker & wiki](https://trac.ffmpeg.org/wiki), 
+- [`ffmpeg` external resources](https://trac.ffmpeg.org/wiki/BooksAndOtherExternalResources). 
 
 [↑](#table-of-contents)   
 
