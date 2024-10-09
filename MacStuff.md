@@ -84,7 +84,9 @@
 
 [40. Refresh shell configuration without restarting](#40-refresh-shell-configuration-without-restarting) 
 
-[41. Why not upgrade macOS?](#41-why-i-do-not-upgrade-macos)
+[41. Why not upgrade macOS?](#41-why-i-do-not-upgrade-macos) 
+
+[42. Convert `.mp4` videos to `.webp` format using `ffmpeg`](#ffmpeg-converts-mp4-video-to-webp) 
 
 [OTHER SOURCES:](#other-sources) 
 
@@ -940,6 +942,24 @@ If you disagree with my opinion, I think that's fine.  You may be the sort of pe
 
 * [Unable to access External Drives and Disk Utility after updating to macOS Sonoma](https://discussions.apple.com/thread/255188289) 
 * more to follow...
+
+[↑](#table-of-contents)   
+
+### 42. `ffmpeg` converts `.mp4` video to `.webp`
+
+Support for `.webp` is a fairly new feature for `ffmpeg`, and only became [available in MacPorts on 8 Oct 2024](https://github.com/macports/macports-ports/pull/26022). 
+
+Here's a *recipe* I used to convert an `.mp4` to `.webp` (*credit to [Matt Joseph](https://mattj.io/posts/2021-02-27-create-animated-gif-and-webp-from-videos-using-ffmpeg/)*): 
+
+```zsh
+   % ffmpeg -i "JW.mp4" \
+		 -vf "fps=10,scale=720:-1:flags=lanczos" \
+     -vcodec libwebp -lossless 0 -compression_level 6 \
+     -q:v 50 -loop 0 \
+     -preset picture -an -vsync 0 JW-convertedmp4.webp 
+```
+
+For the *skeptics* (like me), know that `.webp` may have certain security and performance issues - as discussed in the [*Wikipedia* article](https://en.wikipedia.org/wiki/WebP). 
 
 [↑](#table-of-contents)   
 
