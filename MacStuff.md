@@ -86,7 +86,7 @@
 
 [41. Why not upgrade macOS?](#41-why-i-do-not-upgrade-macos) 
 
-[42. Convert `.mp4` videos to `.webp` format using `ffmpeg`](#ffmpeg-converts-.mp4-video-to-.webp) 
+[42. Convert `.mp4` videos to `.webp` format using `ffmpeg`](#ffmpeg-converts-mp4-video-to-webp) 
 
 [OTHER SOURCES:](#other-sources) 
 
@@ -945,7 +945,7 @@ If you disagree with my opinion, I think that's fine.  You may be the sort of pe
 
 [↑](#table-of-contents)   
 
-### 42. `ffmpeg` converts `.mp4` video to `.webp`
+### 42. `ffmpeg` converts `mp4` video to `webp`
 
 Support for `.webp` is a fairly new feature for `ffmpeg`, and only became [available in MacPorts on 8 Oct 2024](https://github.com/macports/macports-ports/pull/26022). 
 
