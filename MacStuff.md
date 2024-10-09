@@ -86,7 +86,7 @@
 
 [41. Why not upgrade macOS?](#41-why-i-do-not-upgrade-macos) 
 
-[42. Convert `.mp4` videos to `.webp` format using `ffmpeg`](#ffmpeg-converts-mp4-video-to-webp) 
+[42. Convert `.mp4` videos to `.webp` format using `ffmpeg`](#ffmpeg-converts-.mp4-video-to-.webp) 
 
 [OTHER SOURCES:](#other-sources) 
 
