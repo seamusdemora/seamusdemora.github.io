@@ -88,6 +88,8 @@
 
 [42. Convert `.mp4` videos to `.webp` format using `ffmpeg`](#42-ffmpeg-converts-mp4-video-to-webp) 
 
+[43. `yt-dlp` and `ffmpeg` work together to merge audio and video](#43-yt-dlp-and-ffmpeg-work-together-to-merge-audio-and-video) 
+
 [OTHER SOURCES:](#other-sources) 
 
 <hr>
@@ -968,6 +970,52 @@ For the *skeptics* (like me), know that `.webp` may have certain security and pe
 
 [↑](#table-of-contents)   
 
+### 43. `yt-dlp` and `ffmpeg` work together to merge audio and video
+
+I wanted to download an old movie I found on YouTube: ["As Young as You Feel"](https://www.youtube.com/watch?v=duE8686w78E). It seems the only download options were `video only` or `audio only`.  After a brief search, and perusing the [README file in the `yt-dlp` GitHub repo](https://github.com/yt-dlp/yt-dlp), I could find no advice or options for how to get *"the best"* combination of video and audio tracks in a single file.   
+
+`yt-dlp` was installed using 'MacPorts', and I did install it with the `[+]ffmpeg` *variant*...??? Perhaps this depends on YouTube? The [yt-dlp README file](https://github.com/yt-dlp/yt-dlp#format-selection) did offer this one thing, but it did not download the highest quality: 
+
+```bash
+$ yt-dlp -f bestvideo+bestaudio/best 'https://www.youtube.com/watch?v=duE8686w78E'
+...
+[download] Destination: As Young as You Feel (1951) full movie ｜ Marilyn Monroe, Monty Woolley, Thelma Ritter [duE8686w78E].f399.mp4
+[download] 100% of  417.31MiB in 00:00:42 at 9.80MiB/s
+[download] Destination: As Young as You Feel (1951) full movie ｜ Marilyn Monroe, Monty Woolley, Thelma Ritter [duE8686w78E].f251.webm
+[download] 100% of   53.95MiB in 00:00:02 at 24.62MiB/s
+[Merger] Merging formats into "As Young as You Feel (1951) full movie ｜ Marilyn Monroe, Monty Woolley, Thelma Ritter [duE8686w78E].webm"
+...
+$
+```
+
+##### In the end, here's what worked for me <sup>[1](https://superuser.com/a/277667/907399)</sup>: 
+
+```bash
+$ yt-dlp -F 'https://www.youtube.com/watch?v=duE8686w78E'
+...
+251-drc webm  audio only      2 │   53.39MiB   97k https │ audio only          opus        97k 48k [en] medium, DRC, webm_dash
+140     m4a   audio only      2 │   71.14MiB  129k https │ audio only          mp4a.40.2  129k 44k [en] medium, m4a_dash
+...
+270     mp4   1440x1080   24    │ ~  2.23GiB 4150k m3u8  │ avc1.640028   4150k video only
+137     mp4   1440x1080   24    │  964.84MiB 1756k https │ avc1.640028   1756k video only          1080p, mp4_dash
+...
+$ yt-dlp -f 270 'https://www.youtube.com/watch?v=duE8686w78E'
+...
+[download] Destination: As Young as You Feel (1951) full movie ｜ Marilyn Monroe, Monty Woolley, Thelma Ritter [duE8686w78E].mp4
+...
+$ yt-dlp -f 140 'https://www.youtube.com/watch?v=duE8686w78E' 
+...
+[download] Destination: As Young as You Feel (1951) full movie ｜ Marilyn Monroe, Monty Woolley, Thelma Ritter [duE8686w78E].m4a
+...
+$ mv 'As Young as You Feel (1951) full movie ｜ Marilyn Monroe, Monty Woolley, Thelma Ritter [duE8686w78E].mp4' 'AsYoungAsYouFeel.mp4'
+$ mv 'As Young as You Feel (1951) full movie ｜ Marilyn Monroe, Monty Woolley, Thelma Ritter [duE8686w78E].m4a' 'ayayf.m4a'
+$ ffmpeg -i AsYoungAsYouFeel.mp4 -i ayayf.m4a -c:v copy -c:a aac AYAYF.mp4
+...
+$ 
+```
+
+[↑](#table-of-contents)   
+
 
 
 ---
@@ -1022,6 +1070,7 @@ For the *skeptics* (like me), know that `.webp` may have certain security and pe
 - [Running a task at a specified time on a Mac](https://hawksites.newpaltz.edu/myerse/2018/08/16/running-a-task-at-a-specified-time-on-a-mac/)
 - [Blue Lotus Blog: Death to .DS_Store, Dec 24, 2011](https://www.aorensoftware.com/blog/2011/12/24/death-to-ds_store/)
 - [Q&A:Is there a way to prevent those pesky .DS_Store files from being ever created?](https://apple.stackexchange.com/a/296000/149366) 
+- [Q&A: How to merge audio and video file in ffmpeg](https://superuser.com/a/277667/907399) 
 
 <!--- 
 
