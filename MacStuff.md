@@ -1057,7 +1057,7 @@ Next, from the CLI let's first connect (`scutil --nc start`) to one of our VPNs 
    $ scutil --nc stop "906D079A-088E-4A2D-8B63-8F4B5523C407"
    $ 
 ```
-![VPNiconMenuBar](/Users/jmoore/Documents/GitHub/seamusdemora.github.io/pix/VPNiconMenuBar.png)
+![VPNiconMenuBar](pix/VPNiconMenuBar.png)
 
 If the connection is successful, note that the VPN icon in the Menu Bar suddenly comes to life, displaying the length of time the connection has been active. You could also test for the return code from `scutil` (`$?`) as shown above. 
 
