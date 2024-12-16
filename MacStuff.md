@@ -1153,6 +1153,7 @@ We've touched on the usage for `scutil` here to help manage your VPN connections
 - [Blue Lotus Blog: Death to .DS_Store, Dec 24, 2011](https://www.aorensoftware.com/blog/2011/12/24/death-to-ds_store/)
 - [Q&A:Is there a way to prevent those pesky .DS_Store files from being ever created?](https://apple.stackexchange.com/a/296000/149366) 
 - [Q&A: How to merge audio and video file in ffmpeg](https://superuser.com/a/277667/907399) 
+- [Q&A: how to make scutil login to VPN with password on Mac?](https://superuser.com/questions/809150/how-to-make-scutil-login-to-vpn-with-password-on-mac) 
 
 <!--- 
 
