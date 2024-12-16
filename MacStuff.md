@@ -90,7 +90,7 @@
 
 [43. `yt-dlp` and `ffmpeg` work together to merge audio and video](#43-yt-dlp-and-ffmpeg-work-together-to-merge-audio-and-video) 
 
-[44. Using `scutil` to manage macOS VPN connections](#using-scutil-to-manage-vpn-connections) 
+[44. Using `scutil` to manage macOS VPN connections](#44-using-scutil-to-manage-vpn-connections) 
 
 [OTHER SOURCES:](#other-sources) 
 
