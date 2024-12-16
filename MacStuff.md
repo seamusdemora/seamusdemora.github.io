@@ -90,6 +90,8 @@
 
 [43. `yt-dlp` and `ffmpeg` work together to merge audio and video](#43-yt-dlp-and-ffmpeg-work-together-to-merge-audio-and-video) 
 
+[44. Using `scutil` to manage macOS VPN connections](#using-scutil-to-manage-vpn-connections) 
+
 [OTHER SOURCES:](#other-sources) 
 
 <hr>
@@ -1015,6 +1017,86 @@ $
 ```
 
 [↑](#table-of-contents)   
+
+### 43. Using `scutil` to manage VPN connections 
+
+According to `man scutil`, `scutil`'s *raison d'être*  is to: *"Manage system configuration parameters"*. Wow... that's a large remit! But fear not, this note covers only `scutil --nc`; i.e. those commands for monitoring and interacting with VPN connections. The "manual" for the `--nc` subset is obtained by entering the following in `Terminal.app`: 
+
+ ```bash
+  % scutil --nc help
+ ```
+
+This is a rather obscure corner of the world, but useful if you need to automate some aspect of your VPN connections. 
+
+VPNs are rather odd things; they act as an *"encrypted tunnel"* between your Mac's WiFi/Ethernet port to the VPN *"server"*. This server is (*typically*) not the final destination of your route, but it's where the encrypted tunnel ends. From the end of the tunnel, you can go virtually anyplace you like. In effect, your connection is seen by the destination host as originating at the VPN server *instead of your true physical origin*. This can be useful for a number of reasons, but rather than trying to cover that here, [I'll refer you to this article](https://www.howtogeek.com/133680/htg-explains-what-is-a-vpn/). 
+
+There's something else you should know before reading any further: `scutil --nc` is useful *only in the context of* dealing with VPNs that are (have already been) set up/configured using the `System Settings, VPN` dialog; or, at least, that's all that I'll cover here. 
+
+The examples here are based on a set of [IPsec](https://en.wikipedia.org/wiki/IPsec) VPNs generated using the `Add VPN Configuration` dialog for `Cisco IPSec` type VPNs found at the bottom of the `System Settings, VPN` panel. I generated a few to support this recipe.  We'll look at how `scutil` - illustrated here in a `bash` or `zsh` script - can help us use these VPNs.
+
+First - I find it useful to store my VPN configurations in a file. Let's `list` our VPNs  & write them to a file: 
+
+```bash
+   $ scutil --nc list | tee vpn.txt
+   * (Disconnected)   1C5CADA0-EB7B-4A94-A418-59B846D8EB06 IPSec              "osl-c03.ipvanish.com-VPN"       [IPSec]
+   * (Disconnected)   8706B438-B924-4FBF-BB85-293BEA17EF17 IPSec              "IPVanish-bhx-c18-VPN"           [IPSec]
+   * (Disconnected)   65CD8640-3EA9-4633-ADD8-F8C3DBA40FCB IPSec              "hel-c13.ipvanish.com-VPN"       [IPSec]
+   * (Disconnected)   6B205099-5EF0-456C-B8EB-E227DFC07A1C IPSec              "iad-b47.ipvanish-VPN"           [IPSec]
+   * (Disconnected)   906D079A-088E-4A2D-8B63-8F4B5523C407 IPSec              "ams-a39.ipvanish.com-VPN"       [IPSec]
+
+```
+
+We see that there are two (2) unique fields in each VPN record: the [32-char UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier), and the quoted `Display name` which was simply our entry in the  `Display name` field when we defined this VPN in the `System Settings, VPN` panel. We may use either of these to specify our desired connection to `scutil`. 
+
+Next, from the CLI let's first connect (`scutil --nc start`) to one of our VPNs using the UUID value. After you've seen it work, you may disconnect (`scutil --nc stop`) as shown below : 
+
+```bash 
+   $ scutil --nc start "906D079A-088E-4A2D-8B63-8F4B5523C407"
+   $ echo $?
+   0
+   $ scutil --nc stop "906D079A-088E-4A2D-8B63-8F4B5523C407"
+   $ 
+```
+![VPNiconMenuBar](/Users/jmoore/Documents/GitHub/seamusdemora.github.io/pix/VPNiconMenuBar.png)
+
+If the connection is successful, note that the VPN icon in the Menu Bar suddenly comes to life, displaying the length of time the connection has been active. You could also test for the return code from `scutil` (`$?`) as shown above. 
+
+`scutil`'s `-r` option is generally a useful precursor to the `--nc start` option. `-r` reports the availability (*"reachability"*) of a VPN server. IOW, we check availability of the VPN server using `scutil -r`, **before** attempting to start the connection with `scutil --nc start`.  
+
+The following `bash` script segment illustrates how a VPN connection might be set up with `scutil`. In this case, the file `vpn.txt` is first `shuf`fled to put it in random order, and then read sequentially until a successful VPN connection is made: 
+
+```bash
+#!/opt/local/bin/bash
+# NOTE: above shebang reflects installation of a current version of GNU bash via MacPorts
+
+VPN_FILE=./vpn.txt
+tmp_vpnfile=$(mktemp)												# create a file in /tmp
+shuf $VPN_FILE > $tmp_vpnfile								# randomize vpn file entries & store in /tmp
+while IFS= read -r line                     # the input file is defined below
+do
+		vpnsrv_stat="1"
+    vpnsrv=$(echo "$line" | grep -E -o '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}')
+    if [ "$(scutil -r $vpnsrv)" = "Reachable" ]; then
+    		echo "$vpnsrv is Reachable; try to 'start'"
+        scutil --nc start $vpnsrv
+        vpnsrv_stat=$?
+    else
+    		echo "$vpnsrv cannot be Reached at present"
+    fi
+    if [ "$vpnsrv_stat" = "0" ]; then
+         echo -e "Started VPN: $vpnsrv"
+         break
+    fi
+done <<< $(cat $tmp_vpnfile)                # the input file is defined here!
+if [ "$vpnsrv_stat" != "0" ]; then
+		echo -e "All available VPN connections in '$VPN_FILE' FAILED; going to exit"
+		exit
+fi
+```
+
+We've touched on the usage for `scutil` here to help manage your VPN connections, but there are other facets to explore. For example: Assume that you need to specify a VPN based upon its physical location... how would you do that? Perhaps the *simplest* way would be to add a reference to the VPN's physical location in the `Display name` field that you entered in the `System Settings, VPN` panel. Adding a [country code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes), [city code](https://www.nationsonline.org/oneworld/airport_code.htm) (or both) to the `Display name` field would allow subsequent identification via (e.g.) `grep`. 
+
+[↑](#table-of-contents)    
 
 
 
