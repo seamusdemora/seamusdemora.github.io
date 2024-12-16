@@ -1018,7 +1018,7 @@ $
 
 [↑](#table-of-contents)   
 
-### 43. Using `scutil` to manage VPN connections 
+### 44. Using `scutil` to manage VPN connections 
 
 According to `man scutil`, `scutil`'s *raison d'être*  is to: *"Manage system configuration parameters"*. Wow... that's a large remit! But fear not, this note covers only `scutil --nc`; i.e. those commands for monitoring and interacting with VPN connections. The "manual" for the `--nc` subset is obtained by entering the following in `Terminal.app`: 
 
