@@ -66,13 +66,13 @@ WRK_FLO="/Users/seamus/scripts/recipe-web/dl-webpg.workflow"
 # Clear the d/l folder of any files
 DL_FLDR="/Users/seamus/scripts/recipe-web/tmpurl"
 if [ -n "$(ls -A "$DL_FLDR")" ]; then
-		rm "$DL_FLDR"/*
+    rm "$DL_FLDR"/*
 fi
 # Run dl-webpg.workflow & test result
 DL_FILE="$(automator "$WRK_FLO" | awk 'NR == 2' | tr -d "\"" | tr -d ' ')"
 if ! [ -f "$DL_FILE" ]; then
-		echo -e "automator dl-webpg.workflow failed; exit now!"
-		exit
+    echo -e "automator dl-webpg.workflow failed; exit now!"
+    exit
 fi
 # If we've reached this pont, we should have a d/l file to parse
 # and find the URL for the *objective file*: 'usb-boot.zip'
@@ -81,10 +81,10 @@ NEW_URL_STRING=$(grep -Eo '/download/file\.php\?id=[0-9]+' "$DL_FILE" | head -1)
 # If the current value of URL_STRING is different, then we download the objective file
 OLD_URL_STRING=$(cat "/Users/seamus/scripts/recipe-web/urlstring.txt")
 if [ "$OLD_URL_STRING" = "$NEW_URL_STRING" ]; then
-		echo -e "URL strings match; nothing more to do; EXIT"
-		exit
+    echo -e "URL strings match; nothing more to do; EXIT"
+    exit
 else
-		osascript -e 'display notification "A new version of usb-boot.zip is available for download." with title "NOTICE!"'
+    osascript -e 'display notification "A new version of usb-boot.zip is available for download." with title "NOTICE!"'
 fi
 # Here we post a notification that a newer version of 'usb-boot.zip' is available. 
 # Otherwise, we may add another .workflow to d/l the new 'usb-boot.zip'
