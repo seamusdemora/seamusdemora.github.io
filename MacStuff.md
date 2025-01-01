@@ -1159,7 +1159,9 @@ ALTERNATIVELY, to format as ExFAT:
 % diskutil eraseDisk ExFAT SDCARD disk4
 ```
 
-And that's it! Fairly simple once you ferret the needed options from Apple's documentation. And speaking of *simplification*, here's an alternative to poring over `man diskutil`: 
+And that's it! Fairly simple once you ferret the needed options from Apple's documentation. 
+
+#### And speaking of *simplification*, here's an alternative to poring over `man diskutil`: 
 
 ```zsh
 % diskutil     # 'diskutil' by itself lists all available *verbs* for use:
@@ -1196,7 +1198,7 @@ Usage:  diskutil [quiet] <verb> <options>, where <verb> is as follows:
 diskutil <verb> with no options will provide help on that verb    # <=== NOTE!!
 ```
 
-To **confirm** that we've accomplished what we set out to do, we'll re-run `diskutil list` :  
+#### Finally, to **confirm** that we've accomplished what we set out to do, we'll re-run `diskutil list` :  
 
 ```zsh
 % diskutil list 
