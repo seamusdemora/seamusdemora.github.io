@@ -1210,7 +1210,7 @@ diskutil <verb> with no options will provide help on that verb    # <=== NOTE!!
    2:       Microsoft Basic Data GPT                     31.7 GB    disk4s2
 ```
 
-Note that `GPT` means [GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table); if you prefer [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record), simply change the command above to the following: 
+Note that `GPT` means [GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table); and if you're wondering what an EFI partition/volume is, [here's the details](https://en.wikipedia.org/wiki/EFI_system_partition). An alternative to GPT is [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record); if you prefer that, simply change the command above to the following: 
 
 ```zsh
 % diskutil eraseDisk FAT32 MBR disk4
