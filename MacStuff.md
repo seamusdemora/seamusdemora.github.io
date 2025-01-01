@@ -92,6 +92,8 @@
 
 [44. Using `scutil` to manage macOS VPN connections](#44-using-scutil-to-manage-vpn-connections) 
 
+[45. Using diskutil to format an external drive as a FAT filesystem](#45-using-diskutil-to-format-an-external-drive-as-a-fat-filesystem)
+
 [OTHER SOURCES:](#other-sources) 
 
 <hr>
