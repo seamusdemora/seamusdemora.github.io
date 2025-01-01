@@ -1099,6 +1099,76 @@ We've touched on the usage for `scutil` here to help manage your VPN connections
 [↑](#table-of-contents)    
 
 
+### 45. Using `diskutil` to format an external drive as a FAT filesystem
+
+Frequently, "external" drives are small-ish, low capacity USB "thumb drives" or SD cards that must be formatted as a "FAT" (file allocation table) filesystem. One solution is to use `Disk Utility` - the GUI app for disk management on macOS. However, if you're like me, you may find that `Disk Utility` is awkward and non-intuitive in use! Fortunately, the *"command-line version"* - `diskutil` - is a bit more straightforward... as long as you don't get distracted by the obtuse `man diskutil` documentation. In this case, we're not doing enything *exotic* - just a simple format of an SD card.
+
+My Macbook has an SD card slot on the right-hand side. To my way of thinking, if I plug an SD card into that slot, this makes the SD card an ***external*** storage device. However, as we'll see, Apple apparently sees things differently! And so, we'll begin immediately after we've inserted the SD card into the slot:
+
+```zsh
+% diskutil list external
+%                ## ?!?! Why is nothing listed? Let's try this instead:
+% diskutil list
+/dev/disk0 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *4.0 TB     disk0
+   1:             Apple_APFS_ISC Container disk2         524.3 MB   disk0s1
+   2:                 Apple_APFS Container disk3         4.0 TB     disk0s2
+   3:        Apple_APFS_Recovery Container disk1         5.4 GB     disk0s3
+
+/dev/disk3 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      APFS Container Scheme -                      +4.0 TB     disk3
+                                 Physical Store disk0s2
+   1:                APFS Volume Macintosh HD            9.4 GB     disk3s1
+   2:              APFS Snapshot com.apple.os.update-... 9.4 GB     disk3s1s1
+   3:                APFS Volume Preboot                 5.5 GB     disk3s2
+   4:                APFS Volume Recovery                942.5 MB   disk3s3
+   5:                APFS Volume Macintosh HD - Data     124.6 GB   disk3s5
+   6:                APFS Volume VM                      20.5 KB    disk3s6
+#------------------------------------ this is the section we need: ------------------
+/dev/disk4 (internal, physical):                                                    |
+   #:                       TYPE NAME                    SIZE       IDENTIFIER      |
+   0:     FDisk_partition_scheme                        *31.9 GB    disk4           |
+   1:             Windows_FAT_32 bootfs                  536.9 MB   disk4s1         |
+   2:                      Linux                         31.4 GB    disk4s2         |
+#------------------------------------------------------------------------------------
+```
+
+The `diskutil list` command provides information we need to proceed with formatting the SD card:
+
+```zsh
+% diskutil eraseDisk FAT32 GPT disk4
+
+Started erase on disk4
+Unmounting disk
+Creating the partition map
+Waiting for partitions to activate
+Formatting disk4s2 as MS-DOS (FAT32) with name GPT
+512 bytes per physical sector
+/dev/rdisk4s2: 61891008 sectors in 1934094 FAT32 clusters (16384 bytes/cluster)
+bps=512 spc=32 res=32 nft=2 mid=0xf8 spt=32 hds=255 hid=411648 drv=0x80 bsec=61921280 bspf=15111 rdcl=2 infs=1 bkbs=6
+Mounting disk
+Finished erase on disk4
+```
+
+And that's it! Fairly simple once you ferret the needed options from Apple's documentation. To **confirm** that we've accomplished what we set out to do, we'll re-run `diskutil list` :  
+
+```zsh
+% diskutil list 
+
+/dev/disk4 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *31.9 GB    disk4
+   1:                        EFI EFI                     209.7 MB   disk4s1
+   2:       Microsoft Basic Data GPT                     31.7 GB    disk4s2
+```
+
+Note that `GPT` means [GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table); if you prefer [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record), simply change the command above to the following: 
+
+```zsh
+% diskutil eraseDisk FAT32 MBR disk4
+```
 
 ---
 
