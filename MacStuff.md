@@ -1170,6 +1170,7 @@ Note that `GPT` means [GUID Partition Table](https://en.wikipedia.org/wiki/GUID_
 % diskutil eraseDisk FAT32 MBR disk4
 ```
 
+[↑](#table-of-contents)
 ---
 
 
