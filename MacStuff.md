@@ -1152,9 +1152,51 @@ Formatting disk4s2 as MS-DOS (FAT32) with name GPT
 bps=512 spc=32 res=32 nft=2 mid=0xf8 spt=32 hds=255 hid=411648 drv=0x80 bsec=61921280 bspf=15111 rdcl=2 infs=1 bkbs=6
 Mounting disk
 Finished erase on disk4
+
+ALTERNATIVELY, to format as ExFAT:
+% diskutil eraseDisk ExFAT free disk4
+-- OR, IF YOU PREFER TO "name" the disk --
+% diskutil eraseDisk ExFAT SDCARD disk4
 ```
 
-And that's it! Fairly simple once you ferret the needed options from Apple's documentation. To **confirm** that we've accomplished what we set out to do, we'll re-run `diskutil list` :  
+And that's it! Fairly simple once you ferret the needed options from Apple's documentation. And speaking of *simplification*, here's an alternative to poring over `man diskutil`: 
+
+```zsh
+% diskutil     # 'diskutil' by itself lists all available *verbs* for use:
+Disk Utility Tool
+Utility to manage local disks and volumes
+Most commands require an administrator or root user
+
+WARNING: Most destructive operations are not prompted
+
+Usage:  diskutil [quiet] <verb> <options>, where <verb> is as follows:
+
+     list                 (List the partitions of a disk)
+     info[rmation]        (Get information on a specific disk or partition)
+     listFilesystems      (List file systems available for formatting)
+     listClients          (List all current disk management clients)
+     activity             (Continuous log of system-wide disk arbitration)
+...
+...
+     eraseDisk            (Erase an existing disk, removing all volumes)
+     eraseVolume          (Erase an existing volume)
+     reformat             (Erase an existing volume with same name and type)
+     eraseOptical         (Erase optical media (CD/RW, DVD/RW, etc.))
+     zeroDisk             (Erase a disk, writing zeros to the media)
+     randomDisk           (Erase a disk, writing random data to the media)
+     secureErase          (Securely erase a disk or freespace on a volume)
+
+     partitionDisk        ((re)Partition a disk, removing all volumes)
+     addPartition         (Create a new partition to occupy free space)
+     splitPartition       (Split an existing partition into two or more)
+     mergePartitions      (Combine two or more existing partitions into one)
+     resizeVolume         (Resize a volume, increasing or decreasing its size)
+...
+
+diskutil <verb> with no options will provide help on that verb    # <=== NOTE!!
+```
+
+To **confirm** that we've accomplished what we set out to do, we'll re-run `diskutil list` :  
 
 ```zsh
 % diskutil list 
