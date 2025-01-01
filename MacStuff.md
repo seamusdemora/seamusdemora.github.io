@@ -1164,12 +1164,9 @@ And that's it! Fairly simple once you ferret the needed options from Apple's doc
 #### And speaking of *simplification*, here's an alternative to poring over `man diskutil`: 
 
 ```zsh
-% diskutil     # 'diskutil' by itself lists all available *verbs* for use:
+% diskutil     # 'diskutil' by itself lists all available *verbs*:
 Disk Utility Tool
 Utility to manage local disks and volumes
-Most commands require an administrator or root user
-
-WARNING: Most destructive operations are not prompted
 
 Usage:  diskutil [quiet] <verb> <options>, where <verb> is as follows:
 
@@ -1201,7 +1198,7 @@ diskutil <verb> with no options will provide help on that verb    # <=== NOTE!!
 #### Finally, to **confirm** that we've accomplished what we set out to do, we'll re-run `diskutil list` :  
 
 ```zsh
-% diskutil list 
+% diskutil list disk4
 
 /dev/disk4 (internal, physical):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
