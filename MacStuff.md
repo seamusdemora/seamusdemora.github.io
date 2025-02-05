@@ -492,7 +492,7 @@ There are many **hidden files and folders** in MacOS. We have to guess what Appl
 $ defaults write com.apple.finder AppleShowAllFiles TRUE 
 ```
 
-If you have open Finder windows, you'll need to close them all with this command before you see the effects of this change; i.e. before Finder shows the hidden files in its listing:
+If you have open Finder windows, you *may* need to close them all with this command before you see the effects of this change; i.e. before Finder shows the hidden files in its listing:
 
 ```bash
 $ killall Finder
@@ -860,7 +860,7 @@ Yes - you can do this, and it comes in really handy sometimes:
 
 ### 36. Stop Apple's Updates from trashing your customized `/etc` files
 
-It's quite irritating to have files in `/etc` that you have carefully tailored be reverted to their original contents by Apple's Updates. It's even more irritating that Apple does this without notification, explanation or documentation. You learn of it only after an Update when all your shit breaks! Here's a solution that seems to work; it preserved my `/etc/auto_master` file during a recent Ventura Update to 13.6. It should work for other files in `/etc` also - perhaps even in other locations:
+It's quite irritating to spend time carefully tailoring files in `/etc`, only to see them **reverted** to their original contents by Apple's F** Updates. It's even more irritating that Apple does this without notification, explanation or documentation. You learn of it only after an Update when all your shit breaks! Here's a solution that seems to work; it preserved my `/etc/auto_master` file during a recent Ventura Update to 13.6. It should work for other files in `/etc` also - perhaps even in other locations:
 
    ```zsh
    sudo chflags simmutable /etc/auto_master
@@ -896,15 +896,15 @@ If you're having problems with *emin's* `webpQuickLook`, that ***might*** be bec
 
 ### 39. 'whereis' vs. 'which' and why Apple sucks
 
-So - I've got this *old-ish* Macbook - a 2016 model. In my fashion, it was bought new with Mojave installed, and it **still** has Mojave installed. Why don't I upgrade? Because back when I **did** upgrade it was always a recipe for pain and frustration. No upgrades for me;  I don't care how many of those little red dots Apple puts on my 'System Preferences' shortcut icon. 
+So - I've got this *old-ish* Macbook - a 2016 model. In my fashion, it was bought new with Mojave installed, and it **still** has Mojave installed. Why don't I upgrade? Because back when I **did** perform Apple's recommended upgrades was inevitably a _recipe for pain and frustration_. No upgrades for me;  I don't care how many of those little red dots Apple puts on my 'System Preferences' shortcut icon. 
 
-Working with an older machine is actually a blessing. For one thing, you have it long enough to see some of the abject stupidity that's baked into the product. The supidity I'm picking on today is Apple's implementation of `whereis`. Unlike in Linux - where the [differences between `which` and `whereis`](https://www.makeuseof.com/which-vs-whereis-vs-whatis-in-linux/) are clear and mildly useful, Apple forgot the differences in their infelicitous quest for *"security"*. Here's what I find so incredibly stupid about Apple's `whereis` command: **`whereis` searches *only* the PATH defined in a string called `user.cs_path`**. And it gets better: the `user.cs_path` string is apparently baked into Apple's firmware (somewhere it is un-reachable in  any case); far beyond the reach of the `sysctl` utility. What's that you say... *"What do you mean beyond the reach of `sysctl`?"* What I mean is that the `sysctl` utility provided by Apple has had the `-w` (`--write`) option *removed*; to quote Apple's `man sysctl`: 
+Working with an older machine is _sometimes_ a blessing. For one thing, you have it long enough to see some of the abject stupidity that's baked into the product. The supidity I'm picking on today is Apple's implementation of `whereis`. Unlike in Linux - where the [differences between `which` and `whereis`](https://www.makeuseof.com/which-vs-whereis-vs-whatis-in-linux/) are clear and mildly useful, Apple forgot the differences in their infelicitous quest for *"security"*. Here's what I find so incredibly stupid about Apple's `whereis` command: by default **`whereis` searches *only* the PATH defined in a string called `user.cs_path`**. And it gets better: the `user.cs_path` string is apparently baked into Apple's firmware (somewhere it is un-reachable in  any case); far beyond the reach of the `sysctl` utility. What's that you say... *"What do you mean beyond the reach of `sysctl`?"* What I mean is that the `sysctl` utility provided by Apple has had the `-w` (`--write`) option *removed*; to quote Apple's `man sysctl`: 
 
    >The −w option has been deprecated and is silently ignored.
 
 I *thought* this could be overcome somehow by disabling `SIP`, but I tried that without success. 
 
-You may wish to ponder this for just a moment: Apple has relegated `whereis` to searching **only** in this PATH: **`/usr/bin:/bin:/usr/sbin:/sbin`**. And unlike the Linux version of `whereis`, Apple's version is totally silent on the location of any documentation. AFAICT, Apple's `whereis` informs you **only** where Apple keeps their 20+ year-old tools! And this is why I've made the following change on my trusty **"Mojave"** system: 
+You may wish to ponder this for just a moment: Apple has relegated `whereis` to searching **only** in this PATH: **`/usr/bin:/bin:/usr/sbin:/sbin`**. And unlike the Linux version of `whereis`, some versions of Apple's `whereis` are totally silent on the location of any documentation (e.g. Mojave). AFAICT, Apple's `whereis` informs you **only** where Apple keeps their 20+ year-old tools! And this is why I've made the following change on my **"Mojave"** system: 
 
    ```bash
    cd /usr/bin
@@ -915,7 +915,7 @@ You may wish to ponder this for just a moment: Apple has relegated `whereis` to 
 
 ### 40. Refresh shell configuration without restarting:
 
-There are two user-owned files that control many aspects of the shell's behavior - uh, *interactive shells, that is*: `~/.profile` & `~/.bashrc`. Likewise for `zsh`, the `~/.zprofile` & `~/.zshrc`. There will be occasions when changes to these files will need to be made in the current session - without exiting one shell session, and starting a new one. Examples of such changes are changes to the `PATH`, or addition of an `alias`. Here's how to refresh/reload your shell configuration:
+There are two user-owned files that control many aspects of the shell's behavior - uh, *interactive shells, that is*: `~/.profile` & `~/.bashrc`. Likewise for `zsh`, the `~/.zprofile` & `~/.zshrc`. There will be occasions when changes to these files will need to be made in the current session - without exiting one shell session, and starting a new one. Examples of such changes are changes to the `PATH`, or addition of an `alias`. **Here's how to refresh/reload your shell configuration:**__
 
 
 ```zsh
@@ -932,9 +932,9 @@ $ . ~/.bashrc             #        "
 
 >> **Note 1:** The [dot operator](https://ss64.com/bash/source.html); `.` is a synonym for `source`. Also, it's POSIX-compliant (`source` is not).
 
->> **Note 2:** Additions and removals from `~/.bashrc` behave differently: If something is **removed** from `~/.bashrc`, this change will **not** take effect after *sourcing* `~/.bashrc` (i.e.  `. ~/.bashrc`).  
+>> **Note 2:** Additions and removals from `~/.bashrc` behave differently: If something is **removed** from `~/.bashrc`, this change will **not** take effect after *sourcing* `~/.bashrc` (i.e.  `. ~/.bashrc`); you must re-start your shell (e.g. `exec bash`, or `exec zsh`).  
 >
->> For example: Add a function to `~/.bashrc`: `function externalip () { curl http://ipecho.net/plain; echo; }`. Now *source* it with `. ~/.profile`. You should see that the function now works in this session. Now remove the function, and then *source* it again using `. ~/.profile`. The function is still available - only restarting (log out & in), or starting a new shell session will remove it. I *suspect* it works the same in `zsh`.
+>> Example: Add a function to `~/.bashrc`: `function externalip () { curl http://ipecho.net/plain; echo; }`. Now *source* it with `. ~/.profile`. You should see that the function now works in this session. Now remove the function, and then *source* it again. The function is still available! Only restarting (log out & in), or starting a new shell session via `exec bash`/`exec zsh` will remove it. 
 
 [↑](#table-of-contents)  
 
