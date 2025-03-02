@@ -92,7 +92,9 @@
 
 [44. Using `scutil` to manage macOS VPN connections](#44-using-scutil-to-manage-vpn-connections) 
 
-[45. Using diskutil to format an external drive as a FAT filesystem](#45-using-diskutil-to-format-an-external-drive-as-a-fat-filesystem)
+[45. Using diskutil to format an external drive as a FAT filesystem](#45-using-diskutil-to-format-an-external-drive-as-a-fat-filesystem) 
+
+[46. Cure this truly annoying mouse or glidepad behavior in iTerm2](#46-curing-a-truly-annoying-behavior-in-iterm2) 
 
 [OTHER SOURCES:](#other-sources) 
 
@@ -1214,6 +1216,26 @@ Note that `GPT` means [GUID Partition Table](https://en.wikipedia.org/wiki/GUID_
 ```
 
 [↑](#table-of-contents)
+
+
+### 46. Curing a truly annoying behavior in iTerm2
+
+This happens ***all the time!*** :  You have an active SSH session in iTerm2, you get distracted or called away, and while you are away, the SSH session **dies** (or is closed, or whatever).  If you're simply sitting, parked at the command line, there's no problem; you re-connect your SSH session, and go on your merry way. ***HOWEVER*** if you're in a 'pager' app (`less`... maybe reading a `man` page), or in your editor (`vim`, `nano`, etc), or perhaps another app, the *way ahead* is *not so merry*! Upon re-connecting the SSH session you find that "scrolling" with your mouse/glide pad now glides through your command history - instead of scrolling the entire screen up and down. I ***hate it when that happens***!  
+
+I don't know how to **stop** that from happening, but I have learned how to correct it:
+```
+go to `iTerm2`, `Settings...`, and then select the `Advanced` tab.
+once in the `Advanced` tab, scroll down into the `Mouse` area, and find this line:
+
+    Scroll wheel sends arrow keys when in alternate screen mode
+
+change the setting (to the right) from "Yes" to "No"
+```
+
+Credit for this fix goes to *@ThomasDickey*, the author of the answer to [this Q&A](https://stackoverflow.com/a/37879399/22595851)! I'd encourage you to stop by, and give him an *"upvote"*  :)
+
+[↑](#table-of-contents) 
+
 
 ---
 
