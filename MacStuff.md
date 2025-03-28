@@ -96,6 +96,8 @@
 
 [46. Cure this truly annoying mouse or glidepad behavior in iTerm2](#46-curing-a-truly-annoying-behavior-in-iterm2) 
 
+[47. Change your time zone from the command line](#47-change-macos-time-zone-from-the-command-line)
+
 [OTHER SOURCES:](#other-sources) 
 
 <hr>
@@ -1236,6 +1238,17 @@ Credit for this fix goes to *@ThomasDickey*, the author of the answer to [this Q
 
 [↑](#table-of-contents) 
 
+
+### 47. Change macOS time zone from the command line
+
+This Daylight Savings Time often feels just _ridiculous_ to me. And I frequently have to schedule things in UTC time because that's the TZ I use on my Linux/Unix systems. To make this a *little* easier, I have placed two `alias`es in my `~/.zshrc` file: 
+```
+alias set_cen='sudo systemsetup -settimezone America/Chicago'
+alias set_gmt='sudo systemsetup -settimezone GMT'
+```
+After a `. ~/.zshrc` in my Terminal.app, I can type `set_cen` or `set_gmt`, and see the time updated in my menu bar. 
+
+[↑](#table-of-contents) 
 
 ---
 
