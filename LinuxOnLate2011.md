@@ -50,7 +50,7 @@ Instructions, advice and other information on removal of `rEFInd` are provided b
 - [this answer on SE](https://superuser.com/a/1139054) 
 - [the `rEFInd` author's instructions](http://www.rodsbooks.com/refind/installing.html#uninstalling) 
 
-After consulting these sources, we should **verify** that this is actually the true location of the `rEFInd` install by confirming that the file `refund.conf` is located there: 
+After consulting these sources, we should **verify** that this is actually the true location of the `rEFInd` install by confirming that the file `refind.conf` is located there: 
 
 ```bash
 $ ls -l /Volumes/EFI/EFI/refind
