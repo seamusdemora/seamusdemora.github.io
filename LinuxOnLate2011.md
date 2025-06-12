@@ -50,7 +50,7 @@ Instructions, advice and other information on removal of `rEFInd` are provided b
 - [this answer on SE](https://superuser.com/a/1139054) 
 - [the `rEFInd` author's instructions](http://www.rodsbooks.com/refind/installing.html#uninstalling) 
 
-After consulting these sources, we should **verify** that this is actually the true location of the `rEFInd` install by confirming that the file `refund.conf` is located there: 
+After consulting these sources, we should **verify** that this is actually the true location of the `rEFInd` install by confirming that the file `refind.conf` is located there: 
 
 ```bash
 $ ls -l /Volumes/EFI/EFI/refind
@@ -157,7 +157,7 @@ $ diskutil list
 ```
 
 ## Epilogue:
-It's now 4Q 2023, over 2 years since I upgraded the macOS in my 12-year-old MacbookPro to Ubuntu Linux. It's still running great.
+It's now 1Q 2025, over 4 years since I upgraded the macOS in my now 14-year-old MacbookPro to Ubuntu Linux. It's _**still**_ running great.
 
 ## Addendum:
 
