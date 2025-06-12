@@ -15,9 +15,10 @@
     * [Don't forget to ***flush your cache!***](#dont-forget-to-flush-your-cache)
     * [Sorting the **PATH** business](#set-your-path-environment-variable) 
 3. [Documentation & Support:](#documentation--support)
-4. [Miscellaneous Issues and Discoveries:](#miscellaneous-issues-and-discoveries)
-5. [Notes on the High Sierra Installation of MacPorts](#notes-on-the-high-sierra-installation-of-macports)
-6. [REFERENCES:](#references)
+4. [Miscellaneous Issues and Discoveries:](#miscellaneous-issues-and-discoveries) 
+5. ★ [A Note re `yt-dlp` under MacPorts](#regarding-yt-dlp) ★
+6. [Notes on the High Sierra Installation of MacPorts](#notes-on-the-high-sierra-installation-of-macports)
+7. [REFERENCES:](#references) 
 
 ---
 
@@ -249,6 +250,27 @@ If any of these resources do not answer your questions or if you need any kind o
   - The cause of this consternation is a flaw in Apple's software: updating `Xcode` (or in this case, a general update) removes the CLT receipt! This makes it impossible for MacPorts to determine the version of CLT; thus the Warning.
 
   - It turns out that Apple has now displaced `root` as the super-user on macOS in favor of themselves! Consequently, `Software Update` cannot be used (which would be more efficient) because the file used to flag the update is in `/tmp`, and therefore inaccessible as long a `csrutil` is active. And so - **the [only fix](https://trac.macports.org/wiki/ProblemHotlist#reinstall-clt) that will work is to download and re-install the CLT**.
+
+## Regarding `yt-dlp`:
+
+YMMV, but I've come to the conclusion that MacPorts is **not** the best source for installing & maintaining `yt-dlp` on a Mac!  It seems the pace of change in `yt-dlp` is such that MacPorts simply cannot keep up. The clearest symptom of this situation is that while using a MacPorts-sourced version of `yt-dlp`, you get warnings or errors when downloading. If this is happening to you, the solution is quite simple & painless ([REF](https://github.com/yt-dlp/yt-dlp/wiki/Installation#installing-the-release-binary)): 
+
+```zsh
+STEP 1: % sudo port uninstall yt-dlp
+STEP 2: % mkdir -p /Users/seamus/.local/bin 
+STEP 3: % curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp 
+STEP 4: % chmod a+rx ~/.local/bin/yt-dlp
+STEP 5: % cd /usr/local/bin
+STEP 6: % sudo ln -s /Users/seamus/.local/bin/yt-dlp yt-dlp 
+```
+
+Afterwards, to update `yt-dlp`: 
+
+```zsh
+% yt-dlp -U
+Latest version: stable@2025.06.09 from yt-dlp/yt-dlp
+yt-dlp is up to date (stable@2025.06.09 from yt-dlp/yt-dlp)
+```
 
 ## Notes on the High Sierra Installation of MacPorts
 
