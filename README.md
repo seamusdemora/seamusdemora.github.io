@@ -12,8 +12,8 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 |         Repo Files          | Description |
 | :-------------------------- | :-------- |
 | [Example of persistent mount using AutoFS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/AutoFS-AnExamplePeristentMountForSynologyNAS.md) | An example showing how to use AutoFS to create persistent, automatic mounts of external filesystems in macOS. |
+| ["Ripping" DVDs in macOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/RippingDVDs.md) | An "initial installment"; some basic information to get started making ***backups*** of your DVD collection... yes, all DVDs do get [disc rot](https://en.wikipedia.org/wiki/Disc_rot) **!** And of course the [DMCA](https://en.wikipedia.org/wiki/Digital_Millennium_Copyright_Act) is silent on this point. |
 |  [Dual-booting Linux & macOS](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/LinuxOnLate2011.md)  | A step-by-step installation guide for Dual booting High Sierra & Ubuntu 20.04 on 2011 Macbook. <br>**~** *24 months on now, this is a really **solid installation**.*<br/> |
-|[Raspberry Pi Formulae](https://github.com/seamusdemora/PiFormulae) | A repo/collection of "How-To" guides for Raspberry Pi |
 |[Mac Stuff](https://github.com/seamusdemora/seamus.github.io/blob/master/MacStuff.md) | Miscellaneous Recipes for Tweaks to Mac OS|
 |[Serial Comms for Mac OS](https://github.com/seamusdemora/seamus.github.io/blob/master/SerialCommsFromMacOS.md)  |  How To Set Up Serial Communications in Mac OS|
 |[Using `sudo` in Mac OS](https://github.com/seamusdemora/seamus.github.io/blob/master/UsingSudoInMacos.md)  |  Uses for `sudo` in Mac OS with Examples|
@@ -30,6 +30,10 @@ This is my collection - my eclectic collection - of code, how-to's, reminders, h
 ***
 
 <!--   From this line forward are comments. Comments are not displayed in the browser.  
+
+[Raspberry Pi Formulae](https://github.com/seamusdemora/PiFormulae)  A repo/collection of "How-To" guides for Raspberry Pi
+
+
 
 NOTE: The "hidden" tag does not work at GitHub...  <p hidden>This paragraph should be hidden.</p>  
 
