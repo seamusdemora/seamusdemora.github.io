@@ -98,6 +98,8 @@
 
 [47. Change your time zone from the command line](#47-change-macos-time-zone-from-the-command-line)
 
+[48. How do I open a new Terminal window or tab in a folder from `Finder`?](#48-open-a-terminal-in-folder-from-finder)
+
 [OTHER SOURCES:](#other-sources) 
 
 <hr>
@@ -1247,6 +1249,21 @@ alias set_cen='sudo systemsetup -settimezone America/Chicago'
 alias set_gmt='sudo systemsetup -settimezone GMT'
 ```
 After a `. ~/.zshrc` in my Terminal.app, I can type `set_cen` or `set_gmt`, and see the time updated in my menu bar. 
+
+[↑](#table-of-contents) 
+
+
+### 48. Open a terminal in folder from finder 
+
+Often we find ourselves needing to open a window or tab in `Terminal` when we are using `Finder` to navigate through the file system. For such a common task one might think Apple capable of facilitating a *"shortcut"* or other efficient method for doing this - one that works across different versions of macOS. Unfortunately, in over 15 years it seems [Apple has been unable to do this](https://apple.stackexchange.com/questions/11323/how-can-i-open-a-terminal-window-directly-from-my-current-finder-location)! 
+
+As a backstop to Apple's lack of clarity and consistency, the following scheme is offered to accomplish this task: 
+
+1. In a `Finder` window, navigate to a folder where you need to open a `Terminal` window/tab.
+2. 'control(^)-click' the folder in the path bar (bottom of `Finder` window), then either:
+3. click "Open in Terminal" - to get a new Finder window, OR...
+4. if the 'control(^)-click' menu yields a `Services` option, you can explore that for other options
+
 
 [↑](#table-of-contents) 
 
