@@ -1257,12 +1257,24 @@ After a `. ~/.zshrc` in my Terminal.app, I can type `set_cen` or `set_gmt`, and 
 
 Often we find ourselves needing to open a window or tab in `Terminal` when we are using `Finder` to navigate through the file system. For such a common task one might think Apple capable of facilitating a *"shortcut"* or other efficient method for doing this - one that works across different versions of macOS. Unfortunately, in over 15 years it seems [Apple has been unable to do this](https://apple.stackexchange.com/questions/11323/how-can-i-open-a-terminal-window-directly-from-my-current-finder-location)! 
 
-As a backstop to Apple's lack of clarity and consistency, the following scheme is offered to accomplish this task: 
+As a backstop to Apple's lack of clarity/consistency, the following scheme is offered: 
 
 1. In a `Finder` window, navigate to a folder where you need to open a `Terminal` window/tab.
 2. 'control(^)-click' the folder in the path bar (bottom of `Finder` window), then either:
 3. click "Open in Terminal" - to get a new Finder window, OR...
-4. if the 'control(^)-click' menu yields a `Services` option, you can explore that for other options
+4. if the 'control(^)-click' menu yields a `Services` option, you can explore that for other options 
+
+Some Notes: 
+
+*  With the `Finder` window *in focus*, verify that the `Path Bar` option under the `View` menu is selected. 
+
+*  If you have a certain app installed (e.g. `BBEdit`), selecting the "Open in Terminal" option (from the 'control(^)-click' operation) ***may*** result in launching an edit window in `BBEdit` ***instead of*** launching a new `Terminal` window! In this case, move down to display the options under `Services` instead. (*Yes - this is rather BFU!*) 
+
+*  If you're having trouble, the screenshots below might be helpful:  
+
+  | 1. Verify `Path Bar` option selected                         | 2. Open a `Terminal` window at the path                      |
+   | ------------------------------------------------------------ | ------------------------------------------------------------ |
+   | ![FinderScreenshot-1](/Users/jmoore/Documents/GitHub/seamusdemora.github.io/pix/FinderScreenshot-1.png) | ![FinderScreenshot-2](/Users/jmoore/Documents/GitHub/seamusdemora.github.io/pix/FinderScreenshot-2.png) |
 
 
 [↑](#table-of-contents) 
