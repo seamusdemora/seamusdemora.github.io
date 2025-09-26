@@ -1274,7 +1274,7 @@ Some Notes:
 
   | 1. Verify `Path Bar` option selected                         | 2. Open a `Terminal` window at the path                      |
    | ------------------------------------------------------------ | ------------------------------------------------------------ |
-   | ![FinderScreenshot-1](/Users/jmoore/Documents/GitHub/seamusdemora.github.io/pix/FinderScreenshot-1.png) | ![FinderScreenshot-2](/Users/jmoore/Documents/GitHub/seamusdemora.github.io/pix/FinderScreenshot-2.png) |
+   | ![FinderScreenshot-1](pix/FinderScreenshot-1.png) | ![FinderScreenshot-2](pix/FinderScreenshot-2.png) |
 
 
 [↑](#table-of-contents) 
