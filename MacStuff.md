@@ -100,7 +100,7 @@
 
 [48. How do I open a new Terminal window or tab in a folder from `Finder`?](#48-open-a-terminal-in-folder-from-finder) 
 
-[49. PageUp and PageDown in Terminal.app (and iTerm)](#49-pageup-and-pagedown-in-terminal-app-and-iterm) 
+[49. PageUp and PageDown in Terminal.app (and iTerm)](#49-pageup-and-pagedown-in-terminalapp-and-iterm) 
 
 [OTHER SOURCES:](#other-sources) 
 
