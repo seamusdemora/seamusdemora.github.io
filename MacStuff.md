@@ -98,7 +98,9 @@
 
 [47. Change your time zone from the command line](#47-change-macos-time-zone-from-the-command-line)
 
-[48. How do I open a new Terminal window or tab in a folder from `Finder`?](#48-open-a-terminal-in-folder-from-finder)
+[48. How do I open a new Terminal window or tab in a folder from `Finder`?](#48-open-a-terminal-in-folder-from-finder) 
+
+[49. PageUp and PageDown in Terminal.app (and iTerm)](#49-pageup-and-pagedown-in-terminal-app-and-iterm) 
 
 [OTHER SOURCES:](#other-sources) 
 
@@ -1275,6 +1277,17 @@ Some Notes:
   | 1. Verify `Path Bar` option selected                         | 2. Open a `Terminal` window at the path                      |
    | ------------------------------------------------------------ | ------------------------------------------------------------ |
    | ![FinderScreenshot-1](pix/FinderScreenshot-1.png) | ![FinderScreenshot-2](pix/FinderScreenshot-2.png) |
+
+
+[↑](#table-of-contents) 
+
+### 49. PageUp and PageDown in Terminal.app and iTerm 
+
+I'll guess this has been around for a while, but I've only recently discovered it... and as it seems useful/time-saving, I've added it here. When you've got a lot of stuff in your scrollback buffer, you can hop through it (more) quickly with this keyboard shortcut: 
+
+<kbd>shift</kbd> + <kbd>fn</kbd> + <kbd>up arrow</kbd> will give you a `PageUp`; 
+
+<kbd>shift</kbd> + <kbd>fn</kbd> + <kbd>down arrow</kbd> will give you a `PageDown`. 
 
 
 [↑](#table-of-contents) 
