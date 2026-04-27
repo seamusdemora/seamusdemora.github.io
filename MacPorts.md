@@ -17,8 +17,9 @@
 3. [Documentation & Support:](#documentation--support)
 4. [Miscellaneous Issues and Discoveries:](#miscellaneous-issues-and-discoveries) 
 5. ★ [A Note re `yt-dlp` under MacPorts](#regarding-yt-dlp) ★
-6. [Notes on the High Sierra Installation of MacPorts](#notes-on-the-high-sierra-installation-of-macports)
-7. [REFERENCES:](#references) 
+6. [Notes on the High Sierra Installation of MacPorts](#notes-on-the-high-sierra-installation-of-macports) 
+7. [Notes re. macOS Upgrades & MacPorts](#notes-re-macos-upgrades-macports) - the `port migrate` command 
+8. [REFERENCES:](#references) 
 
 ---
 
@@ -274,7 +275,13 @@ yt-dlp is up to date (stable@2025.06.09 from yt-dlp/yt-dlp)
 
 ## Notes on the High Sierra Installation of MacPorts
 
-There are different installers for each version of macOS; they are [listed on the MacPorts install page](https://www.macports.org/install.php). In general, the installation experience on *High Sierra* was the same as for *Catalina*. The difficulty came about in having to upgrade an older version of *Xcode* on my High Sierra system. Since Apple does not provide an in-app upgrade mechanism for Xcode, I felt the safe approach was to un-install the old *Xcode*. If you know what to do, un-installing Xcode is only tedious; if you don't know what to do, it could lead to disaster. I didn't (and still don't) know how to un-install Xcode because Apple doesn't provide that information. I didn't let ignorance stop me however; [I un-installed by this procedure](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacStuff.md#23-upgrade-xcode-on-high-sierra-or-why-does-apple-crap-on-us). All I can say at this point is: "*so far, so good*".
+There are different installers for each version of macOS; they are [listed on the MacPorts install page](https://www.macports.org/install.php). In general, the installation experience on *High Sierra* was the same as for *Catalina*. The difficulty came about in having to upgrade an older version of *Xcode* on my High Sierra system. Since Apple does not provide an in-app upgrade mechanism for Xcode, I felt the safe approach was to un-install the old *Xcode*. If you know what to do, un-installing Xcode is only tedious; if you don't know what to do, it could lead to disaster. I didn't (and still don't) know how to un-install Xcode because Apple doesn't provide that information. I didn't let ignorance stop me however; [I un-installed by this procedure](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacStuff.md#23-upgrade-xcode-on-high-sierra-or-why-does-apple-crap-on-us). All I can say at this point is: "*so far, so good*". 
+
+## Notes re. macOS Upgrades & MacPorts
+
+I don't typically upgrade macOS... I do in-version ***updates***, but moving from one version of macOS to the newer one each year is pain (and wasted time) I can do without! And besides that, I've now got at least 3 MacBooks and one iMac for which there is no macOS upgrade available - i.e. Apple discontinued support!! However, I was compelled to perform an ***upgrade*** recently on a three-year old MacBook because I bought a new one, and wanted to use Apple's `Migration Assistant` to copy everything from the old MacBook to the new one. 
+
+All that blether aside, when you upgrade your macOS, you will need to use the MacPorts `migrate` command to upgrade your MacPorts install: `sudo port migrate`. Fortunately, the folks at MacPorts document the [migration requirement](https://trac.macports.org/wiki/Migration) extremely well - including how to recover from Apple's dysfunctional installation of the Command Line Tools (CLT) - simply follow the procedure outlined in the [Migration Procedure](https://trac.macports.org/wiki/Migration#Migrationprocedure). 
 
 ---
 
