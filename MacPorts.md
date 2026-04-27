@@ -18,7 +18,7 @@
 4. [Miscellaneous Issues and Discoveries:](#miscellaneous-issues-and-discoveries) 
 5. ★ [A Note re `yt-dlp` under MacPorts](#regarding-yt-dlp) ★
 6. [Notes on the High Sierra Installation of MacPorts](#notes-on-the-high-sierra-installation-of-macports) 
-7. [Notes re. macOS Upgrades & MacPorts](#notes-re-macos-upgrades-macports) - the `port migrate` command 
+7. [Notes re. macOS Upgrades & MacPorts](#notes-re-macos-upgrades-&-macports) - the `port migrate` command 
 8. [REFERENCES:](#references) 
 
 ---
