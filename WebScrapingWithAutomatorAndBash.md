@@ -29,13 +29,15 @@ Armed with this outline, let's open `Automator`, and create the *workflow*:
 1. find the goofy `Automator` icon in the `Other` folder in `Launchpad` - or in "Apps" (dismal idea), and click to start it
 2. click the `+` in the tab bar to create a new *workflow*; a popup will appear; in the popup select the `Workflow` type, and then click the `Choose` button to dismiss the popup:
 
-![Screenshot 2024-12-18 at 2.32.14 PM](/Users/jmoore/Desktop/screenshots/Screenshot 2024-12-18 at 2.32.14 PM.png)
+![Screenshot 2024-12-18 at 2.32.14 PM](./pix/Screenshot 2024-12-18 at 2.32.14 PM.png)
 
 3. select `Internet` from the `Actions` list; in the adjacent list first drag & drop `Get Specified URLs`, and then `Download URLs` into the blank workspace in the GUI
 
-![Screenshot 2024-12-18 at 2.32.43 PM](/Users/jmoore/Desktop/screenshots/Screenshot 2024-12-18 at 2.32.43 PM.png)
+![Screenshot 2024-12-18 at 2.32.43 PM](./pix/Screenshot 2024-12-18 at 2.32.43 PM.png)
 
-​	![Screenshot 2024-12-18 at 2.33.27 PM](/Users/jmoore/Desktop/screenshots/Screenshot 2024-12-18 at 2.33.27 PM.png)
+​	![Screenshot 2024-12-18 at 2.33.27 PM](./pix/Screenshot 2024-12-18 at 2.33.27 PM.png)
+
+
 
 We've still got a couple of details to attend to, but let's go ahead and `Save` our `workflow`. I'm saving to `/Users/seamus/scripts/recipe-web/dl-webpg.workflow`; you should choose whatever location is best for you. 
 
