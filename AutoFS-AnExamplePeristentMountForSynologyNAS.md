@@ -1,10 +1,17 @@
 ## AutoFS Example: A Peristent Mount for a Synology NAS
 
-I needed a persistent mount for a share on my Synology NAS (model DS1621+, DSM 7.1.1-42962). As it turns out, this is a fairly straightforward configuration once you understand a wee bit of what is going on in Apple's AutoFS... made far more difficult by Apple's discontinuation of the documentation! Not to get too far off on a tangent, but I simply don't understand why Apple has removed the documentation for AutoFS, and why they seem to have abandoned development of it. If anyone has any background on this, I'd love to hear from you. In the meantime, I've managed to locate a [copy of the AutoFS documentation that may be accessed here](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/Autofs.pdf). 
+I needed **persistent, reliable** mounts for shares on my Synology NAS (model DS1621+, DSM 7.3.2-86009 Update 3), **and** as a destination for [Time Machine](https://en.wikipedia.org/wiki/Time_Machine_(macOS)) backups. The example here is a fairly straightforward configuration once you understand a wee bit of what's going on in Apple's AutoFS. But this necessary understanding is made far more difficult by Apple's discontinuation of the documentation! Not to get too far off on a tangent, but I simply don't understand why Apple has removed the documentation for AutoFS, and why they seem to have abandoned development of it. If anyone has any background on this, I'd love to [hear from you](https://github.com/seamusdemora/seamusdemora.github.io/issues). In the meantime, I've managed to locate a copy of the AutoFS documentation that may be accessed [here in PDF format](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/Autofs.pdf), or [here in GitHub markdown](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/AutoFS.md). 
+
+### Before proceeding, here's an "inconvenient truth" regarding `autofs`:
+
+| ***During any OS update or upgrade, Apple routinely replaces the file `/etc/auto_master` with their "DEFAULT" version; i.e. they replace/over-write any and all  changes you might have made to this file (and perhaps others). They do  this without warning or notification.*** |
+| ------------------------------------------------------------ |
+
+The significance of this comment will become obvious in the sequel; we get on with that below:
 
 ### I. autofs for read-only file systems (Catalina & later)
 
-Without further ado, here are the required changes for my Catalina and Ventura systems. Please note that the following operations require `root` privileges: 
+Without further ado, here are the required changes for my Catalina, Ventura and (*recently*) Tahoe systems. Please note that the following operations require `root` privileges: 
 
 #### 1. Modify the file `/etc/auto_master` to add one line as shown below:
 
@@ -23,7 +30,7 @@ Without further ado, here are the required changes for my Catalina and Ventura s
 /System/Volumes/Data/mnt/synology       auto_synology
 ```
 
-You may choose an alternative name for `synology`, and `auto_synology` is a file containing details for the auto mount. 
+You may choose an alternative folder name in place of `synology`; `auto_synology` is a file (also in `/etc`) containing details for the auto mount. 
 
 #### 2. Create the file `/etc/auto_synology` with the following content:
 
@@ -33,12 +40,12 @@ syn_music         -fstype=smbfs ://username:password@SynologyNAS-1/music
 syn_pictures      -fstype=smbfs ://username:password@SynologyNAS-1/pictures
 ```
 
-My Synology NAS was configured with SMB (or CIFS) shares. In this example, I'm going to ***automount*** three (3) of them. Note the pattern: one line for each share you wish to automount. 
+My Synology NAS was configured with SMB (aka CIFS) shares. In this example, I'm going to ***automount*** three (3) of them. Note the pattern: one line for each share you wish to automount. 
    * The first column is the share's name under the *mount point* (i.e. `/System/Volumes/Data/mnt/synology` from the `/etc/auto_master` entry). 
 
    * The 2nd column specifies the network file system format as defined for the share on the Synology server; in this case I used SMB
 
-   * The 3rd column gives the userid & password defined for a valid user account on the Synology NAS, followed by the network name (`SynologyNAS-1`), and the proper share name as defined on the server.
+   * The 3rd column gives the userid & password defined for a valid user account on the Synology NAS, followed by the network name (`SynologyNAS-1` in this example), and the proper share name as defined on the server (e.g. `/backups`).
 
 #### 3. Run the "magic command" to immediately apply all changes :)
 
@@ -74,16 +81,33 @@ Nothing exceptional here, I only wanted to make a point that creating *symbolic 
 
 ## Other Potentially Useful & Interesting Stuff:
 
-1. I've noticed that each time my OS is updated (or upgraded), Apple's installation routines ***revert*** any changes I've made to my `/etc/auto_master` file. I still do not understand **why** Apple does this, but I have discovered a cure for it. The following command will **preserve** all of my changes to `/etc/auto_master`, allowing it to survive (at least) Apple's updates:
+1. As noted above, I've noticed that each time my OS is updated (or upgraded), Apple's installation routines ***revert*** any changes I've made to my `/etc/auto_master` file. I still do not understand **why** Apple does this, but I have been forced to deal with it. My current solution is as follows: 
 
    ```zsh
-   sudo chflags simmutable /etc/auto_master
-
-   # REF: 'man chflags' for details and options
+   % cd /etc
+   % sudo cp auto_master auto_master.backup
+   % sudo chflags simmutable /etc/auto_master
+   
+   # REF: see 'man chflags' for details and options
    ```
 
-2. I recently came across a very popular gist for [Automounting NFS shares in OS X](https://gist.github.com/L422Y/8697518) that may be useful for using AutoFS to automount NFS shares (my example is for SMB).
+   Note that it is not possible to protect the file `/etc/auto_master` from Apple! However, the .backup file (`/etc/auto_master.backup`) can be protected... but just to be sure, I also keep a copy of the backup in `$HOME`!  
 
-3. Another approach to automounting NFS shares in macOS is provided in the blog post ["Persistent NFS mount points on macOS
-Using vifs and fstab to mount NFS shares"](https://tisgoud.nl/2020/10/persistent-nfs-mount-points-on-macos/).
+2. An improvement to the solution in 1. above would be to create a background job using `launchd` that checked an MD5 signature of the ``.backup` file to that of the `/etc/auto_master`. A mis-match in MD5 signatures could be used to set a notification. That's a *future* project.  :)  
+
+3. If you happen to have "AppleCare*less*" support for your Mac, do not let one of their ignorant "tech support" staff tell you that NAS is not supported for Time Machine backups! In a rare moment of candor, even [Apple says that TM-NAS backup is supported](https://support.apple.com/en-my/guide/mac-help/mh15139/26/mac/26). 
+
+4. If you happen to favor NFS over SMB for network mounts, I found a popular gist for [Automounting NFS shares in OS X](https://gist.github.com/L422Y/8697518) that may be useful.  Another approach to automounting NFS shares in macOS is provided in the blog post ["Persistent NFS mount points on macOS - Using vifs and fstab to mount NFS shares"](https://tisgoud.nl/2020/10/persistent-nfs-mount-points-on-macos/). 
+
+5. **This is not the only solution!** Recently (March-April, 2026) I've noticed that there seems to be an increasing number of alternative solutions for persistent network/NAS mounts for use in macOS. Perhaps this reflects growing frustration that [Apple - one of the three largest companies in the world](https://www.fool.com/research/largest-companies-by-market-cap/) has no (actively maintained) solution for this common need ?! Anyway - here's a short list gleaned from simple searches on the Internet: 
+
+     -  [Network Share Mounter](https://gitlab.rrze.fau.de/faumac/networkShareMounter) - free, open-source, GitLab
+     -  [macOS-Drive-Mounter](https://github.com/PangeranWiguan/macOS-Drive-Mounter) - free, open-source, GitHub
+     -  [AutoMounter](https://www.pixeleyes.co.nz/automounter/) - commercial, by 'PixelEyes', also available in AppStore 
+     -  [Connect CIFS network drive under MacOS](https://www.tik.uni-stuttgart.de/support/anleitungen/fileservice-cifs/Connect_Network_Drive_MacOS.pdf) - a PDF "How-To" fm University of Stuttgart 
+     -  [Volume Manager](https://plumamazing.com/volume-manager) - commercial, by 'plum amazing software' 
+     -  [macOS Network Auto-Mount](https://github.com/ctrlcmdshft/macos-network-automount) - free, open-source, GitHub
+     -  [a GitHub search for "automount"](https://github.com/topics/automount) - many other repos for automounting
+     -  [a duck-duck search for auto mount software](https://duckduckgo.com/?t=ffab&q=macos%20auto%20mount%20software%20german%20university&ia=web) - produced several in above list & more 
+
 
