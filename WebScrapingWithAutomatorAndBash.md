@@ -33,9 +33,9 @@ Armed with this outline, let's open `Automator`, and create the *workflow*:
 
 3. select `Internet` from the `Actions` list; in the adjacent list first drag & drop `Get Specified URLs`, and then `Download URLs` into the blank workspace in the GUI
 
-![Screenshot 2024-12-18 at 2.32.43 PM]('./pix/Screenshot 2024-12-18 at 2.32.43 PM.png')
+![Screenshot 2024-12-18 at 2.32.43 PM](./pix/Screenshot-23243.png)
 
-​	![Screenshot 2024-12-18 at 2.33.27 PM]('./pix/Screenshot 2024-12-18 at 2.33.27 PM.png')
+​	![Screenshot 2024-12-18 at 2.33.27 PM](./pix/Screenshot-23327.png)
 
 
 
