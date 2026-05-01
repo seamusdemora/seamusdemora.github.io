@@ -17,7 +17,7 @@ In the next example, the user `friend` will only be given privileges to run the 
 ### Example: `sudo` for Limited `root` Privileges
 
 ```
-friend   ALL = (ALL) /usr/local/bin/youtube-dl -U
+friend   ALL = (ALL) /usr/local/bin/yt-dlp -U
 ```
 
 ## A Brief Overview of `sudo`: 
