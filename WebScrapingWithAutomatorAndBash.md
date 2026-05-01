@@ -6,7 +6,7 @@ That said, I've recently found a use for it: *avoiding prohibitions against non-
 
 ## Monitor a website for changes
 
-Our objective/*use-case* is to monitor a web page, and issue a ***notification*** whenever there has been a change in one particular part of it. We'll use an `Automator` *workflow*, and some `shell` scripting to accomplish this. It should probably be noted that one could probably accomplish this objective using a 100% `Automator` solution... but that has of no value to me personally. 
+Our objective/*use-case* is to monitor a web page, and issue a ***notification*** whenever there has been a change in one particular part of it. We'll use an `Automator` *workflow*, and some `shell` scripting to accomplish this. It should probably be noted that one could probably accomplish this objective using a 100% `Automator` solution... but that has no value to me personally. 
 
 I'll say this again: In most cases, using `curl` or `wget` to accomplish our objective would be simpler than using `Automator`. However, for reasons I don't understand, some website operators block access to their website from `curl` and `wget`. Without belaboring this point further, let's get to the recipe.
 
