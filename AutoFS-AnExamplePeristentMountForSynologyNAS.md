@@ -93,7 +93,7 @@ Nothing exceptional here, I only wanted to make a point that creating *symbolic 
 
    Note that it is not possible to protect the file `/etc/auto_master` from Apple! However, the .backup file (`/etc/auto_master.backup`) can be protected... but just to be sure, I also keep a copy of the backup in `$HOME`!  
 
-2. An improvement to the solution in 1. above would be to create a background job using `launchd` that checked an MD5 signature of the ``.backup` file to that of the `/etc/auto_master`. A mis-match in MD5 signatures could be used to set a notification. That's a *future* project.  :)  
+2. An improvement to the solution in 1. above would be to create a background job using `launchd` that checked an MD5 signature of the `.backup` file to that of the `/etc/auto_master`. A mis-match in MD5 signatures could be used to set a notification. That's a *future* project.  :)  
 
 3. If you happen to have "AppleCare*less*" support for your Mac, do not let one of their ignorant "tech support" staff tell you that NAS is not supported for Time Machine backups! In a rare moment of candor, even [Apple says that TM-NAS backup is supported](https://support.apple.com/en-my/guide/mac-help/mh15139/26/mac/26). 
 
