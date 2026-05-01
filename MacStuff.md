@@ -267,7 +267,7 @@ In current versions of mac os, there are (at least) three distinct approaches to
 
 3. `at` is a bit of an outlier in the sense it's less frequently used. As of macOS Catalina, `at` is still included, and supported (in the fashion that Apple supports such things). If you're interested, read two things: `man at` and this Q&A on Stack Exchange: [Making “at” work on macOS](https://unix.stackexchange.com/questions/478823/making-at-work-on-macos) that explains how to work around the debris known as Apple's "open source" environment. N.B. that Apple's version of `at` isn't as up-to-date as the one in your favorite Linux distro, but it does work as shown in the following example: 
 
-   **`at` Example:**
+   **`at` Examples:**
    
    ```zsh
    % at now + 1 minute
@@ -279,36 +279,47 @@ In current versions of mac os, there are (at least) three distinct approaches to
    %
    ```
 
-      ​            So... now what? Where's the output? Does this `at` thing work at all? 
+   So... now what? Where's the output? Does this `at` thing work at all? 
    
-      ​            Yes, it created the requested output... it's in an email message! You can verify this by checking your email with the `mail` command. Alternatively, you may use a `redirect` to send the output to a file; e.g. `echo "Hello World from at" > ~/at_output.txt`
+   Yes, it created the requested output... it's in an email message! You can verify this by checking your email with the `mail` command. Alternatively, you may use a `redirect` to send the output to a file; e.g. `echo "Hello World from at" > ~/at_output.txt` 
 
+   That was so much fun, let's try another one - one that I actually use occasionally. In this example, we'll schedule a "pre-recorded announcement" to play at a designated time. I occasionally "get lost", or forget the rest of the world when I'm screwing around on this Apple computer; consequently, I recorded an MP3 file named `~/Music/getoffass.mp3` as a reminder to get out of my comfortable chair, and get up and move about! 
+
+   ``` zsh
+   % at 14:45
+   <enter this command:> afplay ~/Music/getoffass.mp3
+   <enter ^D>
+   %
+   ```
+   
+   And finally, at about 14:45:22, the announcement plays through the speakers on my MacBook... I get up, and go for a short walk.  But why did it delay by 22 seconds? Honestly, I really do not know - that's Apple for you! 
+   
    **`cron` Example:**
-
+   
    Let's assume, you want to check your Gmail account each day at 12:00. How would you do this? Here's one way to do this using `open` and `cron` : 
-
+   
    `cron` events are declared and scheduled in the `crontab`. They follow a specific syntax, although there are variations across the different versions of `cron`. We're working of course with Mac OS, and that means the Vixie (named after Paul VIxie) version of `cron`.  Creating an entry in your `crontab` file is done with a simple command: 
-
+   
    ```bash
    crontab -e
    ```
-
+   
    If this is the first time you've edited your `crontab`, you'll probably find the editor opens a completely blank file. Many Linux systems will have a default `crontab` that has comments and helpful hints, but Mac OS does not. 
    
    Let's schedule our event now. Enter the following line in the `nano` editor you've just opened: 
-
+   
    ```
    00 12 * * * open -a "/Applications/Google Chrome.app" https://mail.google.com/mail/u/0/#inbox
    ```
-
+   
    Next, tell `nano` to write your new `crontab` by entering `ctrl-o`, `enter` to accept the filename, and `ctrl-x` to exit `nano`. And that's it. You've just scheduled Chrome to start and fetch your Gmail inbox every day at 12:00 noon.  
    
    You'll recognize the `open` command and the parameters that follow it in the `crontab` entry. We've prepended a strange-looking sequence to that: 
-
+   
    ```
    00 12 * * *
    ```
-
+   
    This is simply the schedule information. It tells `cron` **when** to execute the command that follows. If you want to re-schedule for a time other that 12:00 noon, all you need change is the time. `man crontab` will guide you in the options for specifying the time and date. Until you become familiar with the syntax, you should use the [crontab guru](https://crontab.guru/#00_12_*_*_*) to check your schedule. You'll learn that  [`cron`'s simple syntax is quite flexible](https://crontab.guru/#5_4-7_1-28/2_1-9/3_*).    
    
    [↑](#table-of-contents)
@@ -362,7 +373,8 @@ Because `macos` has (some of) its roots in BSD Unix rather than Linux, the `mach
 
 ```bash
 $ machine
-x86_64h                         # on a new-ish machine
+x86_64h                         # on an old-ish Intel Mac 
+arm64e													# on my new ARM5 Macbook
 ```
 
 And if you want to see perhaps the *shortest man page in the entire world*, check out `man machine`.  :) 
@@ -371,39 +383,47 @@ However, the following *Linux-style* command also works:
 
 ```bash
 $ uname -m
-x86_64
+x86_64                        # on an old-ish Intel Mac 
+arm64													# on my new ARM5 Macbook
 ```
 
 `uname` has several other options, all described in `man uname`. 
 
-And finally, suggest that you *do not* use this: 
+And finally, suggest that you take this with a grain of salt: 
 
 ```bash
 $ arch
-i386
+i386                        # on an old-ish Intel Mac
+arm64												# on my new ARM5 Macbook
 ```
 
-This is of course an **incorrect answer** for 64-bit processors, but one that you will get as of today (Mojave 10.14.4)**!** [Some have suggested](https://unix.stackexchange.com/a/518320/286615) that the `i386` output simply means that it's *capable* of running 32-bit programs. However, `man arch` makes no such statement. Consequently, it's my opinion that Apple has simply dropped the ball! In any case, the information is virtually useless. 
+The i386 is of course an **incorrect answer** for Intel 64-bit processors, but one that you will get on an old-ish Mojave 10.14.4**!** [Some have suggested](https://unix.stackexchange.com/a/518320/286615) that the `i386` output simply means that it's *capable* of running 32-bit programs. However, `man arch` makes no such statement. Consequently, it's my opinion that Apple has simply dropped the ball! In any case, the information is virtually useless. 
 
 To get the version of the OS: 
 
 ```bash
-$ sw_vers
+$ sw_vers                        # on an old-ish Intel Mac
 ProductName:	Mac OS X
 ProductVersion:	10.14.4
-BuildVersion:	18E226
+BuildVersion:	18E226 
+$ sw_vers												 # on my new ARM5 Macbook
+ProductName:		macOS
+ProductVersion:		26.4.1
+BuildVersion:		25E253
 ```
 
 Note however, there is more confusion/inconsistency between the `sw_vers` command, and `uname -r[sv]`: both commands claim to display the `OS version`, but `uname -r[sv]` actually gives the version of its kernel (currently named [`Darwin`](https://en.wikipedia.org/wiki/Darwin_%28operating_system%29)): 
 ```bash
-$ uname -v
-Darwin Kernel Version 18.5.0: Mon Mar 11 20:40:32 PDT 2019; root:xnu-4903.251.3~3/RELEASE_X86_64
+$ uname -v                        # on an old-ish Intel Mac
+Darwin Kernel Version 18.5.0: Mon Mar 11 20:40:32 PDT 2019; root:xnu-4903.251.3~3/RELEASE_X86_64 
+$ uname -v												# on my new ARM5 Macbook
+Darwin Kernel Version 25.4.0: Thu Mar 19 19:33:50 PDT 2026; root:xnu-12377.101.15~1/RELEASE_ARM64_T6050
 ```
 
 This information is also available from Apple's *unique-to-the-Mac* command line utility `system_profiler SPSoftwareDataType`. Its output shows `System Version`, which corresponds to `OS version` given by `sw_vers`, and `Kernel Version` which corresponds to `OS version` given by `uname -r[sv]`. And yes, you're correct… this ***is*** a bit of a mess!  
 
-```
-$ system_profiler SPSoftwareDataType
+```zsh
+$ system_profiler SPSoftwareDataType           # on an old-ish Intel Mac
 Software:
 
     System Software Overview:
@@ -412,6 +432,21 @@ Software:
       Kernel Version: Darwin 18.5.0
       Boot Volume: Macintosh HD
       Boot Mode: Normal
+
+$ system_profiler SPSoftwareDataType           # on my new ARM5 Macbook
+Software:
+
+    System Software Overview:
+
+      System Version: macOS 26.4.1 (25E253)
+      Kernel Version: Darwin 25.4.0
+      Boot Volume: Macintosh HD
+      Boot Mode: Normal
+      Computer Name: toadie
+      User Name: Seamus (seamus)
+      Secure Virtual Memory: Enabled
+      System Integrity Protection: Enabled
+      Time since boot: 3 days, 16 hours, 55 minutes
 ```
 
 [↑](#table-of-contents)
