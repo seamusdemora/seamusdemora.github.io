@@ -26,7 +26,7 @@ It may help understand this *code concoction* to review an outline/summary of th
 
 Armed with this outline, let's open `Automator`, and create the *workflow*: 
 
-1. find the goofy `Automator` icon in the `Other` folder in `Launchpad`, and click to start it
+1. find the goofy `Automator` icon in the `Other` folder in `Launchpad` - or in "Apps" (dismal idea), and click to start it
 2. click the `+` in the tab bar to create a new *workflow*; a popup will appear; in the popup select the `Workflow` type, and then click the `Choose` button to dismiss the popup:
 
 ![Screenshot 2024-12-18 at 2.32.14 PM](/Users/jmoore/Desktop/screenshots/Screenshot 2024-12-18 at 2.32.14 PM.png)
