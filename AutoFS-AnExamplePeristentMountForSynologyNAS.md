@@ -5,7 +5,7 @@ I needed **persistent, reliable** mounts for shares on my Synology NAS (model DS
 ### Before proceeding, here's an "inconvenient truth" regarding `autofs`:
 
 | ***During any OS update or upgrade, Apple routinely replaces the file `/etc/auto_master` with their "DEFAULT" version; i.e. they replace/over-write any and all  changes you might have made to this file (and perhaps others). They do  this without warning or notification.*** |
-| ------------------------------------------------------------ |
+| :----------------------------------------------------------- |
 
 The significance of this comment will become obvious in the sequel; we get on with that below:
 
