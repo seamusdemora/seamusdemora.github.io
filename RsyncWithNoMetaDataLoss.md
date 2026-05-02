@@ -1,10 +1,8 @@
 ## Use rsync on macOS Without Losing Data
 
-Backups are typically done using Network Attached Storage (NAS) devices. There are numerous file systems in use to support that, but if you're using one of the jumbo storage units, your choices may be limited. But even if the manufacturer offers a multitude of file system options, time and the learning curve may push you toward a familiar option - one you've already invested time and effort in learning. When bringing my new Synology NAS online recently, I learned - again - there are other ***vendor-specific*** factors that may limit your choices. For example, I learned Synology's documentation and technical support are *sorely lacking*; i.e. non-existent. 
+Backups are typically done using [Network Attached Storage (NAS) devices](https://en.wikipedia.org/wiki/Network-attached_storage), or smaller external drives. The smaller external drives typically allow formatting with various file systems (e.g. APFS), but if you're using one of the larger commercial NAS units (e.g. Synology), your file system choices are often limited, and chosen by the vendor. But even if the manufacturer offers a multitude of file system options, time and the learning curve may push you toward a familiar option - one you've already invested time and effort in learning. When bringing my new Synology NAS online recently, I learned - again - there are other ***vendor-specific*** factors that tend to limit your choices. Without belaboring that further, I'll just explain the issue, and provide the approach I developed. 
 
-Without belaboring that further, I'll just explain the issue, and provide the approach I developed. 
-
-### The issue is *meta-data* - how to avoid losing it:
+### The issue with `rsync` & macOS is *meta-data* - how to avoid losing it:
 
 The issue is best illustrated in a brief example of the backup-restore process depicted below: 
 
@@ -28,7 +26,7 @@ total 0
 # i.e. 2 files, a symlink and a subfolder with two more files; a variety of permissions
 ```
 
-Note the user & group ownership (*seamus, staff*), the modes/permissions (*r, w, x*), and the time-stamps (*by default* `ls -l` provides the *file modification time*) for each file, folder and link. These parameters are collectively referred to as *meta-data*. When using `rsync` as a backup solution, you might expect that all meta-data would be recovered if and when your backup is restored. But that does not happen automatically, or by default - as shown below. 
+Note the user & group ownership (*seamus, staff*), the modes/permissions (*r, w, x*), and the time-stamps (*by default* `ls -l` provides the *file modification time*) for each file, folder and link. These parameters are collectively referred to as *meta-data*. When using `rsync` as a backup solution, you might expect that all meta-data would be recovered if and when your backup is restored. *But that does not happen automatically, or by default.* 
 
 In this example, the folder `xyz-original` is backed up to a NAS drive (*my Synology `DS1621+` in this example*) in folder `xyz-backup`. This folder will then be *restored* to another local folder named `xyz-restored`; the restoration will also be done using `rsync`. 
 
@@ -54,7 +52,7 @@ sent 506 bytes  received 110 bytes  1,232.00 bytes/sec
 total size is 84  speedup is 0.14
 ```
 
-The *backup* operation is now complete, and `rsync` has copied the folder `xyz-original` from the local drive to the NAS, and placed it in a folder named `xyz-backup`. The next step is to *restore* the backup copy to the local drive. If this were an actual restoration-from-backup, the local drive would likely be empty; in this case, we *restore* to another folder we have named `xyz-restored` so that we can compare `xyz-restored` against `xyz-original`. 
+The *backup* operation is now complete, and `rsync` has copied the folder `xyz-original` from the local drive to the NAS, and placed it in a folder named `xyz-backup`. The next step is to *restore* the backup copy to a local drive on a macOS. If this were an actual restoration-from-backup, the local drive would likely be empty, but in this case, we *restore* to another folder we have named `xyz-restored` so that we can compare `xyz-restored` against `xyz-original`. 
 
 ```zsh
 # restore 'xyz-backup' from the Synology NAS to local folder 'xyz-restored' for comparison: 
@@ -83,13 +81,25 @@ total 16
 lrwx------  1 seamus  staff   26 Jun 20 15:22 f1f2 -> ./folder1/folder1-file2.sh
 drwx------  4 seamus  staff  128 Jun 20 15:10 folder1
 
-xyz-restored/folder1:
+% ls -l xyz-restored/folder1:
 total 0
 -rwx------  1 seamus  staff  0 Jun 20 15:09 folder1-file1.txt
 -rwx------  1 seamus  staff  0 Jun 20 15:10 folder1-file2.sh
 ```
 
-The `xyz-restored` files are all here of course, but the meta-data (*permissions/mode*) is ***clearly different from the `ls -lR xyz-original` result*** shown above. The ***astute reader will also note*** that in addition to the obvious differences, the file ***`README1` has been stripped of all of its*** ***extended attributes!*** We know this from inspection because in the `ls -lR` listing of `xyz-restored`, the `README1` file is missing ***the `@` symbol*** following the mode/permissions. ***Both issues*** are resolved in the sequel; a discussion of the details will be deferred until after a resolution is presented.   
+The `xyz-restored` files are all here of course, but the meta-data (*permissions/mode*) is ***clearly different from the `ls -lR xyz-original` result*** shown above. The ***astute reader will also note*** that in addition to the obvious differences, the file ***`README1` has been stripped of all of its*** ***extended attributes!*** We know this from inspection because in the `ls -l` listings for `./xyz-original/README1` and `./xyz-restored/README1`, **the `README1` file attributes are different**: 
+
+```zsh
+# the original file (in ./xyz-original, prior to backup and restoration): 
+% ls -l ./xyz-original/README1
+-rw-r--r--@ 1 seamus  staff   28 Jun 15 01:51 README1 
+
+# the "restored" file (in ./xyz-restored, after restoration):
+% ls -l ./xyz-restored/README1
+-rwx------  1 seamus  staff   28 Jun 15 01:51 README1
+```
+
+ These issues are resolved in the sequel; a discussion of the details will be deferred until after a resolution is presented.   
 
 ### Avoiding metadata loss in `rsync` backup-restore cycle: 
 
@@ -97,16 +107,17 @@ Using the `rsync` options shown below eliminates the loss of meta-data - includi
 
 ```zsh
 # repeat the previous backup-restore cycle with a NEW SET OF OPTIONS:
+#
 # the backup:
 % rsync -rlAXtgoDiv --fake-super ~/xyz-original/ /System/Volumes/Data/mnt/synology/syn_backup/xyz-backup 
-# ... output controlled by options `i` and `v`
+# note options `i` and `v` control rsync's output verbosity
 
 # the restore:
 % rsync -rlAXtgoDiv --fake-super /System/Volumes/Data/mnt/synology/syn_backup/xyz-backup/ ~/xyz-restored 
 # ...
 ```
 
-### Verifying the results: 
+### Verifying the results:
 
 All well and good to claim success, but this recipe would be incomplete without some suggestions on how to verify these claims. To this end, [the `src` folder](https://github.com/seamusdemora/seamusdemora.github.io/tree/master/src) folder in this repo contains two scripts that verify the results - after all, I'm now depending upon the accuracy of this recipe for my own backups :) 
 
@@ -122,11 +133,11 @@ Files xyz-original-stat.txt and xyz-restored-stat.txt are identical
 Files xyz-original-xattr.txt and xyz-restored-xattr.txt are identical
 ```
 
-Most of the command-line tools I use on macOS are obtained through [MacPorts](https://www.macports.org/), including `rsync` (ver 3.2.4 protocol version 31), `stat` (GNU coreutils ver 9.1), `find` (GNU findutils ver 4.9.0). macOS tools include `ls` (ver May, 2002), and `xattr` (Nov, 2010). 
+### What tools are needed to avoid metadata loss? 
 
-Whether or not the Apple-supplied tools will work is an open question. The macOS Catalina used in this recipe has `rsync` `version 2.6.9 protocol version 29`; it does not offer all the options used in this recipe. I suspect it will not work properly, but I have not tried it. 
+Most of the command-line tools I use on macOS are obtained through [MacPorts](https://www.macports.org/), including `rsync` (currently at ver 3.4.1 protocol version 32). The macOS Catalina used in this recipe has `rsync` `version 2.6.9 protocol version 29` - same as is available in the current macOS Tahoe! This ***antiquated*** version of `rsync` does not offer all the options needed to avoid metadata loss. I suspect Apple still ships these old software versions to avoid the cost of licensing under GPL 3 - or of developing a competitive, proprietary version of their own. 
 
-### Some details, ICYI
+### More details, ICYI
 
 Some readers may wonder (I certainly did) why all of this is necessary to retain the metadata associated with a file or folder - the owner, group, permissions, time stamps, etc. The short answer is, *"Because the file metadata is not stored within the file itself!"* 
 
@@ -136,7 +147,7 @@ When files are moved cross *file system boundaries* (e.g. APFS-to-ext4, or ext4-
 
 Apple has used extended attributes (`xattr`) for some time, and they seem to use them extensively now. Without knowledge of the proprietary details, [we can only guess](https://apple.stackexchange.com/questions/200413/what-does-these-extended-attributes-mean-and-where-are-they-documented) at how macOS uses these `xattr`, but it's a certainty that loss of this data may create issues or malfunctions. I'm not keen on the idea that Apple creates and uses all of this meta-data on our systems with no explanation, but given that we're required to go [*all-in*](https://idioms.thefreedictionary.com/all+in) on a proprietary system, it seems a more prudent course to make an effort to retain this data.
 
-Finally, one may wonder, "If the filesystem is proprietary, how does `rsync` manage to preserve it?" I don't know the answer to that question now. I'm interested in the answer though, so check back later.
+Finally, one may wonder, "If Apple's filesystem is proprietary, how does `rsync` manage to preserve it?" I don't know the answer to that question, but I'll guess it was *extensive trial-and-error* and *extensive testing* by the `rsync` team. 
 
 ### `rsync` options and decoding the itemized output
 
@@ -192,7 +203,9 @@ Finally, one may wonder, "If the filesystem is proprietary, how does `rsync` man
 #          `-- a: The ACL information changed
 ```
 
+### In conclusion: 
 
+Hopefully, this "recipe" has provided a general guide for using `rsync` in MacOS while avoiding the inevitable loss of potentially important metadata. 
 
 ---
 
