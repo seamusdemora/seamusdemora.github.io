@@ -8,8 +8,8 @@ Anyway - I'm posting two (2) solutions here. Both work on macOS, but I'll leave 
 
 This solution has two software components: 
 
-1.  [**`HandBrake`**](https://en.wikipedia.org/wiki/HandBrake) - the free, open-source video ***transcoder*** - available [here for MacOS](https://handbrake.fr/), or on [GitHub](https://github.com/HandBrake/HandBrake/releases). 
-2.  [**`libdvdcss`**](https://en.wikipedia.org/wiki/Libdvdcss) - the free, open-source library for un-scrambling DVDs available [here in source form](https://code.videolan.org/videolan/libdvdcss), or through [MacPorts](https://www.macports.org/) (my choice), or [Homebrew](https://brew.sh/). 
+1.  [**`HandBrake`**](https://en.wikipedia.org/wiki/HandBrake) - free, open-source video ***transcoder*** - available [here for MacOS](https://handbrake.fr/), or on [GitHub](https://github.com/HandBrake/HandBrake/releases). 
+2.  [**`libdvdcss`**](https://en.wikipedia.org/wiki/Libdvdcss) - free, open-source library for un-scrambling DVDs available [here in source form](https://code.videolan.org/videolan/libdvdcss), or through [MacPorts](https://www.macports.org/) (my choice), or [Homebrew](https://brew.sh/). 
 
 Obviously, you will need to install both of the software components. After doing so, you will find that `HandBrake` ***still refuses*** to decode your DVD! This is because `HandBrake` does not know where to find `libdvdcss`. This is corrected by moving `libdvdcss` to the location where `HandBrake` expects to find it... here's how to do that: 
 
