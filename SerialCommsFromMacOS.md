@@ -1,5 +1,8 @@
 # Serial Communications Using Mac OS
 
+| UPDATE - 1 May 2026:  I no longer use my Macs for serial comms, and haven't done so for some time. Consequently, this "recipe" has become stale, and as I no longer have the impetus, I no longer have the current knowledge to update it. It may contain information still useful to some, so I'll leave it in place for now. |
+| ------------------------------------------------------------ |
+
 Mac OS has the tools needed to communicate with all or most serial devices, but IMHO, they're not documented as well as they should be. I found it to be a bit of a trial-and-error process, but having been through that I find it works quite well now. Here's my system setup: 
 
 ### The Hardware:
@@ -22,11 +25,11 @@ If you need to push the limit on cable length, here's the general approach:
 
 - Find the manufacturer's published specifications for *capacitance per unit length* (at or above the operating frequency). As an example, let's choose [this cable](https://www.quabbin.com/products/general-purpose-wire-cable/multipair/rs-232/8508) that has 13 pf/foot (43 pf/m). 
 
-- Do the math: **L<sub>max</sub> = 2,500 / 43 = 58 meters**  
+- Do the math: **L<sub>max</sub> = 2,500 / 43 = 58 meters**... that should be long enough for most applications!  :)  
 
 ### The Driver:
 
-***N.B. This may be the most critical component for getting good results.*** I tried using the driver included (inconveniently on a mini-CD) with the Tripp-Lite cable. *It sucked*: This was an exercise in frustration, and it really pissed me off! **Why?** ***Because Tripp-Lite couldn't be bothered to do this correctly***. Apple's native drivers *also sucked* -they just didn't cooperate for reasons I still don't understand. After wasting too much time, I found an ***excellent*** driver at [**mac-usb-serial.com**](https://www.mac-usb-serial.com/) developed by Jeroen Arnoldus. Owners of Macs running an OS later than 10.15 ([Catalina](https://en.wikipedia.org/wiki/MacOS_Catalina)) are not supported; further, it now appears they may never be based on the language at Jeroen's website.  
+***N.B. This may be the most critical component for getting good results.*** I tried using the driver included (inconveniently on a mini-CD) with the Tripp-Lite cable. *It sucked*: This was an exercise in frustration, and it really pissed me off! **Why?** ***Because Tripp-Lite couldn't be bothered to do this correctly***. Apple's native drivers *also sucked* -they just didn't cooperate for reasons I still don't understand. After wasting too much time, I found an ***excellent*** driver at [**mac-usb-serial.com**](https://www.mac-usb-serial.com/) developed by Jeroen Arnoldus. As of now, owners of Macs running an OS later than 10.15 ([Catalina](https://en.wikipedia.org/wiki/MacOS_Catalina)) are not supported. Further, based on the language at Jeroen's website, it now appears they may never be supported.  
 
 ### Using `screen`:
 
