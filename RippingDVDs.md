@@ -51,6 +51,8 @@ I am going to avoid (at least for now) a discussion or "How-To" on adding the "d
 
 <!---
 
+an article: [DMCA Backup of Copyrighted Content](https://legalbeagle.com/12719016-copyright-law-making-personal-copies.html) 
+
 `libdvdcss` - like `HandBrake` - was also created by the French via the [VLC project](https://www.videolan.org/). Fortunately, [unlike some of the `HandBrake` team members](https://github.com/HandBrake/HandBrake/discussions/6717#discussioncomment-12508485), the people who run the VLC project are not afraid of the boogeymen who created the [DMCA](https://en.wikipedia.org/wiki/Digital_Millennium_Copyright_Act) and [WIPO](https://en.wikipedia.org/wiki/World_Intellectual_Property_Organization). For the record, I am all for protecting copyrights, but the boogeymen have gone way overboard...  i.e. if I buy a DVD, do I not have the right to make a copy of its contents to put on my private server to watch in my home with friends and family? I believe I do. 
 
 You can get a copy of `libdvdcss` via [MacPorts](https://www.macports.org/install.php) as follows: 
