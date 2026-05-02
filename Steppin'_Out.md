@@ -19,4 +19,5 @@ zstyle :prompt:pure:path color green
 zstyle ':prompt:pure:prompt:*' color 199
 ```
 
+and here's how this looks in my black background `Terminal.app`: 
 ![terminal_ss](./pix/terminal_ss.png)
