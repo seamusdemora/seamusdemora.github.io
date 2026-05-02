@@ -31,7 +31,7 @@ In summary, MakeMKV is a solid performer, and it has the advantage of saving the
 
 ### In Closing: 
 
-I am going to avoid (at least for now) a discussion or "How-To" on adding the "decoder libraries" to `HandBrake`. These decoder libraries are included in the MakeMKV software package that you download - **but not with HandBrake**. If you want to try `HandBrake`, know that the DVD "decoder library" is called `libdvdcss`, and the one for BluRays is called `libaacs.dll` (a `keydb.cfg` file is also required with `libaacs`); both are usually available from the same source. The information on where to find, and how to install these libraries is available to everyone for the cost of an Internet search. 
+I am going to avoid (at least for now) a discussion or "How-To" on adding the "decoder libraries" to `HandBrake`. These decoder libraries are included in the `MakeMKV` software package that you download - **but not with `HandBrake`**. If you want to try `HandBrake`, know that the DVD "decoder library" is called `libdvdcss`, and the one for BluRays is called `libaacs.dll` (a `keydb.cfg` file is also required with `libaacs`); both are usually available from the same source. The information on where to find, and how to install these libraries is available to everyone for the cost of an Internet search. 
 
 <!---
 
