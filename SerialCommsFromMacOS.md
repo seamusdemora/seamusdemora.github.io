@@ -1,7 +1,7 @@
 # Serial Communications Using Mac OS
 
 | UPDATE - 1 May 2026:  I no longer use my Macs for serial comms, and haven't done so for some time. Consequently, this "recipe" has become stale, and as I no longer have the impetus, I no longer have the current knowledge to update it. It may contain information still useful to some, so I'll leave it in place for now. |
-| ------------------------------------------------------------ |
+| :----------------------------------------------------------- |
 
 Mac OS has the tools needed to communicate with all or most serial devices, but IMHO, they're not documented as well as they should be. I found it to be a bit of a trial-and-error process, but having been through that I find it works quite well now. Here's my system setup: 
 
