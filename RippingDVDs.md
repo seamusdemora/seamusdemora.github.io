@@ -9,23 +9,7 @@ Anyway - I'm posting two (2) solutions here for "ripping" DVDs:
 
 Both work on macOS, but I'll leave the final selection to the readers. Once I've gained some experience with these solutions (and perhaps others), I'll write up some analysis and recommendations, but for now - let's go. 
 
-### Solution # 1: `Handbrake` 
-
-This solution has two software components: 
-
-1.  [**`HandBrake`**](https://en.wikipedia.org/wiki/HandBrake) - free, open-source video ***transcoder*** - available [here for MacOS](https://handbrake.fr/), or on [GitHub](https://github.com/HandBrake/HandBrake/releases). 
-2.  [**`libdvdcss`**](https://en.wikipedia.org/wiki/Libdvdcss) - free, open-source library for un-scrambling DVDs available [here in source form](https://code.videolan.org/videolan/libdvdcss), or through [MacPorts](https://www.macports.org/) (my choice), or [Homebrew](https://brew.sh/). 
-
-Obviously, you will need to install both of the software components. After doing so, you will find that `HandBrake` ***still refuses*** to decode your DVD! This is because `HandBrake` does not know where to find `libdvdcss`. This is corrected by moving `libdvdcss` to the location where `HandBrake` expects to find it... here's how to do that: 
-
-```zsh
-% sudo mkdir -p /usr/local/lib
-% sudo cp /opt/local/lib/libdvdcss.2.dylib /usr/local/lib 
-
-# alternatively, create a symbolic link to /opt/local/lib/libdvdcss.2.dylib in /usr/local/lib 
-```
-
-Afterwards, you should find that `HandBrake` will now co-operate, and ***decode*** your DVD! It worked for me... I was able to re-encode several DVDs (no BluRays), and all were view-able on my TV. 
+### Solution # 1: `Handbrake`
 
 `Handbrake` is not the most user-friendly application (my opinion). [The documentation should help - it's available here.](https://handbrake.fr/docs/en/1.9.0/) There is also a [discussion group on reddit devoted to `Handbrake`](https://www.reddit.com/r/handbrake/). Their [GitHub repository](https://github.com/HandBrake/HandBrake) also provides areas for [Issues/bug reports](https://github.com/HandBrake/HandBrake/issues), and for [Discussions/Q&A](https://github.com/HandBrake/HandBrake/discussions).
 
@@ -51,7 +35,29 @@ I am going to avoid (at least for now) a discussion or "How-To" on adding the "d
 
 <!---
 
-an article: [DMCA Backup of Copyrighted Content](https://legalbeagle.com/12719016-copyright-law-making-personal-copies.html) 
+an article: [DMCA Backup of Copyrighted Content](https://legalbeagle.com/12719016-copyright-law-making-personal-copies.html)  
+
+---
+
+This solution has two software components: 
+
+1.  [**`HandBrake`**](https://en.wikipedia.org/wiki/HandBrake) - free, open-source video ***transcoder*** - available [here for MacOS](https://handbrake.fr/), or on [GitHub](https://github.com/HandBrake/HandBrake/releases). 
+2.  [**`libdvdcss`**](https://en.wikipedia.org/wiki/Libdvdcss) - free, open-source library for un-scrambling DVDs available [here in source form](https://code.videolan.org/videolan/libdvdcss), or through [MacPorts](https://www.macports.org/) (my choice), or [Homebrew](https://brew.sh/). 
+
+Obviously, you will need to install both of the software components. After doing so, you will find that `HandBrake` ***still refuses*** to decode your DVD! This is because `HandBrake` does not know where to find `libdvdcss`. This is corrected by moving `libdvdcss` to the location where `HandBrake` expects to find it... here's how to do that: 
+
+```zsh
+% sudo mkdir -p /usr/local/lib
+% sudo cp /opt/local/lib/libdvdcss.2.dylib /usr/local/lib 
+
+# alternatively, create a symbolic link to /opt/local/lib/libdvdcss.2.dylib in /usr/local/lib 
+```
+
+Afterwards, you should find that `HandBrake` will now co-operate, and ***decode*** your DVD! It worked for me... I was able to re-encode several DVDs (no BluRays), and all were view-able on my TV. 
+
+
+
+---
 
 `libdvdcss` - like `HandBrake` - was also created by the French via the [VLC project](https://www.videolan.org/). Fortunately, [unlike some of the `HandBrake` team members](https://github.com/HandBrake/HandBrake/discussions/6717#discussioncomment-12508485), the people who run the VLC project are not afraid of the boogeymen who created the [DMCA](https://en.wikipedia.org/wiki/Digital_Millennium_Copyright_Act) and [WIPO](https://en.wikipedia.org/wiki/World_Intellectual_Property_Organization). For the record, I am all for protecting copyrights, but the boogeymen have gone way overboard...  i.e. if I buy a DVD, do I not have the right to make a copy of its contents to put on my private server to watch in my home with friends and family? I believe I do. 
 
