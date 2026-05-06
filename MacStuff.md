@@ -102,6 +102,10 @@
 
 [49. PageUp and PageDown in Terminal.app (and iTerm)](#49-pageup-and-pagedown-in-terminalapp-and-iterm) 
 
+[50. Playing music/sounds from the command line](#50-playing-music-from-the-command-line) 
+
+
+
 [OTHER SOURCES:](#other-sources) 
 
 <hr>
@@ -1319,7 +1323,7 @@ Some Notes:
 
 [↑](#table-of-contents) 
 
-### 49. PageUp and PageDown in Terminal.app and iTerm 
+### 49. PageUp and PageDown in Terminal.app and iTerm
 
 I'll guess this has been around for a while, but I've only recently discovered it... and as it seems useful/time-saving, I've added it here. When you've got a lot of stuff in your scrollback buffer, you can hop through it (more) quickly with this keyboard shortcut: 
 
@@ -1327,8 +1331,43 @@ I'll guess this has been around for a while, but I've only recently discovered i
 
 <kbd>shift</kbd> + <kbd>fn</kbd> + <kbd>down arrow</kbd> will give you a `PageDown`. 
 
+[↑](#table-of-contents)  
 
-[↑](#table-of-contents) 
+### 50.  Playing music from the command line
+
+Apple literally has thousands of command line utilities built into their system that do many odd/esoteric things... and apparently a few that do fairly common things also! An example is `afplay`... there's a man page (`man afplay`), but perhaps more informative is the `-h` option: 
+
+```zsh
+afplay -h
+
+    Audio File Play
+    Version: 2.0
+    Copyright 2003-2013, Apple Inc. All Rights Reserved.
+    Specify -h (-help) for command options
+
+Usage:
+afplay [option...] audio_file
+
+Options: (may appear before or after arguments)
+  {-v | --volume} VOLUME
+    set the volume for playback of the file
+  {-h | --help}
+    print help
+  { --leaks}
+    run leaks analysis
+  {-t | --time} TIME
+    play for TIME seconds
+  {-r | --rate} RATE
+    play at playback rate
+  {-q | --rQuality} QUALITY
+    set the quality used for rate-scaled playback (default is 0 - low quality, 1 - high quality)
+  {-d | --debug}
+
+```
+
+Now we know! 
+
+[↑](#table-of-contents)  
 
 ---
 
