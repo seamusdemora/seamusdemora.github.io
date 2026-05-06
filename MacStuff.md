@@ -102,7 +102,7 @@
 
 [49. PageUp and PageDown in Terminal.app (and iTerm)](#49-pageup-and-pagedown-in-terminalapp-and-iterm) 
 
-[50. Playing music/sounds from the command line](#50-playing-music-from-the-command-line) 
+[50. Playing music & sounds from the command line](#50-playing-music-from-the-command-line) 
 
 
 
@@ -1333,7 +1333,7 @@ I'll guess this has been around for a while, but I've only recently discovered i
 
 [↑](#table-of-contents)  
 
-### 50.  Playing music from the command line
+### 50. Playing music from the command line
 
 Apple literally has thousands of command line utilities built into their system that do many odd/esoteric things... and apparently a few that do fairly common things also! An example is `afplay`... there's a man page (`man afplay`), but perhaps more informative is the `-h` option: 
 
