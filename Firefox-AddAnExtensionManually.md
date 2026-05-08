@@ -3,7 +3,7 @@
 This is something I'm ***not*** familiar with at all, but I stumbled into a solution, and wanted to post it here so I don't forget it. Here's the problem: 
 
 | `One of my favorite Firefox extensions - "KellyC Image Downloader" - recently disappeared from the menu of extensions. "Poking around" led me to the GitHub site for the missing extension, where I read the authors had removed the extension because they felt there was insufficient interest to warrant their continued efforts.` |
-| ------------------------------------------------------------ |
+| :----------------------------------------------------------- |
 
 Fortunately, the authors of the [`KellyC Image Downloader` have left their code on GitHub](https://github.com/NC22/KellyC-Image-Downloader) after they decided to discontinue development... unfortunately, they left no instructions for how to install their extension into Firefox. I pieced this procedure together from several sources, and was pleasantly surprised that it actually works. 
 
