@@ -1,13 +1,13 @@
 ## AutoFS Example: A Peristent Mount for a Synology NAS
 
-I needed **persistent, reliable** mounts for shares on my Synology NAS (model DS1621+, DSM 7.3.2-86009 Update 3), **and** as a destination for [Time Machine](https://en.wikipedia.org/wiki/Time_Machine_(macOS)) backups. The example here is a fairly straightforward configuration once you understand a wee bit of what's going on in Apple's AutoFS. But this necessary understanding is made far more difficult by Apple's discontinuation of the documentation! Not to get too far off on a tangent, but I simply don't understand why Apple has removed the documentation for AutoFS, and why they seem to have abandoned development of it. If anyone has any background on this, I'd love to [hear from you](https://github.com/seamusdemora/seamusdemora.github.io/issues). In the meantime, I've managed to locate a copy of the AutoFS documentation that may be accessed [here in PDF format](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/Autofs.pdf), or [here in GitHub markdown](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/AutoFS.md). 
+I needed **persistent, reliable, on-demand** mounts for shares on my Synology NAS (model DS1621+, DSM 7.3.2-86009 Update 3), **and** as a destination for [Time Machine](https://en.wikipedia.org/wiki/Time_Machine_(macOS)) backups. The example here is a fairly straightforward configuration once you understand a wee bit of what's going on in Apple's AutoFS. But this necessary understanding is made far more difficult by Apple's discontinuation of the documentation! Not to get too far off on a tangent, but I simply don't understand why Apple has removed the documentation for AutoFS, and why they seem to have abandoned development of it. If anyone has any background on this, I'd love to [hear from you](https://github.com/seamusdemora/seamusdemora.github.io/issues). In the meantime, I've managed to locate a copy of the AutoFS documentation that may be accessed [here in PDF format](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/Autofs.pdf), or [here in GitHub markdown](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/AutoFS.md). 
 
 ### Before proceeding, here's an "inconvenient truth" regarding `autofs`:
 
 | ***During any OS update or upgrade, Apple routinely replaces the file `/etc/auto_master` with their "DEFAULT" version; i.e. they replace/over-write any and all  changes you might have made to this file (and perhaps others). They do  this without warning or notification.*** |
 | :----------------------------------------------------------- |
 
-The significance of this comment will become obvious in the sequel; we get on with that below:
+The significance of this comment will become obvious in the sequel; [we address it below](#other-potentially-useful-interesting-or-annoying-stuff): 
 
 ### I. autofs for read-only file systems (Catalina & later)
 
@@ -52,9 +52,38 @@ My Synology NAS was configured with SMB (aka CIFS) shares. In this example, I'm 
 
    * The 2nd column specifies the network file system format as defined for the share on the Synology server; in this case I used SMB
 
-   * The 3rd column gives the userid & password defined for a valid user account on the Synology NAS, followed by the network name (`SynologyNAS-1` in this example), and the proper share name as defined on the server (e.g. `/backups`).
+   * The 3rd column gives the userid & password defined for a valid user account on the Synology NAS, followed by the network name (`SynologyNAS-1` in this example), and the proper share name as defined on the server (e.g. `/backups`). 
 
-#### 3. Run the "magic command" to immediately apply all changes :)
+
+
+#### 3. Verify that there is a folder named `/System/Volumes/Data/mnt` :
+
+```zsh
+% ls -l /System/Volumes/Data 
+total 1
+drwxrwxr-x 53 root admin 1696 May 16 23:00 Applications
+drwxr-xr-x  2 root wheel   64 Mar 17 20:05 cores
+dr-xr-xr-x  2 root wheel    1 May 15 16:47 home
+drwxr-xr-x 67 root wheel 2144 May 15 16:47 Library
+drwxr-xr-x  3 root wheel   96 Apr 24 00:27 mnt			# <=== VERIFY ./mnt present
+drwxr-xr-x  3 root wheel   96 Apr 21 23:25 MobileSoftwareUpdate
+drwxr-xr-x  4 root wheel  128 Apr 21 23:25 opt
+...
+% 
+```
+
+If there is no `./mnt` folder in `/System/Volumes/Data`, you must create one: 
+
+```zsh
+% sudo mkdir mnt
+# verify its creation, permissions and ownership are as shown above
+# also note that you can (optionally) create a folder(s) under ./mnt;
+# e.g. 'synology' in my case to organize your mount points if you're so inclined
+```
+
+
+
+#### 4. Run the "magic command" to immediately apply all changes :)
 
 Having modified the file `/etc/auto_master`, and created the `/etc/auto_synology` file, all that remains is to apply the changes:
 
@@ -68,6 +97,8 @@ You should now find all the shares specified in `/etc/auto_synology` `mount`ed a
 * `/System/Volumes/Data/mnt/synology/music` 
 * `/System/Volumes/Data/mnt/synology/pictures` 
 
+
+
 ### II. autofs for read-write file systems (Mojave & earlier)
 
 The only change required is in the `/etc/auto_master` file. The single added line should reflect the more straightforward file system hierarchy:
@@ -78,6 +109,8 @@ The only change required is in the `/etc/auto_master` file. The single added lin
 ```
 The `/etc/auto_synology` file is identical, and the same "magic command" immediately applies all changes.
 
+
+
 ### III. Other Ideas:
 
 Nothing exceptional here, I only wanted to make a point that creating *symbolic links* to the mount points can come in handy. As I use the *AutoFS* feature mostly to simplify routine access to network shares, I've found it useful to create *symlinks* that are convenient & useful in scripts & working from the command line. For example, I have created a symlink to the directory where my `rsync` backups are stored. The mount point is `/System/Volumes/Data/mnt/synology/syn_bkup` and the directory is `rsync-myMac`. To easily access that location, I've created the following symlink: 
@@ -86,7 +119,9 @@ Nothing exceptional here, I only wanted to make a point that creating *symbolic 
 % ln -s /System/Volumes/Data/mnt/synology/syn_bkup/myMac ~/rsyn_bkup
 ```
 
-## Other Potentially Useful & Interesting Stuff:
+
+
+## Other Potentially Useful, Interesting or Annoying Stuff:
 
 1. As noted above, I've noticed that each time my OS is updated (or upgraded), Apple's installation routines ***revert*** any changes I've made to my `/etc/auto_master` file. I still do not understand **why** Apple does this, but I have been forced to deal with it. My current solution is as follows: 
 
@@ -117,7 +152,9 @@ Nothing exceptional here, I only wanted to make a point that creating *symbolic 
      -  [a GitHub search for "automount"](https://github.com/topics/automount) - many other repos for automounting
      -  [a duck-duck search for auto mount software](https://duckduckgo.com/?t=ffab&q=macos%20auto%20mount%20software%20german%20university&ia=web) - produced several in above list & more 
 
-## REFERENCES: 
+
+
+## REFERENCES:
 
 1.  [Autofs: Automatically Mounting Network File Shares in Mac OS X](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/AutoFS.md) - in Markdown format
 2.  [Autofs: Automatically Mounting Network File Shares in Mac OS X](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/Autofs.pdf) - in PDF format 
