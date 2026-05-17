@@ -32,6 +32,12 @@ Without further ado, here are the required changes for my Catalina, Ventura and 
 
 You may choose an alternative folder name in place of `synology`; `auto_synology` is a file (also in `/etc`) containing details for the auto mount. 
 
+| Question: Why did you choose `/System/Volumes/Data` as the location for `./mnt` ? |
+| ------------------------------------------------------------ |
+| **Answer:** Because it seems to work! *Seriously*: Apple's ability to mount NAS drives anywhere is tenuous and ever-changing; there are numerous issues and complaints reported! But don't take my word for it - do your own research, or try it yourself. I realize this choice is unorthodox, but it has worked on Ventura for 3+ years, and it does work on Tahoe - as of ver 26.5. |
+
+
+
 #### 2. Create the file `/etc/auto_synology` with the following content:
 
 ```
@@ -117,3 +123,13 @@ Nothing exceptional here, I only wanted to make a point that creating *symbolic 
 3.  [Introduction to Autofs in Mac OS X](https://lowendmac.com/2009/introduction-to-autofs-in-mac-os-x/) - a brief, but informative blog by Keith Winston, 2009 
 4.  [Autofs on Mac OS X](https://gist.github.com/rudelm/7bcc905ab748ab9879ea) - rudelm's GitHub gist; 14 revisions, 251 stars (*current and popular*) 
 5.  [Network Share Mounter](https://gitlab.rrze.fau.de/faumac/networkShareMounter) - a free & open-source alternative to AutoFS from Germany
+
+
+
+<!--- 
+
+You can hide shit in here  :)   LOL 
+
+POINT: "/Volumes (actually /System/Volumes/Data/Volumes) is just a directory  owned by Finder to mount volumes. Since it's owned by Finder, it's not a good idea to use it for mounting volumes using any other method."  [**REF**](https://discussions.apple.com/thread/256271046?answerId=261889439022#261889439022), but compare this POINT to this [DDG search](https://duckduckgo.com/?t=ffab&q=in%20macOS%20is%20%2FSystem%2FVolumes%2FData%2FVolumes%20the%20same%20location%20as%20%2FVolumes%3F&ia=web).  
+
+--->
