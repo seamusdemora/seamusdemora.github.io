@@ -154,7 +154,7 @@ Nothing exceptional here, I only wanted to make a point that creating *symbolic 
 
 
 
-## REFERENCES:
+## REFERENCES *and* ALTERNATIVES: 
 
 1.  [Autofs: Automatically Mounting Network File Shares in Mac OS X](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/AutoFS.md) - in Markdown format
 2.  [Autofs: Automatically Mounting Network File Shares in Mac OS X](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/Autofs.pdf) - in PDF format 
