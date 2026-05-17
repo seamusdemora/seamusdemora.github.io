@@ -35,6 +35,7 @@ You may choose an alternative folder name in place of `synology`; `auto_synology
 | Question: Why did you choose `/System/Volumes/Data` as the location for `./mnt` ? |
 | ------------------------------------------------------------ |
 | **Answer:** Because it seems to work! *Seriously*: Apple's ability to mount NAS drives anywhere is tenuous and ever-changing; there are numerous issues and complaints reported! But don't take my word for it - do your own research, or try it yourself. I realize this choice is unorthodox, but it has worked on Ventura for 3+ years, and it does work on Tahoe - as of ver 26.5. |
+| ***Note:*** You may notice that you cannot access `/System/Volumes/Data` using `Finder`. I have no idea why, but [others have reported the issue](https://forums.macrumors.com/threads/navigate-system-volumes-data-in-finder-file-open-dialog.2346503/). However, you should be able to access it using the `Terminal.app` via the simple commands: `cd /System/Volumes/Data` or `ls -l /System/Volumes/Data`. |
 
 
 
