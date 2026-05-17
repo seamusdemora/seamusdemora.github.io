@@ -123,7 +123,7 @@ The `/etc/auto_synology` file is identical, and the same "magic command" immedia
 Nothing exceptional here, I only wanted to make a point that creating *symbolic links* to the mount points can come in handy. As I use the *AutoFS* feature mostly to simplify routine access to network shares, I've found it useful to create *symlinks* that are convenient & useful in scripts & working from the command line. For example, I have created a symlink to the directory where my `rsync` backups are stored. The mount point is `/System/Volumes/Data/mnt/synology/syn_bkup` and the directory is `rsync-myMac`. To easily access that location, I've created the following symlink: 
 
 ```zsh
-% ln -s /System/Volumes/Data/mnt/synology/syn_bkup/myMac ~/rsyn_bkup
+% ln -s /System/Volumes/Data/mnt/synology/syn_bkup/rsync-myMac ~/rsyn_bkup
 ```
 
 
