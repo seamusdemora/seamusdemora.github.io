@@ -36,17 +36,17 @@ You may choose an alternative folder name in place of `synology`; `auto_synology
 | ------------------------------------------------------------ |
 | **Answer:** Because it seems to work! *Seriously*: Apple's ability to mount NAS drives anywhere is tenuous and ever-changing; there are numerous issues and complaints reported! But don't take my word for it - do your own research, or try it yourself. I realize this choice is unorthodox, but it has worked on Ventura for 3+ years, and it does work on Tahoe - as of ver 26.5. |
 
-***A Few Explanatory Notes:*** You may notice that you cannot access `/System/Volumes/Data` ***directly*** using `Finder`. I have no idea why, but [others have reported the issue](https://forums.macrumors.com/threads/navigate-system-volumes-data-in-finder-file-open-dialog.2346503/). However, while you won't find Finder navigation straightforward, you can get there (at least in macOS Tahoe) via this route:
+***A Few Explanatory Notes:*** You may notice that you cannot access `/System/Volumes/Data` ***directly*** using `Finder`. I have no idea why, but [others have reported the issue](https://forums.macrumors.com/threads/navigate-system-volumes-data-in-finder-file-open-dialog.2346503/). However, while `Finder` navigation is *far from straightforward*, you can get there (at least in macOS Tahoe) via this route:
 
--  In Finder navigate to:  `/System/Volumes/Macintosh HD`, 
+-  In `Finder` navigate to:  `/System/Volumes/Macintosh HD`, 
 -  then rt-click the Macintosh HD icon, and select "Open Macintosh HD in new tab". 
--  In the new Finder tab you will find a folder called `mnt` - which may be empty, ***BUT*** 
+-  In the new `Finder` tab you will find a folder called `mnt` - which may be empty, ***BUT*** 
 -  `/System/Volumes/Macintosh HD/mnt` will eventually contain your AutoFS mounts once you complete the procedure below. 
 -  A far easier way to get there is avoid Apple's *chicanery*, and access the folder ***directly*** using the `Terminal.app` via the following commands: `cd /System/Volumes/Data` or `ls -l /System/Volumes/Data`. 
 
 
 
-#### 2. Create the file `/etc/auto_synology` with the following content:
+#### 2. Modify the file `/etc/auto_synology` with the following content: 
 
 ```
 syn_backup        -fstype=smbfs ://username:password@SynologyNAS-1/backups
@@ -57,9 +57,9 @@ syn_pictures      -fstype=smbfs ://username:password@SynologyNAS-1/pictures
 My Synology NAS was configured with SMB (aka CIFS) shares. In this example, I'm going to ***automount*** three (3) of them. Note the pattern: one line for each share you wish to automount. 
    * The first column is the share's name under the *mount point* (i.e. `/System/Volumes/Data/mnt/synology` from the `/etc/auto_master` entry). 
 
-   * The 2nd column specifies the network file system format as defined for the share on the Synology server; in this case I used SMB
+   * The 2nd column specifies the network file system format as defined for the share on the Synology server; in this case I used SMB: `-fstype=smbfs`
 
-   * The 3rd column gives the userid & password defined for a valid user account on the Synology NAS, followed by the network name (`SynologyNAS-1` in this example), and the proper share name as defined on the server (e.g. `/backups`). 
+   * The 3rd column gives the userid & password defined for a valid user account on the Synology NAS, followed by the network name (`SynologyNAS-1` in this example) or IP address, and the *proper share name as defined on the server* (e.g. `/backups`). 
 
 
 
