@@ -36,12 +36,12 @@ You may choose an alternative folder name in place of `synology`; `auto_synology
 | ------------------------------------------------------------ |
 | **Answer:** Because it seems to work! *Seriously*: Apple's ability to mount NAS drives anywhere is tenuous and ever-changing; there are numerous issues and complaints reported! But don't take my word for it - do your own research, or try it yourself. I realize this choice is unorthodox, but it has worked on Ventura for 3+ years, and it does work on Tahoe - as of ver 26.5. |
 
-***A Few Explanatory Notes:*** You may notice that you cannot access `/System/Volumes/Data` ***directly*** using `Finder`. I have no idea why, but [others have reported the issue](https://forums.macrumors.com/threads/navigate-system-volumes-data-in-finder-file-open-dialog.2346503/). However, while `Finder` navigation is *far from straightforward*, you can get there (at least in macOS Tahoe) via this route:
+***A Few Explanatory Notes:*** You may notice that you cannot access `/System/Volumes/Data` ***directly*** using `Finder`. I have no idea why, but [others have reported the issue](https://forums.macrumors.com/threads/navigate-system-volumes-data-in-finder-file-open-dialog.2346503/). However, while `Finder` navigation is *far from straightforward*, you can get there (at least in macOS Tahoe 26.5) via this route:
 
 -  In `Finder` navigate to:  `/System/Volumes/Macintosh HD`, 
 -  then rt-click the Macintosh HD icon, and select "Open Macintosh HD in new tab". 
 -  In the new `Finder` tab you will find a folder called `mnt` - which may be empty, ***BUT*** 
--  `/System/Volumes/Macintosh HD/mnt` will eventually contain your AutoFS mounts once you complete the procedure below. 
+-  `/System/Volumes/Macintosh HD/mnt` (aka `/System/Volumes/Data/mnt`) will eventually contain your AutoFS mounts once you complete the procedure below. 
 -  A far easier way to get there is avoid Apple's *chicanery*, and access the folder ***directly*** using the `Terminal.app` via the following commands: `cd /System/Volumes/Data` or `ls -l /System/Volumes/Data`. 
 
 
