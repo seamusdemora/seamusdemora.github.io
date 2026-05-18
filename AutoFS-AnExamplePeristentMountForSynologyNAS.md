@@ -46,7 +46,7 @@ You may choose an alternative folder name in place of `synology`; `auto_synology
 
 
 
-#### 2. Modify the file `/etc/auto_synology` with the following content: 
+#### 2. Create (or modify) the file `/etc/auto_synology` with the following content:
 
 ```
 syn_backup        -fstype=smbfs ://username:password@SynologyNAS-1/backups
@@ -130,7 +130,7 @@ Nothing exceptional here, I only wanted to make a point that creating *symbolic 
 
 ## Other Potentially Useful, Interesting or Annoying Stuff:
 
-1. As noted above, I've noticed that each time my OS is updated (or upgraded), Apple's installation routines ***revert*** any changes I've made to my `/etc/auto_master` file. I still do not understand **why** Apple does this, but I have been forced to deal with it. My current solution is as follows: 
+1. As noted above, I've noticed that each time my OS is updated (or upgraded), Apple's installation routines ***revert*** any changes I've made to my `/etc/auto_master` file. I still do not understand **why** Apple does this, but I have been forced to deal with it. My current solution is to make a backup copy of my configuration files (`auto_master` and `auto_synology`), and set the system-level `immutable` flag on the backups: 
 
    ```zsh
    % cd /etc
@@ -140,15 +140,15 @@ Nothing exceptional here, I only wanted to make a point that creating *symbolic 
    # REF: see 'man chflags' for details and options
    ```
 
-   Note that it is not possible to protect the file `/etc/auto_master` from Apple! However, the .backup file (`/etc/auto_master.backup`) can be protected... but just to be sure, I also keep a copy of the backup in `$HOME`!  
+   Note that the `immutable` flag will not protect the file `/etc/auto_master` from Apple! The backup file (`/etc/auto_master.backup`) can be protected (at least for now)... but just to be safe, I also keep a copy of the `immutable` backup in `$HOME`!  
 
-2. An improvement to the solution in 1. above would be to create a background job using `launchd` that checked an MD5 signature of the `.backup` file to that of the `/etc/auto_master`. A mis-match in MD5 signatures could be used to set a notification. That's a *future* project.  :)  
+2. An improvement to the solution in 1. above would be to create a background job using `launchd` that checked an MD5 signature of the `.backup` file to that of the `/etc/auto_master`. A mis-match in MD5 signatures could be used to set a notification, or automatic restoration, but that's a *future* project.  :)  
 
-3. If you happen to have "AppleCare*less*" support for your Mac, do not let one of their ignorant "tech support" staff tell you that NAS is not supported on current versions of macOS for Time Machine backups! In a rare moment of candor, even [Apple says that TM-NAS backup is supported](https://support.apple.com/en-my/guide/mac-help/mh15139/26/mac/26). 
+3. If you happen to have "AppleCare*less*" support for your Mac, do not let one of their ignorant "tech support" staff waste your time after telling you, "*No - NAS is not supported on current versions of macOS for Time Machine backups!*" (Yes - this actually happened to me.) In a rare moment of candor, even [Apple says that TM-NAS backup is supported](https://support.apple.com/en-my/guide/mac-help/mh15139/26/mac/26). 
 
 4. If you happen to favor NFS over SMB for network mounts, I found a popular gist for [Automounting NFS shares in OS X](https://gist.github.com/L422Y/8697518) that may be useful.  Another approach to automounting NFS shares in macOS is provided in the blog post ["Persistent NFS mount points on macOS - Using vifs and fstab to mount NFS shares"](https://tisgoud.nl/2020/10/persistent-nfs-mount-points-on-macos/). 
 
-5. **The AutoFS example here is not the only solution!** Recently (March-April, 2026) I've noticed that there seems to be an increasing number of alternative solutions for persistent network/NAS mounts for use in macOS. Perhaps this reflects growing frustration that [Apple - one of the three largest companies in the world](https://www.fool.com/research/largest-companies-by-market-cap/) - has no (actively maintained) solution for this common need ***?!*** Anyway - here's a short list of alternative solutions/approaches gleaned from simple searches on the Internet: 
+5. **The AutoFS example here is not the only solution!** Recently (March-April, 2026) I've noticed that there seems to be an increasing number of alternative solutions for persistent network/NAS mounts for use in macOS. Perhaps this reflects growing frustration that [Apple - one of the three largest companies in the world](https://www.fool.com/research/largest-companies-by-market-cap/) - has no (actively maintained) solution for this common need ***?!*** Following is a short and incomplete list of alternative solutions for auto-mounting gleaned from simple searches on the Internet: 
 
      -  [Network Share Mounter](https://gitlab.rrze.fau.de/faumac/networkShareMounter) - free, open-source, GitLab
      -  [macOS-Drive-Mounter](https://github.com/PangeranWiguan/macOS-Drive-Mounter) - free, open-source, GitHub
