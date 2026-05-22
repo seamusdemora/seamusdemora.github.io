@@ -48,11 +48,11 @@ Now, let's answer some questions you may have:
 | Well... you can read [this section of the AutoFS White Paper](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/AutoFS.md#direct-indirect-and-executable-maps)... perhaps you can make more sense of it than I could? Put another way, *"I don't really know!"* But I have learned this much: ***A direct mount is needed for reliable Time Machine backups.*** More on that to follow. |
 
 | Q2: *"Why did you choose `/System/Volumes/Data` as the location for `./mnt` ?"* |
-| ------------------------------------------------------------ |
+| :----------------------------------------------------------- |
 | **Because it seems to work!** *Seriously*: Apple's ability to mount NAS drives *anywhere* appears tenuous and ever-changing; numerous issues and complaints have been reported! But don't take my word for it - do your own research, or try it yourself. I realize this location for a mount point is unorthodox, but it has worked on Ventura for 3+ years, and it does work on Tahoe - as of ver 26.5. Of course you are free to try Apple's recommended location of `/Volumes`.  As a closed-source, proprietary OS and filesystem that is poorly documented, my view is that it is *inscrutable*, and so I *"stick with what works for me"*. |
 
 | Q3: *"Why can `Finder` not navigate to `/System/Volumes/Data`?"* |
-| ------------------------------------------------------------ |
+| :----------------------------------------------------------- |
 | I have no idea why, but [others have reported the issue](https://forums.macrumors.com/threads/navigate-system-volumes-data-in-finder-file-open-dialog.2346503/). However, while `Finder` navigation is *far from straightforward*, you can get there (at least in macOS Tahoe 26.5) via the following procedure: |
   -  In `Finder` navigate to:  `/System/Volumes/Macintosh HD`, 
   -  Then, ***right-click*** the `Macintosh HD` icon, and select "`Open Macintosh HD in new tab`". 
