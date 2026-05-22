@@ -33,7 +33,7 @@ Without further ado, here is the **autofs** configuration for my Catalina, Ventu
 
 # all the above is default; add the following line(s): 
 /System/Volumes/Data/mnt/synology       auto_synology_indirect
-/-												auto_synology_direct  
+/-											auto_synology_direct  
 ------------------------------------------------------------
 # save the file, exit the editor
 % 
