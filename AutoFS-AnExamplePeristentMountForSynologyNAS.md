@@ -83,7 +83,7 @@ My Synology NAS is configured with SMB shares. In this step, we ***automount*** 
 ### 3. Create the file `/etc/auto_synology_direct` as follows: 
 
 ```
-/System/Volumes/Data/mnt/synology/syn_tm_for_toadie  -fstype=smbfs ://username:password@SynologyNAS-1/TM-for-toadie
+/System/Volumes/Data/mnt/TM-for-toadie  -fstype=smbfs ://username:password@SynologyNAS-1/TM-for-toadie
 ```
 
 In this step we ***automount*** a single share from SynologyNAS-1 as a **direct-mount**. We use the **direct-mount** because this share is used as a **Time Machine backup** for my MacBook named **toadie**. Note - as before - the pattern of a single line with three columns for each share. You may also note the difference between the **indirect** and **direct** mount specification is limited to the first column: the **direct mount** employs a complete volume and folder specification. 
@@ -125,52 +125,35 @@ Having modified the file `/etc/auto_master`, and created the files `/etc/auto_sy
 % sudo automount -vc
 ```
 
-You should now find all the shares specified in `/etc/auto_synology_indirect` `mount`ed at the mount point specified in `/etc/auto_master`; i.e.: 
+You should now find all the shares specified in `/etc/auto_synology_indirect` `mount`ed at the mount points specified in `/etc/auto_master`; i.e.: 
 
 ```zsh
+# for the indirect mounts
 % ls -l /System/Volumes/Data/mnt/synology
-total 3 
+ 
 dr-xr-xr-x 2 root wheel 1 May 22 14:48 syn_backups
 dr-xr-xr-x 2 root wheel 1 May 22 14:48 syn_music
-dr-xr-xr-x 2 root wheel 1 May 22 14:48 syn_pictures
+dr-xr-xr-x 2 root wheel 1 May 22 14:48 syn_pictures 
+
+# for the direct mount
+% sudo ls -l /System/Volumes/Data/mnt/TM-for-toadie
+
+drwx------ 1 root wheel 16384 May 22 21:46 toadie.sparsebundle
 ```
 
-***BUT...*** Where is the **direct-mount** `/System/Volumes/Data/mnt/synology/syn_tm_for_toadie`? 
-
-You can find the **direct-mounted** SynologyNAS-1 share in ... (*drum roll, please*) `/Volumes`!  Oddly, with some caveats on viewing: 
-
-```zsh
-% ls -l /Volumes
-ls: cannot access '/Volumes/syn_tm_for_toadie': Permission denied
-total 0
-drwxr-xr-x 3 root wheel 96 Apr 22 01:17  com.apple.TimeMachine.localsnapshots
-lrwxr-xr-x 1 root wheel  1 May 15 16:48 'Macintosh HD' -> /
-d????????? ? ?    ?      ?            ?  syn_tm_for_toadie  
-
-# WTF,O ??
-
-% sudo !!
-sudo ls -l /Volumes
-total 16
-drwxr-xr-x 3 root wheel    96 Apr 22 01:17  com.apple.TimeMachine.localsnapshots
-lrwxr-xr-x 1 root wheel     1 May 15 16:48 'Macintosh HD' -> /
-drwx------ 1 root wheel 16384 May 21 10:50  syn_tm_for_toadie 
-%
-```
-
-At present, I am at a complete loss to explain the odd permissions/attributes that were set by macOS Tahoe 26.5 for `/Volumes/syn_tm_for_toadie`.  I'm continuing to experiment, and will update when/if I find an answer. ***HOWEVER***, the good news is that Time Machine is happy, and has made a successful backup: 
-
-```zsh
-% sudo tmutil setdestination smb://myusernm:mypasswd@NetgearNAS-1/TM-for-toadie
-
-% tmutil startbackup 
-
-% 
-```
+At present, I am at a complete loss to explain the odd permissions/attributes that were set by macOS Tahoe 26.5 for `/System/Volumes/Data/mnt/TM-for-toadie`.  I'm continuing to experiment, and will update when/if I find an answer. ***HOWEVER***, the good news is that with the direct mount in place, the "Time Machine GUI" (via `System Settings`, `General`, `Time Machine`) can find the backup destination, and once connected make a successful backup: 
 
 ![TM-screenshot-autofs](./pix/TM-screenshot-autofs.png)
 
 
+
+If you prefer to use  `tmutil`  for Time Machine operations from the command line, it appears that the direct mount won't help. However you can connect to the 'TM-for-toadie' share and get the job done as follows: Here's a [decent reference for `tmutil`](https://ss64.com/mac/tmutil.html). 
+
+```zsh
+% sudo tmutil setdestination smb://myusernm:mypasswd@NetgearNAS-1/TM-for-toadie 
+% tmutil startbackup
+% 
+```
 
 
 
@@ -229,7 +212,7 @@ Nothing exceptional here, I only wanted to make a point that creating *symbolic 
 
 
 
-## REFERENCES *and* ALTERNATIVES: 
+## REFERENCES *and* ALTERNATIVES:
 
 1.  [Autofs: Automatically Mounting Network File Shares in Mac OS X](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/AutoFS.md) - in Markdown format
 2.  [Autofs: Automatically Mounting Network File Shares in Mac OS X](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/Autofs.pdf) - in PDF format 
