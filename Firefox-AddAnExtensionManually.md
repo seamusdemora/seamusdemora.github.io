@@ -45,7 +45,8 @@ uh... before I detail the procedure, I should detail a *drawback*: Manually load
    
    select the modified "manifest.json" file, and then click "Open" in Finder
    
-   # the "KellyC Image Downloader" extension should now appear in the list of "Teporary Extensions"! If it does, pat yourself on the back for a job well done. 
+   # the "KellyC Image Downloader" extension should now appear in the list of "Teporary Extensions"!
+   # If it does, pat yourself on the back for a job well done. 
    ```
 
 6. And that's that - until you `Quit` Firefox. Upon re-starting Firefox, you will find that the  `KellyC Image Downloader` extension - a ***temporary*** extension - has disappeared. When that happens, perform Step 6 above to restore it. 
