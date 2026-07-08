@@ -1379,7 +1379,7 @@ It's true... Apps are folders, but Apple *disguises* them to give them a *"neate
 2. "right-click" the app ![img 3](./pix/apps-are-folders-3.png) 
 3. click `Show Package Contents` menu item to reveal the "Contents" ![img 4](./pix/apps-are-folders-4.png) 
 
-
+[↑](#table-of-contents)  
 
 ---
 
