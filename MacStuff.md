@@ -1381,7 +1381,7 @@ It's true... Apps are folders, but Apple *disguises* them to give them a *"neate
 
 As shown in the screenshots below: 
 
-![img 1](./pix/apps-are-folders-1.png)                        ![img 3](/Users/jmoore/Documents/GitHub/seamusdemora.github.io/pix/apps-are-folders-3.png) ![img 4](/Users/jmoore/Documents/GitHub/seamusdemora.github.io/pix/apps-are-folders-4.png) 
+![img 1](./pix/apps-are-folders-1.png)                        ![img 3](./pix/apps-are-folders-3.png) ![img 4](./pix/apps-are-folders-4.png) 
 
 
 
