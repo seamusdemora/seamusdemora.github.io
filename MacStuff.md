@@ -1373,15 +1373,11 @@ Now we know!
 
 ### 51. Apps are actually Folders! 
 
-It's true... Apps are folders, but Apple *disguises* them to give them a *"neater"* look. To see this for yourself: 
+It's true... Apps are folders, but Apple *disguises* them to give them a *"neater"* look. To see this for yourself - as shown in the screenshots below: 
 
-1.  open `Finder` to view your `Applications` folder, select an app file, 
-2.  "right-click" it, 
-3.  then click the `Show Package Contents` menu item to reveal the "Contents". 
-
-As shown in the screenshots below: 
-
-![img 1](./pix/apps-are-folders-1.png)                        ![img 3](./pix/apps-are-folders-3.png) ![img 4](./pix/apps-are-folders-4.png) 
+1. open `Finder` ![img 1](./pix/apps-are-folders-1.png)                        
+2. "right-click" the app ![img 3](./pix/apps-are-folders-3.png) 
+3. click `Show Package Contents` menu item to reveal the "Contents" ![img 4](./pix/apps-are-folders-4.png) 
 
 
 
