@@ -104,6 +104,8 @@
 
 [50. Playing music & sounds from the command line](#50-playing-music-from-the-command-line) 
 
+[51. Apps are actually Folders!](#51-apps-are-actually-folders) 
+
 
 
 [OTHER SOURCES:](#other-sources) 
@@ -1368,6 +1370,20 @@ Options: (may appear before or after arguments)
 Now we know! 
 
 [↑](#table-of-contents)  
+
+### 51. Apps are actually Folders! 
+
+It's true... Apps are folders, but Apple *disguises* them to give them a *"neater"* look. To see this for yourself: 
+
+1.  open `Finder` to view your `Applications` folder, select an app file, 
+2.  "right-click" it, 
+3.  then click the `Show Package Contents` menu item to reveal the "Contents". 
+
+As shown in the screenshots below: 
+
+![img 1](./pix/apps-are-folders-1.png)                        ![img 3](/Users/jmoore/Documents/GitHub/seamusdemora.github.io/pix/apps-are-folders-3.png) ![img 4](/Users/jmoore/Documents/GitHub/seamusdemora.github.io/pix/apps-are-folders-4.png) 
+
+
 
 ---
 
