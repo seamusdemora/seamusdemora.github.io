@@ -1399,7 +1399,7 @@ sudo pmset -a disablesleep 0
 
 The status of `disablesleep` can be determined from the CLI via: 
 
-```zsh
+```
 % pmset -g
 System-wide power settings:
  SleepDisabled          1   # or '0' if it is not enabled 
@@ -1473,7 +1473,7 @@ Currently in use:
 - [Q&A:Is there a way to prevent those pesky .DS_Store files from being ever created?](https://apple.stackexchange.com/a/296000/149366) 
 - [Q&A: How to merge audio and video file in ffmpeg](https://superuser.com/a/277667/907399) 
 - [Q&A: how to make scutil login to VPN with password on Mac?](https://superuser.com/questions/809150/how-to-make-scutil-login-to-vpn-with-password-on-mac) 
-- [Sleep prevention cheat sheet](https://blog.danielyj.com/blog/prevent_sleep) - by Daniel Jeong
+- [Sleep prevention cheat sheet](https://blog.danielyj.com/blog/prevent_sleep) - by Daniel Jeong 
 
 <!--- 
 
