@@ -108,6 +108,8 @@
 
 [52. Prevent your Mac from "sleeping" - even when the lid is closed](#52-prevent-your-mac-from-sleeping) 
 
+[53. The strange `scutil` command](#53-the-strange-scutil-command) 
+
 
 
 [OTHER SOURCES:](#other-sources) 
@@ -1415,9 +1417,47 @@ Currently in use:
 2.  `disablesleep` is "undocumented" (like much of Apple's macOS!) - it is not mentioned at all in `man pmset`!  This means that Apple may remove or change the command at any time! 
 3.  `disablesleep` does not prevent the display from turning off or the Mac from "locking" to require re-entry of a user password.
 
+[↑](#table-of-contents)   
+
+### 53. The strange `scutil` command
+
+While wondering why the creation of the file `/etc/hostname` with the single line entry of `toadie` was not reflected in the prompt I saw in `Terminal.app`, I searched and found [this post](https://osxdaily.com/2026/07/05/fix-unknown-terminal-prompt-in-macos).   My only previous experience with `scutil` had been in writing a script that selected a VPN on the basis of the URL that I needed to connect with (... *long story* :)   
+
+After reading `man scutil` in an effort to better understand the usage of `scutil`, I can honestly say that I may ***never*** have discovered how to set the "hostname" using this command.  Apple's documentation is routinely absent or very poor, but `man scutil` sets new standards for crappy documentation! But enough of Apple-bashing... here's what I learned: 
+
+There seem to be three (3) "hostnames" in `scutil`: 
+
+	* HostName
+	* LocalHostName 
+	* ComputerName
+
+The following command changes two of the three "hostnames": 
+
+```
+% sudo scutil --set HostName "toadie" 
+# confirm :
+% scutil --get HostName
+toadie
+% scutil --get LocalHostName
+toadie
+% scutil --get ComputerName
+Seamus's MacBook Pro
+```
+
+How odd! Let's make it unanimous: 
+
+```
+% sudo scutil --set ComputerName "toadie" 
+# confirm : 
+% scutil --get ComputerName
+toadie
+```
+
+It's funny, but I do not recall ever using `scutil` to set the "hostname" on any previous Mac that I have owned - and I've owned Macs since 2011. Perhaps this is one of Apple's many "***new innovations***" **?** Anyway - I hope this helps. 
 
 
-[↑](#table-of-contents)  
+
+[↑](#table-of-contents)
 
 ---
 
