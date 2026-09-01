@@ -108,7 +108,7 @@
 
 [52. Prevent your Mac from "sleeping" - even when the lid is closed](#52-prevent-your-mac-from-sleeping) 
 
-[53. The strange `scutil` command](#53-the-strange-scutil-command) 
+[53. Set your Mac's hostname - the strange `scutil` command](#53-the-strange-scutil-command) 
 
 
 
