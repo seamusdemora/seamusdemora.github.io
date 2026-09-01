@@ -1474,6 +1474,7 @@ Currently in use:
 - [Q&A: How to merge audio and video file in ffmpeg](https://superuser.com/a/277667/907399) 
 - [Q&A: how to make scutil login to VPN with password on Mac?](https://superuser.com/questions/809150/how-to-make-scutil-login-to-vpn-with-password-on-mac) 
 - [Sleep prevention cheat sheet](https://blog.danielyj.com/blog/prevent_sleep) - by Daniel Jeong 
+- [Installing Jellyfin on macOS](https://github.com/Digital-Shane/jellyfin-on-macos) - a "guide" to help with installation of Jellyfin on macOS - GitHub
 
 <!--- 
 
