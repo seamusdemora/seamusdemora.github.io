@@ -106,6 +106,8 @@
 
 [51. Apps are actually Folders!](#51-apps-are-actually-folders) 
 
+[52.  Prevent your Mac from "sleeping" - even when the lid is closed](#52-prevent-your-mac-from-sleeping) 
+
 
 
 [OTHER SOURCES:](#other-sources) 
@@ -1371,13 +1373,49 @@ Now we know!
 
 [↑](#table-of-contents)  
 
-### 51. Apps are actually Folders! 
+### 51. Apps are actually Folders!
 
 It's true... Apps are folders, but Apple *disguises* them to give them a *"neater"* look. To see this for yourself - as shown in the screenshots below: 
 
 1. open `Finder` ![img 1](./pix/apps-are-folders-1.png)                        
 2. "right-click" the app ![img 3](./pix/apps-are-folders-3.png) 
 3. click `Show Package Contents` menu item to reveal the "Contents" ![img 4](./pix/apps-are-folders-4.png) 
+
+[↑](#table-of-contents)  
+
+### 52.  Prevent your Mac from "sleeping"
+
+There are situations where your Mac should not *sleep* - *even when the lid is closed* **!**  I encountered such a situation recently after I [installed the Jellyfin server](https://jellyfin.org/docs/general/installation/) on a fairly recent (2019) MacBook Pro model. Here's how to do that:
+
+```
+# disable sleeping completely
+sudo pmset -a disablesleep 1
+
+# re-enable "normal" sleep behavior
+sudo pmset -a disablesleep 0
+```
+
+"root" privileges (`sudo`) are required because `pmset` (ref. `man pmset`) changes system power settings. The `-a` flag applies the `disablesleep` setting to **all** power sources: *battery, mains/wall power and UPS*. Note that this is different from the `caffeinate` command - which is applied to a single Terminal window or job. IOW, if you enter the `disablesleep` command in a Terminal tab or window, you may close that tab or window without restoring "normal" sleep. 
+
+The status of `disablesleep` can be determined from the CLI via: 
+
+```zsh
+% pmset -g
+System-wide power settings:
+ SleepDisabled          1   # or '0' if it is not enabled 
+Currently in use:
+ standby              1
+ Sleep On Power Button 1
+ ...
+```
+
+***Cautionary Notes:*** 
+
+1.  `disablesleep 1` persists across reboots/restarts; the only way to disable it is to enter the `disablesleep 0` command! 
+2.  `disablesleep` is "undocumented" (like much of Apple's macOS!) - it is not mentioned at all in `man pmset`!  This means that Apple may remove or change the command at any time! 
+3.  `disablesleep` does not prevent the display from turning off or the Mac from "locking" to require re-entry of a user password.
+
+
 
 [↑](#table-of-contents)  
 
@@ -1435,6 +1473,7 @@ It's true... Apps are folders, but Apple *disguises* them to give them a *"neate
 - [Q&A:Is there a way to prevent those pesky .DS_Store files from being ever created?](https://apple.stackexchange.com/a/296000/149366) 
 - [Q&A: How to merge audio and video file in ffmpeg](https://superuser.com/a/277667/907399) 
 - [Q&A: how to make scutil login to VPN with password on Mac?](https://superuser.com/questions/809150/how-to-make-scutil-login-to-vpn-with-password-on-mac) 
+- [Sleep prevention cheat sheet](https://blog.danielyj.com/blog/prevent_sleep) - by Daniel Jeong
 
 <!--- 
 
