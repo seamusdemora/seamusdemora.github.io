@@ -106,7 +106,7 @@
 
 [51. Apps are actually Folders!](#51-apps-are-actually-folders) 
 
-[52.  Prevent your Mac from "sleeping" - even when the lid is closed](#52-prevent-your-mac-from-sleeping) 
+[52. Prevent your Mac from "sleeping" - even when the lid is closed](#52-prevent-your-mac-from-sleeping) 
 
 
 
@@ -1383,7 +1383,7 @@ It's true... Apps are folders, but Apple *disguises* them to give them a *"neate
 
 [↑](#table-of-contents)  
 
-### 52.  Prevent your Mac from sleeping
+### 52. Prevent your Mac from sleeping
 
 There are situations where your Mac should not *sleep* - *even when the lid is closed* **!**  I encountered such a situation recently after I [installed the Jellyfin server](https://jellyfin.org/docs/general/installation/) on a fairly recent (2019) MacBook Pro model. Here's how to do that:
 
