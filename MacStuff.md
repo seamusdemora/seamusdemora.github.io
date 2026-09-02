@@ -78,7 +78,7 @@
 
 [37. Don't fret over loss of `youtube-dl`](#37-dont-fret-over-loss-of-youtube-dl) 
 
-[38. Add "QuickLook" visibility for `.webp` images in older Macs](#38-add-webp-quicklook-for-older-macs) - **UPDATED** *20240823*
+[38. Upgrade to "QuickLook" for `.webp` images on older Macs](#38-add-webp-quicklook-for-older-macs) - **UPDATED**
 
 [39. Apple sucks again](#39-whereis-vs-which-and-why-Apple-sucks) 
 
@@ -928,25 +928,40 @@ It's quite irritating to spend time carefully tailoring files in `/etc`, only to
 
 ### 37. Don't fret over loss of `youtube-dl` 
 
-If you're a user of `youtube-dl`, you may have seen [this announcement](https://youtube-dl.org/) announcing that Germany's court system has apparently *pulled the plug* on this popular app. But don't fret, the folks at MacPorts have brought you a replacement in the form of [`yt-dlp`](https://ports.macports.org/port/yt-dlp/). They also have [their own website/repo here on GitHub](https://github.com/yt-dlp/yt-dlp). The king is dead; long live the king. 
+If you're a user of `youtube-dl`, you may have seen [this announcement](https://youtube-dl.org/) announcing that Germany's court system has apparently *pulled the plug* on this popular app. But don't fret; apparently the same team has risen from the ashes, and brought you a replacement in the form of [`yt-dlp`](https://ports.macports.org/port/yt-dlp/). They've set up their [repository here](https://github.com/yt-dlp/yt-dlp). 
+
+***The king is dead; long live the king.*** 
 
 [↑](#table-of-contents) 
 
 ### 38. Add webp QuickLook for older macs
-**[UPDATED 20240823]**
+**[UPDATED 20260902]**
 
-My macOS Mojave is still a good machine - I use it regularly. I've not upgraded it because I feel that Apple "fucks you over" on the upgrades - but that's only my registered opinion :) What's **not** opinion is that Apple **does not support** their older machines for more that a couple of years. Using an older Mac, there are a few upgrades that I might be missing out on. But I've found that [`MacPorts`](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md) usually takes care of the *important stuff*. 
+My macOS Mojave is still a good machine - I use it regularly. I've not upgraded it because I feel that Apple "[fucks you over](#36-stop-apples-updates-from-trashing-your-customized-etc-files)" on the upgrades - but that's only my registered opinion :)  What's **not** opinion is that Apple **does not support** their expensive machines after a couple of years. Also, older Intel-based machines simply cannot be upgraded due to Apple's ***planned  obsolescence!*** If you're like me - still using an older Mac - there are important upgrades that we might be missing. [`MacPorts`](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md) (free, open-source) typically supports our machines for far longer than Apple, but they don't cover everything. 
 
-However, I couldn't find a solution for the "preview/QuickLook" functionality for the (now) ubiquitous `.webp` graphics. Searching online was revealing... why do [some assholes](https://www.laptopmag.com/how-to/preview-webp-files-on-macos-with-quick-look) try to take over other people's work? Yes - that's correct... the assholes at laptopmag.com tried to take credit for ['emin's open source project'](https://github.com/emin/WebPQuickLook). They gave _emin_ (the original author of `WebpQuickLook`) no credit when I looked.
+For example - I couldn't find a solution for the "preview/QuickLook" functionality for the (now) ubiquitous `.webp` graphics. *IOW - no graphic preview when looking at .webp images in Finder.* An Internet search revealed an [older solution from emin's GitHub site](https://github.com/emin/WebPQuickLook), and a [more up-to-date fork](https://github.com/lincerely/WebPQuickLook). As of September 2, 2026 both sites are still available.  Another finding from the same search was ***revealing***... why do [some assholes](https://www.laptopmag.com/how-to/preview-webp-files-on-macos-with-quick-look) try to take credit for other people's work? Yes - that's correct... ***laptopmag.com*** hijacked  'emin's open source project', but gave him ***no credit***! 
 
-Anyway: The [solution is available from emin's GitHub site](https://github.com/emin/WebPQuickLook), and it's still up as of this writing (10 Aug 2024).  
+You might have a few problems with *emin's* `webpQuickLook`. For one thing, it hasn't been updated in a while. The more *up-to-date* fork of `webpQuickLook` available from [*lincerely's* GitHub page](https://github.com/lincerely/WebPQuickLook) has some updates, including a new **installation script**. Lincerely's fork is an ***improvement***, but is not flawless.  A few things I've noticed: 
 
-#### UPDATE:
-If you're having problems with *emin's* `webpQuickLook`, that ***might*** be because it hasn't been updated in a while. There's a more *up-to-date* fork of `webpQuickLook` available from [*lincerely's* GitHub page](https://github.com/lincerely/WebPQuickLook). He's updated several things, including the **installation script**. I just installed IAW the instructions. It seems to be an ***improvement***, but it's not ***flawless!*** A few things I've noticed: 
+   1. Sometimes, `webpQuickLook` doesn't seem to work; other times, it works for a while, but then stops working!  If this happens to you, try entering this command in `Terminal.app`: 
 
-   1. It's not "Quick" in all cases; in some cases I'd call it *"Semi-Quick"* :)
-   2. Sometimes, it doesn't seem to work at all! I've had some luck in restoring it by re-running `qlmanage -r` from the  Terminal.
-   3. It completely fails on some `webp` images. In all cases that I've tested, the failing `webp` images turned out to be **animations** when I viewed them in 'Chrome'. 
+      ```
+      $ qlmanage -r 
+      # REF: 'man qlmanage'
+      ```
+
+      For whatever reason, this ***refresh*** seems to revive `webpQuickLook` - at least temporarily. 
+
+   2. `webpQuickLook` persistently fails on some `webp` images. ***In most cases*** (but not all), the failing `webp` images are **animations**.  You can verify this by opening the file in a web browser. 
+
+   3. *.webp* images that persistently refuse to be displayed by `webpQuickLook` may be converted with this very simple `ffmpeg` command:
+
+```
+	$ ffmpeg -i inputfile.webp outputfile.png
+	# Alternatively: ffmpeg -i inputfile.webp outputfile.jpg
+```
+
+
 
 [↑](#table-of-contents) 
 
@@ -1003,6 +1018,7 @@ My SOP is based on *personal experience* that began years ago, and continues tod
 If you disagree with my opinion, I think that's fine.  You may be the sort of person who prefers to weigh up the evidence, and make their own decisions. If that's the case, my hat is off to you.  I feel the world would be a better place if more people thought (and acted) ***independently***! And so without trying to influence anyone else's thinking or opinions, I will offer some anecdotal evidence that one might consider in forming his or her own opinion. 
 
 * [Unable to access External Drives and Disk Utility after updating to macOS Sonoma](https://discussions.apple.com/thread/255188289) 
+* [Apple's updates revert changes I have made to config files under `/etc`](#36-stop-apples-updates-from-trashing-your-customized-etc-files) 
 * more to follow...
 
 [↑](#table-of-contents)   
@@ -1421,7 +1437,7 @@ Currently in use:
 
 ### 53. The strange `scutil` command
 
-While wondering why the creation of the file `/etc/hostname` with the single line entry of `toadie` was not reflected in the prompt I saw in `Terminal.app`, I searched and found [this post](https://osxdaily.com/2026/07/05/fix-unknown-terminal-prompt-in-macos).   My only previous experience with `scutil` had been in writing a script that selected a VPN on the basis of the URL that I needed to connect with (... *long story* :)   
+While wondering why the creation of the file `/etc/hostname` with the single line entry of `toadie` was not reflected in the prompt I saw in `Terminal.app`, I searched and found [this post](https://osxdaily.com/2026/07/05/fix-unknown-terminal-prompt-in-macos).   My only previous experience with `scutil` had been in writing a script that selected a VPN on the basis of the URL that I needed to connect with (... [*full story here IYI*](#44-using-scutil-to-manage-vpn-connections) :)   
 
 After reading `man scutil` in an effort to better understand the usage of `scutil`, I can honestly say that I may ***never*** have discovered how to set the "hostname" using this command.  Apple's documentation is routinely absent or very poor, but `man scutil` sets new standards for crappy documentation! But enough of Apple-bashing... here's what I learned: 
 
@@ -1431,7 +1447,7 @@ There seem to be three (3) "hostnames" in `scutil`:
 	* LocalHostName 
 	* ComputerName
 
-The following command changes two of the three "hostnames": 
+On my 2019 MBP running Tahoe, the following command changes two of the three "hostnames": 
 
 ```
 % sudo scutil --set HostName "toadie" 
@@ -1444,7 +1460,7 @@ toadie
 Seamus's MacBook Pro
 ```
 
-How odd! Let's make it unanimous: 
+*How odd* **!**  Let's make it unanimous: 
 
 ```
 % sudo scutil --set ComputerName "toadie" 
