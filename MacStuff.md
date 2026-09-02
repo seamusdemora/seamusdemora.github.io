@@ -916,13 +916,35 @@ Yes - you can do this, and it comes in really handy sometimes:
 
 ### 36. Stop Apple's Updates from trashing your customized `/etc` files
 
-It's quite irritating to spend time carefully tailoring files in `/etc`, only to see them **reverted** to their original contents by Apple's F** Updates. It's even more irritating that Apple does this without notification, explanation or documentation. You learn of it only after an Update when all your shit breaks! Here's a solution that seems to work; it preserved my `/etc/auto_master` file during a recent Ventura Update to 13.6. It should work for other files in `/etc` also - perhaps even in other locations:
+It's quite irritating to spend time carefully tailoring files in `/etc`, only to see them **reverted** to their original contents by Apple's *f**g* Updates. It's even more irritating that Apple does this without notification, explanation or documentation. You learn of it only after an Update when all your shit breaks! Here's a solution that seems to work; it preserved my `/etc/auto_master` file during a recent Ventura Update to 13.6. It should work for other files in `/etc` also - perhaps even in other locations:
 
    ```zsh
    sudo chflags simmutable /etc/auto_master
 
    # REF: 'man chflags'; use 'nosimmutable' to undo when edits are required
    ```
+
+[**UPDATE**]
+
+Unfortunately, the solution described above no longer seems to work! **:(**   Apple seems to have pulled out all the stops to **fuck us over !**  Following a recent in-version upgrade, I discovered that my [AutoFS configuration files](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/AutoFS-AnExamplePeristentMountForSynologyNAS.md) had been reverted to their original version - even after the original files had been deleted by me. Fortunately, I had saved a backup of my modified configuration files under a different file name. Consequently, my advice on how to stop Apple from trashing your customized files in `/etc` has changed:
+
+1.  Make a backup of your modified config files in /etc; e.g. : 
+
+```
+% cd/etc
+% sudo cp auto_master auto_master_backup
+% sudo cp auto_synology auto_synology_backup
+```
+
+2.  Protect your backup files by setting their `simmutable` flag: 
+
+```
+% cd/etc
+% sudo chflags simmutable /etc/auto_master_backup
+% sudo chflags simmutable /etc/auto_synology_backup
+```
+
+As a further precaution (*who knows how far Apple will pursue their pathological file reversion policies?*), you can always save backup copies to a thumb drive - or perhaps a NAS device that can be disconnected when performing an upgrade. 
 
 [↑](#table-of-contents)
 
