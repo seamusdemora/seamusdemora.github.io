@@ -1095,7 +1095,7 @@ I wanted to download an old movie I found on YouTube: ["As Young as You Feel"](h
 
 `yt-dlp` was installed using 'MacPorts', and I did install it with the `[+]ffmpeg` *variant*...??? Perhaps this depends on YouTube? The [yt-dlp README file](https://github.com/yt-dlp/yt-dlp#format-selection) did offer this one thing, but it did not download the highest quality: 
 
-```bash
+```
 $ yt-dlp -f bestvideo+bestaudio/best 'https://www.youtube.com/watch?v=duE8686w78E'
 ...
 [download] Destination: As Young as You Feel (1951) full movie ｜ Marilyn Monroe, Monty Woolley, Thelma Ritter [duE8686w78E].f399.mp4
