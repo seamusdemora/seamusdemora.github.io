@@ -939,10 +939,15 @@ Yes - you can do this, and it comes in really handy sometimes:
 
 It's quite irritating to spend time carefully tailoring files in `/etc`, only to see them **reverted** to their original contents by Apple's *f**g* Updates. It's even more irritating that Apple does this without notification, explanation or documentation. You learn of it only after an Update when all your shit breaks! Here's a solution that seems to work; it preserved my `/etc/auto_master` file during a recent Ventura Update to 13.6. It should work for other files in `/etc` also - perhaps even in other locations:
 
-   ```zsh
-   sudo chflags simmutable /etc/auto_master
-
-   # REF: 'man chflags'; use 'nosimmutable' to undo when edits are required
+   ```
+   # set the "immutable" flag on the file /etc/auto_master:
+   % sudo chflags simmutable /etc/auto_master
+   # REF: 'man chflags'; use 'nosimmutable' to unset the flag for editing:
+   % sudo chflags nosimmutable /etc/auto_master
+   ...
+   # list the files with the 'simmutable' flag set:
+   % ls -lO | grep "schg" 
+   
    ```
 
 [**UPDATE**]
@@ -961,8 +966,8 @@ Unfortunately, the solution described above no longer seems to work! **:(**   Ap
 
 ```
 % cd/etc
-% sudo chflags simmutable /etc/auto_master_backup
-% sudo chflags simmutable /etc/auto_synology_backup
+% sudo chflags simmutable /etc/auto_master /etc/auto_master_backup
+% sudo chflags simmutable /etc/auto_synology /etc/auto_synology_backup
 ```
 
 As a further precaution (*who knows how far Apple will pursue their pathological file reversion policies?*), you can always save backup copies to a thumb drive - or perhaps a NAS device that can be disconnected when performing an upgrade. 
