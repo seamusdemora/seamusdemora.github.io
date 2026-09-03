@@ -135,7 +135,9 @@ Alternatively, you may specify the full path:
 
 This will cause all screenshots to be saved in a folder called `screenshots` on your Desktop. You may, of course, store them anywhere you wish*. 
 
-\* Note that you must create this folder if it doesn't already exist!  [↑toc](#table-of-contents) 
+\* Note that you must create this folder if it doesn't already exist!
+
+  [↑toc](#table-of-contents) 
 
 ### 1.5 A Shell Script to Rename Screenshot Files
 
@@ -145,9 +147,9 @@ Apple does several things I don't particularly like. One of them is the file-nam
 
    2. >June 16, 2004
 
-So - ***someone*** at Apple recognized their documentation sucks, yet the document was last updated in mid-2004! 
+So - ***someone*** at Apple recognized their documentation sucks, yet the document was last updated in mid-2004! That recognition occurred more than 22 years ago; as of macOS Tahoe, the documentation for `screencapture` has yet to be updated. The poor state of Apple's documentation should not be news to any user.
 
-But we're not here to belabor the poor state of Apple's documentation. Here's a script that will do a *bulk-rename* of all the files in your screenshots (or any other) folder: 
+ Here's a script that will do a *bulk-rename* of all the files in your screenshots (or any other) folder: 
 
 ```zsh
 #!/bin/zsh
@@ -211,7 +213,9 @@ When used with the `-w` argument, sleep will be inhibited as long as the process
 
 Note also that Process ID's are available from `Activity Monitor`, or can be listed in the terminal by entering `ps -Al` 
 
-​    <b id="f1">Note1:</b> *Know that `caffeinate` will not prevent a scheduled [automatic logout](http://osxdaily.com/2013/03/23/automatically-log-out-of-a-mac-after-a-period-of-inactivity/)*. 
+**Note 1:** *Know that `caffeinate` will not prevent a scheduled [automatic logout](http://osxdaily.com/2013/03/23/automatically-log-out-of-a-mac-after-a-period-of-inactivity/)*. 
+
+**Note 2:** See [recipe # 52](#52-prevent-your-mac-from-sleeping) for a command to prevent sleep more completely than `caffeinate`.
 
 [↑toc](#table-of-contents) 
 
@@ -293,7 +297,7 @@ In current versions of mac os, there are (at least) three distinct approaches to
    
    Yes, it created the requested output... it's in an email message! You can verify this by checking your email with the `mail` command. Alternatively, you may use a `redirect` to send the output to a file; e.g. `echo "Hello World from at" > ~/at_output.txt` 
 
-   That was so much fun, let's try another one - one that I actually use occasionally. In this example, we'll schedule a "pre-recorded announcement" to play at a designated time. I occasionally "get lost", or forget the rest of the world when I'm screwing around on this Apple computer; consequently, I recorded an MP3 file named `~/Music/getoffass.mp3` as a reminder to get out of my comfortable chair, and get up and move about! 
+   That was so much fun, let's try another one - one that I actually use occasionally. In this example, we'll schedule a "pre-recorded announcement" to play at a designated time. I occasionally "get lost", or forget the rest of the world when I'm screwing around on this Apple computer; consequently, I recorded an MP3 file named `~/Music/getoffass.mp3` as a reminder to get out of my comfortable chair, and move! 
 
    ``` zsh
    % at 14:45
@@ -336,11 +340,14 @@ In current versions of mac os, there are (at least) three distinct approaches to
 
 ### 5. How to Check the Size of a Directory?
 
-You can of course do this from the Finder menu: `File, Get Info`, but it may be quicker from the command line.
+You can of course do this from the Finder menu: `File, Get Info`, but it may be quicker from the command line. For checking **D**isk **U**sage, the `du` command works well: 
 
 For a directory on your Mac's HDD: 
 ```
 $ du -sh /path/to/directory
+# Example: check disk usage for '~/Desktop/screenshots'
+$ du -sh ~/Desktop/screenshots
+12M	/Users/seamus/Desktop/screenshots
 ```
 For a network drive that's mounted: 
 ```
@@ -363,17 +370,23 @@ The `-g`  (get) option provides data on current settings and logfiles. It can be
 
 [↑](#table-of-contents)
 
-### 7. How to Send Files to the Trash from the macos Command Line?
+### 7. How to Send Files to the Trash from the macOS Command Line?
 
-This is easily and elegntly done thanks to the work of dabrahams. The latest version of the command line utility named `trash` is [available in this gist on GitHub](https://gist.github.com/dabrahams/14fedc316441c350b382528ea64bc09c), and [now here in this repo](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/Trash.md). Its creation was spawned by a Q&A on Stack Exchange, and initially posted in [this answer](https://apple.stackexchange.com/a/162354). There is always `rm` of course, but it's a permanent and irrecoverable deletion. What makes `trash` special is that it ***moves*** files to the `Trash` folder, essentially replicating the system's `Move to Trash` feature available in `Finder`. And from `Trash` of course you have the option to recover the file, or delete it permanently. 
+This is easily and elegntly done thanks to the work of 'dabrahams'. The latest version of the command line utility named `trash` is [available in this gist on GitHub](https://gist.github.com/dabrahams/14fedc316441c350b382528ea64bc09c), and [now here in this repo](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/Trash.md). Its creation was spawned by a Q&A on Stack Exchange, and initially posted in [this answer](https://apple.stackexchange.com/a/162354). There is always `rm` of course, but it's a permanent and irrecoverable deletion. What makes `trash` special is that it ***moves*** files to the `Trash` folder, essentially replicating the system's `Move to Trash` feature available in `Finder`. And from `Trash` of course you have the option to recover the file, or delete it permanently. 
 
 It's written in Python, and *open source*. If you want to "integrate" `trash` into your system: 
 
-- Save the script as a file named `trash`, and copy `trash` to `/usr/local/bin` 
+*  Save the script as a file named `trash`, and copy `trash` to `/usr/local/bin`, and make it executable (`chmod`) :
+```
+   $ sudo chmod a+rx /usr/local/bin/trash
+```
+*  You can then run the trash command to place files in your system's `Trash` folder. For example assume you have a file in your Desktop folder named `afilenotneeded`:
 
-- ```
-  $ chmod a+rx /usr/local/bin/trash
-  ```
+```
+   $ trash ~/Desktop/afilenotneeded
+```
+
+
 
 [↑](#table-of-contents)
 
@@ -389,7 +402,7 @@ arm64e													# on my new ARM5 Macbook
 
 And if you want to see perhaps the *shortest man page in the entire world*, check out `man machine`.  :) 
 
-However, the following *Linux-style* command also works: 
+If you've installed GNU's `coreutils` package (using e.g. MacPorts), the following *Linux-style* command will also work: 
 
 ```bash
 $ uname -m
@@ -463,7 +476,9 @@ Software:
 
 ### 9. How to Combine/Concatenate Multiple PDFs?
 
-[Apple has this one covered](https://support.apple.com/guide/mac-help/combine-files-into-a-pdf-mchl21ac2368/mac), and it's easy if you know ***the trick***. You should also know that the `Quick Actions > Create PDF` option in `Finder` may not show up! When you move the pointer over `Quick Actions` in `Finder` you may see only the option `Customize...`. If that's the case, click `Customize...`, then tick the box next to `Create PDF`. This will add `Create PDF` as an option for `Quick Actions`.   
+[Apple has this one covered](https://support.apple.com/guide/mac-help/combine-files-into-a-pdf-mchl21ac2368/mac), and it's easy if you know ***the trick***. In `Finder` select 2 or more PDF files that you want to combine/concatenate into a single PDF file. Once selected, right-click on the pad/mouse, then move the pointer down the pop-up menu to `Quick Actions`, and select/click the item labeled `Create PDF`. This will create a new PDF file that contains all of the selected PDF files; the selected PDF files will remain as separate PDFs. 
+
+You should also know that the `Quick Actions > Create PDF` option in `Finder` may not show up! When you move the pointer over `Quick Actions` in `Finder` you may see only the option `Customize...`. If that's the case, click `Customize...`, then tick the box next to `Create PDF`. This will add `Create PDF` as an option for `Quick Actions`.   
 
 [↑](#table-of-contents)
 
@@ -804,7 +819,7 @@ Lest I be accused of ignoring the occasional and potentially useful item that Ap
 
 For hardware built prior to June, 2013, use the [Apple Hardware Test](https://support.apple.com/en-us/HT201257) 
 
-For hardware built after June, 2013, use [Apple Diagnostics](https://support.apple.com/en-us/HT202731). 
+For hardware built after June, 2013, use [Apple Diagnostics](https://support.apple.com/en-us/102550). 
 
 [↑](#table-of-contents)
 
@@ -826,15 +841,21 @@ Several ways to do this:
 
 ### 31. The Strange Case of `airport`
 
-I've seen references to **"Airport"** in various articles for years without knowing what they were on about. Yeah - there's the odd app called [`AirPort Utility`](https://support.apple.com/guide/aputility/welcome/mac) in the folder labeled `Other` in `Launchpad`- the folder where they put a few other seldom-used apps. But as far as I knew, this  `AirPort Utility` was used *only* for light administrative duty on my *old-and-now-no-longer-manufactured* [Time Capsule](https://en.wikipedia.org/wiki/AirPort_Time_Capsule). I was amazed to see that it was still included in Catalina - Apple being so fond of casting out legacy items.
+~~I've seen references to **"Airport"** in various articles for years without knowing what they were on about. Yeah - there's the odd app called [`AirPort Utility`](https://support.apple.com/guide/aputility/welcome/mac) in the folder labeled `Other` in `Launchpad`- the folder where they put a few other seldom-used apps. But as far as I knew, this  `AirPort Utility` was used *only* for light administrative duty on my *old-and-now-no-longer-manufactured* [Time Capsule](https://en.wikipedia.org/wiki/AirPort_Time_Capsule). I was amazed to see that it was still included in Catalina - Apple being so fond of casting out legacy items.~~
 
-But as it turns out, there's a *command-line utility* named `airport` that's been around for quite some time - maybe since Apple first embraced wifi? It may be useful for exercising a bit of **administrative control** over wifi, but I'll postpone that discussion. This note is simply an introduction.
+~~But as it turns out, there's a *command-line utility* named `airport` that's been around for quite some time - maybe since Apple first embraced wifi? It may be useful for exercising a bit of **administrative control** over wifi, but I'll postpone that discussion. This note is simply an introduction.~~
 
-The **strange** things about `airport` are its location in the filesystem, and the stupefying lack of documentation. Even by Apple's low standards for documentation, `man airport` is laughable! If you never use `airport`, you should at least enter `man airport` from the command line - what ***were*** these wankers thinking?! Equally laughable is the output of `airport -h` - the so-called "help menu"! 
+~~The **strange** things about `airport` are its location in the filesystem, and the stupefying lack of documentation. Even by Apple's low standards for documentation, `man airport` is laughable! If you never use `airport`, you should at least enter `man airport` from the command line - what ***were*** these wankers thinking?! Equally laughable is the output of `airport -h` - the so-called "help menu"!~~ 
 
-As for its location: `/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport` 
+~~As for its location: `/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport`~~ 
 
-Yes - seriously - that's where it is - at least for Catalina & Mojave. Older versions of macOS have it in a different, but equally odd location. If you want to try `airport` you could start by reading [this post on OSX Daily](https://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/).  I **hope** to find a use for `airport` in conjunction with `networksetup` to overcome the *promising-but-utterly-useless* `Network` configuration tool in the `System Preferences` app - but that's for another day.  
+~~Yes - seriously - that's where it is - at least for Catalina & Mojave. Older versions of macOS have it in a different, but equally odd location. If you want to try `airport` you could start by reading [this post on OSX Daily](https://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/).  I **hope** to find a use for `airport` in conjunction with `networksetup` to overcome the *promising-but-utterly-useless* `Network` configuration tool in the `System Settings` app - but that's for another day.~~  
+
+I get truly sick and f**g tired of searching for Apple documentation; not just on `airport`, but on virtually anything! I don't use AI often, but I did in this case. When I finally pinned down the robot, I got this quote: 
+
+>  Apple’s documentation ecosystem makes it difficult to distinguish between an officially announced deprecation and a change mentioned only in beta release notes. In the case of AirPort Utility, Apple’s public support documentation does not provide a clear, stable deprecation notice, leaving users dependent on third-party reporting to interpret the product’s future. 
+
+And so apparently Apple has deprecated `airport` from macOS, but they haven't actually made an announcement to that effect! ***What a bunch of lame assholes they are.***  
 
 [↑](#table-of-contents) 
 
@@ -856,13 +877,13 @@ But these default behaviors are **not** what we want in some situations. Here's 
 
 ### 33. Should You Put Siri on an "iLeash", or Put Her Down?
 
-With the ["Siri Privacy Scandal"](https://duckduckgo.com/?t=ffnt&q=Siri+Privacy+Scandal&ia=web) out in the open now, you may have wondered what, if anything, you should do about it. I know I have. After understanding what happened, it *feels like* Apple simply cannot be trusted. For me - the fact that they **didn't take ownership of the issue** was the biggest disappointment - a punk-ass move IMHO. I should just accept the fact that giant corporations are inherently untrustworthy, and run by people who might throw their Mother overboard to improve their odds... I should *grow up*, and accept this. Anyway - now the time has come to decide what to do about it. Here are some of the options I've considered:
+With the ["Siri Privacy Scandal"](https://duckduckgo.com/?t=ffnt&q=Siri+Privacy+Scandal&ia=web) out in the open, and in full public view, you may have wondered what, if anything, you should do about it. I know I have. After understanding what happened, it *feels like* Apple simply cannot be trusted. For me - the fact that they **didn't take ownership of the issue** was the biggest disappointment - a punk-ass move IMHO. I should just accept the fact that giant corporations are inherently untrustworthy, and run by people who might throw their Mother overboard to improve their odds... I should *grow up*, and accept this. Anyway - now the time has come to decide what to do about it. Here are some of the options I've considered:
 
   1. Leave it disabled - as it has always been on my new Macbook 
   2. [Remove Siri from the TouchBar](https://apple.stackexchange.com/questions/373361/how-do-i-remove-siri-from-the-collapsed-control-strip) - definitely!
   3. Rip it out - remove the executable/app file(s)
 
-On Catalina and Mojave, there's a control panel for Siri in `System Preferences`. The `Enable Siri` option can be checked - or un-checked. It ought to be that simple - but it's not. Since Catalina 10.15.1, Apple added "new features" to the Siri control panel - giving you "more control" over your personal data. Hmm - Apple's post-Siri-Scandal pledges and promises are already being watered down? In all honesty, I don't know. But given that Apple's software is closed-source, and their record is not great I wouldn't take any wagers. Note to Apple: Lost trust is hard to recover. 
+On Catalina and Mojave, there's a control panel for Siri in `System Preferences`. The `Enable Siri` option can be checked - or un-checked. It ought to be that simple - but it's not. Since Catalina 10.15.1, Apple added "new features" to the Siri control panel - giving you "more control" over your personal data. Hmm - Apple's post-Siri-Scandal pledges and promises are already being watered down? In all honesty, I don't know. But given that Apple's software is closed-source, and their record is not great I wouldn't take any wagers. **Note to Apple: Lost trust is hard to recover.** 
 
 Removing Siri from the "Touch Bar" (Mojave-speak), or the "Control Strip" (Catalina-speak) likewise has been made harder than it should be. The link in option 2. above is a SE Q&A that illustrates this point. If that doesn't work for you, my best suggestion is to [search for your particular OS](https://duckduckgo.com/?t=ffnt&q=remove+siri+from+macOS+touchbar&ia=web).
 
