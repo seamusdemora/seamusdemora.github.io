@@ -952,7 +952,7 @@ It's quite irritating to spend time carefully tailoring files in `/etc`, only to
 
 [**UPDATE**]
 
-Unfortunately, the solution described above no longer seems to work! **:(**   Apple seems to have pulled out all the stops to **fuck us over !**  Following a recent in-version upgrade, I discovered that my [AutoFS configuration files](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/AutoFS-AnExamplePeristentMountForSynologyNAS.md) had been reverted to their original version - even after the original files had been deleted by me. Fortunately, I had saved a backup of my modified configuration files under a different file name. Consequently, my advice on how to stop Apple from trashing your customized files in `/etc` has changed:
+Unfortunately, the solution described above no longer seems to work! **:(**   Apple seems to have pulled out all the stops to **fuck us over !<sup>1</sup>**  Following a recent in-version upgrade, I discovered that my [AutoFS configuration files](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/AutoFS-AnExamplePeristentMountForSynologyNAS.md) had been reverted to their original version - even after the original files had been deleted by me. Fortunately, I had saved a backup of my modified configuration files under a different file name. Consequently, my advice on how to stop Apple from trashing your customized files in `/etc` has changed:
 
 1.  Make a backup of your modified config files in /etc; e.g. : 
 
@@ -971,6 +971,8 @@ Unfortunately, the solution described above no longer seems to work! **:(**   Ap
 ```
 
 As a further precaution (*who knows how far Apple will pursue their pathological file reversion policies?*), you can always save backup copies to a thumb drive - or perhaps a NAS device that can be disconnected when performing an upgrade. 
+
+**Note 1:** Which of course means that we - as individuals - have been completely displaced as root/Admin on the machines that we bought and paid for! Even as a root/Admin user in macOS it is "impossible" to delete a file when its `simmutable` flag is set; the `simmutable` flag must be un-set before the file can be deleted.
 
 [↑](#table-of-contents)
 
