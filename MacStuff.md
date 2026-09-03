@@ -538,7 +538,7 @@ Similarly, using `pbpaste` you can paste text you've copied to a file; e.g.
 $ pbpaste > newfile.txt
 ```
 
-See `man pbcopy` for further details.   
+See `man pbcopy` (or `man pbpaste`) for further details.   
 
 [↑](#table-of-contents)
 
@@ -753,7 +753,7 @@ Apple has decided that the most-commonly-used shell (`bash`) should no longer be
 chsh -s /bin/bash
 ```
 
-Finally, know that if you prefer `bash`, you're not stuck with Apple's "antique" version of `bash`; you can get the latest release through [MacPorts](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md).
+Finally, know that if you prefer `bash`, you're not stuck with Apple's "antique" version of `bash`; you can get the latest version of GNU's `bash` through [MacPorts](https://github.com/seamusdemora/seamusdemora.github.io/blob/master/MacPorts.md).
 
 [↑](#table-of-contents)
 
